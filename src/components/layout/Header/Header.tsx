@@ -8,11 +8,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import type { NavData } from '@/types';
 import styles from './Header.module.css';
 import { SCROLL_THRESHOLD } from '@/constants';
-import { useTheme } from '@/context/ThemeContext';
+import HeaderActions from '@/components/layout/HeaderActions';
 import Navigation from '@/components/layout/Navigation';
 import NavItemMobile from '@/components/layout/NavItemMobile';
 import TopBar from '@/components/layout/TopBar';
-import Icon from '@/components/shared/Icon';
 
 interface HeaderProps {
   data: NavData;
@@ -22,7 +21,6 @@ export default function Header({ data }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const { theme, toggleTheme } = useTheme();
   const pathname = usePathname();
 
   const isActive = (href: string) =>
@@ -93,40 +91,13 @@ export default function Header({ data }: HeaderProps) {
             isActive={isActive}
           />
 
-          {/* Actions */}
-          <div className={styles.actions}>
-            <div className={styles.langSwitch}>
-              {data.languages.map((lang) => (
-                <button
-                  key={lang.code}
-                  className={[styles.langBtn, lang.active ? styles.langActive : ''].filter(Boolean).join(' ')}
-                >
-                  {lang.label}
-                </button>
-              ))}
-            </div>
-            <button
-              className={styles.themeToggle}
-              onClick={toggleTheme}
-              aria-label={theme === 'dark' ? 'تغییر به حالت روشن' : 'تغییر به حالت تاریک'}
-              title={theme === 'dark' ? 'حالت روشن' : 'حالت تاریک'}
-            >
-              <Icon name={theme === 'dark' ? 'sun' : 'moon'} size={18} />
-            </button>
-            <a href={data.cta.href} className={styles.ctaBtn} onClick={scrollToCta}>
-              {data.cta.label}
-            </a>
-            <button
-              className={styles.hamburger}
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="منو"
-              aria-expanded={mobileOpen}
-            >
-              <span className={[styles.bar, mobileOpen ? styles.barOpen1 : ''].filter(Boolean).join(' ')} />
-              <span className={[styles.bar, mobileOpen ? styles.barOpen2 : ''].filter(Boolean).join(' ')} />
-              <span className={[styles.bar, mobileOpen ? styles.barOpen3 : ''].filter(Boolean).join(' ')} />
-            </button>
-          </div>
+          <HeaderActions
+            languages={data.languages}
+            cta={data.cta}
+            mobileOpen={mobileOpen}
+            onHamburgerClick={() => setMobileOpen(!mobileOpen)}
+            onCtaClick={scrollToCta}
+          />
         </div>
 
         {/* Mobile Menu — outside navInner so it expands below the nav bar */}
