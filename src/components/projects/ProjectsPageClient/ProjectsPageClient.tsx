@@ -1,31 +1,21 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Container from '@/components/shared/Container';
-import Icon from '@/components/shared/Icon';
+import ProjectCard from '@/components/shared/ProjectCard';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import type { BreadcrumbItem } from '@/components/shared/Breadcrumb';
+import type { Project } from '@/types';
 import styles from './ProjectsPageClient.module.css';
 
 interface Tab { id: string; label: string; }
-interface ProjectItem {
-  id: string;
-  image: string;
-  category: string;
-  title: string;
-  location: string;
-  href: string;
-  featured: boolean;
-}
 
 interface Props {
   breadcrumb: BreadcrumbItem[];
   pageTitle: string;
   tabs: Tab[];
-  items: ProjectItem[];
+  items: Project[];
 }
 
 export default function ProjectsPageClient({ breadcrumb, pageTitle, tabs, items }: Props) {
@@ -78,7 +68,7 @@ export default function ProjectsPageClient({ breadcrumb, pageTitle, tabs, items 
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.25 }}
                   >
-                    <ProjectCard project={project} />
+                    <ProjectCard project={project} variant="grid" />
                   </motion.div>
                 ))
               )}
@@ -90,42 +80,3 @@ export default function ProjectsPageClient({ breadcrumb, pageTitle, tabs, items 
   );
 }
 
-function ProjectCard({ project }: { project: ProjectItem }) {
-  return (
-    <Link href={project.href} className={styles.card}>
-      <div className={styles.imgWrap}>
-        <Image
-          src={project.image}
-          alt={project.title}
-          fill
-          className={styles.img}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-        />
-        <Placeholder title={project.title} />
-        <div className={styles.overlay} aria-hidden />
-        <div className={styles.cardContent}>
-          <h3 className={styles.cardTitle}>{project.title}</h3>
-          <div className={styles.cardMeta}>
-            <Icon name="location" size={13} />
-            <span>{project.location}</span>
-          </div>
-          <span className={styles.cardLink}>
-            <Icon name="arrow-right" size={14} />
-            مشاهده جزئیات
-          </span>
-        </div>
-      </div>
-    </Link>
-  );
-}
-
-function Placeholder({ title }: { title: string }) {
-  const colors = ['#0a1e3d', '#0d2444', '#081528', '#0e2040'];
-  const idx = title.length % colors.length;
-  return (
-    <div className={styles.placeholder} style={{ background: colors[idx] }} aria-hidden>
-      <Icon name="building" size={56} style={{ color: 'rgba(30,111,207,0.35)' }} />
-    </div>
-  );
-}

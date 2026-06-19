@@ -2,14 +2,13 @@
 
 import { useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import type { ProjectsData, Project } from '@/types';
+import type { ProjectsData } from '@/types';
 import SectionTitle from '@/components/shared/SectionTitle';
 import Container from '@/components/shared/Container';
-import Badge from '@/components/shared/Badge';
+import ProjectCard from '@/components/shared/ProjectCard';
 import Icon from '@/components/shared/Icon';
 import styles from './Projects.module.css';
 
@@ -67,7 +66,7 @@ export default function Projects({ data }: ProjectsProps) {
         >
           {data.items.map((project) => (
             <SwiperSlide key={project.id} className={styles.slide}>
-              <ProjectCard project={project} />
+              <ProjectCard project={project} variant="carousel" />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -85,43 +84,3 @@ export default function Projects({ data }: ProjectsProps) {
   );
 }
 
-function ProjectCard({ project }: { project: Project }) {
-  return (
-    <Link href={project.href} className={styles.card}>
-      <div className={styles.imgWrap}>
-        <Image
-          src={project.image}
-          alt={project.title}
-          fill
-          className={styles.img}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-        />
-        <ProjectPlaceholder title={project.title} />
-        <div className={styles.overlay} aria-hidden />
-        <div className={styles.overlayContent}>
-          <Badge variant="accent">{project.category}</Badge>
-          <div className={styles.overlayMeta}>
-            <Icon name="location" size={14} />
-            <span>{project.location}</span>
-          </div>
-        </div>
-      </div>
-      <div className={styles.cardBody}>
-        <h3 className={styles.title}>{project.title}</h3>
-        <span className={styles.link}>مشاهده مطالعه موردی →</span>
-      </div>
-    </Link>
-  );
-}
-
-function ProjectPlaceholder({ title }: { title: string }) {
-  const colors = ['#0a1e3d', '#0d2444', '#081528', '#0e2040'];
-  const idx = title.length % colors.length;
-  return (
-    <div className={styles.placeholder} style={{ background: colors[idx] }} aria-hidden>
-      <Icon name="building" size={48} style={{ color: 'rgba(30,111,207,0.4)' }} />
-      <span>{title}</span>
-    </div>
-  );
-}

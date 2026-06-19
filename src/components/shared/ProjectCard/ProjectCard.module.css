@@ -1,0 +1,176 @@
+/* ─── Base Card ──────────────────────────────────────────────── */
+.card {
+  text-decoration: none;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+/* ─── Carousel Variant ───────────────────────────────────────── */
+.carousel {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-slow);
+  height: 100%;
+}
+
+.carousel:hover {
+  border-color: var(--color-border-primary);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-glow-primary), var(--shadow-lg);
+}
+
+.carousel .imgWrap { aspect-ratio: 4/5; }
+
+/* ─── Grid Variant ───────────────────────────────────────────── */
+.grid {
+  display: block;
+  position: relative;
+}
+
+.grid .imgWrap {
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-xl);
+}
+
+/* ─── Image Wrap ─────────────────────────────────────────────── */
+.imgWrap {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── Image ──────────────────────────────────────────────────── */
+.img {
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .img { transform: scale(1.07); }
+
+/* ─── Placeholder ────────────────────────────────────────────── */
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+}
+
+.placeholder span {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+/* ─── Overlay ────────────────────────────────────────────────── */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(6, 13, 26, 0.9) 0%,
+    rgba(6, 13, 26, 0.4) 40%,
+    transparent 75%
+  );
+  pointer-events: none;
+}
+
+/* ─── Carousel: Overlay Content (badge + location inside image) ─ */
+.overlayContent {
+  position: absolute;
+  bottom: var(--space-4);
+  right: var(--space-4);
+  left: var(--space-4);
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.overlayMeta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--text-xs);
+}
+
+.overlayMeta svg { color: var(--color-accent); flex-shrink: 0; }
+
+/* ─── Carousel: Card Body (below image) ─────────────────────── */
+.cardBody {
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.title {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: var(--leading-snug);
+}
+
+.link {
+  flex-shrink: 0;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.carousel:hover .link { color: var(--color-accent); }
+
+/* ─── Grid: Card Content (inside image overlay) ──────────────── */
+.cardContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-5) var(--space-5) var(--space-4);
+  direction: rtl;
+  text-align: right;
+}
+
+.cardTitle {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: #fff;
+  margin: 0 0 var(--space-1);
+  line-height: var(--leading-snug);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-3);
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  transition: gap var(--transition-fast), color var(--transition-fast);
+  flex-direction: row-reverse;
+  direction: rtl;
+}
+
+.card:hover .cardLink { gap: var(--space-3); }
