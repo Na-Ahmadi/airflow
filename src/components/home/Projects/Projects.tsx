@@ -10,6 +10,7 @@ import type { ProjectsData, Project } from '@/types';
 import SectionTitle from '@/components/shared/SectionTitle';
 import Container from '@/components/shared/Container';
 import Badge from '@/components/shared/Badge';
+import Icon from '@/components/shared/Icon';
 import styles from './Projects.module.css';
 
 import 'swiper/css';
@@ -72,10 +73,10 @@ export default function Projects({ data }: ProjectsProps) {
         </Swiper>
 
         <button className={`${styles.navBtn} ${styles.navPrev} projects-prev`} aria-label="قبلی">
-          <ChevronRightIcon />
+          <Icon name="chevron-right" size={20} />
         </button>
         <button className={`${styles.navBtn} ${styles.navNext} projects-next`} aria-label="بعدی">
-          <ChevronLeftIcon />
+          <Icon name="chevron-left" size={20} />
         </button>
 
         <div className={`projects-pagination ${styles.pagination}`} />
@@ -101,7 +102,7 @@ function ProjectCard({ project }: { project: Project }) {
         <div className={styles.overlayContent}>
           <Badge variant="accent">{project.category}</Badge>
           <div className={styles.overlayMeta}>
-            <LocationIcon />
+            <Icon name="location" size={14} />
             <span>{project.location}</span>
           </div>
         </div>
@@ -119,13 +120,8 @@ function ProjectPlaceholder({ title }: { title: string }) {
   const idx = title.length % colors.length;
   return (
     <div className={styles.placeholder} style={{ background: colors[idx] }} aria-hidden>
-      <BuildingIcon />
+      <Icon name="building" size={48} style={{ color: 'rgba(30,111,207,0.4)' }} />
       <span>{title}</span>
     </div>
   );
 }
-
-function ChevronRightIcon() { return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><polyline points="9 18 15 12 9 6"/></svg>; }
-function ChevronLeftIcon()  { return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><polyline points="15 18 9 12 15 6"/></svg>; }
-function LocationIcon() { return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>; }
-function BuildingIcon() { return <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(30,111,207,0.4)" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M9 9h6M9 12h6M9 15h6M9 6h6"/></svg>; }

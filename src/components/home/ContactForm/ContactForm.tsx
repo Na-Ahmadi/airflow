@@ -8,6 +8,7 @@ import { motion, useInView } from 'framer-motion';
 import type { ContactFormValues } from '@/types';
 import Container from '@/components/shared/Container';
 import SectionTitle from '@/components/shared/SectionTitle';
+import Icon from '@/components/shared/Icon';
 import styles from './ContactForm.module.css';
 
 const schema = z.object({
@@ -92,7 +93,7 @@ export default function ContactForm({ data }: ContactFormProps) {
             <div className={styles.formCard}>
               {status === 'success' ? (
                 <div className={styles.successMsg}>
-                  <SuccessIcon />
+                  <Icon name="check-circle" size={56} style={{ color: 'var(--color-success)' }} />
                   <p>{data.submit.success}</p>
                   <button className={styles.resetBtn} onClick={() => setStatus('idle')}>ارسال پیام جدید</button>
                 </div>
@@ -134,7 +135,7 @@ export default function ContactForm({ data }: ContactFormProps) {
                   {/* File Upload */}
                   <div className={styles.fileUpload}>
                     <label className={styles.fileLabel}>
-                      <UploadIcon />
+                      <Icon name="upload" size={24} />
                       <div>
                         <span className={styles.fileLabelTitle}>{data.fileInfo.label}</span>
                         <span className={styles.fileHint}>{data.fileInfo.hint}</span>
@@ -190,7 +191,7 @@ function Field({ label, error, required, children }: { label: string; error?: st
 function ContactDetail({ icon, label, value }: { icon: string; label: string; value: string }) {
   return (
     <div className={styles.contactItem}>
-      <div className={styles.contactIcon}><ContactIcon name={icon} /></div>
+      <div className={styles.contactIcon}><div className={styles.iconSvg}><Icon name={icon} /></div></div>
       <div>
         <span className={styles.contactLabel}>{label}</span>
         <span className={styles.contactValue}>{value}</span>
@@ -198,17 +199,3 @@ function ContactDetail({ icon, label, value }: { icon: string; label: string; va
     </div>
   );
 }
-
-function ContactIcon({ name }: { name: string }) {
-  const icons: Record<string, React.ReactElement> = {
-    phone:    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 1.18 2 2 0 012.03 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91A16 16 0 0016.09 17.9l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>,
-    mail:     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>,
-    location: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>,
-    clock:    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>,
-  };
-  return <div className={styles.iconSvg}>{icons[name] ?? null}</div>;
-}
-
-function SuccessIcon() { return <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>; }
-function UploadIcon()  { return <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>; }
-function Spinner() { return <span className={styles.spinner} aria-hidden />; }

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import type { HeroData } from '@/types';
 import styles from './Hero.module.css';
+import Icon from '@/components/shared/Icon';
 
 const EASE = [0.4, 0, 0.2, 1] as [number, number, number, number];
 
@@ -67,9 +68,9 @@ export default function Hero({ data }: HeroProps) {
                 href={btn.href}
                 className={[styles.btn, styles[`btn_${btn.variant}`]].join(' ')}
               >
-                {btn.variant === 'outline' && <PlayIcon />}
+                {btn.variant === 'outline' && <Icon name="play" size={18} />}
                 {btn.label}
-                {btn.variant === 'primary' && <ArrowLeftIcon />}
+                {btn.variant === 'primary' && <Icon name="arrow-left" size={18} />}
               </Link>
             ))}
           </motion.div>
@@ -104,25 +105,5 @@ export default function Hero({ data }: HeroProps) {
         <div className={styles.scrollDot} />
       </div>
     </section>
-  );
-}
-
-function ArrowLeftIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <line x1="19" y1="12" x2="5" y2="12"/>
-      <polyline points="12 19 5 12 12 5"/>
-    </svg>
-  );
-}
-
-function PlayIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <circle cx="12" cy="12" r="10"/>
-      <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
-    </svg>
   );
 }

@@ -1,9 +1,10 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
-import type { NavItem } from '@/types';
-import styles from './NavItemDesktop.module.css';
+import type { NavItem } from "@/types";
+import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
+import styles from "./NavItemDesktop.module.css";
+import Icon from "@/components/shared/Icon";
 
 interface NavItemDesktopProps {
   item: NavItem;
@@ -21,13 +22,19 @@ export default function NavItemDesktop({
   onMouseLeave,
 }: NavItemDesktopProps) {
   return (
-    <div className={styles.menuItem} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+    <div
+      className={styles.menuItem}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <Link
         href={item.href}
-        className={[styles.menuLink, isActive ? styles.active : ''].filter(Boolean).join(' ')}
+        className={[styles.menuLink, isActive ? styles.active : ""]
+          .filter(Boolean)
+          .join(" ")}
       >
         {item.label}
-        {item.children && <ChevronIcon />}
+        {item.children && <Icon name="chevron-down" size={14} />}
       </Link>
       <AnimatePresence>
         {item.children && dropdownOpen && (
@@ -39,7 +46,11 @@ export default function NavItemDesktop({
             transition={{ duration: 0.2 }}
           >
             {item.children.map((child) => (
-              <Link key={child.href} href={child.href} className={styles.dropdownItem}>
+              <Link
+                key={child.href}
+                href={child.href}
+                className={styles.dropdownItem}
+              >
                 {child.label}
               </Link>
             ))}
@@ -47,13 +58,5 @@ export default function NavItemDesktop({
         )}
       </AnimatePresence>
     </div>
-  );
-}
-
-function ChevronIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <polyline points="6 9 12 15 18 9" />
-    </svg>
   );
 }

@@ -10,6 +10,7 @@ import type { ProductsData, Product } from '@/types';
 import SectionTitle from '@/components/shared/SectionTitle';
 import Container from '@/components/shared/Container';
 import Badge from '@/components/shared/Badge';
+import Icon from '@/components/shared/Icon';
 import styles from './Products.module.css';
 
 import 'swiper/css';
@@ -95,10 +96,10 @@ export default function Products({ data }: ProductsProps) {
 
           {/* Custom Nav */}
           <button className={`${styles.navBtn} ${styles.navPrev} products-prev`} aria-label="قبلی">
-            <ChevronRightIcon />
+            <Icon name="chevron-right" size={20} />
           </button>
           <button className={`${styles.navBtn} ${styles.navNext} products-next`} aria-label="بعدی">
-            <ChevronLeftIcon />
+            <Icon name="chevron-left" size={20} />
           </button>
 
           <div className={`products-pagination ${styles.pagination}`} />
@@ -151,6 +152,3 @@ function ProductPlaceholderImg() {
     </div>
   );
 }
-
-function ChevronRightIcon() { return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><polyline points="9 18 15 12 9 6"/></svg>; }
-function ChevronLeftIcon()  { return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><polyline points="15 18 9 12 15 6"/></svg>; }

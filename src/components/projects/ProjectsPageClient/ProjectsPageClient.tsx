@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Container from '@/components/shared/Container';
+import Icon from '@/components/shared/Icon';
 import styles from './ProjectsPageClient.module.css';
 
 interface Tab { id: string; label: string; }
@@ -116,11 +117,11 @@ function ProjectCard({ project }: { project: ProjectItem }) {
         <div className={styles.cardContent}>
           <h3 className={styles.cardTitle}>{project.title}</h3>
           <div className={styles.cardMeta}>
-            <LocationIcon />
+            <Icon name="location" size={13} />
             <span>{project.location}</span>
           </div>
           <span className={styles.cardLink}>
-            <ArrowIcon />
+            <Icon name="arrow-right" size={14} />
             مشاهده جزئیات
           </span>
         </div>
@@ -134,34 +135,7 @@ function Placeholder({ title }: { title: string }) {
   const idx = title.length % colors.length;
   return (
     <div className={styles.placeholder} style={{ background: colors[idx] }} aria-hidden>
-      <BuildingIcon />
+      <Icon name="building" size={56} style={{ color: 'rgba(30,111,207,0.35)' }} />
     </div>
-  );
-}
-
-function LocationIcon() {
-  return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-      <circle cx="12" cy="10" r="3"/>
-    </svg>
-  );
-}
-
-function ArrowIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <line x1="5" y1="12" x2="19" y2="12"/>
-      <polyline points="12 5 19 12 12 19"/>
-    </svg>
-  );
-}
-
-function BuildingIcon() {
-  return (
-    <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(30,111,207,0.35)" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <rect x="3" y="3" width="18" height="18" rx="2"/>
-      <path d="M9 9h6M9 12h6M9 15h6M9 6h6"/>
-    </svg>
   );
 }
