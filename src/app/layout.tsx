@@ -4,6 +4,7 @@ import Script from 'next/script';
 import './globals.css';
 import { SITE_CONFIG } from '@/constants';
 import { ThemeProvider } from '@/context/ThemeContext';
+import { LanguageProvider } from '@/context/LanguageContext';
 import ScrollToTop from '@/components/shared/ScrollToTop/ScrollToTop';
 
 const vazir = Vazirmatn({
@@ -53,9 +54,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`,
           }}
         />
+        <Script
+          id="lang-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var l=localStorage.getItem('lang');var en=l==='en';document.documentElement.setAttribute('lang',en?'en':'fa');document.documentElement.setAttribute('dir',en?'ltr':'rtl');}catch(e){}})();`,
+          }}
+        />
         <ThemeProvider>
-          {children}
-          <ScrollToTop />
+          <LanguageProvider>
+            {children}
+            <ScrollToTop />
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

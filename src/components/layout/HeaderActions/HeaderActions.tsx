@@ -1,11 +1,10 @@
 'use client';
 
-import LanguageSwitch, { type Language } from '@/components/layout/LanguageSwitch/LanguageSwitch';
+import LanguageSwitch from '@/components/layout/LanguageSwitch/LanguageSwitch';
 import ThemeToggle from '@/components/layout/ThemeToggle/ThemeToggle';
 import styles from './HeaderActions.module.css';
 
 interface HeaderActionsProps {
-  languages: Language[];
   cta: { label: string; href: string };
   mobileOpen: boolean;
   onHamburgerClick: () => void;
@@ -13,7 +12,6 @@ interface HeaderActionsProps {
 }
 
 export default function HeaderActions({
-  languages,
   cta,
   mobileOpen,
   onHamburgerClick,
@@ -21,7 +19,7 @@ export default function HeaderActions({
 }: HeaderActionsProps) {
   return (
     <div className={styles.actions}>
-      <LanguageSwitch languages={languages} />
+      <LanguageSwitch />
 
       <ThemeToggle />
 

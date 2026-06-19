@@ -1,9 +1,20 @@
 {
-  "items": [
-    { "id": "experience",   "icon": "clock",      "value": 18,    "suffix": "+", "label": "سال تجربه",                "numericValue": 18 },
-    { "id": "projects",     "icon": "briefcase",  "value": 850,   "suffix": "+", "label": "پروژه موفق",               "numericValue": 850 },
-    { "id": "production",   "icon": "factory",    "value": 13000, "suffix": "+", "label": "متر مربع تولید ماهانه",    "numericValue": 13000 },
-    { "id": "countries",    "icon": "globe",      "value": 300,   "suffix": "+", "label": "کشور صادراتی",             "numericValue": 300 },
-    { "id": "satisfaction", "icon": "smile",      "value": 98,    "suffix": "%", "label": "رضایت مشتریان",            "numericValue": 98 }
-  ]
+  "fa": {
+    "items": [
+      { "id": "experience",   "icon": "clock",     "value": 18,    "suffix": "+", "label": "سال تجربه",             "numericValue": 18    },
+      { "id": "projects",     "icon": "briefcase", "value": 850,   "suffix": "+", "label": "پروژه موفق",            "numericValue": 850   },
+      { "id": "production",   "icon": "factory",   "value": 13000, "suffix": "+", "label": "متر مربع تولید ماهانه", "numericValue": 13000 },
+      { "id": "countries",    "icon": "globe",     "value": 300,   "suffix": "+", "label": "کشور صادراتی",          "numericValue": 300   },
+      { "id": "satisfaction", "icon": "smile",     "value": 98,    "suffix": "%", "label": "رضایت مشتریان",         "numericValue": 98    }
+    ]
+  },
+  "en": {
+    "items": [
+      { "id": "experience",   "icon": "clock",     "value": 18,    "suffix": "+", "label": "Years of Experience",        "numericValue": 18    },
+      { "id": "projects",     "icon": "briefcase", "value": 850,   "suffix": "+", "label": "Successful Projects",        "numericValue": 850   },
+      { "id": "production",   "icon": "factory",   "value": 13000, "suffix": "+", "label": "sqm Monthly Production",     "numericValue": 13000 },
+      { "id": "countries",    "icon": "globe",     "value": 300,   "suffix": "+", "label": "Export Countries",           "numericValue": 300   },
+      { "id": "satisfaction", "icon": "smile",     "value": 98,    "suffix": "%", "label": "Client Satisfaction",        "numericValue": 98    }
+    ]
+  }
 }

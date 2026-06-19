@@ -88,7 +88,6 @@ export default function Header({ data }: HeaderProps) {
           />
 
           <HeaderActions
-            languages={data.languages}
             cta={data.cta}
             mobileOpen={mobileOpen}
             onHamburgerClick={() => setMobileOpen(!mobileOpen)}

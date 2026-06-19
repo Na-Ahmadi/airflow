@@ -1,42 +1,50 @@
 {
-  "logo": {
-    "text": "ایرفلو سیستم",
-    "tagline": "راهکارهای توزیع هوای هوشمند",
-    "href": "/"
-  },
-  "topbar": {
-    "phone": "۰۲۱-۳۳۵۸۵۷۸",
-    "email": "info@airflowsystem.ir",
-    "address": "تهران، شهران، خیابان مطهری، خیابان ستارخان، پلاک ۱۲۳"
-  },
-  "items": [
-    { "id": "home", "label": "صفحه اصلی", "href": "/", "active": true },
-    {
-      "id": "products",
-      "label": "محصولات",
-      "href": "/products",
-      "active": false
+  "fa": {
+    "logo": {
+      "text": "ایرفلو سیستم",
+      "tagline": "راهکارهای توزیع هوای هوشمند",
+      "href": "/"
     },
-    {
-      "id": "projects",
-      "label": "پروژه‌ها",
-      "href": "/projects",
-      "active": false
+    "topbar": {
+      "phone": "۰۲۱-۳۳۵۸۵۷۸",
+      "email": "info@airflowsystem.ir",
+      "address": "تهران، شهران، خیابان مطهری، خیابان ستارخان، پلاک ۱۲۳"
     },
-    { "id": "about", "label": "با ما", "href": "/about", "active": false },
-    {
-      "id": "resources",
-      "label": "منابع ما",
-      "href": "/resources",
-      "active": false
-    }
-  ],
-  "cta": {
-    "label": "درخواست استعلام",
-    "href": "#contact"
+    "items": [
+      { "id": "home",      "label": "صفحه اصلی", "href": "/",          "active": true  },
+      { "id": "products",  "label": "محصولات",    "href": "/products",  "active": false },
+      { "id": "projects",  "label": "پروژه‌ها",   "href": "/projects",  "active": false },
+      { "id": "about",     "label": "با ما",       "href": "/about",     "active": false },
+      { "id": "resources", "label": "منابع ما",    "href": "/resources", "active": false }
+    ],
+    "cta": { "label": "درخواست استعلام", "href": "#contact" },
+    "languages": [
+      { "code": "fa", "label": "FA", "active": true  },
+      { "code": "en", "label": "EN", "active": false }
+    ]
   },
-  "languages": [
-    { "code": "fa", "label": "FA", "active": true },
-    { "code": "en", "label": "EN", "active": false }
-  ]
+  "en": {
+    "logo": {
+      "text": "Airflow System",
+      "tagline": "Smart Air Distribution Solutions",
+      "href": "/"
+    },
+    "topbar": {
+      "phone": "021-33585780",
+      "email": "info@airflowsystem.ir",
+      "address": "Tehran, Shahran, Motahari St., Sattar Khan St., No. 123"
+    },
+    "items": [
+      { "id": "home",      "label": "Home",      "href": "/",          "active": true  },
+      { "id": "products",  "label": "Products",  "href": "/products",  "active": false },
+      { "id": "projects",  "label": "Projects",  "href": "/projects",  "active": false },
+      { "id": "about",     "label": "About",     "href": "/about",     "active": false },
+      { "id": "resources", "label": "Resources", "href": "/resources", "active": false }
+    ],
+    "cta": { "label": "Request Quote", "href": "#contact" },
+    "languages": [
+      { "code": "fa", "label": "FA", "active": false },
+      { "code": "en", "label": "EN", "active": true  }
+    ]
+  }
 }

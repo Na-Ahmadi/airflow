@@ -1,15 +1,8 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import Header from '@/components/layout/Header/Header';
-import Footer from '@/components/layout/Footer/Footer';
+import LanguageAwareShell from '@/components/layout/LanguageAwareShell';
 import ProjectDetailClient from '@/components/projects/ProjectDetailClient/ProjectDetailClient';
-import type { NavData, FooterData } from '@/types';
-import navDataRaw from '@/data/navigation.json';
-import footerDataRaw from '@/data/footer.json';
 import projectsDetail from '@/data/projects-detail.json';
-
-const navData = navDataRaw as unknown as NavData;
-const footerData = footerDataRaw as unknown as FooterData;
 
 type ProjectsDetail = typeof projectsDetail;
 type Slug = keyof ProjectsDetail;
@@ -45,27 +38,23 @@ export default async function ProjectDetailPage(
   ];
 
   return (
-    <>
-      <Header data={navData} />
-      <main>
-        <ProjectDetailClient
-          breadcrumb={breadcrumb}
-          title={project.title}
-          category={project.category}
-          location={project.location}
-          year={project.year}
-          client={project.client}
-          area={project.area}
-          duration={project.duration}
-          description={project.description}
-          scope={project.scope}
-          products={project.products}
-          stats={project.stats}
-          highlights={project.highlights}
-          imageCount={project.imageCount}
-        />
-      </main>
-      <Footer data={footerData} />
-    </>
+    <LanguageAwareShell>
+      <ProjectDetailClient
+        breadcrumb={breadcrumb}
+        title={project.title}
+        category={project.category}
+        location={project.location}
+        year={project.year}
+        client={project.client}
+        area={project.area}
+        duration={project.duration}
+        description={project.description}
+        scope={project.scope}
+        products={project.products}
+        stats={project.stats}
+        highlights={project.highlights}
+        imageCount={project.imageCount}
+      />
+    </LanguageAwareShell>
   );
 }

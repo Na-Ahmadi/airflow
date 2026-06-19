@@ -1,0 +1,79 @@
+'use client';
+
+import { useLanguage } from '@/context/LanguageContext';
+import Header from '@/components/layout/Header/Header';
+import Footer from '@/components/layout/Footer/Footer';
+import Hero from '@/components/home/Hero/Hero';
+import Partners from '@/components/home/Partners/Partners';
+import WhyUs from '@/components/home/WhyUs/WhyUs';
+import Products from '@/components/home/Products/Products';
+import Projects from '@/components/home/Projects/Projects';
+import Statistics from '@/components/home/Statistics/Statistics';
+import Resources from '@/components/home/Resources/Resources';
+import ContactForm from '@/components/home/ContactForm/ContactForm';
+
+import type {
+  NavData, HeroData, PartnersData, WhyUsData, ProductsData,
+  ProjectsData, StatisticsData, ResourcesData, FooterData,
+} from '@/types';
+
+import navRaw from '@/data/navigation.json';
+import heroRaw from '@/data/hero.json';
+import partnersRaw from '@/data/partners.json';
+import whyUsRaw from '@/data/whyus.json';
+import productsRaw from '@/data/products.json';
+import projectsRaw from '@/data/projects.json';
+import statisticsRaw from '@/data/statistics.json';
+import resourcesRaw from '@/data/resources.json';
+import footerRaw from '@/data/footer.json';
+import contactRaw from '@/data/contact.json';
+
+type BillingualNav        = { fa: NavData;        en: NavData        };
+type BillingualHero       = { fa: HeroData;       en: HeroData       };
+type BillingualPartners   = { fa: PartnersData;   en: PartnersData   };
+type BillingualWhyUs      = { fa: WhyUsData;      en: WhyUsData      };
+type BillingualProducts   = { fa: ProductsData;   en: ProductsData   };
+type BillingualProjects   = { fa: ProjectsData;   en: ProjectsData   };
+type BillingualStatistics = { fa: StatisticsData; en: StatisticsData };
+type BillingualResources  = { fa: ResourcesData;  en: ResourcesData  };
+type BillingualFooter     = { fa: FooterData;     en: FooterData     };
+
+type ContactData = {
+  section: { tag: string; title: string; subtitle: string };
+  projectTypes: string[];
+  fileInfo: { label: string; hint: string };
+  submit: { label: string; loading: string; success: string; error: string };
+};
+type BillingualContact = { fa: ContactData; en: ContactData };
+
+export default function HomeContent() {
+  const { lang } = useLanguage();
+
+  const nav        = (navRaw        as unknown as BillingualNav)[lang];
+  const hero       = (heroRaw       as unknown as BillingualHero)[lang];
+  const partners   = (partnersRaw   as unknown as BillingualPartners)[lang];
+  const whyUs      = (whyUsRaw      as unknown as BillingualWhyUs)[lang];
+  const products   = (productsRaw   as unknown as BillingualProducts)[lang];
+  const projects   = (projectsRaw   as unknown as BillingualProjects)[lang];
+  const statistics = (statisticsRaw as unknown as BillingualStatistics)[lang];
+  const resources  = (resourcesRaw  as unknown as BillingualResources)[lang];
+  const footer     = (footerRaw     as unknown as BillingualFooter)[lang];
+  const contact    = (contactRaw    as unknown as BillingualContact)[lang];
+
+  return (
+    <>
+      <Header data={nav} />
+      <main>
+        <Hero data={hero} />
+        <Partners data={partners} />
+        <WhyUs data={whyUs} />
+        <Products data={products} />
+        <Projects data={projects} />
+        <Statistics data={statistics} />
+        <Resources data={resources} />
+        <ContactForm data={contact} />
+      </main>
+      <Footer data={footer} />
+    </>
+  );
+}

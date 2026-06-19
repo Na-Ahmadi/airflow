@@ -160,7 +160,7 @@ export default function ContactForm({ data }: ContactFormProps) {
                     disabled={status === 'loading'}
                   >
                     {status === 'loading' ? (
-                      <><Spinner /> {data.submit.loading}</>
+                      <>{data.submit.loading}</>
                     ) : (
                       data.submit.label
                     )}

@@ -1,36 +1,50 @@
 {
-  "badge": "راهکارهای هوشمند HVAC",
-  "title": {
-    "main": "طراحی و اجرای سیستم‌های توزیع هوا",
-    "highlight": "برای فضاهای حرفه‌ای"
-  },
-  "subtitle": "راهکارهای مهندسی برای جریان هوای بهینه، کارایی انرژی بیشتر و آسایش پایدار در هر پروژه.",
-  "buttons": [
-    {
-      "id": "consult",
-      "label": "درخواست مشاوره تخصصی",
-      "href": "#contact",
-      "variant": "primary",
-      "icon": "arrow-left"
+  "fa": {
+    "badge": "راهکارهای هوشمند HVAC",
+    "title": {
+      "main": "طراحی و اجرای سیستم‌های توزیع هوا",
+      "highlight": "برای فضاهای حرفه‌ای"
     },
-    {
-      "id": "video",
-      "label": "مشاهده ویدیو معرفی",
-      "href": "#video",
-      "variant": "outline",
-      "icon": "instagram"
+    "subtitle": "راهکارهای مهندسی برای جریان هوای بهینه، کارایی انرژی بیشتر و آسایش پایدار در هر پروژه.",
+    "buttons": [
+      { "id": "consult", "label": "درخواست مشاوره تخصصی", "href": "#contact", "variant": "primary",  "icon": "arrow-left"  },
+      { "id": "video",   "label": "مشاهده ویدیو معرفی",    "href": "#video",   "variant": "outline", "icon": "instagram"   }
+    ],
+    "stats": [
+      { "id": "experience",   "value": "۱۸",  "suffix": "+", "label": "سال تجربه"       },
+      { "id": "projects",     "value": "۸۵۰", "suffix": "+", "label": "پروژه موفق"      },
+      { "id": "area",         "value": "۱۲M", "suffix": "+", "label": "متر مربع اجرا"   },
+      { "id": "satisfaction", "value": "۹۸",  "suffix": "%", "label": "رضایت مشتریان"  }
+    ],
+    "productCard": {
+      "image":    "/images/products/ls-300-hero.png",
+      "category": "دریچه خطی شیاردار",
+      "name":     "LS-300",
+      "href":     "/products/ls-300"
     }
-  ],
-  "stats": [
-    { "id": "experience", "value": "۱۸",    "suffix": "+", "label": "سال تجربه" },
-    { "id": "projects",   "value": "۸۵۰",   "suffix": "+", "label": "پروژه موفق" },
-    { "id": "area",       "value": "۱۲M",   "suffix": "+", "label": "متر مربع اجرا" },
-    { "id": "satisfaction","value": "۹۸",   "suffix": "%", "label": "رضایت مشتریان" }
-  ],
-  "productCard": {
-    "image": "/images/products/ls-300-hero.png",
-    "category": "دریچه خطی شیاردار",
-    "name": "LS-300",
-    "href": "/products/ls-300"
+  },
+  "en": {
+    "badge": "Smart HVAC Solutions",
+    "title": {
+      "main":      "Design & Installation of Air Distribution Systems",
+      "highlight": "For Professional Spaces"
+    },
+    "subtitle": "Engineering solutions for optimal airflow, energy efficiency, and lasting comfort in every project.",
+    "buttons": [
+      { "id": "consult", "label": "Request Expert Consultation", "href": "#contact", "variant": "primary",  "icon": "arrow-left" },
+      { "id": "video",   "label": "Watch Introduction Video",    "href": "#video",   "variant": "outline", "icon": "instagram"  }
+    ],
+    "stats": [
+      { "id": "experience",   "value": "18",  "suffix": "+", "label": "Years of Experience"  },
+      { "id": "projects",     "value": "850", "suffix": "+", "label": "Successful Projects"   },
+      { "id": "area",         "value": "12M", "suffix": "+", "label": "sqm Executed"          },
+      { "id": "satisfaction", "value": "98",  "suffix": "%", "label": "Client Satisfaction"   }
+    ],
+    "productCard": {
+      "image":    "/images/products/ls-300-hero.png",
+      "category": "Slotted Linear Diffuser",
+      "name":     "LS-300",
+      "href":     "/products/ls-300"
+    }
   }
 }

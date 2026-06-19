@@ -1,55 +1,112 @@
 {
-  "company": {
-    "name": "ایرفلو سیستم",
-    "tagline": "تولید کننده تخصصی انواع دریچه‌ها و دمپرهای هوا، تجهیزات تهویه مطبوع با بیش از ۱۸ سال سابقه درخشان در صنعت.",
-    "socials": [
-      { "id": "instagram", "icon": "instagram", "href": "https://instagram.com", "label": "اینستاگرام" },
-      { "id": "linkedin",  "icon": "linkedin",  "href": "https://linkedin.com",  "label": "لینکدین" },
-      { "id": "telegram",  "icon": "telegram",  "href": "https://t.me",          "label": "تلگرام" },
-      { "id": "youtube",   "icon": "youtube",   "href": "https://youtube.com",   "label": "یوتیوب" }
-    ]
-  },
-  "columns": [
-    {
-      "id": "products",
-      "title": "محصولات",
-      "links": [
-        { "label": "دریچه‌های خطی",  "href": "/products/linear-diffusers" },
-        { "label": "دریچه‌های سقفی", "href": "/products/ceiling-diffusers" },
-        { "label": "دمپرها",          "href": "/products/dampers" },
-        { "label": "ملتیواها",        "href": "/products/multiways" },
-        { "label": "مانتوعات",        "href": "/products/accessories" }
+  "fa": {
+    "company": {
+      "name": "ایرفلو سیستم",
+      "tagline": "تولید کننده تخصصی انواع دریچه‌ها و دمپرهای هوا، تجهیزات تهویه مطبوع با بیش از ۱۸ سال سابقه درخشان در صنعت.",
+      "socials": [
+        { "id": "instagram", "icon": "instagram", "href": "https://instagram.com", "label": "اینستاگرام" },
+        { "id": "linkedin",  "icon": "linkedin",  "href": "https://linkedin.com",  "label": "لینکدین"    },
+        { "id": "telegram",  "icon": "telegram",  "href": "https://t.me",          "label": "تلگرام"     },
+        { "id": "youtube",   "icon": "youtube",   "href": "https://youtube.com",   "label": "یوتیوب"     }
       ]
     },
-    {
-      "id": "solutions",
-      "title": "راهکارها",
-      "links": [
-        { "label": "ساختمان‌های اداری", "href": "/solutions/office" },
-        { "label": "مراکز تجاری",       "href": "/solutions/commercial" },
-        { "label": "مجتمع‌های مسکونی", "href": "/solutions/residential" },
-        { "label": "فضاهای صنعتی",     "href": "/solutions/industrial" },
-        { "label": "مراکز درمانی",      "href": "/solutions/healthcare" },
-        { "label": "تاسیسات عمومی",     "href": "/solutions/public" }
+    "columns": [
+      {
+        "id": "products",
+        "title": "محصولات",
+        "links": [
+          { "label": "دریچه‌های خطی",  "href": "/products/linear-diffusers"  },
+          { "label": "دریچه‌های سقفی", "href": "/products/ceiling-diffusers" },
+          { "label": "دمپرها",          "href": "/products/dampers"           },
+          { "label": "ملتیواها",        "href": "/products/multiways"         },
+          { "label": "مانتوعات",        "href": "/products/accessories"       }
+        ]
+      },
+      {
+        "id": "solutions",
+        "title": "راهکارها",
+        "links": [
+          { "label": "ساختمان‌های اداری", "href": "/solutions/office"       },
+          { "label": "مراکز تجاری",       "href": "/solutions/commercial"   },
+          { "label": "مجتمع‌های مسکونی", "href": "/solutions/residential"  },
+          { "label": "فضاهای صنعتی",     "href": "/solutions/industrial"   },
+          { "label": "مراکز درمانی",      "href": "/solutions/healthcare"   },
+          { "label": "تاسیسات عمومی",     "href": "/solutions/public"       }
+        ]
+      },
+      {
+        "id": "resources",
+        "title": "منابع",
+        "links": [
+          { "label": "کاتالوگ‌ها",       "href": "/resources/catalog"   },
+          { "label": "نقشه‌های فنی",     "href": "/resources/technical" },
+          { "label": "مقالات آموزشی",    "href": "/resources/articles"  },
+          { "label": "استانداردها",       "href": "/resources/standards" },
+          { "label": "ویدیوها",           "href": "/resources/videos"    }
+        ]
+      }
+    ],
+    "contact": {
+      "title": "اطلاعات تماس",
+      "address": "تهران، شهران، خیابان مطهری، خیابان ستارخان، پلاک ۱۲۳",
+      "phone": "۰۲۱-۳۳۵۸۵۷۸",
+      "email": "info@airflowsystem.ir"
+    },
+    "copyright": "تمامی حقوق محفوظ است © ۱۴۰۳ | ایرفلو سیستم"
+  },
+  "en": {
+    "company": {
+      "name": "Airflow System",
+      "tagline": "Specialist manufacturer of air diffusers, dampers, and HVAC equipment with over 18 years of excellence in the industry.",
+      "socials": [
+        { "id": "instagram", "icon": "instagram", "href": "https://instagram.com", "label": "Instagram" },
+        { "id": "linkedin",  "icon": "linkedin",  "href": "https://linkedin.com",  "label": "LinkedIn"  },
+        { "id": "telegram",  "icon": "telegram",  "href": "https://t.me",          "label": "Telegram"  },
+        { "id": "youtube",   "icon": "youtube",   "href": "https://youtube.com",   "label": "YouTube"   }
       ]
     },
-    {
-      "id": "resources",
-      "title": "منابع",
-      "links": [
-        { "label": "کاتالوگ‌ها",       "href": "/resources/catalog" },
-        { "label": "نقشه‌های فنی",     "href": "/resources/technical" },
-        { "label": "مقالات آموزشی",    "href": "/resources/articles" },
-        { "label": "استانداردها",       "href": "/resources/standards" },
-        { "label": "ویدیوها",           "href": "/resources/videos" }
-      ]
-    }
-  ],
-  "contact": {
-    "title": "اطلاعات تماس",
-    "address": "تهران، شهران، خیابان مطهری، خیابان ستارخان، پلاک ۱۲۳",
-    "phone": "۰۲۱-۳۳۵۸۵۷۸",
-    "email": "info@airflowsystem.ir"
-  },
-  "copyright": "تمامی حقوق محفوظ است © ۱۴۰۳ | ایرفلو سیستم"
+    "columns": [
+      {
+        "id": "products",
+        "title": "Products",
+        "links": [
+          { "label": "Linear Diffusers",  "href": "/products/linear-diffusers"  },
+          { "label": "Ceiling Diffusers", "href": "/products/ceiling-diffusers" },
+          { "label": "Dampers",           "href": "/products/dampers"           },
+          { "label": "Multiways",         "href": "/products/multiways"         },
+          { "label": "Accessories",       "href": "/products/accessories"       }
+        ]
+      },
+      {
+        "id": "solutions",
+        "title": "Solutions",
+        "links": [
+          { "label": "Office Buildings",  "href": "/solutions/office"      },
+          { "label": "Commercial Centers","href": "/solutions/commercial"  },
+          { "label": "Residential",       "href": "/solutions/residential" },
+          { "label": "Industrial",        "href": "/solutions/industrial"  },
+          { "label": "Healthcare",        "href": "/solutions/healthcare"  },
+          { "label": "Public Facilities", "href": "/solutions/public"      }
+        ]
+      },
+      {
+        "id": "resources",
+        "title": "Resources",
+        "links": [
+          { "label": "Catalogs",           "href": "/resources/catalog"   },
+          { "label": "Technical Drawings", "href": "/resources/technical" },
+          { "label": "Articles",           "href": "/resources/articles"  },
+          { "label": "Standards",          "href": "/resources/standards" },
+          { "label": "Videos",             "href": "/resources/videos"    }
+        ]
+      }
+    ],
+    "contact": {
+      "title": "Contact Info",
+      "address": "Tehran, Shahran, Motahari St., Sattar Khan St., No. 123",
+      "phone": "021-33585780",
+      "email": "info@airflowsystem.ir"
+    },
+    "copyright": "All rights reserved © 2024 | Airflow System"
+  }
 }

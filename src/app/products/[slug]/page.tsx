@@ -1,15 +1,8 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import Header from '@/components/layout/Header/Header';
-import Footer from '@/components/layout/Footer/Footer';
+import LanguageAwareShell from '@/components/layout/LanguageAwareShell';
 import ProductDetailClient from '@/components/products/ProductDetailClient/ProductDetailClient';
-import type { NavData, FooterData } from '@/types';
-import navDataRaw from '@/data/navigation.json';
-import footerDataRaw from '@/data/footer.json';
 import productsDetail from '@/data/products-detail.json';
-
-const navData = navDataRaw as unknown as NavData;
-const footerData = footerDataRaw as unknown as FooterData;
 
 type ProductsDetail = typeof productsDetail;
 type Slug = keyof ProductsDetail;
@@ -57,26 +50,22 @@ export default async function ProductDetailPage(
   }));
 
   return (
-    <>
-      <Header data={navData} />
-      <main>
-        <ProductDetailClient
-          breadcrumb={breadcrumb}
-          name={product.name}
-          model={product.model}
-          description={product.description}
-          features={product.features}
-          images={images}
-          cta={{
-            inquiry: { label: 'درخواست استعلام', href: '#contact' },
-            catalog: { label: 'دانلود کاتالوگ',  href: '#catalog' },
-          }}
-          tabs={TABS}
-          specs={product.specs}
-          faq={product.faq}
-        />
-      </main>
-      <Footer data={footerData} />
-    </>
+    <LanguageAwareShell>
+      <ProductDetailClient
+        breadcrumb={breadcrumb}
+        name={product.name}
+        model={product.model}
+        description={product.description}
+        features={product.features}
+        images={images}
+        cta={{
+          inquiry: { label: 'درخواست استعلام', href: '#contact' },
+          catalog: { label: 'دانلود کاتالوگ',  href: '#catalog' },
+        }}
+        tabs={TABS}
+        specs={product.specs}
+        faq={product.faq}
+      />
+    </LanguageAwareShell>
   );
 }

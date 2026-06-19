@@ -1,32 +1,66 @@
 {
-  "section": {
-    "tag": "تماس",
-    "title": "درخواست استعلام",
-    "subtitle": "اطلاعات پروژه خود را ثبت کنید تا کارشناسان ما در سریع‌ترین زمان با شما تماس بگیرند."
+  "fa": {
+    "section": {
+      "tag": "تماس",
+      "title": "درخواست استعلام",
+      "subtitle": "اطلاعات پروژه خود را ثبت کنید تا کارشناسان ما در سریع‌ترین زمان با شما تماس بگیرند."
+    },
+    "fields": [
+      { "id": "name",    "label": "نام و نام خانوادگی", "type": "text",  "placeholder": "نام و نام خانوادگی",  "required": true  },
+      { "id": "email",   "label": "ایمیل",               "type": "email", "placeholder": "ایمیل",               "required": true  },
+      { "id": "phone",   "label": "شماره تماس",          "type": "tel",   "placeholder": "شماره تماس",          "required": true  },
+      { "id": "company", "label": "شرکت / سازمان",       "type": "text",  "placeholder": "شرکت / سازمان",       "required": false }
+    ],
+    "projectTypes": [
+      "ساختمان اداری",
+      "مرکز تجاری",
+      "مجتمع مسکونی",
+      "فضای صنعتی",
+      "مرکز درمانی",
+      "تاسیسات عمومی",
+      "سایر"
+    ],
+    "fileInfo": {
+      "label": "آپلود نقشه (اختیاری)",
+      "hint": "فرمت‌های مجاز: PDF, DWG, ZIP (حداکثر ۲۵ مگابایت)"
+    },
+    "submit": {
+      "label":   "ارسال درخواست",
+      "loading": "در حال ارسال...",
+      "success": "درخواست شما با موفقیت ارسال شد. کارشناسان ما به زودی با شما تماس خواهند گرفت.",
+      "error":   "خطایی رخ داد. لطفاً مجدداً تلاش کنید."
+    }
   },
-  "fields": [
-    { "id": "name",        "label": "نام و نام خانوادگی", "type": "text",   "placeholder": "نام و نام خانوادگی",   "required": true },
-    { "id": "email",       "label": "ایمیل",               "type": "email",  "placeholder": "ایمیل",                "required": true },
-    { "id": "phone",       "label": "شماره تماس",          "type": "tel",    "placeholder": "شماره تماس",           "required": true },
-    { "id": "company",     "label": "شرکت / سازمان",       "type": "text",   "placeholder": "شرکت / سازمان",        "required": false }
-  ],
-  "projectTypes": [
-    "ساختمان اداری",
-    "مرکز تجاری",
-    "مجتمع مسکونی",
-    "فضای صنعتی",
-    "مرکز درمانی",
-    "تاسیسات عمومی",
-    "سایر"
-  ],
-  "fileInfo": {
-    "label": "آپلود نقشه (اختیاری)",
-    "hint": "فرمت‌های مجاز: PDF, DWG, ZIP (حداکثر ۲۵ مگابایت)"
-  },
-  "submit": {
-    "label": "ارسال درخواست",
-    "loading": "در حال ارسال...",
-    "success": "درخواست شما با موفقیت ارسال شد. کارشناسان ما به زودی با شما تماس خواهند گرفت.",
-    "error": "خطایی رخ داد. لطفاً مجدداً تلاش کنید."
+  "en": {
+    "section": {
+      "tag": "Contact",
+      "title": "Request a Quote",
+      "subtitle": "Submit your project details and our experts will get in touch with you as soon as possible."
+    },
+    "fields": [
+      { "id": "name",    "label": "Full Name",         "type": "text",  "placeholder": "Full Name",         "required": true  },
+      { "id": "email",   "label": "Email",             "type": "email", "placeholder": "Email",             "required": true  },
+      { "id": "phone",   "label": "Phone Number",      "type": "tel",   "placeholder": "Phone Number",      "required": true  },
+      { "id": "company", "label": "Company / Organization", "type": "text",  "placeholder": "Company / Organization", "required": false }
+    ],
+    "projectTypes": [
+      "Office Building",
+      "Commercial Center",
+      "Residential Complex",
+      "Industrial Space",
+      "Healthcare Facility",
+      "Public Infrastructure",
+      "Other"
+    ],
+    "fileInfo": {
+      "label": "Upload Drawing (Optional)",
+      "hint": "Allowed formats: PDF, DWG, ZIP (max 25 MB)"
+    },
+    "submit": {
+      "label":   "Submit Request",
+      "loading": "Sending...",
+      "success": "Your request was submitted successfully. Our experts will contact you shortly.",
+      "error":   "An error occurred. Please try again."
+    }
   }
 }
