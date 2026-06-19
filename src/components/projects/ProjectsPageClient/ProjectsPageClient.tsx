@@ -1,15 +1,18 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Container from '@/components/shared/Container/Container';
-import ProjectCard from '@/components/shared/ProjectCard/ProjectCard';
-import Breadcrumb from '@/components/shared/Breadcrumb/Breadcrumb';
-import type { BreadcrumbItem } from '@/components/shared/Breadcrumb/Breadcrumb';
-import type { Project } from '@/types';
-import styles from './ProjectsPageClient.module.css';
+import type { BreadcrumbItem } from "@/components/shared/Breadcrumb/Breadcrumb";
+import Breadcrumb from "@/components/shared/Breadcrumb/Breadcrumb";
+import Container from "@/components/shared/Container/Container";
+import ProjectCard from "@/components/shared/ProjectCard/ProjectCard";
+import type { Project } from "@/types";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import styles from "./ProjectsPageClient.module.css";
 
-interface Tab { id: string; label: string; }
+interface Tab {
+  id: string;
+  label: string;
+}
 
 interface Props {
   breadcrumb: BreadcrumbItem[];
@@ -18,12 +21,16 @@ interface Props {
   items: Project[];
 }
 
-export default function ProjectsPageClient({ breadcrumb, pageTitle, tabs, items }: Props) {
-  const [activeTab, setActiveTab] = useState('all');
+export default function ProjectsPageClient({
+  breadcrumb,
+  pageTitle,
+  tabs,
+  items,
+}: Props) {
+  const [activeTab, setActiveTab] = useState("all");
 
-  const filtered = activeTab === 'all'
-    ? items
-    : items.filter((p) => p.category === activeTab);
+  const filtered =
+    activeTab === "all" ? items : items.filter((p) => p.category === activeTab);
 
   return (
     <>
@@ -45,7 +52,12 @@ export default function ProjectsPageClient({ breadcrumb, pageTitle, tabs, items 
                 key={tab.id}
                 role="tab"
                 aria-selected={activeTab === tab.id}
-                className={[styles.tab, activeTab === tab.id ? styles.tabActive : ''].filter(Boolean).join(' ')}
+                className={[
+                  styles.tab,
+                  activeTab === tab.id ? styles.tabActive : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
                 onClick={() => setActiveTab(tab.id)}
               >
                 {tab.label}
@@ -57,7 +69,9 @@ export default function ProjectsPageClient({ breadcrumb, pageTitle, tabs, items 
           <motion.div className={styles.grid} layout>
             <AnimatePresence mode="popLayout">
               {filtered.length === 0 ? (
-                <p className={styles.empty}>پروژه‌ای در این دسته‌بندی یافت نشد.</p>
+                <p className={styles.empty}>
+                  پروژه‌ای در این دسته‌بندی یافت نشد.
+                </p>
               ) : (
                 filtered.map((project) => (
                   <motion.div
@@ -79,4 +93,3 @@ export default function ProjectsPageClient({ breadcrumb, pageTitle, tabs, items 
     </>
   );
 }
-

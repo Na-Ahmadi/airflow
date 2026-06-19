@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import type { PartnersData } from '@/types';
-import styles from './Partners.module.css';
+import type { PartnersData } from "@/types";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import styles from "./Partners.module.css";
 
 interface PartnersProps {
   data: PartnersData;
