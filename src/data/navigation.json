@@ -10,11 +10,26 @@
     "address": "تهران، شهران، خیابان مطهری، خیابان ستارخان، پلاک ۱۲۳"
   },
   "items": [
-    { "id": "home",     "label": "صفحه اصلی", "href": "/",          "active": true },
-    { "id": "about",    "label": "با ما",      "href": "/about",     "active": false },
-    { "id": "resources","label": "منابع ما",   "href": "/resources", "active": false },
-    { "id": "projects", "label": "پروژه‌ها",   "href": "/projects",  "active": false },
-    { "id": "products", "label": "محصولات", "href": "/products", "active": false }
+    { "id": "home", "label": "صفحه اصلی", "href": "/", "active": true },
+    {
+      "id": "products",
+      "label": "محصولات",
+      "href": "/products",
+      "active": false
+    },
+    {
+      "id": "projects",
+      "label": "پروژه‌ها",
+      "href": "/projects",
+      "active": false
+    },
+    { "id": "about", "label": "با ما", "href": "/about", "active": false },
+    {
+      "id": "resources",
+      "label": "منابع ما",
+      "href": "/resources",
+      "active": false
+    }
   ],
   "cta": {
     "label": "درخواست استعلام",
