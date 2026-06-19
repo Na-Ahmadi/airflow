@@ -23,27 +23,6 @@
   padding-bottom: var(--space-5);
 }
 
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  /* RTL: flex-start = right side visually */
-  justify-content: flex-start;
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  direction: rtl;
-}
-
-.breadcrumb a {
-  color: var(--color-text-muted);
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-.breadcrumb a:hover { color: var(--color-text-primary); }
-
-.sep { opacity: 0.4; }
-
 /* ─── Hero Section ─────────────────────────────────────────── */
 .hero {
   background: var(--color-bg-secondary);

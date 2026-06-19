@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Container from '@/components/shared/Container';
 import Badge from '@/components/shared/Badge';
+import Breadcrumb from '@/components/shared/Breadcrumb';
+import type { BreadcrumbItem } from '@/components/shared/Breadcrumb';
 import styles from './ProductsPageClient.module.css';
 
 interface Tab { id: string; label: string; }
@@ -19,7 +21,6 @@ interface ProductItem {
   badge: string | null;
 }
 interface Cta { title: string; subtitle: string; button: { label: string; href: string }; }
-interface BreadcrumbItem { label: string; href: string; }
 
 interface Props {
   breadcrumb: BreadcrumbItem[];
@@ -42,18 +43,7 @@ export default function ProductsPageClient({ breadcrumb, pageTitle, tabs, items,
       <div className={styles.pageHeader}>
         <Container>
           <h1 className={styles.pageTitle}>{pageTitle}</h1>
-          <nav className={styles.breadcrumb} aria-label="breadcrumb">
-            {breadcrumb.map((crumb, i) => (
-              <span key={crumb.href} style={{ display: 'contents' }}>
-                {i > 0 && <span className={styles.breadcrumbSep}>/</span>}
-                {i < breadcrumb.length - 1 ? (
-                  <Link href={crumb.href}>{crumb.label}</Link>
-                ) : (
-                  <span>{crumb.label}</span>
-                )}
-              </span>
-            ))}
-          </nav>
+          <Breadcrumb items={breadcrumb} />
         </Container>
       </div>
 

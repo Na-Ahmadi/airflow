@@ -4,13 +4,14 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import Container from '@/components/shared/Container';
+import Breadcrumb from '@/components/shared/Breadcrumb';
+import type { BreadcrumbItem } from '@/components/shared/Breadcrumb';
 import Badge from '@/components/shared/Badge';
 import Icon from '@/components/shared/Icon';
 import styles from './ProjectDetailClient.module.css';
 
 /* ─── Types ───────────────────────────────────────────────── */
 interface StatItem     { label: string; value: string; }
-interface BreadcrumbItem { label: string; href: string; }
 
 interface Props {
   breadcrumb:  BreadcrumbItem[];
@@ -82,16 +83,7 @@ export default function ProjectDetailClient({
       {/* ─── Breadcrumb ─────────────────────────────────────── */}
       <div className={styles.breadcrumbBar}>
         <Container>
-          <nav className={styles.breadcrumb} aria-label="breadcrumb">
-            {breadcrumb.map((crumb, i) => (
-              <span key={crumb.href} style={{ display: 'contents' }}>
-                {i > 0 && <span className={styles.breadcrumbSep}>/</span>}
-                {i < breadcrumb.length - 1
-                  ? <Link href={crumb.href} className={styles.breadcrumbLink}>{crumb.label}</Link>
-                  : <span className={styles.breadcrumbCurrent}>{crumb.label}</span>}
-              </span>
-            ))}
-          </nav>
+          <Breadcrumb items={breadcrumb} />
         </Container>
       </div>
 

@@ -14,26 +14,6 @@
   line-height: var(--leading-tight);
 }
 
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  justify-content: flex-start;
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  direction: rtl;
-}
-
-.breadcrumb a {
-  color: var(--color-text-muted);
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-.breadcrumb a:hover { color: var(--color-text-primary); }
-
-.breadcrumbSep { color: var(--color-text-muted); opacity: 0.5; }
-
 /* ─── Main Section ─────────────────────────────────────────── */
 .section {
   background: var(--color-bg);

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Container from '@/components/shared/Container';
+import Breadcrumb from '@/components/shared/Breadcrumb';
 import Icon from '@/components/shared/Icon';
 import styles from './AboutHero.module.css';
 
@@ -22,16 +23,7 @@ export default function AboutHero({ breadcrumb, title, paragraphs, button, image
       {/* Breadcrumb */}
       <div className={styles.pageHeader}>
         <Container>
-          <nav className={styles.breadcrumb} aria-label="breadcrumb">
-            {breadcrumb.map((crumb, i) => (
-              <span key={crumb.href} style={{ display: 'contents' }}>
-                {i > 0 && <span className={styles.sep}>/</span>}
-                {i < breadcrumb.length - 1
-                  ? <Link href={crumb.href}>{crumb.label}</Link>
-                  : <span>{crumb.label}</span>}
-              </span>
-            ))}
-          </nav>
+          <Breadcrumb items={breadcrumb} />
         </Container>
       </div>
 

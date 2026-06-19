@@ -6,10 +6,11 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Container from '@/components/shared/Container';
 import Icon from '@/components/shared/Icon';
+import Breadcrumb from '@/components/shared/Breadcrumb';
+import type { BreadcrumbItem } from '@/components/shared/Breadcrumb';
 import styles from './ProjectsPageClient.module.css';
 
 interface Tab { id: string; label: string; }
-interface BreadcrumbItem { label: string; href: string; }
 interface ProjectItem {
   id: string;
   image: string;
@@ -40,18 +41,7 @@ export default function ProjectsPageClient({ breadcrumb, pageTitle, tabs, items 
       <div className={styles.pageHeader}>
         <Container>
           <h1 className={styles.pageTitle}>{pageTitle}</h1>
-          <nav className={styles.breadcrumb} aria-label="breadcrumb">
-            {breadcrumb.map((crumb, i) => (
-              <span key={crumb.href} style={{ display: 'contents' }}>
-                {i > 0 && <span className={styles.breadcrumbSep}>/</span>}
-                {i < breadcrumb.length - 1 ? (
-                  <Link href={crumb.href}>{crumb.label}</Link>
-                ) : (
-                  <span>{crumb.label}</span>
-                )}
-              </span>
-            ))}
-          </nav>
+          <Breadcrumb items={breadcrumb} />
         </Container>
       </div>
 
