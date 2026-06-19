@@ -1,8 +1,7 @@
 'use client';
 
-import Icon from '@/components/shared/Icon';
-import { useTheme } from '@/context/ThemeContext';
 import LanguageSwitch, { type Language } from '@/components/layout/LanguageSwitch/LanguageSwitch';
+import ThemeToggle from '@/components/layout/ThemeToggle/ThemeToggle';
 import styles from './HeaderActions.module.css';
 
 interface HeaderActionsProps {
@@ -20,20 +19,11 @@ export default function HeaderActions({
   onHamburgerClick,
   onCtaClick,
 }: HeaderActionsProps) {
-  const { theme, toggleTheme } = useTheme();
-
   return (
     <div className={styles.actions}>
       <LanguageSwitch languages={languages} />
 
-      <button
-        className={styles.themeToggle}
-        onClick={toggleTheme}
-        aria-label={theme === 'dark' ? 'تغییر به حالت روشن' : 'تغییر به حالت تاریک'}
-        title={theme === 'dark' ? 'حالت روشن' : 'حالت تاریک'}
-      >
-        <Icon name={theme === 'dark' ? 'sun' : 'moon'} size={18} />
-      </button>
+      <ThemeToggle />
 
       <a href={cta.href} className={styles.ctaBtn} onClick={onCtaClick}>
         {cta.label}
