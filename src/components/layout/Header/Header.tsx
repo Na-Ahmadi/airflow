@@ -27,6 +27,27 @@ export default function Header({ data }: HeaderProps) {
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href);
 
+  const closeMobileMenu = () => {
+    document.body.style.overflow = '';
+    setMobileOpen(false);
+  };
+
+  const scrollToCta = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const target = document.querySelector(data.cta.href);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleMobileCta = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    closeMobileMenu();
+    setTimeout(() => {
+      document.querySelector(data.cta.href)?.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
+  };
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > SCROLL_THRESHOLD);
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -104,9 +125,9 @@ export default function Header({ data }: HeaderProps) {
             >
               <Icon name={theme === 'dark' ? 'sun' : 'moon'} size={18} />
             </button>
-            <Link href={data.cta.href} className={styles.ctaBtn}>
+            <a href={data.cta.href} className={styles.ctaBtn} onClick={scrollToCta}>
               {data.cta.label}
-            </Link>
+            </a>
             <button
               className={styles.hamburger}
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -137,12 +158,12 @@ export default function Header({ data }: HeaderProps) {
                     item={item}
                     index={i}
                     isActive={isActive(item.href)}
-                    onClose={() => setMobileOpen(false)}
+                    onClose={closeMobileMenu}
                   />
                 ))}
-                <Link href={data.cta.href} className={styles.mobileCta} onClick={() => setMobileOpen(false)}>
+                <a href={data.cta.href} className={styles.mobileCta} onClick={handleMobileCta}>
                   {data.cta.label}
-                </Link>
+                </a>
               </div>
             </motion.div>
           )}
