@@ -1,0 +1,52 @@
+.mobileLink {
+  display: block;
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.mobileLink:hover {
+  color: var(--color-text-primary);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.mobileLinkActive {
+  color: var(--color-primary-light);
+  background: rgba(30, 111, 207, 0.12);
+  border-inline-start: 2px solid var(--color-primary-light);
+}
+
+.mobileSubMenu {
+  padding-inline-start: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mobileSubLink {
+  display: block;
+  padding: var(--space-2) var(--space-4);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast);
+}
+
+.mobileSubLink:hover {
+  color: var(--color-primary-light);
+}
+
+/* ─── Light Mode ────────────────────────────────────────────── */
+:global([data-theme="light"]) .mobileLink:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+:global([data-theme="light"]) .mobileLinkActive {
+  background: rgba(30, 111, 207, 0.08);
+  border-inline-start-color: var(--color-primary);
+}
