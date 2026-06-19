@@ -4,11 +4,13 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
 import type { NavData } from '@/types';
 import styles from './Header.module.css';
 import { SCROLL_THRESHOLD } from '@/constants';
 import { useTheme } from '@/context/ThemeContext';
 import Navigation from '@/components/layout/Navigation';
+import NavItemMobile from '@/components/layout/NavItemMobile';
 import Icon from '@/components/shared/Icon';
 
 interface HeaderProps {
@@ -80,9 +82,6 @@ export default function Header({ data }: HeaderProps) {
             onDropdownEnter={setActiveDropdown}
             onDropdownLeave={() => setActiveDropdown(null)}
             isActive={isActive}
-            mobileOpen={mobileOpen}
-            onClose={() => setMobileOpen(false)}
-            cta={data.cta}
           />
 
           {/* Actions */}
@@ -120,6 +119,34 @@ export default function Header({ data }: HeaderProps) {
             </button>
           </div>
         </div>
+
+        {/* Mobile Menu — outside navInner so it expands below the nav bar */}
+        <AnimatePresence>
+          {mobileOpen && (
+            <motion.div
+              className={styles.mobileMenu}
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className={styles.mobileMenuInner}>
+                {data.items.map((item, i) => (
+                  <NavItemMobile
+                    key={item.id}
+                    item={item}
+                    index={i}
+                    isActive={isActive(item.href)}
+                    onClose={() => setMobileOpen(false)}
+                  />
+                ))}
+                <Link href={data.cta.href} className={styles.mobileCta} onClick={() => setMobileOpen(false)}>
+                  {data.cta.label}
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
     </header>
   );
