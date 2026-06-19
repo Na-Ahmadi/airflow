@@ -1,0 +1,198 @@
+/* Desktop Menu */
+.desktopMenu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex: 1;
+  justify-content: center;
+}
+
+.menuItem {
+  position: relative;
+}
+
+.menuLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.menuLink:hover {
+  color: var(--color-text-primary);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.menuLink.active {
+  color: var(--color-primary-light);
+  position: relative;
+}
+
+.menuLink.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, #1e6fcf, #00d4ff);
+  border-radius: 2px;
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 200px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur-xl);
+  -webkit-backdrop-filter: var(--blur-xl);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2);
+  box-shadow: var(--shadow-xl);
+  z-index: var(--z-dropdown);
+}
+
+.dropdownItem {
+  display: block;
+  padding: var(--space-2) var(--space-4);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.dropdownItem:hover {
+  color: var(--color-text-primary);
+  background: rgba(30, 111, 207, 0.15);
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur-xl);
+  -webkit-backdrop-filter: var(--blur-xl);
+  border-top: 1px solid var(--glass-border);
+  overflow: hidden;
+}
+
+.mobileMenuInner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--space-4) var(--section-padding-x) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.mobileLink {
+  display: block;
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.mobileLink:hover {
+  color: var(--color-text-primary);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.mobileLinkActive {
+  color: var(--color-primary-light);
+  background: rgba(30, 111, 207, 0.12);
+  border-inline-start: 2px solid var(--color-primary-light);
+}
+
+.mobileSubMenu {
+  padding-inline-start: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mobileSubLink {
+  display: block;
+  padding: var(--space-2) var(--space-4);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast);
+}
+
+.mobileSubLink:hover {
+  color: var(--color-primary-light);
+}
+
+.mobileCta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--btn-height-md);
+  background: var(--gradient-primary);
+  color: #fff;
+  text-decoration: none;
+  font-weight: var(--font-semibold);
+  border-radius: var(--radius-full);
+  margin-top: var(--space-4);
+  box-shadow: var(--shadow-btn);
+}
+
+/* ─── Light Mode Overrides ──────────────────────────────────── */
+:global([data-theme="light"]) .menuLink {
+  color: #94a3b8;
+}
+
+:global([data-theme="light"]) .menuLink:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+:global([data-theme="light"]) .menuLink.active {
+  color: var(--color-primary-light);
+}
+
+:global([data-theme="light"]) .scrolled .menuLink {
+  color: #4a5568;
+}
+
+:global([data-theme="light"]) .scrolled .menuLink:hover {
+  color: #0a2540;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+:global([data-theme="light"]) .scrolled .menuLink.active {
+  color: var(--color-primary);
+}
+
+:global([data-theme="light"]) .mobileLink:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+:global([data-theme="light"]) .mobileLinkActive {
+  background: rgba(30, 111, 207, 0.08);
+  border-inline-start-color: var(--color-primary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .desktopMenu {
+    display: none;
+  }
+}
