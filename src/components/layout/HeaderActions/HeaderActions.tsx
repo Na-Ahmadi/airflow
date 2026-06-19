@@ -2,13 +2,8 @@
 
 import Icon from '@/components/shared/Icon';
 import { useTheme } from '@/context/ThemeContext';
+import LanguageSwitch, { type Language } from '@/components/layout/LanguageSwitch/LanguageSwitch';
 import styles from './HeaderActions.module.css';
-
-interface Language {
-  code: string;
-  label: string;
-  active: boolean;
-}
 
 interface HeaderActionsProps {
   languages: Language[];
@@ -29,16 +24,7 @@ export default function HeaderActions({
 
   return (
     <div className={styles.actions}>
-      <div className={styles.langSwitch}>
-        {languages.map((lang) => (
-          <button
-            key={lang.code}
-            className={[styles.langBtn, lang.active ? styles.langActive : ''].filter(Boolean).join(' ')}
-          >
-            {lang.label}
-          </button>
-        ))}
-      </div>
+      <LanguageSwitch languages={languages} />
 
       <button
         className={styles.themeToggle}
