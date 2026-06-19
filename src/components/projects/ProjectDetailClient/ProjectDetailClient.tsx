@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import Container from '@/components/shared/Container';
@@ -30,39 +31,6 @@ interface Props {
   imageCount:  number;
 }
 
-/* ─── SVG placeholder for project images ─────────────────── */
-function ProjectPlaceholder({ index, active = false }: { index: number; active?: boolean }) {
-  const fills = [
-    'rgba(30,111,207,0.12)', 'rgba(0,212,255,0.08)',
-    'rgba(30,111,207,0.18)', 'rgba(0,212,255,0.1)',
-    'rgba(30,111,207,0.09)', 'rgba(0,212,255,0.14)',
-  ];
-  const fill = fills[index % fills.length];
-  return (
-    <svg viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.projectSvg}>
-      {active && <ellipse cx="200" cy="140" rx="180" ry="100" fill="rgba(30,111,207,0.05)"/>}
-      {/* Building */}
-      <rect x="60" y="60" width="280" height="180" rx="3" fill={fill} stroke="rgba(30,111,207,0.3)" strokeWidth="1.5"/>
-      {/* Windows grid */}
-      {[0,1,2,3].map((row) => [0,1,2,3,4,5].map((col) => (
-        <rect key={`${row}-${col}`}
-          x={72 + col * 44} y={72 + row * 40}
-          width="28" height="26" rx="2"
-          fill={active && row === 1 && col === 2 ? 'rgba(0,212,255,0.2)' : 'rgba(30,111,207,0.1)'}
-          stroke="rgba(30,111,207,0.35)" strokeWidth="0.8"/>
-      )))}
-      {/* Door */}
-      <rect x="174" y="190" width="52" height="50" rx="2" fill="rgba(30,111,207,0.2)" stroke="rgba(30,111,207,0.45)" strokeWidth="1"/>
-      {/* Roof line */}
-      <line x1="60" y1="60" x2="340" y2="60" stroke="rgba(30,111,207,0.5)" strokeWidth="2"/>
-      {/* Ground */}
-      <line x1="40" y1="240" x2="360" y2="240" stroke="rgba(30,111,207,0.25)" strokeWidth="1.5"/>
-      {active && (
-        <ellipse cx="200" cy="248" rx="100" ry="6" fill="rgba(30,111,207,0.08)"/>
-      )}
-    </svg>
-  );
-}
 
 /* ─── Component ───────────────────────────────────────────── */
 export default function ProjectDetailClient({
@@ -141,7 +109,7 @@ export default function ProjectDetailClient({
                     transition={{ duration: 0.25 }}
                     className={styles.mainImage}
                   >
-                    <ProjectPlaceholder index={activeImage} active />
+                    <Image src="/images/project-placeholder.svg" alt="" fill unoptimized className={styles.projectSvg} />
                   </motion.div>
                 </AnimatePresence>
               </div>
@@ -154,7 +122,7 @@ export default function ProjectDetailClient({
                     onClick={() => setActiveImage(i)}
                     aria-label={`تصویر ${i + 1}`}
                   >
-                    <ProjectPlaceholder index={i} />
+                    <Image src="/images/project-placeholder.svg" alt="" fill unoptimized />
                   </button>
                 ))}
               </div>

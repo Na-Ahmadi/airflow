@@ -1,0 +1,32 @@
+<svg viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="200" cy="140" rx="180" ry="100" fill="rgba(30,111,207,0.05)"/>
+  <rect x="60" y="60" width="280" height="180" rx="3" fill="rgba(30,111,207,0.12)" stroke="rgba(30,111,207,0.3)" stroke-width="1.5"/>
+  <rect x="72"  y="72"  width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="116" y="72"  width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="160" y="72"  width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="204" y="72"  width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="248" y="72"  width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="292" y="72"  width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="72"  y="112" width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="116" y="112" width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="160" y="112" width="28" height="26" rx="2" fill="rgba(0,212,255,0.2)"    stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="204" y="112" width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="248" y="112" width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="292" y="112" width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="72"  y="152" width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="116" y="152" width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="160" y="152" width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="204" y="152" width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="248" y="152" width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="292" y="152" width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="72"  y="192" width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="116" y="192" width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="160" y="192" width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="204" y="192" width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="248" y="192" width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="292" y="192" width="28" height="26" rx="2" fill="rgba(30,111,207,0.1)"   stroke="rgba(30,111,207,0.35)" stroke-width="0.8"/>
+  <rect x="174" y="190" width="52" height="50" rx="2" fill="rgba(30,111,207,0.2)" stroke="rgba(30,111,207,0.45)" stroke-width="1"/>
+  <line x1="60" y1="60" x2="340" y2="60" stroke="rgba(30,111,207,0.5)" stroke-width="2"/>
+  <line x1="40" y1="240" x2="360" y2="240" stroke="rgba(30,111,207,0.25)" stroke-width="1.5"/>
+  <ellipse cx="200" cy="248" rx="100" ry="6" fill="rgba(30,111,207,0.08)"/>
+</svg>

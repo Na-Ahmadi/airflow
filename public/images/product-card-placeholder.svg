@@ -1,0 +1,12 @@
+<svg viewBox="0 0 180 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="35" width="160" height="60" rx="4" fill="rgba(30,111,207,0.1)" stroke="rgba(30,111,207,0.3)" stroke-width="1"/>
+  <rect x="15"  y="40" width="15" height="50" rx="2" fill="rgba(30,111,207,0.15)" stroke="rgba(30,111,207,0.4)" stroke-width="0.8"/>
+  <rect x="37"  y="40" width="15" height="50" rx="2" fill="rgba(30,111,207,0.15)" stroke="rgba(30,111,207,0.4)" stroke-width="0.8"/>
+  <rect x="59"  y="40" width="15" height="50" rx="2" fill="rgba(30,111,207,0.15)" stroke="rgba(30,111,207,0.4)" stroke-width="0.8"/>
+  <rect x="81"  y="40" width="15" height="50" rx="2" fill="rgba(30,111,207,0.15)" stroke="rgba(30,111,207,0.4)" stroke-width="0.8"/>
+  <rect x="103" y="40" width="15" height="50" rx="2" fill="rgba(30,111,207,0.15)" stroke="rgba(30,111,207,0.4)" stroke-width="0.8"/>
+  <rect x="125" y="40" width="15" height="50" rx="2" fill="rgba(30,111,207,0.15)" stroke="rgba(30,111,207,0.4)" stroke-width="0.8"/>
+  <rect x="147" y="40" width="15" height="50" rx="2" fill="rgba(30,111,207,0.15)" stroke="rgba(30,111,207,0.4)" stroke-width="0.8"/>
+  <rect x="10" y="30" width="160" height="7" rx="2" fill="rgba(30,111,207,0.2)"/>
+  <rect x="10" y="93" width="160" height="7" rx="2" fill="rgba(30,111,207,0.2)"/>
+</svg>

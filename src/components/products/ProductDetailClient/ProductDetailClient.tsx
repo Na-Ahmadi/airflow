@@ -3,97 +3,13 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import Container from '@/components/shared/Container';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import type { BreadcrumbItem } from '@/components/shared/Breadcrumb';
+import Icon from '@/components/shared/Icon';
 import styles from './ProductDetailClient.module.css';
 
-/* ─── SVG icons for features ──────────────────────────────── */
-const ICONS: Record<string, React.ReactNode> = {
-  air: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 3v3M12 18v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M3 12H6M18 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
-      <circle cx="12" cy="12" r="4"/>
-    </svg>
-  ),
-  design: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
-    </svg>
-  ),
-  install: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-    </svg>
-  ),
-  ceiling: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="3" y="3" width="18" height="4" rx="1"/><path d="M7 7v10M12 7v10M17 7v10"/><rect x="3" y="17" width="18" height="4" rx="1"/>
-    </svg>
-  ),
-  energy: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-    </svg>
-  ),
-  material: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-    </svg>
-  ),
-};
-
-/* ─── Product image placeholder SVG ──────────────────────── */
-function ProductPlaceholder({ active = false }: { active?: boolean }) {
-  return (
-    <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.productSvg}>
-      {/* Background glow */}
-      {active && (
-        <ellipse cx="200" cy="130" rx="160" ry="80" fill="rgba(30,111,207,0.08)"/>
-      )}
-      {/* Main body */}
-      <rect x="40" y="80" width="320" height="100" rx="6" fill="rgba(180,190,210,0.12)" stroke="rgba(180,190,210,0.35)" strokeWidth="1.5"/>
-      {/* Slots */}
-      {[0,1,2,3,4,5,6,7].map((i) => (
-        <rect key={i} x={50 + i * 38} y="88" width="22" height="84" rx="3"
-          fill={active ? 'rgba(30,111,207,0.15)' : 'rgba(180,190,210,0.08)'}
-          stroke={active ? 'rgba(30,111,207,0.5)' : 'rgba(180,190,210,0.25)'}
-          strokeWidth="1"/>
-      ))}
-      {/* Top rail */}
-      <rect x="40" y="74" width="320" height="10" rx="3" fill="rgba(200,210,230,0.25)" stroke="rgba(200,210,230,0.4)" strokeWidth="1"/>
-      {/* Bottom rail */}
-      <rect x="40" y="176" width="320" height="10" rx="3" fill="rgba(200,210,230,0.25)" stroke="rgba(200,210,230,0.4)" strokeWidth="1"/>
-      {/* Highlight line */}
-      <line x1="40" y1="84" x2="360" y2="84" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5"/>
-      {/* Blue accent glow at center */}
-      {active && (
-        <>
-          <line x1="190" y1="88" x2="190" y2="172" stroke="rgba(0,212,255,0.6)" strokeWidth="1.5"/>
-          <ellipse cx="200" cy="130" rx="10" ry="42" fill="rgba(0,212,255,0.05)" stroke="rgba(0,212,255,0.2)" strokeWidth="1"/>
-        </>
-      )}
-    </svg>
-  );
-}
-
-function ThumbnailPlaceholder({ index }: { index: number }) {
-  const colors = [
-    'rgba(30,111,207,0.2)', 'rgba(0,212,255,0.15)', 'rgba(30,111,207,0.25)',
-    'rgba(0,212,255,0.1)', 'rgba(30,111,207,0.18)', 'rgba(0,212,255,0.2)',
-  ];
-  return (
-    <svg viewBox="0 0 80 55" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }}>
-      <rect x="4" y="10" width="72" height="35" rx="3" fill={colors[index % colors.length]} stroke="rgba(180,190,210,0.3)" strokeWidth="1"/>
-      {[0,1,2].map((i) => (
-        <rect key={i} x={8 + i * 23} y="14" width="16" height="27" rx="2"
-          fill="rgba(180,190,210,0.08)" stroke="rgba(180,190,210,0.2)" strokeWidth="0.8"/>
-      ))}
-      <rect x="4" y="8" width="72" height="4" rx="2" fill="rgba(200,210,230,0.2)"/>
-      <rect x="4" y="41" width="72" height="4" rx="2" fill="rgba(200,210,230,0.2)"/>
-    </svg>
-  );
-}
 
 /* ─── Types ───────────────────────────────────────────────── */
 interface Feature { icon: string; label: string; }
@@ -151,7 +67,7 @@ export default function ProductDetailClient({
               <div className={styles.featuresGrid}>
                 {features.map((f) => (
                   <div key={f.label} className={styles.featureItem}>
-                    <span className={styles.featureIcon}>{ICONS[f.icon]}</span>
+                    <span className={styles.featureIcon}><Icon name={f.icon} size={20} /></span>
                     <span className={styles.featureLabel}>{f.label}</span>
                   </div>
                 ))}
@@ -163,11 +79,7 @@ export default function ProductDetailClient({
                   <span>›</span> {cta.inquiry.label}
                 </Link>
                 <Link href={cta.catalog.href} className={styles.btnOutline}>
-                  <span className={styles.downloadIcon}>
-                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M10 3v10M6 9l4 4 4-4"/><path d="M4 15h12"/>
-                    </svg>
-                  </span>
+                  <span className={styles.downloadIcon}><Icon name="download" size={18} /></span>
                   {cta.catalog.label}
                 </Link>
               </div>
@@ -186,7 +98,7 @@ export default function ProductDetailClient({
                     transition={{ duration: 0.25 }}
                     className={styles.mainImage}
                   >
-                    <ProductPlaceholder active />
+                    <Image src="/images/product-detail-placeholder.svg" alt="" fill unoptimized className={styles.productSvg} />
                   </motion.div>
                 </AnimatePresence>
               </div>
@@ -200,7 +112,7 @@ export default function ProductDetailClient({
                     onClick={() => setActiveImage(i)}
                     aria-label={img.alt}
                   >
-                    <ThumbnailPlaceholder index={i} />
+                    <Image src="/images/product-thumbnail-placeholder.svg" alt="" fill unoptimized />
                   </button>
                 ))}
               </div>
@@ -247,22 +159,7 @@ export default function ProductDetailClient({
                 {activeTab === 'dimensions' && (
                   <div className={styles.dimensionsPane}>
                     <div className={styles.dimPlaceholder}>
-                      <svg viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.dimSvg}>
-                        <rect x="50" y="80" width="400" height="140" rx="4" stroke="rgba(30,111,207,0.6)" strokeWidth="1.5" strokeDasharray="6 3"/>
-                        {[0,1,2,3,4,5,6,7,8,9].map((i) => (
-                          <rect key={i} x={58 + i * 39} y="88" width="24" height="124" rx="2"
-                            fill="rgba(30,111,207,0.06)" stroke="rgba(30,111,207,0.35)" strokeWidth="1"/>
-                        ))}
-                        {/* Dimension lines */}
-                        <line x1="50" y1="240" x2="450" y2="240" stroke="rgba(0,212,255,0.5)" strokeWidth="1"/>
-                        <line x1="50" y1="235" x2="50" y2="245" stroke="rgba(0,212,255,0.5)" strokeWidth="1"/>
-                        <line x1="450" y1="235" x2="450" y2="245" stroke="rgba(0,212,255,0.5)" strokeWidth="1"/>
-                        <text x="250" y="258" textAnchor="middle" fill="rgba(0,212,255,0.8)" fontSize="11" fontFamily="monospace">2000 mm</text>
-                        <line x1="20" y1="80" x2="20" y2="220" stroke="rgba(0,212,255,0.5)" strokeWidth="1"/>
-                        <line x1="15" y1="80" x2="25" y2="80" stroke="rgba(0,212,255,0.5)" strokeWidth="1"/>
-                        <line x1="15" y1="220" x2="25" y2="220" stroke="rgba(0,212,255,0.5)" strokeWidth="1"/>
-                        <text x="12" y="155" textAnchor="middle" fill="rgba(0,212,255,0.8)" fontSize="11" fontFamily="monospace" transform="rotate(-90,12,155)">45 mm</text>
-                      </svg>
+                      <Image src="/images/dimensions-diagram.svg" alt="" fill unoptimized className={styles.dimSvg} />
                     </div>
                     <p className={styles.dimNote}>نقشه‌های فنی دقیق در کاتالوگ محصول موجود است.</p>
                   </div>
@@ -276,22 +173,13 @@ export default function ProductDetailClient({
                       { name: 'جدول مشخصات فنی', size: '0.6 MB', type: 'PDF' },
                     ].map((doc) => (
                       <div key={doc.name} className={styles.docItem}>
-                        <span className={styles.docIcon}>
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                            <polyline points="14 2 14 8 20 8"/>
-                            <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
-                            <polyline points="10 9 9 9 8 9"/>
-                          </svg>
-                        </span>
+                        <span className={styles.docIcon}><Icon name="file-pdf" /></span>
                         <div className={styles.docInfo}>
                           <span className={styles.docName}>{doc.name}</span>
                           <span className={styles.docMeta}>{doc.type} · {doc.size}</span>
                         </div>
                         <button className={styles.docDownload} aria-label={`دانلود ${doc.name}`}>
-                          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M10 3v10M6 9l4 4 4-4"/><path d="M4 15h12"/>
-                          </svg>
+                          <Icon name="download" size={18} />
                         </button>
                       </div>
                     ))}
@@ -307,11 +195,7 @@ export default function ProductDetailClient({
                           onClick={() => setOpenFaq(openFaq === i ? null : i)}
                         >
                           <span>{item.question}</span>
-                          <span className={styles.faqChevron}>
-                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                              <polyline points="5 8 10 13 15 8"/>
-                            </svg>
-                          </span>
+                          <span className={styles.faqChevron}><Icon name="chevron-down" size={18} /></span>
                         </button>
                         <AnimatePresence>
                           {openFaq === i && (
