@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Container from '@/components/shared/Container';
-import ProjectCard from '@/components/shared/ProjectCard';
+import ProjectCard from '@/components/shared/ProjectCard/ProjectCard';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import type { BreadcrumbItem } from '@/components/shared/Breadcrumb';
 import type { Project } from '@/types';

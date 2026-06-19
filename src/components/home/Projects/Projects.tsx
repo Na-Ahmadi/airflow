@@ -8,7 +8,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import type { ProjectsData } from '@/types';
 import SectionTitle from '@/components/shared/SectionTitle';
 import Container from '@/components/shared/Container';
-import ProjectCard from '@/components/shared/ProjectCard';
+import ProjectCard from '@/components/shared/ProjectCard/ProjectCard';
 import Icon from '@/components/shared/Icon';
 import styles from './Projects.module.css';
 
