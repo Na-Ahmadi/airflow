@@ -1,0 +1,46 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.icon { flex-shrink: 0; }
+
+.text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.name {
+  display: block;
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+
+.sub {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+
+/* Light theme: logo sits on transparent/dark-image header */
+:global([data-theme="light"]) .name {
+  color: #ffffff;
+}
+
+:global([data-theme="light"]) .sub {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Light theme + scrolled: glass background, switch to dark text */
+:global([data-theme="light"]) .logo[data-scrolled="true"] .name {
+  color: #0a2540;
+}
+
+:global([data-theme="light"]) .logo[data-scrolled="true"] .sub {
+  color: #718096;
+}

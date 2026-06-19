@@ -1,8 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { NavData } from '@/types';
@@ -12,6 +10,7 @@ import HeaderActions from '@/components/layout/HeaderActions';
 import Navigation from '@/components/layout/Navigation';
 import NavItemMobile from '@/components/layout/NavItemMobile';
 import TopBar from '@/components/layout/TopBar';
+import Logo from '@/components/layout/Logo/Logo';
 
 interface HeaderProps {
   data: NavData;
@@ -72,15 +71,12 @@ export default function Header({ data }: HeaderProps) {
       <nav className={styles.nav}>
         <div className={styles.navInner}>
           {/* Logo */}
-          <Link href={data.logo.href} className={styles.logo}>
-            <div className={styles.logoIcon}>
-              <Image src="/icons/airflow-logo.svg" width={32} height={32} alt="" aria-hidden />
-            </div>
-            <div className={styles.logoText}>
-              <span className={styles.logoName}>{data.logo.text}</span>
-              <span className={styles.logoTagline}>{data.logo.tagline}</span>
-            </div>
-          </Link>
+          <Logo
+            name={data.logo.text}
+            subtitle={data.logo.tagline}
+            href={data.logo.href}
+            scrolled={scrolled}
+          />
 
           {/* Navigation */}
           <Navigation

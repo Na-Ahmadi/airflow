@@ -21,25 +21,7 @@
 .companyCol {}
 
 .logoWrap {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
   margin-bottom: var(--space-5);
-}
-
-.logoName {
-  display: block;
-  font-size: var(--text-xl);
-  font-weight: var(--font-bold);
-  color: var(--color-text-primary);
-  line-height: 1;
-}
-
-.logoSub {
-  display: block;
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-  margin-top: 2px;
 }
 
 .companyDesc {

@@ -30,51 +30,6 @@
   gap: var(--space-6);
 }
 
-/* Logo */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  text-decoration: none;
-  flex-shrink: 0;
-}
-
-.logoIcon { flex-shrink: 0; }
-
-.logoText {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-.logoName {
-  font-size: var(--text-lg);
-  font-weight: var(--font-bold);
-  color: var(--color-text-primary);
-}
-
-.logoTagline {
-  font-size: var(--text-xs);
-  color: var(--color-text-secondary);
-}
-
-/* ─── Light Mode Overrides ────────────────────────────────── */
-:global([data-theme="light"]) .logoName {
-  color: #ffffff;
-}
-
-:global([data-theme="light"]) .logoTagline {
-  color: rgba(255, 255, 255, 0.65);
-}
-
-:global([data-theme="light"]) .scrolled .logoName {
-  color: #0a2540;
-}
-
-:global([data-theme="light"]) .scrolled .logoTagline {
-  color: #718096;
-}
-
 /* Mobile Menu */
 .mobileMenu {
   background: var(--glass-bg);

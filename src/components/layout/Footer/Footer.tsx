@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import type { FooterData } from '@/types';
 import styles from './Footer.module.css';
 import Icon from '@/components/shared/Icon';
+import Logo from '@/components/layout/Logo/Logo';
 
 interface FooterProps {
   data: FooterData;
@@ -15,13 +15,12 @@ export default function Footer({ data }: FooterProps) {
         <div className={styles.inner}>
           {/* Company Column */}
           <div className={styles.companyCol}>
-            <div className={styles.logoWrap}>
-              <Image src="/icons/airflow-logo.svg" width={40} height={40} alt="" aria-hidden />
-              <div>
-                <span className={styles.logoName}>{data.company.name}</span>
-                <span className={styles.logoSub}>HVAC Solutions</span>
-              </div>
-            </div>
+            <Logo
+              name={data.company.name}
+              subtitle="HVAC Solutions"
+              size={40}
+              className={styles.logoWrap}
+            />
             <p className={styles.companyDesc}>{data.company.tagline}</p>
             <div className={styles.socials}>
               {data.company.socials.map((s) => (
