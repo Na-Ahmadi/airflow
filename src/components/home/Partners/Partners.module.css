@@ -1,0 +1,98 @@
+.section {
+  padding: var(--space-8) 0;
+  background: rgba(10, 22, 40, 0.6);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--section-padding-x);
+}
+
+.label {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  margin: 0 0 var(--space-6);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wide);
+}
+
+.track {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fade edges */
+.track::before,
+.track::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+.track::before {
+  right: 0;
+  background: linear-gradient(to left, var(--color-bg-secondary), transparent);
+}
+.track::after {
+  left: 0;
+  background: linear-gradient(to right, var(--color-bg-secondary), transparent);
+}
+
+.marquee {
+  display: flex;
+  gap: var(--space-4);
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.marquee:hover { animation-play-state: paused; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ─── Light Mode ──────────────────────────────────────────── */
+:global([data-theme="light"]) .section {
+  background: var(--color-bg-secondary);
+}
+
+.partnerItem {
+  flex-shrink: 0;
+}
+
+.logoBox {
+  height: 60px;
+  min-width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-base);
+}
+
+.logoBox:hover {
+  background: var(--color-surface-hover);
+  border-color: var(--color-border-primary);
+}
+
+.logoText {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+}
+
+.logoBox:hover .logoText { color: var(--color-text-primary); }

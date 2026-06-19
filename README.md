@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ایرفلو سیستم — Airflow System
 
-## Getting Started
+Unternehmenswebsite für **ایرفلو سیستم** (Airflow System), einen iranischen Hersteller von HVAC-Komponenten (Lüftungsgitter, Dämper, Luftverteilungssysteme) mit über 18 Jahren Erfahrung.
 
-First, run the development server:
+Die Website ist vollständig auf Persisch (Farsi) mit RTL-Layout aufgebaut und richtet sich an den iranischen B2B-Markt.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Tech-Stack
+
+| Technologie | Version | Zweck |
+|---|---|---|
+| Next.js | 16.2.9 | Framework (App Router) |
+| React | 19 | UI |
+| TypeScript | 5 | Typsicherheit (strict mode) |
+| CSS Modules | — | Komponentenstyling |
+| Framer Motion | 12 | Animationen |
+| Swiper.js | 12 | Slider/Karussell |
+| React Hook Form + Zod | 7 / 4 | Kontaktformular + Validierung |
+| Vazirmatn (next/font) | — | Persische Schriftart |
+| Tailwind CSS | 4 | Utility-Klassen |
+
+---
+
+## Projektstruktur
+
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── page.tsx            # Homepage
+│   ├── about/              # Über uns
+│   ├── products/           # Produktliste + Detailseite ([slug])
+│   ├── projects/           # Referenzprojekte + Detail ([slug])
+│   └── resources/          # Downloads / Ressourcen
+├── components/
+│   ├── home/               # Sektionen der Homepage
+│   │   ├── Hero/
+│   │   ├── Partners/
+│   │   ├── WhyUs/
+│   │   ├── Products/
+│   │   ├── Projects/
+│   │   ├── Statistics/
+│   │   ├── Resources/
+│   │   └── ContactForm/
+│   ├── layout/             # Header / Footer
+│   ├── about/              # About-Sektionen
+│   ├── products/           # Produkt-Seiten-Komponenten
+│   ├── projects/           # Projekt-Seiten-Komponenten
+│   └── shared/             # Wiederverwendbare UI-Elemente
+├── data/                   # Alle Inhalte als JSON (kein CMS)
+│   ├── hero.json
+│   ├── navigation.json
+│   ├── products.json
+│   ├── products-detail.json
+│   ├── projects.json
+│   ├── resources.json
+│   └── ...
+├── types/                  # TypeScript-Interfaces
+├── constants/              # SITE_CONFIG, Animationskonstanten
+├── context/                # ThemeContext (Dark/Light)
+├── hooks/                  # Custom React Hooks
+├── lib/                    # Hilfsfunktionen
+├── services/               # API-Schicht (vorbereitet)
+└── styles/                 # CSS-Variablen / Design-Tokens
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Lokale Entwicklung
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Die App läuft standardmäßig auf [http://localhost:3000](http://localhost:3000). Falls Port 3000 belegt ist, wird Port 3001 verwendet.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build    # Produktions-Build
+npm run start    # Produktionsserver starten
+npm run lint     # ESLint ausführen
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Inhalte pflegen
 
-## Deploy on Vercel
+Alle Texte und Daten liegen als JSON-Dateien in `src/data/`. Es ist kein CMS notwendig — Änderungen an den JSON-Dateien wirken sich direkt auf die Website aus.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Wichtig:** JSON-Importe müssen mit `as unknown as Type` gecastet werden, damit TypeScript Literal-Unions (z. B. `"primary" | "outline"`) nicht zu `string` verbreitert.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## RTL-Konfiguration
+
+- `<html dir="rtl" lang="fa">` ist in `src/app/layout.tsx` gesetzt
+- Schriftart: **Vazirmatn** (Google Fonts, Arabic-Subset)
+- Design-Tokens für RTL-Abstände in `src/styles/variables.css`
+
+---
+
+## Kontakt / Deployment
+
+- **Website:** [airflowsystem.ir](https://airflowsystem.ir)
+- **Entwickler:** Naser Ahmadi — ahmadi@neoskop.de
+- **Deployment:** Vercel (empfohlen) oder beliebiger Node.js-Host
+# airflow

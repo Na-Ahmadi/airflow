@@ -1,0 +1,18 @@
+/* ─── Breakpoint System ──────────────────────────────────────
+   xs:  320px  — small mobile
+   sm:  480px  — mobile
+   md:  768px  — tablet
+   lg: 1024px  — laptop
+   xl: 1280px  — desktop
+  2xl: 1536px  — large desktop
+──────────────────────────────────────────────────────────── */
+
+/* Usage in components: @media (min-width: var(--bp-md)) { ... } */
+:root {
+  --bp-xs:  320px;
+  --bp-sm:  480px;
+  --bp-md:  768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --bp-2xl:1536px;
+}

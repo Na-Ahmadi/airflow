@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--section-padding-x);
+}
+
+.sm   { max-width: var(--container-md); }
+.md   { max-width: var(--container-lg); }
+.lg   { max-width: var(--container-xl); }
+.xl   { max-width: var(--container-max); }
+.full { max-width: 100%; }

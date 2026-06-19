@@ -1,0 +1,90 @@
+{
+  "section": {
+    "tag": "محصولات",
+    "title": "محصولات ما",
+    "subtitle": "گستره کاملی از محصولات توزیع هوا برای هر نوع پروژه",
+    "viewAll": { "label": "مشاهده همه محصولات", "href": "/products" }
+  },
+  "tabs": [
+    { "id": "all",      "label": "همه محصولات",    "active": true },
+    { "id": "linear",   "label": "دریچه‌های خطی",  "active": false },
+    { "id": "ceiling",  "label": "دریچه‌های سقفی", "active": false },
+    { "id": "damper",   "label": "دمپرها",          "active": false },
+    { "id": "multiway", "label": "ملتیواها",        "active": false },
+    { "id": "accessory","label": "مانتوعات",        "active": false }
+  ],
+  "items": [
+    {
+      "id": "ls-300",
+      "category": "linear",
+      "image": "/images/products/linear-diffuser-1.jpg",
+      "name": "دریچه خطی شیاردار",
+      "series": "سری LS",
+      "href": "/products/ls-300",
+      "badge": null
+    },
+    {
+      "id": "dc-400",
+      "category": "ceiling",
+      "image": "/images/products/ceiling-diffuser-round.jpg",
+      "name": "دریچه گرد سقفی",
+      "series": "سری DC",
+      "href": "/products/dc-400",
+      "badge": null
+    },
+    {
+      "id": "4d-500",
+      "category": "ceiling",
+      "image": "/images/products/ceiling-diffuser-4way.jpg",
+      "name": "دریچه چهار طرفه",
+      "series": "سری 4D",
+      "href": "/products/4d-500",
+      "badge": "جدید"
+    },
+    {
+      "id": "vcd-200",
+      "category": "damper",
+      "image": "/images/products/damper-volume.jpg",
+      "name": "دمپر کنترل حجم هوا",
+      "series": "سری VCD",
+      "href": "/products/vcd-200",
+      "badge": null
+    },
+    {
+      "id": "fd-100",
+      "category": "damper",
+      "image": "/images/products/damper-fire.jpg",
+      "name": "دمپر ضد حریق",
+      "series": "سری FD",
+      "href": "/products/fd-100",
+      "badge": null
+    },
+    {
+      "id": "mw-300",
+      "category": "multiway",
+      "image": "/images/products/multiway-1.jpg",
+      "name": "ملتیوا چهار طرفه",
+      "series": "سری MW",
+      "href": "/products/mw-300",
+      "badge": null
+    },
+    {
+      "id": "gr-100",
+      "category": "accessory",
+      "image": "/images/products/grille-return.jpg",
+      "name": "گریل برگشت هوا",
+      "series": "سری GR",
+      "href": "/products/gr-100",
+      "badge": null
+    },
+    {
+      "id": "ec-200",
+      "category": "accessory",
+      "image": "/images/products/exhaust-cap.jpg",
+      "name": "کلاهک خروجی هوا",
+      "series": "سری EC",
+      "href": "/products/ec-200",
+      "badge": null
+    }
+  ]
+}

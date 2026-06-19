@@ -1,0 +1,358 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+/* ─── Background image layer ─────────────────────────────── */
+.bgWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bgImg {
+  object-fit: cover;
+  object-position: 30% center;
+}
+
+/* main dark overlay – RTL: text is on right, image on left */
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(4, 10, 22, 0.15) 0%,
+    rgba(4, 10, 22, 0.55) 45%,
+    rgba(4, 10, 22, 0.88) 75%,
+    rgba(4, 10, 22, 0.97) 100%
+  );
+}
+
+/* blue accent gradient on the text side (right in RTL) */
+.bgGradLeft {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 60% 80% at 100% 50%,
+    rgba(14, 50, 120, 0.35) 0%,
+    transparent 70%
+  );
+}
+
+/* bottom glow line */
+.bgGlow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), var(--color-accent), transparent);
+  opacity: 0.6;
+}
+
+/* ─── Content layout ──────────────────────────────────────── */
+.inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-inline: clamp(1rem, 3vw, 3.5rem);
+  padding-top: calc(var(--header-height) + 80px);
+  padding-bottom: var(--space-24);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  gap: var(--space-16);
+}
+
+/* text block – RTL: align-self flex-start = right edge */
+.content {
+  max-width: 50%;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  position: relative;
+}
+
+/* ─── Badge ───────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: rgba(30, 111, 207, 0.15);
+  border: 1px solid rgba(30, 111, 207, 0.35);
+  border-radius: var(--radius-full);
+  color: var(--color-accent);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  backdrop-filter: var(--blur-sm);
+  width: fit-content;
+}
+
+.badgeDot {
+  width: 7px;
+  height: 7px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--color-accent);
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ─── Title ───────────────────────────────────────────────── */
+.title {
+  font-size: var(--text-6xl);
+  font-weight: var(--font-extrabold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+  margin: 0;
+  letter-spacing: var(--tracking-tight);
+  text-shadow: 0 2px 30px rgba(0,0,0,0.5);
+}
+
+.titleHighlight {
+  color: var(--color-primary-light);
+}
+
+/* ─── Subtitle ────────────────────────────────────────────── */
+.subtitle {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.75);
+  line-height: var(--leading-relaxed);
+  max-width: 46ch;
+  margin: 0;
+}
+
+/* ─── Buttons ─────────────────────────────────────────────── */
+.buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: var(--btn-height-lg);
+  padding: 0 var(--space-8);
+  border-radius: var(--radius-full);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.btn_primary {
+  background: var(--gradient-primary);
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(30, 111, 207, 0.45);
+}
+.btn_primary:hover {
+  box-shadow: 0 8px 32px rgba(30, 111, 207, 0.65);
+  transform: translateY(-2px);
+}
+
+.btn_outline {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: var(--blur-sm);
+}
+.btn_outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* ─── Product badge – floats over the image (left side in RTL) ─── */
+.productBadge {
+  position: absolute;
+  left: 6%;
+  bottom: 22%;
+  width: 210px;
+  z-index: 2;
+}
+
+.productBadgeInner {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--space-4) var(--space-5);
+  background: rgba(10, 20, 40, 0.75);
+  border: 1px solid rgba(30, 111, 207, 0.35);
+  border-radius: var(--radius-xl);
+  backdrop-filter: var(--blur-md);
+  text-decoration: none;
+  transition: border-color var(--transition-base), background var(--transition-base), transform var(--transition-base);
+  cursor: pointer;
+}
+.productBadgeInner:hover {
+  border-color: rgba(30, 111, 207, 0.7);
+  background: rgba(10, 20, 40, 0.9);
+  transform: translateY(-2px);
+}
+
+.productBadgeCategory {
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wider);
+}
+
+.productBadgeName {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.productBadgeLink {
+  font-size: var(--text-xs);
+  color: var(--color-primary-light);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.productBadgeLink:hover { color: var(--color-accent); }
+
+/* ─── Stats row ───────────────────────────────────────────── */
+.statsRow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: var(--space-5) var(--space-6);
+  background: rgba(6, 13, 26, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+  backdrop-filter: var(--blur-md);
+  width: fit-content;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding-inline: var(--space-6);
+  position: relative;
+}
+
+.statDivider {
+  position: absolute;
+  right: 0;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.statValue {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-extrabold);
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+.statSuffix {
+  color: var(--color-primary-light);
+}
+
+.statLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+/* ─── Scroll indicator ────────────────────────────────────── */
+.scrollIndicator {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.scrollDot {
+  width: 26px;
+  height: 42px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 13px;
+  position: relative;
+}
+
+.scrollDot::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 8px;
+  background: var(--color-primary-light);
+  border-radius: 3px;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { top: 6px; opacity: 1; }
+  50%       { top: 18px; opacity: 0.4; }
+}
+
+/* ─── Light Mode — hero always stays dark ──────────────────── */
+:global([data-theme="light"]) .hero {
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b0bfd4;
+  --color-text-muted: #8a9ab4;
+}
+
+/* ─── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1280px) {
+  .content { max-width: 62%; }
+  .productBadge { left: 2%; bottom: 18%; width: 185px; }
+}
+
+@media (max-width: 1024px) {
+  .content { max-width: 72%; }
+  .productBadge { left: 1.5%; bottom: 15%; width: 165px; }
+  .bgOverlay {
+    background: linear-gradient(
+      to right,
+      rgba(4, 10, 22, 0.3) 0%,
+      rgba(4, 10, 22, 0.75) 55%,
+      rgba(4, 10, 22, 0.95) 100%
+    );
+  }
+}
+
+@media (max-width: 900px) {
+  .productBadge { display: none; }
+}
+
+@media (max-width: 768px) {
+  .content { max-width: 100%; align-self: stretch; }
+  .title   { font-size: var(--text-5xl); }
+  .buttons { flex-direction: column; align-items: stretch; }
+  .btn     { justify-content: center; }
+  .statsRow { flex-wrap: wrap; justify-content: center; width: 100%; }
+  .bgOverlay { background: rgba(4, 10, 22, 0.75); }
+  .scrollIndicator { display: none; }
+}
+
+@media (max-width: 480px) {
+  .title { font-size: var(--text-4xl); }
+  .stat  { padding-inline: var(--space-4); }
+}

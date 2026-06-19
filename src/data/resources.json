@@ -1,0 +1,64 @@
+{
+  "section": {
+    "tag": "دانلود",
+    "title": "منابع فنی و آموزشی",
+    "subtitle": "دسترسی آسان به کاتالوگ‌ها، فایل‌های فنی و منابع آموزشی",
+    "viewAll": { "label": "مشاهده همه منابع", "href": "/resources" }
+  },
+  "items": [
+    {
+      "id": "catalog",
+      "icon": "file-pdf",
+      "type": "PDF",
+      "title": "کاتالوگ محصولات",
+      "description": "مشخصات فنی کامل تمامی محصولات",
+      "href": "/resources/catalog.pdf",
+      "size": "۴.۲ مگابایت"
+    },
+    {
+      "id": "cad",
+      "icon": "file-dwg",
+      "type": "DWG",
+      "title": "فایل‌های CAD",
+      "description": "نقشه‌های فنی برای طراحی",
+      "href": "/resources/cad-files.zip",
+      "size": "۱۲.۸ مگابایت"
+    },
+    {
+      "id": "bim",
+      "icon": "file-3d",
+      "type": "PDF",
+      "title": "مدل‌های BIM",
+      "description": "مدل‌های سه‌بعدی برای نرم‌افزارهای BIM",
+      "href": "/resources/bim-models.zip",
+      "size": "۲۳.۵ مگابایت"
+    },
+    {
+      "id": "install",
+      "icon": "file-text",
+      "type": "PDF",
+      "title": "راهنمای نصب",
+      "description": "دستورالعمل کامل نصب و راه‌اندازی",
+      "href": "/resources/installation-guide.pdf",
+      "size": "۲.۱ مگابایت"
+    },
+    {
+      "id": "standards",
+      "icon": "file-check",
+      "type": "PDF",
+      "title": "استانداردها",
+      "description": "گواهینامه‌ها و استانداردهای بین‌المللی",
+      "href": "/resources/standards.pdf",
+      "size": "۱.۸ مگابایت"
+    },
+    {
+      "id": "articles",
+      "icon": "file-article",
+      "type": "آنلاین",
+      "title": "مقالات فنی",
+      "description": "مقالات تخصصی حوزه تهویه و HVAC",
+      "href": "/resources/articles",
+      "size": null
+    }
+  ]
+}
