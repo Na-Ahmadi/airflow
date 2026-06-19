@@ -11,6 +11,7 @@ import { SCROLL_THRESHOLD } from '@/constants';
 import { useTheme } from '@/context/ThemeContext';
 import Navigation from '@/components/layout/Navigation';
 import NavItemMobile from '@/components/layout/NavItemMobile';
+import TopBar from '@/components/layout/TopBar';
 import Icon from '@/components/shared/Icon';
 
 interface HeaderProps {
@@ -62,25 +63,12 @@ export default function Header({ data }: HeaderProps) {
 
   return (
     <header className={[styles.header, scrolled ? styles.scrolled : ''].filter(Boolean).join(' ')}>
-      {/* Top Bar */}
-      <div className={styles.topBar}>
-        <div className={styles.topBarInner}>
-          <div className={styles.topBarInfo}>
-            <span className={styles.topBarItem}>
-              <Icon name="phone" size={14} />
-              <a href={`tel:${data.topbar.phone}`}>{data.topbar.phone}</a>
-            </span>
-            <span className={styles.topBarItem}>
-              <Icon name="mail" size={14} />
-              <a href={`mailto:${data.topbar.email}`}>{data.topbar.email}</a>
-            </span>
-          </div>
-          <div className={styles.topBarAddress}>
-            <Icon name="location" size={14} />
-            <span>{data.topbar.address}</span>
-          </div>
-        </div>
-      </div>
+      <TopBar
+        phone={data.topbar.phone}
+        email={data.topbar.email}
+        address={data.topbar.address}
+        scrolled={scrolled}
+      />
 
       {/* Main Nav */}
       <nav className={styles.nav}>
