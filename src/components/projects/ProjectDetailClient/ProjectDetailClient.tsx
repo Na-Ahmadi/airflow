@@ -4,11 +4,11 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import Container from '@/components/shared/Container';
-import Breadcrumb from '@/components/shared/Breadcrumb';
-import type { BreadcrumbItem } from '@/components/shared/Breadcrumb';
-import Badge from '@/components/shared/Badge';
-import Icon from '@/components/shared/Icon';
+import Container from '@/components/shared/Container/Container';
+import Breadcrumb from '@/components/shared/Breadcrumb/Breadcrumb';
+import type { BreadcrumbItem } from '@/components/shared/Breadcrumb/Breadcrumb';
+import Badge from '@/components/shared/Badge/Badge';
+import Icon from '@/components/shared/Icon/Icon';
 import styles from './ProjectDetailClient.module.css';
 
 /* ─── Types ───────────────────────────────────────────────── */

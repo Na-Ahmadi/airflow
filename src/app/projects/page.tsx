@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import ProjectsPageClient from '@/components/projects/ProjectsPageClient';
+import Header from '@/components/layout/Header/Header';
+import Footer from '@/components/layout/Footer/Footer';
+import ProjectsPageClient from '@/components/projects/ProjectsPageClient/ProjectsPageClient';
 import type { NavData, FooterData, Project } from '@/types';
 import navDataRaw from '@/data/navigation.json';
 import footerDataRaw from '@/data/footer.json';

@@ -6,10 +6,10 @@ import { motion, useInView } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import type { ProjectsData } from '@/types';
-import SectionTitle from '@/components/shared/SectionTitle';
-import Container from '@/components/shared/Container';
+import SectionTitle from '@/components/shared/SectionTitle/SectionTitle';
+import Container from '@/components/shared/Container/Container';
 import ProjectCard from '@/components/shared/ProjectCard/ProjectCard';
-import Icon from '@/components/shared/Icon';
+import Icon from '@/components/shared/Icon/Icon';
 import styles from './Projects.module.css';
 
 import 'swiper/css';

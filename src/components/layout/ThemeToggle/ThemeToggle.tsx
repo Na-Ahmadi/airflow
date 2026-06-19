@@ -1,7 +1,7 @@
 'use client';
 
 import { useTheme } from '@/context/ThemeContext';
-import Icon from '@/components/shared/Icon';
+import Icon from '@/components/shared/Icon/Icon';
 import styles from './ThemeToggle.module.css';
 
 export default function ThemeToggle() {

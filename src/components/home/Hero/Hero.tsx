@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import type { HeroData } from '@/types';
 import styles from './Hero.module.css';
-import Icon from '@/components/shared/Icon';
+import Icon from '@/components/shared/Icon/Icon';
 
 const EASE = [0.4, 0, 0.2, 1] as [number, number, number, number];
 

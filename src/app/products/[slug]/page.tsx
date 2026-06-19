@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import ProductDetailClient from '@/components/products/ProductDetailClient';
+import Header from '@/components/layout/Header/Header';
+import Footer from '@/components/layout/Footer/Footer';
+import ProductDetailClient from '@/components/products/ProductDetailClient/ProductDetailClient';
 import type { NavData, FooterData } from '@/types';
 import navDataRaw from '@/data/navigation.json';
 import footerDataRaw from '@/data/footer.json';

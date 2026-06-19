@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import Badge from '@/components/shared/Badge';
-import Icon from '@/components/shared/Icon';
+import Badge from '@/components/shared/Badge/Badge';
+import Icon from '@/components/shared/Icon/Icon';
 import type { Project } from '@/types';
 import styles from './ProjectCard.module.css';
 

@@ -1,5 +1,5 @@
-import Container from '@/components/shared/Container';
-import Icon from '@/components/shared/Icon';
+import Container from '@/components/shared/Container/Container';
+import Icon from '@/components/shared/Icon/Icon';
 import styles from './AboutValues.module.css';
 
 interface ValueItem {

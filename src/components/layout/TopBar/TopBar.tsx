@@ -1,4 +1,4 @@
-import Icon from '@/components/shared/Icon';
+import Icon from '@/components/shared/Icon/Icon';
 import styles from './TopBar.module.css';
 
 interface TopBarProps {

@@ -3,9 +3,9 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import type { StatisticsData } from '@/types';
-import Container from '@/components/shared/Container';
+import Container from '@/components/shared/Container/Container';
 import styles from './Statistics.module.css';
-import Icon from '@/components/shared/Icon';
+import Icon from '@/components/shared/Icon/Icon';
 
 interface StatisticsProps { data: StatisticsData; }
 

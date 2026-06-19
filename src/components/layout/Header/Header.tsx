@@ -6,10 +6,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import type { NavData } from '@/types';
 import styles from './Header.module.css';
 import { SCROLL_THRESHOLD } from '@/constants';
-import HeaderActions from '@/components/layout/HeaderActions';
-import Navigation from '@/components/layout/Navigation';
-import NavItemMobile from '@/components/layout/NavItemMobile';
-import TopBar from '@/components/layout/TopBar';
+import HeaderActions from '@/components/layout/HeaderActions/HeaderActions';
+import Navigation from '@/components/layout/Navigation/Navigation';
+import NavItemMobile from '@/components/layout/NavItemMobile/NavItemMobile';
+import TopBar from '@/components/layout/TopBar/TopBar';
 import Logo from '@/components/layout/Logo/Logo';
 
 interface HeaderProps {

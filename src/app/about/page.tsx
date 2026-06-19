@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import AboutHero from '@/components/about/AboutHero';
-import AboutValues from '@/components/about/AboutValues';
+import Header from '@/components/layout/Header/Header';
+import Footer from '@/components/layout/Footer/Footer';
+import AboutHero from '@/components/about/AboutHero/AboutHero';
+import AboutValues from '@/components/about/AboutValues/AboutValues';
 import type { NavData, FooterData } from '@/types';
 import navDataRaw from '@/data/navigation.json';
 import footerDataRaw from '@/data/footer.json';

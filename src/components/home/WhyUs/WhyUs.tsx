@@ -3,10 +3,10 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import type { WhyUsData } from '@/types';
-import SectionTitle from '@/components/shared/SectionTitle';
-import Container from '@/components/shared/Container';
+import SectionTitle from '@/components/shared/SectionTitle/SectionTitle';
+import Container from '@/components/shared/Container/Container';
 import styles from './WhyUs.module.css';
-import Icon from '@/components/shared/Icon';
+import Icon from '@/components/shared/Icon/Icon';
 
 interface WhyUsProps { data: WhyUsData; }
 

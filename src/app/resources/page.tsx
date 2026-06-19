@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import Resources from '@/components/home/Resources';
-import Container from '@/components/shared/Container';
+import Header from '@/components/layout/Header/Header';
+import Footer from '@/components/layout/Footer/Footer';
+import Resources from '@/components/home/Resources/Resources';
+import Container from '@/components/shared/Container/Container';
 import type { NavData, FooterData, ResourcesData } from '@/types';
 import navDataRaw from '@/data/navigation.json';
 import footerDataRaw from '@/data/footer.json';

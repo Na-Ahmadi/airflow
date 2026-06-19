@@ -6,9 +6,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { motion, useInView } from 'framer-motion';
 import type { ContactFormValues } from '@/types';
-import Container from '@/components/shared/Container';
-import SectionTitle from '@/components/shared/SectionTitle';
-import Icon from '@/components/shared/Icon';
+import Container from '@/components/shared/Container/Container';
+import SectionTitle from '@/components/shared/SectionTitle/SectionTitle';
+import Icon from '@/components/shared/Icon/Icon';
 import styles from './ContactForm.module.css';
 
 const schema = z.object({

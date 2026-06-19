@@ -4,10 +4,10 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import Container from '@/components/shared/Container';
-import Badge from '@/components/shared/Badge';
-import Breadcrumb from '@/components/shared/Breadcrumb';
-import type { BreadcrumbItem } from '@/components/shared/Breadcrumb';
+import Container from '@/components/shared/Container/Container';
+import Badge from '@/components/shared/Badge/Badge';
+import Breadcrumb from '@/components/shared/Breadcrumb/Breadcrumb';
+import type { BreadcrumbItem } from '@/components/shared/Breadcrumb/Breadcrumb';
 import styles from './ProductsPageClient.module.css';
 
 interface Tab { id: string; label: string; }

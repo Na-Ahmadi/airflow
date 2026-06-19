@@ -6,9 +6,9 @@ import { motion, useInView } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import type { ProductsData } from '@/types';
-import SectionTitle from '@/components/shared/SectionTitle';
-import Container from '@/components/shared/Container';
-import Icon from '@/components/shared/Icon';
+import SectionTitle from '@/components/shared/SectionTitle/SectionTitle';
+import Container from '@/components/shared/Container/Container';
+import Icon from '@/components/shared/Icon/Icon';
 import ProductCard from './ProductCard';
 import styles from './Products.module.css';
 

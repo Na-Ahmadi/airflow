@@ -4,10 +4,10 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import Container from '@/components/shared/Container';
-import Breadcrumb from '@/components/shared/Breadcrumb';
-import type { BreadcrumbItem } from '@/components/shared/Breadcrumb';
-import Icon from '@/components/shared/Icon';
+import Container from '@/components/shared/Container/Container';
+import Breadcrumb from '@/components/shared/Breadcrumb/Breadcrumb';
+import type { BreadcrumbItem } from '@/components/shared/Breadcrumb/Breadcrumb';
+import Icon from '@/components/shared/Icon/Icon';
 import styles from './ProductDetailClient.module.css';
 
 

@@ -1,13 +1,13 @@
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import Hero from '@/components/home/Hero';
-import Partners from '@/components/home/Partners';
-import WhyUs from '@/components/home/WhyUs';
-import Products from '@/components/home/Products';
-import Projects from '@/components/home/Projects';
-import Statistics from '@/components/home/Statistics';
-import Resources from '@/components/home/Resources';
-import ContactForm from '@/components/home/ContactForm';
+import Header from '@/components/layout/Header/Header';
+import Footer from '@/components/layout/Footer/Footer';
+import Hero from '@/components/home/Hero/Hero';
+import Partners from '@/components/home/Partners/Partners';
+import WhyUs from '@/components/home/WhyUs/WhyUs';
+import Products from '@/components/home/Products/Products';
+import Projects from '@/components/home/Projects/Projects';
+import Statistics from '@/components/home/Statistics/Statistics';
+import Resources from '@/components/home/Resources/Resources';
+import ContactForm from '@/components/home/ContactForm/ContactForm';
 
 import type {
   NavData, HeroData, PartnersData, WhyUsData, ProductsData,

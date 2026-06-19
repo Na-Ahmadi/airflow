@@ -4,7 +4,7 @@ import Script from 'next/script';
 import './globals.css';
 import { SITE_CONFIG } from '@/constants';
 import { ThemeProvider } from '@/context/ThemeContext';
-import ScrollToTop from '@/components/shared/ScrollToTop';
+import ScrollToTop from '@/components/shared/ScrollToTop/ScrollToTop';
 
 const vazir = Vazirmatn({
   subsets: ['arabic'],

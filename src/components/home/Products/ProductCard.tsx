@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Product } from '@/types';
-import Badge from '@/components/shared/Badge';
+import Badge from '@/components/shared/Badge/Badge';
 import styles from './Products.module.css';
 
 export default function ProductCard({ product }: { product: Product }) {

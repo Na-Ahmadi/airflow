@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import Badge from '@/components/shared/Badge';
+import Badge from '@/components/shared/Badge/Badge';
 import styles from './ProductsPageClient.module.css';
 
 export interface ProductItem {

@@ -4,9 +4,9 @@ import { useRef } from 'react';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 import type { ResourcesData, Resource } from '@/types';
-import SectionTitle from '@/components/shared/SectionTitle';
-import Container from '@/components/shared/Container';
-import Icon from '@/components/shared/Icon';
+import SectionTitle from '@/components/shared/SectionTitle/SectionTitle';
+import Container from '@/components/shared/Container/Container';
+import Icon from '@/components/shared/Icon/Icon';
 import styles from './Resources.module.css';
 
 interface ResourcesProps { data: ResourcesData; }

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { FooterData } from '@/types';
 import styles from './Footer.module.css';
-import Icon from '@/components/shared/Icon';
+import Icon from '@/components/shared/Icon/Icon';
 import Logo from '@/components/layout/Logo/Logo';
 
 interface FooterProps {

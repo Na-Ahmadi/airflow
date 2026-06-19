@@ -2,7 +2,7 @@
 
 import type { NavItem } from '@/types';
 import styles from './Navigation.module.css';
-import NavItemDesktop from '@/components/layout/NavItemDesktop';
+import NavItemDesktop from '@/components/layout/NavItemDesktop/NavItemDesktop';
 
 interface NavigationProps {
   items: NavItem[];
