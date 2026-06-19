@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import LanguageAwareShell from '@/components/layout/LanguageAwareShell';
 import ProjectDetailClient from '@/components/projects/ProjectDetailClient/ProjectDetailClient';
 import projectsDetail from '@/data/projects-detail.json';
 
@@ -38,7 +37,7 @@ export default async function ProjectDetailPage(
   ];
 
   return (
-    <LanguageAwareShell>
+    <main>
       <ProjectDetailClient
         breadcrumb={breadcrumb}
         title={project.title}
@@ -55,6 +54,6 @@ export default async function ProjectDetailPage(
         highlights={project.highlights}
         imageCount={project.imageCount}
       />
-    </LanguageAwareShell>
+    </main>
   );
 }

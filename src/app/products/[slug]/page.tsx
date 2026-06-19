@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import LanguageAwareShell from '@/components/layout/LanguageAwareShell';
 import ProductDetailClient from '@/components/products/ProductDetailClient/ProductDetailClient';
 import productsDetail from '@/data/products-detail.json';
 
@@ -50,7 +49,7 @@ export default async function ProductDetailPage(
   }));
 
   return (
-    <LanguageAwareShell>
+    <main>
       <ProductDetailClient
         breadcrumb={breadcrumb}
         name={product.name}
@@ -66,6 +65,6 @@ export default async function ProductDetailPage(
         specs={product.specs}
         faq={product.faq}
       />
-    </LanguageAwareShell>
+    </main>
   );
 }

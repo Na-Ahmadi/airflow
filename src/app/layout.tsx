@@ -6,6 +6,8 @@ import { SITE_CONFIG } from '@/constants';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { LanguageProvider } from '@/context/LanguageContext';
 import ScrollToTop from '@/components/shared/ScrollToTop/ScrollToTop';
+import Header from '@/components/layout/Header/Header';
+import Footer from '@/components/layout/Footer/Footer';
 
 const vazir = Vazirmatn({
   subsets: ['arabic'],
@@ -63,7 +65,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <ThemeProvider>
           <LanguageProvider>
+            <Header />
             {children}
+            <Footer />
             <ScrollToTop />
           </LanguageProvider>
         </ThemeProvider>

@@ -1,14 +1,18 @@
+'use client';
+
 import Link from 'next/link';
 import type { FooterData } from '@/types';
 import styles from './Footer.module.css';
 import Icon from '@/components/shared/Icon/Icon';
 import Logo from '@/components/layout/Logo/Logo';
+import { useLanguage } from '@/context/LanguageContext';
+import footerRaw from '@/data/footer.json';
 
-interface FooterProps {
-  data: FooterData;
-}
+type BillingualFooter = { fa: FooterData; en: FooterData };
 
-export default function Footer({ data }: FooterProps) {
+export default function Footer() {
+  const { lang } = useLanguage();
+  const data = (footerRaw as unknown as BillingualFooter)[lang];
   return (
     <footer className={styles.footer}>
       <div className={styles.footerTop}>
