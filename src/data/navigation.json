@@ -14,19 +14,7 @@
     { "id": "about",    "label": "با ما",      "href": "/about",     "active": false },
     { "id": "resources","label": "منابع ما",   "href": "/resources", "active": false },
     { "id": "projects", "label": "پروژه‌ها",   "href": "/projects",  "active": false },
-    {
-      "id": "products",
-      "label": "محصولات",
-      "href": "/products",
-      "active": false,
-      "children": [
-        { "label": "دریچه‌های خطی",  "href": "/products/linear-diffusers" },
-        { "label": "دریچه‌های سقفی", "href": "/products/ceiling-diffusers" },
-        { "label": "دمپرها",          "href": "/products/dampers" },
-        { "label": "ملتیواها",        "href": "/products/multiways" },
-        { "label": "مانتوعات",        "href": "/products/accessories" }
-      ]
-    }
+    { "id": "products", "label": "محصولات", "href": "/products", "active": false }
   ],
   "cta": {
     "label": "درخواست استعلام",
