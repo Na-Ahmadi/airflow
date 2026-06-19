@@ -4,7 +4,7 @@ import type { NavItem } from "@/types";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import styles from "./NavItemDesktop.module.css";
-import Icon from "@/components/shared/Icon";
+import Icon from "@/components/shared/Icon/Icon";
 
 interface NavItemDesktopProps {
   item: NavItem;
