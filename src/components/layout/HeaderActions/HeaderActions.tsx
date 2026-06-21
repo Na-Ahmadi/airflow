@@ -2,13 +2,14 @@
 
 import LanguageSwitch from '@/components/layout/LanguageSwitch/LanguageSwitch';
 import ThemeToggle from '@/components/layout/ThemeToggle/ThemeToggle';
+import Button from '@/components/shared/Button/Button';
 import styles from './HeaderActions.module.css';
 
 interface HeaderActionsProps {
   cta: { label: string; href: string };
   mobileOpen: boolean;
   onHamburgerClick: () => void;
-  onCtaClick: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+  onCtaClick: React.MouseEventHandler<HTMLElement>;
 }
 
 export default function HeaderActions({
@@ -23,9 +24,9 @@ export default function HeaderActions({
 
       <ThemeToggle />
 
-      <a href={cta.href} className={styles.ctaBtn} onClick={onCtaClick}>
+      <Button href={cta.href} variant="primary" size="sm" onClick={onCtaClick} className={styles.ctaBtn}>
         {cta.label}
-      </a>
+      </Button>
 
       <button
         className={styles.hamburger}

@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import Container from '@/components/shared/Container/Container';
 import Breadcrumb from '@/components/shared/Breadcrumb/Breadcrumb';
 import type { BreadcrumbItem } from '@/components/shared/Breadcrumb/Breadcrumb';
 import ProductCard from './ProductCard';
 import type { ProductItem } from './ProductCard';
+import Button from '@/components/shared/Button/Button';
 import styles from './ProductsPageClient.module.css';
 
 interface Tab { id: string; label: string; }
@@ -91,9 +91,9 @@ export default function ProductsPageClient({ breadcrumb, pageTitle, tabs, items,
               <h2 className={styles.ctaTitle}>{cta.title}</h2>
               <p className={styles.ctaSubtitle}>{cta.subtitle}</p>
             </div>
-            <Link href={cta.button.href} className={styles.ctaButton}>
-              &#8250; {cta.button.label}
-            </Link>
+            <Button href={cta.button.href} variant="primary" size="lg">
+              {cta.button.label}
+            </Button>
           </div>
         </Container>
       </div>

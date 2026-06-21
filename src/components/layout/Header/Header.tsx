@@ -8,6 +8,7 @@ import styles from './Header.module.css';
 import { SCROLL_THRESHOLD } from '@/constants';
 import HeaderActions from '@/components/layout/HeaderActions/HeaderActions';
 import Navigation from '@/components/layout/Navigation/Navigation';
+import Button from '@/components/shared/Button/Button';
 import NavItemMobile from '@/components/layout/NavItemMobile/NavItemMobile';
 import TopBar from '@/components/layout/TopBar/TopBar';
 import Logo from '@/components/layout/Logo/Logo';
@@ -32,7 +33,7 @@ export default function Header() {
     setMobileOpen(false);
   };
 
-  const scrollToCta = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const scrollToCta: React.MouseEventHandler<HTMLElement> = (e) => {
     const target = document.querySelector(data.cta.href);
     if (target) {
       e.preventDefault();
@@ -40,7 +41,7 @@ export default function Header() {
     }
   };
 
-  const handleMobileCta = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleMobileCta: React.MouseEventHandler<HTMLElement> = (e) => {
     e.preventDefault();
     closeMobileMenu();
     setTimeout(() => {
@@ -117,9 +118,9 @@ export default function Header() {
                     onClose={closeMobileMenu}
                   />
                 ))}
-                <a href={data.cta.href} className={styles.mobileCta} onClick={handleMobileCta}>
+                <Button href={data.cta.href} variant="primary" size="md" fullWidth onClick={handleMobileCta} className={styles.mobileCta}>
                   {data.cta.label}
-                </a>
+                </Button>
               </div>
             </motion.div>
           )}

@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Container from '@/components/shared/Container/Container';
 import Breadcrumb from '@/components/shared/Breadcrumb/Breadcrumb';
 import type { BreadcrumbItem } from '@/components/shared/Breadcrumb/Breadcrumb';
 import Icon from '@/components/shared/Icon/Icon';
+import Button from '@/components/shared/Button/Button';
 import styles from './ProductDetailClient.module.css';
 
 
@@ -75,13 +75,12 @@ export default function ProductDetailClient({
 
               {/* CTA Buttons */}
               <div className={styles.ctaButtons}>
-                <Link href={cta.inquiry.href} className={styles.btnPrimary}>
-                  <span>›</span> {cta.inquiry.label}
-                </Link>
-                <Link href={cta.catalog.href} className={styles.btnOutline}>
-                  <span className={styles.downloadIcon}><Icon name="download" size={18} /></span>
+                <Button href={cta.inquiry.href} variant="primary" size="lg" iconStart={<span>›</span>}>
+                  {cta.inquiry.label}
+                </Button>
+                <Button href={cta.catalog.href} variant="outline" size="lg" iconStart={<Icon name="download" size={18} />}>
                   {cta.catalog.label}
-                </Link>
+                </Button>
               </div>
             </div>
 

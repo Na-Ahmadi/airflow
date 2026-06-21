@@ -15,7 +15,7 @@ interface ButtonProps {
   fullWidth?: boolean;
   children: ReactNode;
   className?: string;
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLElement>;
   type?: 'button' | 'submit' | 'reset';
   iconStart?: ReactNode;
   iconEnd?: ReactNode;
@@ -43,7 +43,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     if (href) {
       return (
-        <Link href={href} className={cls} aria-disabled={disabled}>
+        <Link href={href} className={cls} aria-disabled={disabled} onClick={onClick}>
           {content}
         </Link>
       );

@@ -9,6 +9,7 @@ import Breadcrumb from '@/components/shared/Breadcrumb/Breadcrumb';
 import type { BreadcrumbItem } from '@/components/shared/Breadcrumb/Breadcrumb';
 import Badge from '@/components/shared/Badge/Badge';
 import Icon from '@/components/shared/Icon/Icon';
+import Button from '@/components/shared/Button/Button';
 import styles from './ProjectDetailClient.module.css';
 
 /* ─── Types ───────────────────────────────────────────────── */
@@ -87,12 +88,12 @@ export default function ProjectDetailClient({
 
               {/* CTA */}
               <div className={styles.ctaRow}>
-                <Link href="#contact" className={styles.btnPrimary}>
-                  <span>›</span> درخواست مشاوره
-                </Link>
-                <Link href="/projects" className={styles.btnOutline}>
+                <Button href="#contact" variant="primary" size="lg" iconStart={<span>›</span>}>
+                  درخواست مشاوره
+                </Button>
+                <Button href="/projects" variant="outline" size="lg">
                   بازگشت به پروژه‌ها
-                </Link>
+                </Button>
               </div>
             </div>
 
