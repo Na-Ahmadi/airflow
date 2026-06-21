@@ -193,6 +193,6 @@ export interface FooterData {
 }
 
 // ─── Shared ───────────────────────────────────────────────────
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
+export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger' | 'accent';
 export type ButtonSize = 'sm' | 'md' | 'lg';
 export type Direction = 'rtl' | 'ltr';

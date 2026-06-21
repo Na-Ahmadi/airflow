@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { forwardRef } from 'react';
+import type { ReactNode } from 'react';
 import type { ButtonVariant, ButtonSize } from '@/types';
 import styles from './Button.module.css';
 
@@ -12,14 +13,16 @@ interface ButtonProps {
   loading?: boolean;
   disabled?: boolean;
   fullWidth?: boolean;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
+  iconStart?: ReactNode;
+  iconEnd?: ReactNode;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant = 'primary', size = 'md', href, loading, disabled, fullWidth, children, className = '', onClick, type = 'button' }, ref) => {
+  ({ variant = 'primary', size = 'md', href, loading, disabled, fullWidth, children, className = '', onClick, type = 'button', iconStart, iconEnd }, ref) => {
     const cls = [
       styles.btn,
       styles[variant],
@@ -29,18 +32,26 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       className,
     ].filter(Boolean).join(' ');
 
+    const content = (
+      <>
+        {loading ? <span className={styles.spinner} /> : null}
+        {!loading && iconStart ? <span className={styles.icon}>{iconStart}</span> : null}
+        {children}
+        {!loading && iconEnd ? <span className={styles.icon}>{iconEnd}</span> : null}
+      </>
+    );
+
     if (href) {
       return (
-        <Link href={href} className={cls}>
-          {children}
+        <Link href={href} className={cls} aria-disabled={disabled}>
+          {content}
         </Link>
       );
     }
 
     return (
       <button ref={ref} type={type} className={cls} disabled={disabled || loading} onClick={onClick}>
-        {loading ? <span className={styles.spinner} /> : null}
-        {children}
+        {content}
       </button>
     );
   }

@@ -70,6 +70,17 @@
   border-color: transparent;
 }
 
+.accent {
+  background: var(--gradient-accent);
+  color: var(--color-secondary);
+  border-color: transparent;
+  box-shadow: 0 4px 24px rgba(0, 212, 255, 0.35);
+}
+.accent:hover:not(:disabled) {
+  box-shadow: 0 6px 32px rgba(0, 212, 255, 0.55);
+  transform: translateY(-1px);
+}
+
 /* ─── Sizes ───────────────────────────────────────────────── */
 .sm {
   height: var(--btn-height-sm);
@@ -91,6 +102,12 @@
 
 /* ─── States ──────────────────────────────────────────────── */
 .fullWidth { width: 100%; }
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
 .btn:disabled { opacity: var(--opacity-disabled); cursor: not-allowed; }
 .loading { pointer-events: none; }
 

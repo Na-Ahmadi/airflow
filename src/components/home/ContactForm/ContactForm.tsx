@@ -5,10 +5,10 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { motion, useInView } from 'framer-motion';
-import type { ContactFormValues } from '@/types';
 import Container from '@/components/shared/Container/Container';
 import SectionTitle from '@/components/shared/SectionTitle/SectionTitle';
 import Icon from '@/components/shared/Icon/Icon';
+import Button from '@/components/shared/Button/Button';
 import styles from './ContactForm.module.css';
 
 const schema = z.object({
@@ -154,17 +154,15 @@ export default function ContactForm({ data }: ContactFormProps) {
                     <p className={styles.errorMsg}>{data.submit.error}</p>
                   )}
 
-                  <button
+                  <Button
                     type="submit"
-                    className={styles.submitBtn}
-                    disabled={status === 'loading'}
+                    variant="primary"
+                    size="lg"
+                    fullWidth
+                    loading={status === 'loading'}
                   >
-                    {status === 'loading' ? (
-                      <>{data.submit.loading}</>
-                    ) : (
-                      data.submit.label
-                    )}
-                  </button>
+                    {status === 'loading' ? data.submit.loading : data.submit.label}
+                  </Button>
                 </form>
               )}
             </div>

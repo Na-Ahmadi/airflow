@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import type { HeroData } from '@/types';
 import styles from './Hero.module.css';
 import Icon from '@/components/shared/Icon/Icon';
+import Button from '@/components/shared/Button/Button';
 
 const EASE = [0.4, 0, 0.2, 1] as [number, number, number, number];
 
@@ -63,15 +64,16 @@ export default function Hero({ data }: HeroProps) {
 
           <motion.div className={styles.buttons} {...fadeUp(0.45)}>
             {data.buttons.map((btn) => (
-              <Link
+              <Button
                 key={btn.id}
                 href={btn.href}
-                className={[styles.btn, styles[`btn_${btn.variant}`]].join(' ')}
+                variant={btn.variant}
+                size="lg"
+                iconStart={btn.variant === 'outline' ? <Icon name="play" size={18} /> : undefined}
+                iconEnd={btn.variant === 'primary' ? <Icon name="arrow-left" size={18} /> : undefined}
               >
-                {btn.variant === 'outline' && <Icon name="play" size={18} />}
                 {btn.label}
-                {btn.variant === 'primary' && <Icon name="arrow-left" size={18} />}
-              </Link>
+              </Button>
             ))}
           </motion.div>
 
