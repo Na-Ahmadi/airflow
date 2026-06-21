@@ -8,6 +8,7 @@ import Breadcrumb from '@/components/shared/Breadcrumb/Breadcrumb';
 import type { BreadcrumbItem } from '@/components/shared/Breadcrumb/Breadcrumb';
 import Icon from '@/components/shared/Icon/Icon';
 import Button from '@/components/shared/Button/Button';
+import ImageGallery from '@/components/shared/ImageGallery/ImageGallery';
 import styles from './ProductDetailClient.module.css';
 
 
@@ -36,7 +37,6 @@ export default function ProductDetailClient({
   breadcrumb, name, model, description, features, images, cta, tabs, specs, faq,
 }: Props) {
   const [activeTab, setActiveTab] = useState('specs');
-  const [activeImage, setActiveImage] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const half = Math.ceil(specs.length / 2);
@@ -86,35 +86,7 @@ export default function ProductDetailClient({
 
             {/* Image Column */}
             <div className={styles.imageCol}>
-              <div className={styles.mainImageWrap}>
-                <div className={styles.imageGlow} />
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeImage}
-                    initial={{ opacity: 0, scale: 0.97 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.97 }}
-                    transition={{ duration: 0.25 }}
-                    className={styles.mainImage}
-                  >
-                    <Image src="/images/product-detail-placeholder.svg" alt="" fill unoptimized className={styles.productSvg} />
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-
-              {/* Thumbnails */}
-              <div className={styles.thumbnails}>
-                {images.map((img, i) => (
-                  <button
-                    key={i}
-                    className={[styles.thumb, activeImage === i ? styles.thumbActive : ''].filter(Boolean).join(' ')}
-                    onClick={() => setActiveImage(i)}
-                    aria-label={img.alt}
-                  >
-                    <Image src="/images/product-thumbnail-placeholder.svg" alt="" fill unoptimized />
-                  </button>
-                ))}
-              </div>
+              <ImageGallery images={images} />
             </div>
           </div>
         </Container>

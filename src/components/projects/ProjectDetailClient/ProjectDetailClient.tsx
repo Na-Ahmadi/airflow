@@ -1,50 +1,63 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
-import Container from '@/components/shared/Container/Container';
-import Breadcrumb from '@/components/shared/Breadcrumb/Breadcrumb';
-import type { BreadcrumbItem } from '@/components/shared/Breadcrumb/Breadcrumb';
-import Badge from '@/components/shared/Badge/Badge';
-import Icon from '@/components/shared/Icon/Icon';
-import Button from '@/components/shared/Button/Button';
-import styles from './ProjectDetailClient.module.css';
+import Badge from "@/components/shared/Badge/Badge";
+import type { BreadcrumbItem } from "@/components/shared/Breadcrumb/Breadcrumb";
+import Breadcrumb from "@/components/shared/Breadcrumb/Breadcrumb";
+import Button from "@/components/shared/Button/Button";
+import Container from "@/components/shared/Container/Container";
+import ImageGallery from "@/components/shared/ImageGallery/ImageGallery";
+import Icon from "@/components/shared/Icon/Icon";
+import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
+import { useState } from "react";
+import styles from "./ProjectDetailClient.module.css";
 
 /* ─── Types ───────────────────────────────────────────────── */
-interface StatItem     { label: string; value: string; }
-
-interface Props {
-  breadcrumb:  BreadcrumbItem[];
-  title:       string;
-  category:    string;
-  location:    string;
-  year:        string;
-  client:      string;
-  area:        string;
-  duration:    string;
-  description: string;
-  scope:       string;
-  products:    string[];
-  stats:       StatItem[];
-  highlights:  string[];
-  imageCount:  number;
+interface StatItem {
+  label: string;
+  value: string;
 }
 
+interface Props {
+  breadcrumb: BreadcrumbItem[];
+  title: string;
+  category: string;
+  location: string;
+  year: string;
+  client: string;
+  area: string;
+  duration: string;
+  description: string;
+  scope: string;
+  products: string[];
+  stats: StatItem[];
+  highlights: string[];
+  imageCount: number;
+}
 
 /* ─── Component ───────────────────────────────────────────── */
 export default function ProjectDetailClient({
-  breadcrumb, title, category, location, year, client, area, duration,
-  description, scope, products, stats, highlights, imageCount,
+  breadcrumb,
+  title,
+  category,
+  location,
+  year,
+  client,
+  area,
+  duration,
+  description,
+  scope,
+  products,
+  stats,
+  highlights,
+  imageCount,
 }: Props) {
-  const [activeImage, setActiveImage] = useState(0);
-  const [activeTab, setActiveTab]     = useState('info');
+  const [activeTab, setActiveTab] = useState("info");
 
   const TABS = [
-    { id: 'info',      label: 'اطلاعات پروژه' },
-    { id: 'scope',     label: 'حوزه اجرا' },
-    { id: 'products',  label: 'محصولات استفاده‌شده' },
+    { id: "info", label: "اطلاعات پروژه" },
+    { id: "scope", label: "حوزه اجرا" },
+    { id: "products", label: "محصولات استفاده‌شده" },
   ];
 
   return (
@@ -60,7 +73,6 @@ export default function ProjectDetailClient({
       <section className={styles.hero}>
         <Container>
           <div className={styles.heroGrid}>
-
             {/* Info column */}
             <div className={styles.infoCol}>
               <div className={styles.badges}>
@@ -69,9 +81,15 @@ export default function ProjectDetailClient({
               <h1 className={styles.title}>{title}</h1>
 
               <div className={styles.metaRow}>
-                <span className={styles.metaItem}><Icon name="location" size={14} />{location}</span>
+                <span className={styles.metaItem}>
+                  <Icon name="location" size={14} />
+                  {location}
+                </span>
                 <span className={styles.metaDot} />
-                <span className={styles.metaItem}><Icon name="calendar" size={14} />{year}</span>
+                <span className={styles.metaItem}>
+                  <Icon name="calendar" size={14} />
+                  {year}
+                </span>
               </div>
 
               <p className={styles.description}>{description}</p>
@@ -88,7 +106,12 @@ export default function ProjectDetailClient({
 
               {/* CTA */}
               <div className={styles.ctaRow}>
-                <Button href="#contact" variant="primary" size="lg" iconStart={<span>›</span>}>
+                <Button
+                  href="#contact"
+                  variant="primary"
+                  size="lg"
+                  iconStart={<span>›</span>}
+                >
                   درخواست مشاوره
                 </Button>
                 <Button href="/projects" variant="outline" size="lg">
@@ -99,34 +122,12 @@ export default function ProjectDetailClient({
 
             {/* Image column */}
             <div className={styles.imageCol}>
-              <div className={styles.mainImageWrap}>
-                <div className={styles.imageGlow} />
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeImage}
-                    initial={{ opacity: 0, scale: 0.97 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.97 }}
-                    transition={{ duration: 0.25 }}
-                    className={styles.mainImage}
-                  >
-                    <Image src="/images/project-placeholder.svg" alt="" fill unoptimized className={styles.projectSvg} />
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-
-              <div className={styles.thumbnails}>
-                {Array.from({ length: imageCount }, (_, i) => (
-                  <button
-                    key={i}
-                    className={[styles.thumb, activeImage === i ? styles.thumbActive : ''].filter(Boolean).join(' ')}
-                    onClick={() => setActiveImage(i)}
-                    aria-label={`تصویر ${i + 1}`}
-                  >
-                    <Image src="/images/project-placeholder.svg" alt="" fill unoptimized />
-                  </button>
-                ))}
-              </div>
+              <ImageGallery
+                images={Array.from({ length: imageCount }, (_, i) => ({
+                  src: "/images/project-placeholder.svg",
+                  alt: `تصویر ${i + 1}`,
+                }))}
+              />
             </div>
           </div>
         </Container>
@@ -141,7 +142,12 @@ export default function ProjectDetailClient({
                 key={tab.id}
                 role="tab"
                 aria-selected={activeTab === tab.id}
-                className={[styles.tabBtn, activeTab === tab.id ? styles.tabActive : ''].filter(Boolean).join(' ')}
+                className={[
+                  styles.tabBtn,
+                  activeTab === tab.id ? styles.tabActive : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
                 onClick={() => setActiveTab(tab.id)}
               >
                 {tab.label}
@@ -158,16 +164,16 @@ export default function ProjectDetailClient({
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.2 }}
               >
-                {activeTab === 'info' && (
+                {activeTab === "info" && (
                   <div className={styles.infoPane}>
                     <div className={styles.infoGrid}>
                       {[
-                        { label: 'کارفرما',       value: client },
-                        { label: 'موقعیت',        value: location },
-                        { label: 'سال اجرا',       value: year },
-                        { label: 'مساحت',          value: area },
-                        { label: 'مدت اجرا',       value: duration },
-                        { label: 'دسته‌بندی',      value: category },
+                        { label: "کارفرما", value: client },
+                        { label: "موقعیت", value: location },
+                        { label: "سال اجرا", value: year },
+                        { label: "مساحت", value: area },
+                        { label: "مدت اجرا", value: duration },
+                        { label: "دسته‌بندی", value: category },
                       ].map((row) => (
                         <div key={row.label} className={styles.infoRow}>
                           <span className={styles.infoLabel}>{row.label}</span>
@@ -181,7 +187,11 @@ export default function ProjectDetailClient({
                       <ul className={styles.highlightsList}>
                         {highlights.map((h) => (
                           <li key={h} className={styles.highlightItem}>
-                            <Icon name="check" size={16} style={{ flexShrink: 0 }} />
+                            <Icon
+                              name="check"
+                              size={16}
+                              style={{ flexShrink: 0 }}
+                            />
                             <span>{h}</span>
                           </li>
                         ))}
@@ -190,7 +200,7 @@ export default function ProjectDetailClient({
                   </div>
                 )}
 
-                {activeTab === 'scope' && (
+                {activeTab === "scope" && (
                   <div className={styles.scopePane}>
                     <div className={styles.scopeCard}>
                       <h3 className={styles.blockTitle}>حوزه خدمات</h3>
@@ -201,7 +211,11 @@ export default function ProjectDetailClient({
                       <ul className={styles.highlightsList}>
                         {highlights.map((h) => (
                           <li key={h} className={styles.highlightItem}>
-                            <Icon name="check" size={16} style={{ flexShrink: 0 }} />
+                            <Icon
+                              name="check"
+                              size={16}
+                              style={{ flexShrink: 0 }}
+                            />
                             <span>{h}</span>
                           </li>
                         ))}
@@ -210,7 +224,7 @@ export default function ProjectDetailClient({
                   </div>
                 )}
 
-                {activeTab === 'products' && (
+                {activeTab === "products" && (
                   <div className={styles.productsPane}>
                     <p className={styles.productsPreamble}>
                       محصولات و سیستم‌های مورد استفاده در این پروژه:
@@ -218,7 +232,11 @@ export default function ProjectDetailClient({
                     <div className={styles.productsList}>
                       {products.map((p) => (
                         <div key={p} className={styles.productItem}>
-                          <Icon name="box" size={16} style={{ flexShrink: 0 }} />
+                          <Icon
+                            name="box"
+                            size={16}
+                            style={{ flexShrink: 0 }}
+                          />
                           <span>{p}</span>
                         </div>
                       ))}
