@@ -9,6 +9,7 @@ import type { BreadcrumbItem } from '@/components/shared/Breadcrumb/Breadcrumb';
 import Icon from '@/components/shared/Icon/Icon';
 import Button from '@/components/shared/Button/Button';
 import ImageGallery from '@/components/shared/ImageGallery/ImageGallery';
+import Tabs from '@/components/shared/Tabs/Tabs';
 import styles from './ProductDetailClient.module.css';
 
 
@@ -36,7 +37,6 @@ interface Props {
 export default function ProductDetailClient({
   breadcrumb, name, model, description, features, images, cta, tabs, specs, faq,
 }: Props) {
-  const [activeTab, setActiveTab] = useState('specs');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const half = Math.ceil(specs.length / 2);
@@ -95,31 +95,9 @@ export default function ProductDetailClient({
       {/* ─── Tabs Section ─────────────────────────────────────── */}
       <section className={styles.tabsSection}>
         <Container>
-          {/* Tab Bar */}
-          <div className={styles.tabBar} role="tablist">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                role="tab"
-                aria-selected={activeTab === tab.id}
-                className={[styles.tabBtn, activeTab === tab.id ? styles.tabActive : ''].filter(Boolean).join(' ')}
-                onClick={() => setActiveTab(tab.id)}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Tab Panels */}
-          <div className={styles.tabContent}>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeTab}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.2 }}
-              >
+          <Tabs tabs={tabs} defaultTab="specs">
+            {(activeTab) => (
+              <>
                 {activeTab === 'specs' && (
                   <div className={styles.specsGrid}>
                     <SpecTable rows={specsLeft} />
@@ -185,9 +163,9 @@ export default function ProductDetailClient({
                     ))}
                   </div>
                 )}
-              </motion.div>
-            </AnimatePresence>
-          </div>
+              </>
+            )}
+          </Tabs>
         </Container>
       </section>
     </>

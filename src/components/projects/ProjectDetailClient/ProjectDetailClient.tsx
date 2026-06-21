@@ -7,9 +7,8 @@ import Button from "@/components/shared/Button/Button";
 import Container from "@/components/shared/Container/Container";
 import ImageGallery from "@/components/shared/ImageGallery/ImageGallery";
 import Icon from "@/components/shared/Icon/Icon";
-import { AnimatePresence, motion } from "framer-motion";
+import Tabs from "@/components/shared/Tabs/Tabs";
 import Link from "next/link";
-import { useState } from "react";
 import styles from "./ProjectDetailClient.module.css";
 
 /* ─── Types ───────────────────────────────────────────────── */
@@ -52,8 +51,6 @@ export default function ProjectDetailClient({
   highlights,
   imageCount,
 }: Props) {
-  const [activeTab, setActiveTab] = useState("info");
-
   const TABS = [
     { id: "info", label: "اطلاعات پروژه" },
     { id: "scope", label: "حوزه اجرا" },
@@ -136,34 +133,9 @@ export default function ProjectDetailClient({
       {/* ─── Tabs Section ───────────────────────────────────── */}
       <section className={styles.tabsSection}>
         <Container>
-          <div className={styles.tabBar} role="tablist">
-            {TABS.map((tab) => (
-              <button
-                key={tab.id}
-                role="tab"
-                aria-selected={activeTab === tab.id}
-                className={[
-                  styles.tabBtn,
-                  activeTab === tab.id ? styles.tabActive : "",
-                ]
-                  .filter(Boolean)
-                  .join(" ")}
-                onClick={() => setActiveTab(tab.id)}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          <div className={styles.tabContent}>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeTab}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.2 }}
-              >
+          <Tabs tabs={TABS} defaultTab="info">
+            {(activeTab) => (
+              <>
                 {activeTab === "info" && (
                   <div className={styles.infoPane}>
                     <div className={styles.infoGrid}>
@@ -187,11 +159,7 @@ export default function ProjectDetailClient({
                       <ul className={styles.highlightsList}>
                         {highlights.map((h) => (
                           <li key={h} className={styles.highlightItem}>
-                            <Icon
-                              name="check"
-                              size={16}
-                              style={{ flexShrink: 0 }}
-                            />
+                            <Icon name="check" size={16} style={{ flexShrink: 0 }} />
                             <span>{h}</span>
                           </li>
                         ))}
@@ -211,11 +179,7 @@ export default function ProjectDetailClient({
                       <ul className={styles.highlightsList}>
                         {highlights.map((h) => (
                           <li key={h} className={styles.highlightItem}>
-                            <Icon
-                              name="check"
-                              size={16}
-                              style={{ flexShrink: 0 }}
-                            />
+                            <Icon name="check" size={16} style={{ flexShrink: 0 }} />
                             <span>{h}</span>
                           </li>
                         ))}
@@ -232,11 +196,7 @@ export default function ProjectDetailClient({
                     <div className={styles.productsList}>
                       {products.map((p) => (
                         <div key={p} className={styles.productItem}>
-                          <Icon
-                            name="box"
-                            size={16}
-                            style={{ flexShrink: 0 }}
-                          />
+                          <Icon name="box" size={16} style={{ flexShrink: 0 }} />
                           <span>{p}</span>
                         </div>
                       ))}
@@ -246,9 +206,9 @@ export default function ProjectDetailClient({
                     </Link>
                   </div>
                 )}
-              </motion.div>
-            </AnimatePresence>
-          </div>
+              </>
+            )}
+          </Tabs>
         </Container>
       </section>
     </>

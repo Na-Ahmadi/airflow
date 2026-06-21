@@ -184,48 +184,6 @@
   direction: rtl;
 }
 
-.tabBar {
-  display: flex;
-  align-items: stretch;
-  border-bottom: 1px solid var(--color-border);
-  gap: 0;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.tabBar::-webkit-scrollbar { display: none; }
-
-.tabBtn {
-  flex-shrink: 0;
-  padding: var(--space-5) var(--space-6);
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid transparent;
-  color: var(--color-text-muted);
-  font-size: var(--text-base);
-  font-weight: var(--font-medium);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  white-space: nowrap;
-  font-family: var(--font-primary);
-  margin-bottom: -1px;
-}
-
-.tabBtn:hover {
-  color: var(--color-text-primary);
-  border-bottom-color: var(--color-border-primary);
-}
-
-.tabActive {
-  color: var(--color-primary-light) !important;
-  border-bottom-color: var(--color-primary) !important;
-}
-
-.tabContent {
-  padding-top: var(--space-8);
-  min-height: 200px;
-}
-
 /* ─── Specs Table ───────────────────────────────────────────── */
 .specsGrid {
   display: grid;
@@ -492,5 +450,4 @@
   .productName { font-size: var(--text-3xl); }
   .modelTag { font-size: var(--text-2xl); }
   .featuresGrid { grid-template-columns: 1fr; }
-  .tabBtn { padding: var(--space-4) var(--space-4); font-size: var(--text-sm); }
 }
