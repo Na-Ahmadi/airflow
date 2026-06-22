@@ -1,0 +1,7 @@
+.value {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-extrabold);
+  color: var(--color-text-primary);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
