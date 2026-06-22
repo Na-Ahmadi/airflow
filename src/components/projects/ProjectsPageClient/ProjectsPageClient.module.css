@@ -7,10 +7,10 @@
 }
 
 .pageTitle {
-  font-size: var(--text-4xl);
-  font-weight: var(--font-bold);
-  color: var(--color-text-primary);
   margin: 0 0 var(--space-3);
+  color: var(--color-text-primary);
+  font-weight: var(--font-bold);
+  font-size: var(--text-4xl);
   line-height: var(--leading-tight);
 }
 
@@ -23,26 +23,26 @@
 /* ─── Filter Tabs ──────────────────────────────────────────── */
 .tabs {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
   gap: var(--space-2);
-  flex-wrap: wrap;
-  justify-content: flex-end;
   margin-bottom: var(--space-8);
   direction: rtl;
 }
 
 .tab {
-  padding: var(--space-2) var(--space-6);
-  background: transparent;
+  transition: all var(--transition-fast);
+  cursor: pointer;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
+  background: transparent;
+  padding: var(--space-2) var(--space-6);
   color: var(--color-text-secondary);
-  font-size: var(--text-sm);
   font-weight: var(--font-medium);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  white-space: nowrap;
+  font-size: var(--text-sm);
   font-family: var(--font-primary);
+  white-space: nowrap;
 }
 
 .tab:hover {
@@ -51,10 +51,10 @@
 }
 
 .tabActive {
-  background: var(--gradient-primary) !important;
-  border-color: transparent !important;
-  color: #fff !important;
   box-shadow: var(--shadow-btn);
+  border-color: transparent !important;
+  background: var(--gradient-primary) !important;
+  color: #fff !important;
 }
 
 /* ─── Project Grid ─────────────────────────────────────────── */
@@ -65,20 +65,25 @@
 }
 
 @media (max-width: 1024px) {
-  .grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
 }
 
 @media (max-width: 600px) {
-  .grid { grid-template-columns: 1fr; }
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ─── Project Card ─────────────────────────────────────────── */
 .card {
   display: block;
-  text-decoration: none;
+  position: relative;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  position: relative;
+  text-decoration: none;
 }
 
 .card:hover .img {
@@ -92,28 +97,29 @@
 /* ─── Image Wrapper ────────────────────────────────────────── */
 .imgWrap {
   position: relative;
+  border-radius: var(--radius-xl);
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  border-radius: var(--radius-xl);
 }
 
 .img {
-  object-fit: cover;
   transition: transform var(--transition-slow);
+  object-fit: cover;
 }
 
 .placeholder {
-  position: absolute;
-  inset: 0;
   display: flex;
-  align-items: center;
+  position: absolute;
   justify-content: center;
+  align-items: center;
+  inset: 0;
 }
 
 /* ─── Overlay ──────────────────────────────────────────────── */
 .overlay {
   position: absolute;
   inset: 0;
+  border-radius: inherit;
   background: linear-gradient(
     to top,
     rgba(4, 10, 22, 0.92) 0%,
@@ -121,51 +127,52 @@
     rgba(4, 10, 22, 0.1) 70%,
     transparent 100%
   );
-  border-radius: inherit;
   pointer-events: none;
 }
 
 /* ─── Card Content ─────────────────────────────────────────── */
 .cardContent {
-  position: absolute;
-  inset: 0;
   display: flex;
+  position: absolute;
   flex-direction: column;
   justify-content: flex-end;
+  inset: 0;
   padding: var(--space-5) var(--space-5) var(--space-4);
   direction: rtl;
   text-align: right;
 }
 
 .cardTitle {
-  font-size: var(--text-xl);
-  font-weight: var(--font-bold);
-  color: #fff;
   margin: 0 0 var(--space-1);
+  color: #fff;
+  font-weight: var(--font-bold);
+  font-size: var(--text-xl);
   line-height: var(--leading-snug);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .cardMeta {
   display: flex;
-  align-items: center;
-  gap: var(--space-1);
-  color: rgba(255, 255, 255, 0.7);
-  font-size: var(--text-sm);
-  margin-bottom: var(--space-3);
   flex-direction: row-reverse;
   justify-content: flex-end;
+  align-items: center;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--text-sm);
 }
 
 .cardLink {
   display: inline-flex;
+  flex-direction: row-reverse;
   align-items: center;
   gap: var(--space-2);
+  transition:
+    gap var(--transition-fast),
+    color var(--transition-fast);
   color: rgba(255, 255, 255, 0.75);
-  font-size: var(--text-sm);
   font-weight: var(--font-medium);
-  transition: gap var(--transition-fast), color var(--transition-fast);
-  flex-direction: row-reverse;
+  font-size: var(--text-sm);
   direction: rtl;
 }
 
@@ -176,14 +183,18 @@
 /* ─── Empty State ──────────────────────────────────────────── */
 .empty {
   grid-column: 1 / -1;
-  text-align: center;
   padding: var(--space-16) 0;
   color: var(--color-text-muted);
   font-size: var(--text-lg);
+  text-align: center;
 }
 
 /* ─── Responsive ────────────────────────────────────────────── */
 @media (max-width: 640px) {
-  .pageTitle { font-size: var(--text-3xl); }
-  .tabs { justify-content: flex-start; }
+  .pageTitle {
+    font-size: var(--text-3xl);
+  }
+  .tabs {
+    justify-content: flex-start;
+  }
 }
