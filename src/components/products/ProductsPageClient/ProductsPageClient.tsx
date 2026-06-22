@@ -1,33 +1,37 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Container from '@/components/shared/Container/Container';
-import Breadcrumb from '@/components/shared/Breadcrumb/Breadcrumb';
-import type { BreadcrumbItem } from '@/components/shared/Breadcrumb/Breadcrumb';
-import ProductCard from './ProductCard';
-import type { ProductItem } from './ProductCard';
-import Button from '@/components/shared/Button/Button';
-import styles from './ProductsPageClient.module.css';
+import type { BreadcrumbItem } from "@/components/shared/Breadcrumb/Breadcrumb";
+import Breadcrumb from "@/components/shared/Breadcrumb/Breadcrumb";
+import Button from "@/components/shared/Button/Button";
+import Container from "@/components/shared/Container/Container";
+import Tabs from "@/components/shared/Tabs/Tabs";
+import type { TabItem } from "@/components/shared/Tabs/Tabs";
+import { AnimatePresence, motion } from "framer-motion";
+import type { ProductItem } from "./ProductCard";
+import ProductCard from "./ProductCard";
+import styles from "./ProductsPageClient.module.css";
 
-interface Tab { id: string; label: string; }
-interface Cta { title: string; subtitle: string; button: { label: string; href: string }; }
+interface Cta {
+  title: string;
+  subtitle: string;
+  button: { label: string; href: string };
+}
 
 interface Props {
   breadcrumb: BreadcrumbItem[];
   pageTitle: string;
-  tabs: Tab[];
+  tabs: TabItem[];
   items: ProductItem[];
   cta: Cta;
 }
 
-export default function ProductsPageClient({ breadcrumb, pageTitle, tabs, items, cta }: Props) {
-  const [activeTab, setActiveTab] = useState('all');
-
-  const filtered = activeTab === 'all'
-    ? items
-    : items.filter((p) => p.category === activeTab);
-
+export default function ProductsPageClient({
+  breadcrumb,
+  pageTitle,
+  tabs,
+  items,
+  cta,
+}: Props) {
   return (
     <>
       {/* Page Header */}
@@ -41,45 +45,39 @@ export default function ProductsPageClient({ breadcrumb, pageTitle, tabs, items,
       {/* Products Grid */}
       <section className={styles.section}>
         <Container>
-          {/* Tabs */}
-          <div className={styles.tabs} role="tablist">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                role="tab"
-                aria-selected={activeTab === tab.id}
-                className={[styles.tab, activeTab === tab.id ? styles.tabActive : ''].filter(Boolean).join(' ')}
-                onClick={() => setActiveTab(tab.id)}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+          <Tabs tabs={tabs} defaultTab="all">
+            {(activeTab) => {
+              const filtered =
+                activeTab === "all"
+                  ? items
+                  : items.filter((p) => p.category === activeTab);
 
-          {/* Grid */}
-          <motion.div
-            className={styles.grid}
-            layout
-          >
-            <AnimatePresence mode="popLayout">
-              {filtered.length === 0 ? (
-                <p className={styles.empty}>محصولی در این دسته‌بندی یافت نشد.</p>
-              ) : (
-                filtered.map((product) => (
-                  <motion.div
-                    key={product.id}
-                    layout
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    <ProductCard product={product} />
-                  </motion.div>
-                ))
-              )}
-            </AnimatePresence>
-          </motion.div>
+              return (
+                <motion.div className={styles.grid} layout>
+                  <AnimatePresence mode="popLayout">
+                    {filtered.length === 0 ? (
+                      <p className={styles.empty}>
+                        محصولی در این دسته‌بندی یافت نشد.
+                      </p>
+                    ) : (
+                      filtered.map((product) => (
+                        <motion.div
+                          key={product.id}
+                          layout
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.95 }}
+                          transition={{ duration: 0.25 }}
+                        >
+                          <ProductCard product={product} />
+                        </motion.div>
+                      ))
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            }}
+          </Tabs>
         </Container>
       </section>
 
