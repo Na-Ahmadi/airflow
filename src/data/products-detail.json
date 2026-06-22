@@ -11,7 +11,12 @@
       { "icon": "energy",   "label": "مصرف انرژی بهینه" },
       { "icon": "material", "label": "جنس آلومینیوم با کیفیت" }
     ],
-    "imageCount": 6,
+    "images": [
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دریچه خطی شیاردار LS-300 - نما ۱" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دریچه خطی شیاردار LS-300 - نما ۲" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دریچه خطی شیاردار LS-300 - نما ۳" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دریچه خطی شیاردار LS-300 - نما ۴" }
+    ],
     "specs": [
       { "label": "مدل",         "value": "LS-300" },
       { "label": "جنس",         "value": "آلومینیوم اکسترود شده" },
@@ -32,10 +37,10 @@
     ]
   },
 
-  "cc-400": {
+  "dc-400": {
     "name": "دریچه گرد سقفی",
-    "model": "CC-400",
-    "description": "دریچه گرد سقفی CC-400 با طراحی دایره‌ای مدرن، برای توزیع هوا به صورت ۳۶۰ درجه طراحی شده است. مناسب فضاهای اداری، تجاری و رستوران‌ها با سقف کاذب.",
+    "model": "DC-400",
+    "description": "دریچه گرد سقفی DC-400 با طراحی دایره‌ای مدرن، برای توزیع هوا به صورت ۳۶۰ درجه طراحی شده است. مناسب فضاهای اداری، تجاری و رستوران‌ها با سقف کاذب.",
     "features": [
       { "icon": "air",      "label": "توزیع ۳۶۰ درجه هوا" },
       { "icon": "design",   "label": "طراحی دایره‌ای زیبا" },
@@ -44,9 +49,14 @@
       { "icon": "energy",   "label": "جریان هوای یکنواخت" },
       { "icon": "material", "label": "آلومینیوم با پوشش پودری" }
     ],
-    "imageCount": 6,
+    "images": [
+      { "src": "/images/products/ceiling-diffuser-round.jpg", "alt": "دریچه گرد سقفی DC-400 - نمای اصلی" },
+      { "src": "/images/products/ceiling-diffuser-round.jpg", "alt": "دریچه گرد سقفی DC-400 - نمای جانبی" },
+      { "src": "/images/products/ceiling-diffuser-round.jpg", "alt": "دریچه گرد سقفی DC-400 - جزئیات حلقه" },
+      { "src": "/images/products/ceiling-diffuser-round.jpg", "alt": "دریچه گرد سقفی DC-400 - نمای نصب‌شده" }
+    ],
     "specs": [
-      { "label": "مدل",       "value": "CC-400" },
+      { "label": "مدل",       "value": "DC-400" },
       { "label": "جنس",       "value": "آلومینیوم آنودایز شده" },
       { "label": "قطر",       "value": "200 / 300 / 400 mm" },
       { "label": "تعداد حلقه","value": "۲ / ۳ / ۴ حلقه" },
@@ -58,9 +68,9 @@
       { "label": "کاربرد",    "value": "اداری / تجاری / رستوران" }
     ],
     "faq": [
-      { "question": "این دریچه برای چه نوع سقفی مناسب است؟", "answer": "دریچه CC-400 برای سقف‌های کاذب (Suspended Ceiling) طراحی شده و در تایل‌های ۶۰×۶۰ یا ۶۰×۱۲۰ نصب می‌شود." },
+      { "question": "این دریچه برای چه نوع سقفی مناسب است؟", "answer": "دریچه DC-400 برای سقف‌های کاذب (Suspended Ceiling) طراحی شده و در تایل‌های ۶۰×۶۰ یا ۶۰×۱۲۰ نصب می‌شود." },
       { "question": "آیا قابل تنظیم است؟", "answer": "بله، حلقه‌های داخلی برای تنظیم دبی و جهت هوا قابل تنظیم هستند." },
-      { "question": "رنگ‌های موجود چیست؟", "answer": "دریچه CC-400 در رنگ‌های سفید RAL9010 و نقره‌ای آنودایز موجود است." },
+      { "question": "رنگ‌های موجود چیست؟", "answer": "دریچه DC-400 در رنگ‌های سفید RAL9010 و نقره‌ای آنودایز موجود است." },
       { "question": "دبی هوا چگونه محاسبه می‌شود؟", "answer": "دبی هوا بستگی به سایز دریچه و فشار سیستم دارد. تیم فنی ما محاسبات دقیق را انجام می‌دهد." }
     ]
   },
@@ -77,7 +87,12 @@
       { "icon": "energy",   "label": "پره‌های تنظیم‌پذیر" },
       { "icon": "material", "label": "ساخت آلومینیوم فشرده" }
     ],
-    "imageCount": 6,
+    "images": [
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دریچه چهار طرفه AQ-500 - نما ۱" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دریچه چهار طرفه AQ-500 - نما ۲" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دریچه چهار طرفه AQ-500 - نما ۳" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دریچه چهار طرفه AQ-500 - نما ۴" }
+    ],
     "specs": [
       { "label": "مدل",       "value": "AQ-500" },
       { "label": "جنس",       "value": "آلومینیوم اکسترود شده" },
@@ -110,7 +125,12 @@
       { "icon": "energy",   "label": "کنترل دقیق جریان هوا" },
       { "icon": "material", "label": "بدنه آلومینیوم سبک" }
     ],
-    "imageCount": 6,
+    "images": [
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دریچه دیواری WD-200 - نما ۱" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دریچه دیواری WD-200 - نما ۲" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دریچه دیواری WD-200 - نما ۳" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دریچه دیواری WD-200 - نما ۴" }
+    ],
     "specs": [
       { "label": "مدل",       "value": "WD-200" },
       { "label": "جنس",       "value": "آلومینیوم اکسترود شده" },
@@ -143,7 +163,12 @@
       { "icon": "energy",   "label": "کاهش مصرف انرژی" },
       { "icon": "material", "label": "ورق گالوانیزه با دوام" }
     ],
-    "imageCount": 6,
+    "images": [
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دمپر کنترل حجم VCD-200 - نما ۱" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دمپر کنترل حجم VCD-200 - نما ۲" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دمپر کنترل حجم VCD-200 - نما ۳" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دمپر کنترل حجم VCD-200 - نما ۴" }
+    ],
     "specs": [
       { "label": "مدل",          "value": "VCD-200" },
       { "label": "جنس",          "value": "ورق گالوانیزه / استیل" },
@@ -176,7 +201,12 @@
       { "icon": "energy",   "label": "مطابق EN 1366-2" },
       { "icon": "air",      "label": "مقاومت حرارتی ۱.۵ ساعت" }
     ],
-    "imageCount": 6,
+    "images": [
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دمپر ضد حریق FD-100 - نما ۱" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دمپر ضد حریق FD-100 - نما ۲" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دمپر ضد حریق FD-100 - نما ۳" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "دمپر ضد حریق FD-100 - نما ۴" }
+    ],
     "specs": [
       { "label": "مدل",             "value": "FD-100" },
       { "label": "جنس",             "value": "ورق فولادی گالوانیزه" },
@@ -209,7 +239,12 @@
       { "icon": "energy",   "label": "توزیع بهینه هوا" },
       { "icon": "material", "label": "بدنه آلومینیوم مقاوم" }
     ],
-    "imageCount": 6,
+    "images": [
+      { "src": "/images/product-detail-placeholder.svg", "alt": "ملتی‌وی چهار طرفه MW-300 - نما ۱" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "ملتی‌وی چهار طرفه MW-300 - نما ۲" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "ملتی‌وی چهار طرفه MW-300 - نما ۳" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "ملتی‌وی چهار طرفه MW-300 - نما ۴" }
+    ],
     "specs": [
       { "label": "مدل",         "value": "MW-300" },
       { "label": "جنس",         "value": "آلومینیوم آنودایز شده" },
@@ -242,7 +277,12 @@
       { "icon": "energy",   "label": "افت فشار کم" },
       { "icon": "material", "label": "آلومینیوم ضد زنگ" }
     ],
-    "imageCount": 6,
+    "images": [
+      { "src": "/images/product-detail-placeholder.svg", "alt": "گریل برگشت هوا GR-100 - نما ۱" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "گریل برگشت هوا GR-100 - نما ۲" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "گریل برگشت هوا GR-100 - نما ۳" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "گریل برگشت هوا GR-100 - نما ۴" }
+    ],
     "specs": [
       { "label": "مدل",         "value": "GR-100" },
       { "label": "جنس",         "value": "آلومینیوم اکسترود شده" },
@@ -275,7 +315,12 @@
       { "icon": "energy",   "label": "افت فشار کم" },
       { "icon": "material", "label": "آلومینیوم ضد اکسیداسیون" }
     ],
-    "imageCount": 6,
+    "images": [
+      { "src": "/images/product-detail-placeholder.svg", "alt": "کلاهک خروجی هوا EC-200 - نما ۱" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "کلاهک خروجی هوا EC-200 - نما ۲" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "کلاهک خروجی هوا EC-200 - نما ۳" },
+      { "src": "/images/product-detail-placeholder.svg", "alt": "کلاهک خروجی هوا EC-200 - نما ۴" }
+    ],
     "specs": [
       { "label": "مدل",           "value": "EC-200" },
       { "label": "جنس",           "value": "آلومینیوم آنودایز خارجی" },
