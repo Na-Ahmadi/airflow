@@ -190,9 +190,9 @@
 
 @media (max-width: 640px) {
   .grid { grid-template-columns: 1fr; direction: ltr; }
-  .imgWrap   { grid-column: 1; aspect-ratio: 16 / 9; }
-  .content   { grid-column: 1; }
-  .statsGrid { grid-column: 1; grid-template-columns: repeat(2, 1fr); }
+  .imgWrap   { grid-column: 1; grid-row: 1; aspect-ratio: 4 / 3; }
+  .content   { grid-column: 1; grid-row: 2; }
+  .statsGrid { grid-column: 1; grid-row: 3; grid-template-columns: repeat(2, 1fr); }
   .title { font-size: var(--text-2xl); }
   .btn { align-self: stretch; text-align: center; }
 }
