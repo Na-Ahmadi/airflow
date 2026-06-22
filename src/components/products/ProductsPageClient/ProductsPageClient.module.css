@@ -20,42 +20,6 @@
   padding: var(--space-10) 0 var(--space-16);
 }
 
-/* ─── Filter Tabs ──────────────────────────────────────────── */
-.tabs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  gap: var(--space-2);
-  margin-bottom: var(--space-8);
-}
-
-.tab {
-  transition: all var(--transition-fast);
-  cursor: pointer;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  background: var(--color-surface);
-  padding: var(--space-2) var(--space-5);
-  color: var(--color-text-secondary);
-  font-weight: var(--font-medium);
-  font-size: var(--text-sm);
-  font-family: var(--font-primary);
-  white-space: nowrap;
-}
-
-.tab:hover {
-  border-color: var(--color-border-primary);
-  color: var(--color-text-primary);
-}
-
-.tabActive {
-  box-shadow: var(--shadow-btn);
-  border-color: transparent !important;
-  background: var(--gradient-primary) !important;
-  color: #fff !important;
-}
-
 /* ─── Product Grid ─────────────────────────────────────────── */
 .grid {
   display: grid;
@@ -256,10 +220,6 @@
   .ctaButton {
     justify-content: center;
     width: 100%;
-  }
-
-  .tabs {
-    justify-content: flex-start;
   }
 
   .pageTitle {

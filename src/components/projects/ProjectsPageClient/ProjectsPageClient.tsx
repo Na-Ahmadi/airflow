@@ -3,21 +3,18 @@
 import type { BreadcrumbItem } from "@/components/shared/Breadcrumb/Breadcrumb";
 import Breadcrumb from "@/components/shared/Breadcrumb/Breadcrumb";
 import Container from "@/components/shared/Container/Container";
+import FilterTabs from "@/components/shared/FilterTabs/FilterTabs";
+import type { TabItem } from "@/components/shared/FilterTabs/FilterTabs";
 import ProjectCard from "@/components/shared/ProjectCard/ProjectCard";
 import type { Project } from "@/types";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import styles from "./ProjectsPageClient.module.css";
 
-interface Tab {
-  id: string;
-  label: string;
-}
-
 interface Props {
   breadcrumb: BreadcrumbItem[];
   pageTitle: string;
-  tabs: Tab[];
+  tabs: TabItem[];
   items: Project[];
 }
 
@@ -46,24 +43,7 @@ export default function ProjectsPageClient({
       <section className={styles.section}>
         <Container>
           {/* Tabs */}
-          <div className={styles.tabs} role="tablist">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                role="tab"
-                aria-selected={activeTab === tab.id}
-                className={[
-                  styles.tab,
-                  activeTab === tab.id ? styles.tabActive : "",
-                ]
-                  .filter(Boolean)
-                  .join(" ")}
-                onClick={() => setActiveTab(tab.id)}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+          <FilterTabs tabs={tabs} activeTab={activeTab} onChange={setActiveTab} />
 
           {/* Grid */}
           <motion.div className={styles.grid} layout>
