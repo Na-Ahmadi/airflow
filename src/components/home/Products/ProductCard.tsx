@@ -1,24 +1,38 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import type { Product } from '@/types';
-import Badge from '@/components/shared/Badge/Badge';
-import styles from './Products.module.css';
+"use client";
+
+import Badge from "@/components/shared/Badge/Badge";
+import type { Product } from "@/types";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import styles from "./Products.module.css";
 
 export default function ProductCard({ product }: { product: Product }) {
+  const [imgError, setImgError] = useState(false);
+  const showPlaceholder = !product.image || imgError;
+
   return (
     <Link href={product.href} className={styles.card}>
       <div className={styles.cardImgWrap}>
-        <Image
-          src={product.image}
-          alt={product.name}
-          fill
-          className={styles.cardImg}
-          sizes="220px"
-          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-        />
-        <div className={styles.placeholder} aria-hidden>
-          <Image src="/images/product-card-placeholder.svg" alt="" fill unoptimized />
-        </div>
+        {showPlaceholder ? (
+          <div className={styles.placeholder} aria-hidden>
+            <Image
+              src="/images/product-card-placeholder.svg"
+              alt=""
+              fill
+              unoptimized
+            />
+          </div>
+        ) : (
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            className={styles.cardImg}
+            sizes="220px"
+            onError={() => setImgError(true)}
+          />
+        )}
         {product.badge && (
           <div className={styles.cardBadge}>
             <Badge variant="accent">{product.badge}</Badge>
