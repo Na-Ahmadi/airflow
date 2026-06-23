@@ -1,13 +1,18 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import Container from '@/components/shared/Container/Container';
-import Breadcrumb from '@/components/shared/Breadcrumb/Breadcrumb';
-import Icon from '@/components/shared/Icon/Icon';
-import styles from './AboutHero.module.css';
+import Breadcrumb from "@/components/shared/Breadcrumb/Breadcrumb";
+import Container from "@/components/shared/Container/Container";
+import Icon from "@/components/shared/Icon/Icon";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./AboutHero.module.css";
 
-interface Stat { id: string; icon: string; value: string; label: string; }
+interface Stat {
+  id: string;
+  icon: string;
+  value: string;
+  label: string;
+}
 interface Props {
   breadcrumb: { label: string; href: string }[];
   title: string;
@@ -17,7 +22,14 @@ interface Props {
   stats: Stat[];
 }
 
-export default function AboutHero({ breadcrumb, title, paragraphs, button, image, stats }: Props) {
+export default function AboutHero({
+  breadcrumb,
+  title,
+  paragraphs,
+  button,
+  image,
+  stats,
+}: Props) {
   return (
     <>
       {/* Breadcrumb */}
@@ -32,7 +44,6 @@ export default function AboutHero({ breadcrumb, title, paragraphs, button, image
       <section className={styles.hero}>
         <Container>
           <div className={styles.grid}>
-
             {/* RIGHT column: building image */}
             <div className={`${styles.imgWrap} ${styles.animSlideRight}`}>
               <Image
@@ -44,27 +55,32 @@ export default function AboutHero({ breadcrumb, title, paragraphs, button, image
                 priority
               />
             </div>
-
             {/* CENTER column: title + text + button */}
             <div className={`${styles.content} ${styles.animFadeUp}`}>
               <h1 className={styles.title}>{title}</h1>
               {paragraphs.map((p, i) => (
-                <p key={i} className={styles.para}>{p}</p>
+                <p key={i} className={styles.para}>
+                  {p}
+                </p>
               ))}
-              <Link href={button.href} className={styles.btn}>{button.label}</Link>
+              <Link href={button.href} className={styles.btn}>
+                {button.label}
+              </Link>
             </div>
-
             {/* LEFT column: 2×2 stats grid */}
             <div className={`${styles.statsGrid} ${styles.animSlideLeft}`}>
               {stats.map((s) => (
                 <div key={s.id} className={styles.statCard}>
-                  <div className={styles.statIcon}><div className={styles.iconSvg}><Icon name={s.icon} /></div></div>
+                  <div className={styles.statIcon}>
+                    <div className={styles.iconSvg}>
+                      <Icon name={s.icon} />
+                    </div>
+                  </div>
                   <div className={styles.statValue}>{s.value}</div>
                   <div className={styles.statLabel}>{s.label}</div>
                 </div>
               ))}
             </div>
-
           </div>
         </Container>
       </section>

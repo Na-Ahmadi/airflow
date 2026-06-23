@@ -1,9 +1,9 @@
-import { Resend } from 'resend';
-import { NextRequest } from 'next/server';
-import { contactSchema } from '@/lib/contactSchema';
+import { contactSchema } from "@/lib/contactSchema";
+import { NextRequest } from "next/server";
+import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const TO_EMAIL = 'ahmadi@neoskop.de';
+const TO_EMAIL = "ahmadi@neoskop.de";
 
 // Rate limiting: max 3 requests per IP per 10 minutes
 const RATE_LIMIT_MAX = 3;
@@ -27,31 +27,35 @@ function isRateLimited(ip: string): boolean {
 
 function escapeHtml(str: string): string {
   return str
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 export async function POST(request: NextRequest) {
-  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown';
+  const ip =
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
 
-  if (process.env.NODE_ENV === 'production' && isRateLimited(ip)) {
+  if (process.env.NODE_ENV === "production" && isRateLimited(ip)) {
     return Response.json(
-      { error: 'Zu viele Anfragen. Bitte warte 10 Minuten.' },
-      { status: 429 }
+      { error: "Zu viele Anfragen. Bitte warte 10 Minuten." },
+      { status: 429 },
     );
   }
 
   const body = await request.json().catch(() => null);
   if (!body) {
-    return Response.json({ error: 'Ungültige Anfrage.' }, { status: 400 });
+    return Response.json({ error: "Ungültige Anfrage." }, { status: 400 });
   }
 
   const parsed = contactSchema.safeParse(body);
   if (!parsed.success) {
-    return Response.json({ error: 'Ungültige Formulardaten.' }, { status: 422 });
+    return Response.json(
+      { error: "Ungültige Formulardaten." },
+      { status: 422 },
+    );
   }
 
   const { name, email, phone, company, projectType, message } = parsed.data;
@@ -60,7 +64,7 @@ export async function POST(request: NextRequest) {
     `<tr><td style="padding:8px 12px;font-weight:600;background:#f5f5f5;width:140px">${label}</td><td style="padding:8px 12px">${escapeHtml(value)}</td></tr>`;
 
   const { error } = await resend.emails.send({
-    from: 'Airflow Kontaktformular <onboarding@resend.dev>',
+    from: "Airflow Kontaktformular <onboarding@resend.dev>",
     to: TO_EMAIL,
     replyTo: email,
     subject: `Neue Anfrage: ${escapeHtml(projectType)} – ${escapeHtml(name)}`,
@@ -68,11 +72,11 @@ export async function POST(request: NextRequest) {
       <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
         <h2 style="background:#0f172a;color:#fff;padding:20px 24px;margin:0">Neue Kontaktanfrage</h2>
         <table cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;border:1px solid #e2e8f0">
-          ${row('Name', name)}
-          ${row('E-Mail', email)}
-          ${row('Telefon', phone)}
-          ${company ? row('Firma', company) : ''}
-          ${row('Projekttyp', projectType)}
+          ${row("Name", name)}
+          ${row("E-Mail", email)}
+          ${row("Telefon", phone)}
+          ${company ? row("Firma", company) : ""}
+          ${row("Projekttyp", projectType)}
           <tr>
             <td style="padding:8px 12px;font-weight:600;background:#f5f5f5;vertical-align:top">Nachricht</td>
             <td style="padding:8px 12px;white-space:pre-wrap">${escapeHtml(message)}</td>
@@ -84,7 +88,10 @@ export async function POST(request: NextRequest) {
   });
 
   if (error) {
-    return Response.json({ error: 'E-Mail konnte nicht gesendet werden.' }, { status: 500 });
+    return Response.json(
+      { error: "E-Mail konnte nicht gesendet werden." },
+      { status: 500 },
+    );
   }
 
   return Response.json({ ok: true });

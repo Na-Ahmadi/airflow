@@ -1,25 +1,42 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
-import Container from '@/components/shared/Container/Container';
-import Breadcrumb from '@/components/shared/Breadcrumb/Breadcrumb';
-import type { BreadcrumbItem } from '@/components/shared/Breadcrumb/Breadcrumb';
-import Icon from '@/components/shared/Icon/Icon';
-import Button from '@/components/shared/Button/Button';
-import ImageGallery from '@/components/shared/ImageGallery/ImageGallery';
-import Tabs from '@/components/shared/Tabs/Tabs';
-import styles from './ProductDetailClient.module.css';
-
+import type { BreadcrumbItem } from "@/components/shared/Breadcrumb/Breadcrumb";
+import Breadcrumb from "@/components/shared/Breadcrumb/Breadcrumb";
+import Button from "@/components/shared/Button/Button";
+import Container from "@/components/shared/Container/Container";
+import Icon from "@/components/shared/Icon/Icon";
+import ImageGallery from "@/components/shared/ImageGallery/ImageGallery";
+import Tabs from "@/components/shared/Tabs/Tabs";
+import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
+import { useState } from "react";
+import styles from "./ProductDetailClient.module.css";
 
 /* ─── Types ───────────────────────────────────────────────── */
-interface Feature { icon: string; label: string; }
-interface CtaConfig { label: string; href: string; }
-interface Tab { id: string; label: string; }
-interface SpecItem { label: string; value: string; }
-interface FaqItem { question: string; answer: string; }
-interface ImageItem { src: string; alt: string; }
+interface Feature {
+  icon: string;
+  label: string;
+}
+interface CtaConfig {
+  label: string;
+  href: string;
+}
+interface Tab {
+  id: string;
+  label: string;
+}
+interface SpecItem {
+  label: string;
+  value: string;
+}
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+interface ImageItem {
+  src: string;
+  alt: string;
+}
 
 interface Props {
   breadcrumb: BreadcrumbItem[];
@@ -35,7 +52,16 @@ interface Props {
 }
 
 export default function ProductDetailClient({
-  breadcrumb, name, model, description, features, images, cta, tabs, specs, faq,
+  breadcrumb,
+  name,
+  model,
+  description,
+  features,
+  images,
+  cta,
+  tabs,
+  specs,
+  faq,
 }: Props) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -56,7 +82,6 @@ export default function ProductDetailClient({
       <section className={styles.hero}>
         <Container>
           <div className={styles.heroGrid}>
-
             {/* Info Column */}
             <div className={styles.infoCol}>
               <h1 className={styles.productName}>{name}</h1>
@@ -67,7 +92,9 @@ export default function ProductDetailClient({
               <div className={styles.featuresGrid}>
                 {features.map((f) => (
                   <div key={f.label} className={styles.featureItem}>
-                    <span className={styles.featureIcon}><Icon name={f.icon} size={20} /></span>
+                    <span className={styles.featureIcon}>
+                      <Icon name={f.icon} size={20} />
+                    </span>
                     <span className={styles.featureLabel}>{f.label}</span>
                   </div>
                 ))}
@@ -75,10 +102,20 @@ export default function ProductDetailClient({
 
               {/* CTA Buttons */}
               <div className={styles.ctaButtons}>
-                <Button href={cta.inquiry.href} variant="primary" size="lg" iconStart={<span>›</span>}>
+                <Button
+                  href={cta.inquiry.href}
+                  variant="primary"
+                  size="lg"
+                  iconStart={<span>›</span>}
+                >
                   {cta.inquiry.label}
                 </Button>
-                <Button href={cta.catalog.href} variant="outline" size="lg" iconStart={<Icon name="download" size={18} />}>
+                <Button
+                  href={cta.catalog.href}
+                  variant="outline"
+                  size="lg"
+                  iconStart={<Icon name="download" size={18} />}
+                >
                   {cta.catalog.label}
                 </Button>
               </div>
@@ -98,36 +135,59 @@ export default function ProductDetailClient({
           <Tabs tabs={tabs} defaultTab="specs">
             {(activeTab) => (
               <>
-                {activeTab === 'specs' && (
+                {activeTab === "specs" && (
                   <div className={styles.specsGrid}>
                     <SpecTable rows={specsLeft} />
                     <SpecTable rows={specsRight} />
                   </div>
                 )}
 
-                {activeTab === 'dimensions' && (
+                {activeTab === "dimensions" && (
                   <div className={styles.dimensionsPane}>
                     <div className={styles.dimPlaceholder}>
-                      <Image src="/images/dimensions-diagram.svg" alt="" fill unoptimized className={styles.dimSvg} />
+                      <Image
+                        src="/images/dimensions-diagram.svg"
+                        alt=""
+                        fill
+                        unoptimized
+                        className={styles.dimSvg}
+                      />
                     </div>
-                    <p className={styles.dimNote}>نقشه‌های فنی دقیق در کاتالوگ محصول موجود است.</p>
+                    <p className={styles.dimNote}>
+                      نقشه‌های فنی دقیق در کاتالوگ محصول موجود است.
+                    </p>
                   </div>
                 )}
 
-                {activeTab === 'documents' && (
+                {activeTab === "documents" && (
                   <div className={styles.documentsPane}>
                     {[
-                      { name: 'کاتالوگ محصول LS-300', size: '2.4 MB', type: 'PDF' },
-                      { name: 'دفترچه نصب و راه‌اندازی', size: '1.1 MB', type: 'PDF' },
-                      { name: 'جدول مشخصات فنی', size: '0.6 MB', type: 'PDF' },
+                      {
+                        name: "کاتالوگ محصول LS-300",
+                        size: "2.4 MB",
+                        type: "PDF",
+                      },
+                      {
+                        name: "دفترچه نصب و راه‌اندازی",
+                        size: "1.1 MB",
+                        type: "PDF",
+                      },
+                      { name: "جدول مشخصات فنی", size: "0.6 MB", type: "PDF" },
                     ].map((doc) => (
                       <div key={doc.name} className={styles.docItem}>
-                        <span className={styles.docIcon}><Icon name="file-pdf" /></span>
+                        <span className={styles.docIcon}>
+                          <Icon name="file-pdf" />
+                        </span>
                         <div className={styles.docInfo}>
                           <span className={styles.docName}>{doc.name}</span>
-                          <span className={styles.docMeta}>{doc.type} · {doc.size}</span>
+                          <span className={styles.docMeta}>
+                            {doc.type} · {doc.size}
+                          </span>
                         </div>
-                        <button className={styles.docDownload} aria-label={`دانلود ${doc.name}`}>
+                        <button
+                          className={styles.docDownload}
+                          aria-label={`دانلود ${doc.name}`}
+                        >
                           <Icon name="download" size={18} />
                         </button>
                       </div>
@@ -135,25 +195,32 @@ export default function ProductDetailClient({
                   </div>
                 )}
 
-                {activeTab === 'faq' && (
+                {activeTab === "faq" && (
                   <div className={styles.faqPane}>
                     {faq.map((item, i) => (
                       <div key={i} className={styles.faqItem}>
                         <button
-                          className={[styles.faqQuestion, openFaq === i ? styles.faqOpen : ''].filter(Boolean).join(' ')}
+                          className={[
+                            styles.faqQuestion,
+                            openFaq === i ? styles.faqOpen : "",
+                          ]
+                            .filter(Boolean)
+                            .join(" ")}
                           onClick={() => setOpenFaq(openFaq === i ? null : i)}
                         >
                           <span>{item.question}</span>
-                          <span className={styles.faqChevron}><Icon name="chevron-down" size={18} /></span>
+                          <span className={styles.faqChevron}>
+                            <Icon name="chevron-down" size={18} />
+                          </span>
                         </button>
                         <AnimatePresence>
                           {openFaq === i && (
                             <motion.div
                               initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: 'auto', opacity: 1 }}
+                              animate={{ height: "auto", opacity: 1 }}
                               exit={{ height: 0, opacity: 0 }}
                               transition={{ duration: 0.22 }}
-                              style={{ overflow: 'hidden' }}
+                              style={{ overflow: "hidden" }}
                             >
                               <p className={styles.faqAnswer}>{item.answer}</p>
                             </motion.div>

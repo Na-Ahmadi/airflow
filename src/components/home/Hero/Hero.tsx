@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import type { HeroData } from '@/types';
-import styles from './Hero.module.css';
-import Icon from '@/components/shared/Icon/Icon';
-import Button from '@/components/shared/Button/Button';
+import Button from "@/components/shared/Button/Button";
+import Icon from "@/components/shared/Icon/Icon";
+import type { HeroData } from "@/types";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./Hero.module.css";
 
 const EASE = [0.4, 0, 0.2, 1] as [number, number, number, number];
 
@@ -23,7 +23,6 @@ interface HeroProps {
 export default function Hero({ data }: HeroProps) {
   return (
     <section className={styles.hero} aria-label="بخش اصلی">
-
       {/* ── Full-screen background image ── */}
       <div className={styles.bgWrap} aria-hidden>
         <Image
@@ -46,7 +45,6 @@ export default function Hero({ data }: HeroProps) {
       {/* ── Content ── */}
       <div className={styles.inner}>
         <div className={styles.content}>
-
           <motion.span className={styles.badge} {...fadeUp(0.15)}>
             <span className={styles.badgeDot} />
             {data.badge}
@@ -55,7 +53,9 @@ export default function Hero({ data }: HeroProps) {
           <motion.h1 className={styles.title} {...fadeUp(0.25)}>
             {data.title.main}
             <br />
-            <span className={styles.titleHighlight}>{data.title.highlight}</span>
+            <span className={styles.titleHighlight}>
+              {data.title.highlight}
+            </span>
           </motion.h1>
 
           <motion.p className={styles.subtitle} {...fadeUp(0.35)}>
@@ -69,14 +69,21 @@ export default function Hero({ data }: HeroProps) {
                 href={btn.href}
                 variant={btn.variant}
                 size="lg"
-                iconStart={btn.variant === 'outline' ? <Icon name="play" size={18} /> : undefined}
-                iconEnd={btn.variant === 'primary' ? <Icon name="arrow-left" size={18} /> : undefined}
+                iconStart={
+                  btn.variant === "outline" ? (
+                    <Icon name="play" size={18} />
+                  ) : undefined
+                }
+                iconEnd={
+                  btn.variant === "primary" ? (
+                    <Icon name="arrow-left" size={18} />
+                  ) : undefined
+                }
               >
                 {btn.label}
               </Button>
             ))}
           </motion.div>
-
         </div>
 
         {/* ── Stats row ── */}
@@ -85,7 +92,8 @@ export default function Hero({ data }: HeroProps) {
             <div key={stat.id} className={styles.stat}>
               {i > 0 && <div className={styles.statDivider} />}
               <span className={styles.statValue}>
-                {stat.value}<span className={styles.statSuffix}>{stat.suffix}</span>
+                {stat.value}
+                <span className={styles.statSuffix}>{stat.suffix}</span>
               </span>
               <span className={styles.statLabel}>{stat.label}</span>
             </div>
@@ -96,8 +104,12 @@ export default function Hero({ data }: HeroProps) {
       {/* ── Product badge – floats over the image area (left in RTL) ── */}
       <motion.div className={styles.productBadge} {...fadeUp(0.55)}>
         <Link href={data.productCard.href} className={styles.productBadgeInner}>
-          <span className={styles.productBadgeCategory}>{data.productCard.category}</span>
-          <span className={styles.productBadgeName}>{data.productCard.name}</span>
+          <span className={styles.productBadgeCategory}>
+            {data.productCard.category}
+          </span>
+          <span className={styles.productBadgeName}>
+            {data.productCard.name}
+          </span>
           <span className={styles.productBadgeLink}>مشاهده جزئیات →</span>
         </Link>
       </motion.div>

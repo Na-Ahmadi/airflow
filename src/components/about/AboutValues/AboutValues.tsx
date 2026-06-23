@@ -1,6 +1,6 @@
-import Container from '@/components/shared/Container/Container';
-import Icon from '@/components/shared/Icon/Icon';
-import styles from './AboutValues.module.css';
+import Container from "@/components/shared/Container/Container";
+import Icon from "@/components/shared/Icon/Icon";
+import styles from "./AboutValues.module.css";
 
 interface ValueItem {
   id: string;
@@ -30,7 +30,9 @@ export default function AboutValues({ title, items }: Props) {
               <div className={styles.iconsRow}>
                 {item.icons.map((icon) => (
                   <div key={icon} className={styles.iconWrap}>
-                    <div className={styles.iconSvg}><Icon name={icon} /></div>
+                    <div className={styles.iconSvg}>
+                      <Icon name={icon} />
+                    </div>
                   </div>
                 ))}
               </div>
