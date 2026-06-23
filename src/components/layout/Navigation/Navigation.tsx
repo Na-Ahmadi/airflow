@@ -10,6 +10,7 @@ interface NavigationProps {
   onDropdownEnter: (id: string) => void;
   onDropdownLeave: () => void;
   isActive: (href: string) => boolean;
+  isHome?: boolean;
 }
 
 export default function Navigation({
@@ -18,6 +19,7 @@ export default function Navigation({
   onDropdownEnter,
   onDropdownLeave,
   isActive,
+  isHome = false,
 }: NavigationProps) {
   return (
     <div className={styles.desktopMenu}>
@@ -29,6 +31,7 @@ export default function Navigation({
           dropdownOpen={activeDropdown === item.id}
           onMouseEnter={() => item.children && onDropdownEnter(item.id)}
           onMouseLeave={onDropdownLeave}
+          isHome={isHome}
         />
       ))}
     </div>

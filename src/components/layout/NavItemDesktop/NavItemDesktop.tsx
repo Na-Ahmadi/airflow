@@ -12,6 +12,7 @@ interface NavItemDesktopProps {
   dropdownOpen: boolean;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
+  isHome?: boolean;
 }
 
 export default function NavItemDesktop({
@@ -20,10 +21,11 @@ export default function NavItemDesktop({
   dropdownOpen,
   onMouseEnter,
   onMouseLeave,
+  isHome = false,
 }: NavItemDesktopProps) {
   return (
     <div
-      className={styles.menuItem}
+      className={[styles.menuItem, isHome ? styles.onHome : styles.onInner].join(' ')}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
