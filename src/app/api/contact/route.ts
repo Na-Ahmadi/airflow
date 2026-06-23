@@ -37,7 +37,7 @@ function escapeHtml(str: string): string {
 export async function POST(request: NextRequest) {
   const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown';
 
-  if (isRateLimited(ip)) {
+  if (process.env.NODE_ENV === 'production' && isRateLimited(ip)) {
     return Response.json(
       { error: 'Zu viele Anfragen. Bitte warte 10 Minuten.' },
       { status: 429 }
