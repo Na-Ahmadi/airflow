@@ -95,22 +95,6 @@
   gap: var(--space-4);
 }
 
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-
-.label {
-  font-size: var(--text-sm);
-  font-weight: var(--font-medium);
-  color: var(--color-text-secondary);
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.required { color: var(--color-danger); }
 
 .input {
   width: 100%;
@@ -153,11 +137,6 @@
   padding: var(--space-3) var(--space-4);
   resize: vertical;
   min-height: 100px;
-}
-
-.fieldError {
-  font-size: var(--text-xs);
-  color: var(--color-danger);
 }
 
 /* File Upload */

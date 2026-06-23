@@ -4,10 +4,11 @@ import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion, useInView } from 'framer-motion';
-import Container from '@/components/shared/Container/Container';
-import SectionTitle from '@/components/shared/SectionTitle/SectionTitle';
-import Icon from '@/components/shared/Icon/Icon';
 import Button from '@/components/shared/Button/Button';
+import Container from '@/components/shared/Container/Container';
+import Field from '@/components/shared/Field/Field';
+import Icon from '@/components/shared/Icon/Icon';
+import SectionTitle from '@/components/shared/SectionTitle/SectionTitle';
 import { contactSchema, type ContactFormValues as FormValues } from '@/lib/contactSchema';
 import styles from './ContactForm.module.css';
 
@@ -162,19 +163,6 @@ export default function ContactForm({ data }: ContactFormProps) {
         </div>
       </Container>
     </section>
-  );
-}
-
-function Field({ label, error, required, children }: { label: string; error?: string; required?: boolean; children: React.ReactNode }) {
-  return (
-    <div className={styles.field}>
-      <label className={styles.label}>
-        {label}
-        {required && <span className={styles.required}>*</span>}
-      </label>
-      {children}
-      {error && <span className={styles.fieldError}>{error}</span>}
-    </div>
   );
 }
 
