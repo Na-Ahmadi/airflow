@@ -3,12 +3,13 @@
 import Link from 'next/link';
 import { forwardRef } from 'react';
 import type { ReactNode } from 'react';
-import type { ButtonVariant, ButtonSize } from '@/types';
+import type { ButtonVariant, ButtonSize, ButtonTextColor } from '@/types';
 import styles from './Button.module.css';
 
 interface ButtonProps {
   variant?: ButtonVariant;
   size?: ButtonSize;
+  textColor?: ButtonTextColor;
   href?: string;
   loading?: boolean;
   disabled?: boolean;
@@ -21,12 +22,19 @@ interface ButtonProps {
   iconEnd?: ReactNode;
 }
 
+const TEXT_COLOR_CLASS: Record<string, string> = {
+  white: styles.textWhite,
+  light: styles.textLight,
+  accent: styles.textAccent,
+};
+
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant = 'primary', size = 'md', href, loading, disabled, fullWidth, children, className = '', onClick, type = 'button', iconStart, iconEnd }, ref) => {
+  ({ variant = 'primary', size = 'md', textColor = 'default', href, loading, disabled, fullWidth, children, className = '', onClick, type = 'button', iconStart, iconEnd }, ref) => {
     const cls = [
       styles.btn,
       styles[variant],
       styles[size],
+      TEXT_COLOR_CLASS[textColor] ?? '',
       fullWidth ? styles.fullWidth : '',
       loading ? styles.loading : '',
       className,

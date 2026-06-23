@@ -142,3 +142,27 @@
   background: rgba(30, 111, 207, 0.06);
   border-color: var(--color-primary);
 }
+
+/* ─── Text Color Overrides ────────────────────────────────── */
+.textWhite,
+.textWhite:hover:not(:disabled) { color: #ffffff; }
+
+/* outline + white text in light mode: blue tinted background so white stays readable */
+:global([data-theme="light"]) .outline.textWhite {
+  background: rgba(30, 111, 207, 0.12);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+:global([data-theme="light"]) .outline.textWhite:hover:not(:disabled) {
+  background: rgba(30, 111, 207, 0.22);
+  border-color: var(--color-primary-dark);
+  color: #ffffff;
+}
+
+.textLight,
+.textLight:hover:not(:disabled) { color: var(--color-primary-light); }
+:global([data-theme="light"]) .textLight,
+:global([data-theme="light"]) .textLight:hover:not(:disabled) { color: var(--color-primary-light); }
+
+.textAccent,
+.textAccent:hover:not(:disabled) { color: var(--color-accent); }

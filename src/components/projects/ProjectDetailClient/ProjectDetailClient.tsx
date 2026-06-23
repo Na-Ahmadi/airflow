@@ -107,12 +107,17 @@ export default function ProjectDetailClient({
                   href="#contact"
                   variant="primary"
                   size="lg"
-                  iconStart={<span>›</span>}
+                  textColor="white"
                 >
-                  درخواست مشاوره
+                  درخواست استعلام
                 </Button>
-                <Button href="/projects" variant="outline" size="lg">
-                  بازگشت به پروژه‌ها
+                <Button
+                  href="#contact"
+                  variant="outline"
+                  size="lg"
+                  textColor="white"
+                >
+                  درخواست طراحی اختصاصی
                 </Button>
               </div>
             </div>

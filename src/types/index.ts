@@ -195,4 +195,5 @@ export interface FooterData {
 // ─── Shared ───────────────────────────────────────────────────
 export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger' | 'accent';
 export type ButtonSize = 'sm' | 'md' | 'lg';
+export type ButtonTextColor = 'default' | 'white' | 'light' | 'accent';
 export type Direction = 'rtl' | 'ltr';
