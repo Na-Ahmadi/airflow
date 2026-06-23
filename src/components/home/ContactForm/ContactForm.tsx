@@ -3,7 +3,10 @@
 import Button from "@/components/shared/Button/Button";
 import ContactDetail from "@/components/shared/ContactDetail/ContactDetail";
 import Container from "@/components/shared/Container/Container";
-import Field from "@/components/shared/Field/Field";
+import FileUpload from "@/components/shared/FileUpload/FileUpload";
+import FormInput from "@/components/shared/FormField/FormInput";
+import FormSelect from "@/components/shared/FormField/FormSelect";
+import FormTextarea from "@/components/shared/FormField/FormTextarea";
 import Icon from "@/components/shared/Icon/Icon";
 import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
 import {
@@ -28,10 +31,7 @@ interface ContactFormProps {
 export default function ContactForm({ data }: ContactFormProps) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
-  const [fileName, setFileName] = useState<string>("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const {
     register,
@@ -53,11 +53,12 @@ export default function ContactForm({ data }: ContactFormProps) {
       if (!res.ok) throw new Error();
       setStatus("success");
       reset();
-      setFileName("");
     } catch {
       setStatus("error");
     }
   };
+
+  const projectOptions = data.projectTypes.map((pt) => ({ value: pt, label: pt }));
 
   return (
     <section
@@ -85,26 +86,10 @@ export default function ContactForm({ data }: ContactFormProps) {
               align="start"
             />
             <div className={styles.contactDetails}>
-              <ContactDetail
-                icon="phone"
-                label="تلفن تماس"
-                value="۰۲۱-۳۳۵۸۵۷۸"
-              />
-              <ContactDetail
-                icon="mail"
-                label="ایمیل"
-                value="info@airflowsystem.ir"
-              />
-              <ContactDetail
-                icon="location"
-                label="آدرس"
-                value="تهران، شهران، خیابان مطهری، پلاک ۱۲۳"
-              />
-              <ContactDetail
-                icon="clock"
-                label="ساعات کاری"
-                value="شنبه تا چهارشنبه ۸–۱۷ | پنج‌شنبه ۸–۱۳"
-              />
+              <ContactDetail icon="phone" label="تلفن تماس" value="۰۲۱-۳۳۵۸۵۷۸" />
+              <ContactDetail icon="mail" label="ایمیل" value="info@airflowsystem.ir" />
+              <ContactDetail icon="location" label="آدرس" value="تهران، شهران، خیابان مطهری، پلاک ۱۲۳" />
+              <ContactDetail icon="clock" label="ساعات کاری" value="شنبه تا چهارشنبه ۸–۱۷ | پنج‌شنبه ۸–۱۳" />
             </div>
           </motion.div>
 
@@ -118,162 +103,69 @@ export default function ContactForm({ data }: ContactFormProps) {
             <div className={styles.formCard}>
               {status === "success" ? (
                 <div className={styles.successMsg}>
-                  <Icon
-                    name="check-circle"
-                    size={56}
-                    style={{ color: "var(--color-success)" }}
-                  />
+                  <Icon name="check-circle" size={56} style={{ color: "var(--color-success)" }} />
                   <p>{data.submit.success}</p>
-                  <button
-                    className={styles.resetBtn}
-                    onClick={() => setStatus("idle")}
-                  >
+                  <button className={styles.resetBtn} onClick={() => setStatus("idle")}>
                     ارسال پیام جدید
                   </button>
                 </div>
               ) : (
-                <form
-                  onSubmit={handleSubmit(onSubmit)}
-                  noValidate
-                  className={styles.form}
-                >
+                <form onSubmit={handleSubmit(onSubmit)} noValidate className={styles.form}>
                   <div className={styles.row}>
-                    <Field
+                    <FormInput
                       label="نام و نام خانوادگی"
                       error={errors.name?.message}
                       required
-                    >
-                      <input
-                        className={[
-                          styles.input,
-                          errors.name ? styles.inputError : "",
-                        ]
-                          .filter(Boolean)
-                          .join(" ")}
-                        type="text"
-                        placeholder="نام و نام خانوادگی"
-                        {...register("name")}
-                      />
-                    </Field>
-                    <Field label="ایمیل" error={errors.email?.message} required>
-                      <input
-                        className={[
-                          styles.input,
-                          errors.email ? styles.inputError : "",
-                        ]
-                          .filter(Boolean)
-                          .join(" ")}
-                        type="email"
-                        placeholder="ایمیل"
-                        {...register("email")}
-                      />
-                    </Field>
+                      type="text"
+                      placeholder="نام و نام خانوادگی"
+                      {...register("name")}
+                    />
+                    <FormInput
+                      label="ایمیل"
+                      error={errors.email?.message}
+                      required
+                      type="email"
+                      placeholder="ایمیل"
+                      {...register("email")}
+                    />
                   </div>
                   <div className={styles.row}>
-                    <Field
+                    <FormInput
                       label="شماره تماس"
                       error={errors.phone?.message}
                       required
-                    >
-                      <input
-                        className={[
-                          styles.input,
-                          errors.phone ? styles.inputError : "",
-                        ]
-                          .filter(Boolean)
-                          .join(" ")}
-                        type="tel"
-                        placeholder="شماره تماس"
-                        {...register("phone")}
-                      />
-                    </Field>
-                    <Field
+                      type="tel"
+                      placeholder="شماره تماس"
+                      {...register("phone")}
+                    />
+                    <FormInput
                       label="شرکت / سازمان"
                       error={errors.company?.message}
-                    >
-                      <input
-                        className={styles.input}
-                        type="text"
-                        placeholder="شرکت / سازمان"
-                        {...register("company")}
-                      />
-                    </Field>
+                      type="text"
+                      placeholder="شرکت / سازمان"
+                      {...register("company")}
+                    />
                   </div>
-                  <Field
+                  <FormSelect
                     label="نوع پروژه"
                     error={errors.projectType?.message}
                     required
-                  >
-                    <select
-                      className={[
-                        styles.input,
-                        styles.select,
-                        errors.projectType ? styles.inputError : "",
-                      ]
-                        .filter(Boolean)
-                        .join(" ")}
-                      {...register("projectType")}
-                      defaultValue=""
-                    >
-                      <option value="" disabled>
-                        انتخاب کنید
-                      </option>
-                      {data.projectTypes.map((pt) => (
-                        <option key={pt} value={pt}>
-                          {pt}
-                        </option>
-                      ))}
-                    </select>
-                  </Field>
-                  <Field
+                    placeholder="انتخاب کنید"
+                    options={projectOptions}
+                    {...register("projectType")}
+                  />
+                  <FormTextarea
                     label="توضیحات پروژه"
                     error={errors.message?.message}
                     required
-                  >
-                    <textarea
-                      className={[
-                        styles.input,
-                        styles.textarea,
-                        errors.message ? styles.inputError : "",
-                      ]
-                        .filter(Boolean)
-                        .join(" ")}
-                      placeholder="توضیحات پروژه خود را بنویسید..."
-                      rows={4}
-                      {...register("message")}
-                    />
-                  </Field>
-
-                  {/* File Upload */}
-                  <div className={styles.fileUpload}>
-                    <label className={styles.fileLabel}>
-                      <Icon name="upload" size={24} />
-                      <div>
-                        <span className={styles.fileLabelTitle}>
-                          {data.fileInfo.label}
-                        </span>
-                        <span className={styles.fileHint}>
-                          {data.fileInfo.hint}
-                        </span>
-                        {fileName && (
-                          <span className={styles.fileName}>{fileName}</span>
-                        )}
-                      </div>
-                      <input
-                        type="file"
-                        className={styles.fileInput}
-                        accept=".pdf,.dwg,.zip"
-                        onChange={(e) =>
-                          setFileName(e.target.files?.[0]?.name ?? "")
-                        }
-                      />
-                    </label>
-                  </div>
-
+                    placeholder="توضیحات پروژه خود را بنویسید..."
+                    rows={4}
+                    {...register("message")}
+                  />
+                  <FileUpload label={data.fileInfo.label} hint={data.fileInfo.hint} />
                   {status === "error" && (
                     <p className={styles.errorMsg}>{data.submit.error}</p>
                   )}
-
                   <Button
                     type="submit"
                     variant="primary"
@@ -281,9 +173,7 @@ export default function ContactForm({ data }: ContactFormProps) {
                     fullWidth
                     loading={status === "loading"}
                   >
-                    {status === "loading"
-                      ? data.submit.loading
-                      : data.submit.label}
+                    {status === "loading" ? data.submit.loading : data.submit.label}
                   </Button>
                 </form>
               )}

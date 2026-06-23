@@ -1,0 +1,50 @@
+.fileLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  color: var(--color-text-secondary);
+}
+
+.fileLabel:hover {
+  border-color: var(--color-border-primary);
+  background: rgba(30, 111, 207, 0.05);
+  color: var(--color-primary-light);
+}
+
+.fileInput { display: none; }
+
+.fileLabelTitle {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+}
+
+.fileHint {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.fileName {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-success);
+  margin-top: 2px;
+}
+
+:global([data-theme="light"]) .fileLabel {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+:global([data-theme="light"]) .fileLabel:hover {
+  background: rgba(30, 111, 207, 0.05);
+}
