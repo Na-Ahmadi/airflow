@@ -3,24 +3,13 @@
 import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
 import { motion, useInView } from 'framer-motion';
 import Container from '@/components/shared/Container/Container';
 import SectionTitle from '@/components/shared/SectionTitle/SectionTitle';
 import Icon from '@/components/shared/Icon/Icon';
 import Button from '@/components/shared/Button/Button';
+import { contactSchema, type ContactFormValues as FormValues } from '@/lib/contactSchema';
 import styles from './ContactForm.module.css';
-
-const schema = z.object({
-  name:        z.string().min(2, 'نام باید حداقل ۲ کاراکتر باشد'),
-  email:       z.string().email('ایمیل معتبر نیست'),
-  phone:       z.string().min(10, 'شماره تلفن معتبر نیست').regex(/^[\d\s\-+()۰-۹]+$/, 'شماره تلفن معتبر نیست'),
-  company:     z.string().optional(),
-  projectType: z.string().min(1, 'لطفاً نوع پروژه را انتخاب کنید'),
-  message:     z.string().min(10, 'پیام باید حداقل ۱۰ کاراکتر باشد'),
-});
-
-type FormValues = z.infer<typeof schema>;
 
 interface ContactFormProps {
   data: {
@@ -38,7 +27,7 @@ export default function ContactForm({ data }: ContactFormProps) {
   const [fileName, setFileName] = useState<string>('');
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm<FormValues>({
-    resolver: zodResolver(schema),
+    resolver: zodResolver(contactSchema),
   });
 
   const onSubmit = async (values: FormValues) => {
