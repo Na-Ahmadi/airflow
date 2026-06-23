@@ -27,20 +27,20 @@
   color: var(--color-text-secondary);
 }
 
-/* Light theme: logo sits on transparent/dark-image header */
+/* Light theme default: dark text (works on all inner pages) */
 :global([data-theme="light"]) .name {
-  color: #ffffff;
-}
-
-:global([data-theme="light"]) .sub {
-  color: rgba(255, 255, 255, 0.65);
-}
-
-/* Light theme + scrolled: glass background, switch to dark text */
-:global([data-theme="light"]) .logo[data-scrolled="true"] .name {
   color: #0a2540;
 }
 
-:global([data-theme="light"]) .logo[data-scrolled="true"] .sub {
+:global([data-theme="light"]) .sub {
   color: #718096;
+}
+
+/* Light theme + home page + not scrolled: white text over dark hero */
+:global([data-theme="light"]) .logo[data-home="true"][data-scrolled="false"] .name {
+  color: #ffffff;
+}
+
+:global([data-theme="light"]) .logo[data-home="true"][data-scrolled="false"] .sub {
+  color: rgba(255, 255, 255, 0.65);
 }

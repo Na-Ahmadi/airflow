@@ -79,6 +79,7 @@ export default function Header() {
             subtitle={data.logo.tagline}
             href={data.logo.href}
             scrolled={scrolled}
+            isHome={pathname === '/'}
           />
 
           {/* Navigation */}

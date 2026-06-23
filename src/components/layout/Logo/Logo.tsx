@@ -8,12 +8,16 @@ interface LogoProps {
   size?: number;
   href?: string;
   scrolled?: boolean;
+  isHome?: boolean;
   className?: string;
 }
 
-export default function Logo({ name, subtitle, size = 32, href, scrolled, className }: LogoProps) {
+export default function Logo({ name, subtitle, size = 32, href, scrolled, isHome = false, className }: LogoProps) {
   const cls = [styles.logo, className].filter(Boolean).join(' ');
-  const attrs = scrolled !== undefined ? { 'data-scrolled': String(scrolled) } : {};
+  const attrs = {
+    ...(scrolled !== undefined ? { 'data-scrolled': String(scrolled) } : {}),
+    'data-home': String(isHome),
+  };
 
   const inner = (
     <>
