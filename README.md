@@ -47,6 +47,18 @@ src/
 │   ├── products/           # Produkt-Seiten-Komponenten
 │   ├── projects/           # Projekt-Seiten-Komponenten
 │   └── shared/             # Wiederverwendbare UI-Elemente
+│       ├── Button/         # Button + Link, Varianten: primary/outline/ghost/accent, textColor-Prop
+│       ├── AnimatedCounter/
+│       ├── Badge/
+│       ├── Breadcrumb/
+│       ├── FilterTabs/
+│       ├── Icon/
+│       ├── ImageGallery/
+│       ├── ProjectCard/
+│       ├── ResourceCard/
+│       ├── ScrollToTop/
+│       ├── SectionTitle/
+│       └── Tabs/
 ├── data/                   # Alle Inhalte als JSON (kein CMS)
 │   ├── hero.json
 │   ├── navigation.json
@@ -57,7 +69,7 @@ src/
 │   └── ...
 ├── types/                  # TypeScript-Interfaces
 ├── constants/              # SITE_CONFIG, Animationskonstanten
-├── context/                # ThemeContext (Dark/Light)
+├── context/                # ThemeContext (Dark/Light), LanguageContext (FA/EN)
 ├── hooks/                  # Custom React Hooks
 ├── lib/                    # Hilfsfunktionen
 ├── services/               # API-Schicht (vorbereitet)
