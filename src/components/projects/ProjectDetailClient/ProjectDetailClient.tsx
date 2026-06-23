@@ -5,8 +5,8 @@ import type { BreadcrumbItem } from "@/components/shared/Breadcrumb/Breadcrumb";
 import Breadcrumb from "@/components/shared/Breadcrumb/Breadcrumb";
 import Button from "@/components/shared/Button/Button";
 import Container from "@/components/shared/Container/Container";
-import ImageGallery from "@/components/shared/ImageGallery/ImageGallery";
 import Icon from "@/components/shared/Icon/Icon";
+import ImageGallery from "@/components/shared/ImageGallery/ImageGallery";
 import Tabs from "@/components/shared/Tabs/Tabs";
 import Link from "next/link";
 import styles from "./ProjectDetailClient.module.css";
@@ -115,7 +115,6 @@ export default function ProjectDetailClient({
                   href="#contact"
                   variant="outline"
                   size="lg"
-                  textColor="white"
                 >
                   درخواست طراحی اختصاصی
                 </Button>
@@ -164,7 +163,11 @@ export default function ProjectDetailClient({
                       <ul className={styles.highlightsList}>
                         {highlights.map((h) => (
                           <li key={h} className={styles.highlightItem}>
-                            <Icon name="check" size={16} style={{ flexShrink: 0 }} />
+                            <Icon
+                              name="check"
+                              size={16}
+                              style={{ flexShrink: 0 }}
+                            />
                             <span>{h}</span>
                           </li>
                         ))}
@@ -184,7 +187,11 @@ export default function ProjectDetailClient({
                       <ul className={styles.highlightsList}>
                         {highlights.map((h) => (
                           <li key={h} className={styles.highlightItem}>
-                            <Icon name="check" size={16} style={{ flexShrink: 0 }} />
+                            <Icon
+                              name="check"
+                              size={16}
+                              style={{ flexShrink: 0 }}
+                            />
                             <span>{h}</span>
                           </li>
                         ))}
@@ -201,7 +208,11 @@ export default function ProjectDetailClient({
                     <div className={styles.productsList}>
                       {products.map((p) => (
                         <div key={p} className={styles.productItem}>
-                          <Icon name="box" size={16} style={{ flexShrink: 0 }} />
+                          <Icon
+                            name="box"
+                            size={16}
+                            style={{ flexShrink: 0 }}
+                          />
                           <span>{p}</span>
                         </div>
                       ))}
