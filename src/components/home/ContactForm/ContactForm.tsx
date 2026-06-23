@@ -27,10 +27,19 @@ interface ContactFormProps {
   };
 }
 
+const CONTACT_DETAILS = [
+  { icon: "phone", label: "تلفن تماس", value: "۰۲۱-۳۳۵۸۵۷۸" },
+  { icon: "mail", label: "ایمیل", value: "info@airflowsystem.ir" },
+  { icon: "location", label: "آدرس", value: "تهران، شهران، خیابان مطهری، پلاک ۱۲۳" },
+  { icon: "clock", label: "ساعات کاری", value: "شنبه تا چهارشنبه ۸–۱۷ | پنج‌شنبه ۸–۱۳" },
+];
+
 export default function ContactForm({ data }: ContactFormProps) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
 
   const {
     register,
@@ -57,7 +66,10 @@ export default function ContactForm({ data }: ContactFormProps) {
     }
   };
 
-  const projectOptions = data.projectTypes.map((pt) => ({ value: pt, label: pt }));
+  const projectOptions = data.projectTypes.map((pt) => ({
+    value: pt,
+    label: pt,
+  }));
 
   return (
     <section
@@ -85,10 +97,9 @@ export default function ContactForm({ data }: ContactFormProps) {
               align="start"
             />
             <div className={styles.contactDetails}>
-              <ContactDetail icon="phone" label="تلفن تماس" value="۰۲۱-۳۳۵۸۵۷۸" />
-              <ContactDetail icon="mail" label="ایمیل" value="info@airflowsystem.ir" />
-              <ContactDetail icon="location" label="آدرس" value="تهران، شهران، خیابان مطهری، پلاک ۱۲۳" />
-              <ContactDetail icon="clock" label="ساعات کاری" value="شنبه تا چهارشنبه ۸–۱۷ | پنج‌شنبه ۸–۱۳" />
+              {CONTACT_DETAILS.map((detail) => (
+                <ContactDetail key={detail.icon} {...detail} />
+              ))}
             </div>
           </motion.div>
 
@@ -102,14 +113,25 @@ export default function ContactForm({ data }: ContactFormProps) {
             <div className={styles.formCard}>
               {status === "success" ? (
                 <div className={styles.successMsg}>
-                  <Icon name="check-circle" size={56} style={{ color: "var(--color-success)" }} />
+                  <Icon
+                    name="check-circle"
+                    size={56}
+                    style={{ color: "var(--color-success)" }}
+                  />
                   <p>{data.submit.success}</p>
-                  <button className={styles.resetBtn} onClick={() => setStatus("idle")}>
+                  <button
+                    className={styles.resetBtn}
+                    onClick={() => setStatus("idle")}
+                  >
                     ارسال پیام جدید
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit(onSubmit)} noValidate className={styles.form}>
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  noValidate
+                  className={styles.form}
+                >
                   <div className={styles.row}>
                     <FormField
                       label="نام و نام خانوادگی"
@@ -162,7 +184,10 @@ export default function ContactForm({ data }: ContactFormProps) {
                     rows={4}
                     {...register("message")}
                   />
-                  <FileUpload label={data.fileInfo.label} hint={data.fileInfo.hint} />
+                  <FileUpload
+                    label={data.fileInfo.label}
+                    hint={data.fileInfo.hint}
+                  />
                   {status === "error" && (
                     <p className={styles.errorMsg}>{data.submit.error}</p>
                   )}
@@ -173,7 +198,9 @@ export default function ContactForm({ data }: ContactFormProps) {
                     fullWidth
                     loading={status === "loading"}
                   >
-                    {status === "loading" ? data.submit.loading : data.submit.label}
+                    {status === "loading"
+                      ? data.submit.loading
+                      : data.submit.label}
                   </Button>
                 </form>
               )}
