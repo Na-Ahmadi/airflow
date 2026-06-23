@@ -4,9 +4,8 @@ import Button from "@/components/shared/Button/Button";
 import ContactDetail from "@/components/shared/ContactDetail/ContactDetail";
 import Container from "@/components/shared/Container/Container";
 import FileUpload from "@/components/shared/FileUpload/FileUpload";
-import FormInput from "@/components/shared/FormField/FormInput";
+import FormField from "@/components/shared/FormField/FormField";
 import FormSelect from "@/components/shared/FormField/FormSelect";
-import FormTextarea from "@/components/shared/FormField/FormTextarea";
 import Icon from "@/components/shared/Icon/Icon";
 import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
 import {
@@ -112,7 +111,7 @@ export default function ContactForm({ data }: ContactFormProps) {
               ) : (
                 <form onSubmit={handleSubmit(onSubmit)} noValidate className={styles.form}>
                   <div className={styles.row}>
-                    <FormInput
+                    <FormField
                       label="نام و نام خانوادگی"
                       error={errors.name?.message}
                       required
@@ -120,7 +119,7 @@ export default function ContactForm({ data }: ContactFormProps) {
                       placeholder="نام و نام خانوادگی"
                       {...register("name")}
                     />
-                    <FormInput
+                    <FormField
                       label="ایمیل"
                       error={errors.email?.message}
                       required
@@ -130,7 +129,7 @@ export default function ContactForm({ data }: ContactFormProps) {
                     />
                   </div>
                   <div className={styles.row}>
-                    <FormInput
+                    <FormField
                       label="شماره تماس"
                       error={errors.phone?.message}
                       required
@@ -138,7 +137,7 @@ export default function ContactForm({ data }: ContactFormProps) {
                       placeholder="شماره تماس"
                       {...register("phone")}
                     />
-                    <FormInput
+                    <FormField
                       label="شرکت / سازمان"
                       error={errors.company?.message}
                       type="text"
@@ -154,7 +153,8 @@ export default function ContactForm({ data }: ContactFormProps) {
                     options={projectOptions}
                     {...register("projectType")}
                   />
-                  <FormTextarea
+                  <FormField
+                    multiline
                     label="توضیحات پروژه"
                     error={errors.message?.message}
                     required
