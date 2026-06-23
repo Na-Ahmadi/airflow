@@ -70,15 +70,33 @@
 }
 
 /* ─── Light Mode ────────────────────────────────────────────── */
-:global([data-theme="light"]) .menuLink {
+
+/* Home page: nav sits over dark hero → white hover is fine */
+:global([data-theme="light"]) :global([data-home="true"]) .menuLink {
   color: #94a3b8;
 }
-
-:global([data-theme="light"]) .menuLink:hover {
+:global([data-theme="light"]) :global([data-home="true"]) .menuLink:hover {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.06);
 }
 
+/* Inner pages: nav sits over light/glass background → use dark/primary text */
+:global([data-theme="light"]) :global([data-home="false"]) .menuLink {
+  color: #334155;
+}
+:global([data-theme="light"]) :global([data-home="false"]) .menuLink:hover {
+  color: var(--color-primary);
+  background: rgba(30, 111, 207, 0.08);
+}
+
 :global([data-theme="light"]) .menuLink.active {
-  color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+:global([data-theme="light"]) .dropdownItem {
+  color: #334155;
+}
+:global([data-theme="light"]) .dropdownItem:hover {
+  color: var(--color-primary);
+  background: rgba(30, 111, 207, 0.08);
 }

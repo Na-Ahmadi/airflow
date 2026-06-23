@@ -62,7 +62,7 @@ export default function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className={[styles.header, scrolled ? styles.scrolled : ''].filter(Boolean).join(' ')}>
+    <header className={[styles.header, scrolled ? styles.scrolled : ''].filter(Boolean).join(' ')} data-home={pathname === '/' ? 'true' : 'false'}>
       <TopBar
         phone={data.topbar.phone}
         email={data.topbar.email}
