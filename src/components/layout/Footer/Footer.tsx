@@ -4,6 +4,7 @@ import Link from 'next/link';
 import type { FooterData } from '@/types';
 import styles from './Footer.module.css';
 import Icon from '@/components/shared/Icon/Icon';
+import ContactDetail from '@/components/shared/ContactDetail/ContactDetail';
 import Logo from '@/components/layout/Logo/Logo';
 import { useLanguage } from '@/context/LanguageContext';
 import footerRaw from '@/data/footer.json';
@@ -52,20 +53,11 @@ export default function Footer() {
           {/* Contact Column */}
           <div className={styles.contactCol}>
             <h3 className={styles.colTitle}>{data.contact.title}</h3>
-            <ul className={styles.contactList}>
-              <li className={styles.contactItem}>
-                <Icon name="location" size={16} />
-                <span>{data.contact.address}</span>
-              </li>
-              <li className={styles.contactItem}>
-                <Icon name="phone" size={16} />
-                <a href={`tel:${data.contact.phone}`}>{data.contact.phone}</a>
-              </li>
-              <li className={styles.contactItem}>
-                <Icon name="mail" size={16} />
-                <a href={`mailto:${data.contact.email}`}>{data.contact.email}</a>
-              </li>
-            </ul>
+            <div className={styles.contactList}>
+              {data.contact.items.map((item) => (
+                <ContactDetail key={item.icon} {...item} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

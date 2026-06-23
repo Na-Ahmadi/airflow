@@ -48,9 +48,11 @@
     ],
     "contact": {
       "title": "اطلاعات تماس",
-      "address": "تهران، شهران، خیابان مطهری، خیابان ستارخان، پلاک ۱۲۳",
-      "phone": "۰۲۱-۳۳۵۸۵۷۸",
-      "email": "info@airflowsystem.ir"
+      "items": [
+        { "icon": "location", "label": "آدرس",       "value": "تهران، شهران، خیابان مطهری، خیابان ستارخان، پلاک ۱۲۳" },
+        { "icon": "phone",    "label": "تلفن تماس",  "value": "۰۲۱-۳۳۵۸۵۷۸"        },
+        { "icon": "mail",     "label": "ایمیل",       "value": "info@airflowsystem.ir" }
+      ]
     },
     "copyright": "تمامی حقوق محفوظ است © ۱۴۰۳ | ایرفلو سیستم"
   },
@@ -103,9 +105,11 @@
     ],
     "contact": {
       "title": "Contact Info",
-      "address": "Tehran, Shahran, Motahari St., Sattar Khan St., No. 123",
-      "phone": "021-33585780",
-      "email": "info@airflowsystem.ir"
+      "items": [
+        { "icon": "location", "label": "Address", "value": "Tehran, Shahran, Motahari St., Sattar Khan St., No. 123" },
+        { "icon": "phone",    "label": "Phone",   "value": "021-33585780"         },
+        { "icon": "mail",     "label": "Email",   "value": "info@airflowsystem.ir" }
+      ]
     },
     "copyright": "All rights reserved © 2024 | Airflow System"
   }
