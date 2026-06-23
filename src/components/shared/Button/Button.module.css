@@ -147,14 +147,24 @@
 .textWhite,
 .textWhite:hover:not(:disabled) { color: #ffffff; }
 
-/* outline + white text in light mode: blue tinted background so white stays readable */
+/* outline + white text: solid blue tinted background in both themes so white stays readable */
+.outline.textWhite {
+  background: rgba(30, 111, 207, 0.18);
+  border-color: rgba(30, 111, 207, 0.5);
+  color: #ffffff;
+}
+.outline.textWhite:hover:not(:disabled) {
+  background: rgba(30, 111, 207, 0.30);
+  border-color: var(--color-primary-light);
+  color: #ffffff;
+}
 :global([data-theme="light"]) .outline.textWhite {
-  background: rgba(30, 111, 207, 0.12);
+  background: var(--color-primary);
   border-color: var(--color-primary);
   color: #ffffff;
 }
 :global([data-theme="light"]) .outline.textWhite:hover:not(:disabled) {
-  background: rgba(30, 111, 207, 0.22);
+  background: var(--color-primary-dark);
   border-color: var(--color-primary-dark);
   color: #ffffff;
 }
