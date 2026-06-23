@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Badge from '@/components/shared/Badge/Badge';
 import Icon from '@/components/shared/Icon/Icon';
 import type { Project } from '@/types';
+import { useState } from 'react';
 import styles from './ProjectCard.module.css';
 
 interface Props {
@@ -13,20 +14,22 @@ interface Props {
 }
 
 const PLACEHOLDER_COLORS = ['#0a1e3d', '#0d2444', '#081528', '#0e2040'];
+const FALLBACK_SRC = '/images/project-placeholder.svg';
 
 export default function ProjectCard({ project, variant = 'grid' }: Props) {
   const isCarousel = variant === 'carousel';
+  const [imgSrc, setImgSrc] = useState(project.image);
 
   return (
     <Link href={project.href} className={`${styles.card} ${isCarousel ? styles.carousel : styles.grid}`}>
       <div className={styles.imgWrap}>
         <Image
-          src={project.image}
+          src={imgSrc}
           alt={project.title}
           fill
           className={styles.img}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+          onError={() => setImgSrc(FALLBACK_SRC)}
         />
         <div
           className={styles.placeholder}
