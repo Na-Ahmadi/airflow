@@ -43,10 +43,13 @@ export default function ContactForm({ data }: ContactFormProps) {
 
   const onSubmit = async (values: FormValues) => {
     setStatus('loading');
-    // Simulate API call
-    await new Promise((r) => setTimeout(r, 1800));
     try {
-      console.log('Form submitted:', values);
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      });
+      if (!res.ok) throw new Error();
       setStatus('success');
       reset();
       setFileName('');
