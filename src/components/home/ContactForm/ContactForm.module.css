@@ -287,14 +287,27 @@
 
 /* ─── Light Mode ──────────────────────────────────────────── */
 :global([data-theme="light"]) .formCard {
-  background: rgba(10, 22, 40, 0.9);
-  border-color: rgba(30, 111, 207, 0.2);
-  /* Scope all child text vars to stay light inside the dark card */
-  --color-text-primary: #f1f5f9;
-  --color-text-secondary: #94a3b8;
-  --color-text-muted: #64748b;
-  --color-border: rgba(255, 255, 255, 0.1);
-  --color-bg-secondary: #0a1628;
+  background: var(--color-bg-card);
+  border-color: var(--color-border);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08), 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+
+:global([data-theme="light"]) .input {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+:global([data-theme="light"]) .input:focus {
+  background: rgba(30, 111, 207, 0.04);
+}
+
+:global([data-theme="light"]) .fileLabel {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+:global([data-theme="light"]) .fileLabel:hover {
+  background: rgba(30, 111, 207, 0.05);
 }
 
 /* Responsive */
