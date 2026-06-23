@@ -21,14 +21,22 @@
 }
 
 /* ─── Variants ────────────────────────────────────────────── */
+
+/*
+ * --btn-primary-text is always white: the gradient background is blue in
+ * both themes, so it must never inherit --color-text-primary (which flips
+ * to dark navy in light mode). Declare it once here; override nowhere.
+ */
 .primary {
+  --btn-primary-text: #ffffff;
   background: var(--gradient-primary);
-  color: var(--color-text-primary);
+  color: var(--btn-primary-text);
   border-color: transparent;
   box-shadow: var(--shadow-btn);
 }
 .primary:hover:not(:disabled) {
   background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+  color: var(--btn-primary-text);
   box-shadow: 0 6px 28px rgba(30, 111, 207, 0.55);
   transform: translateY(-1px);
 }
