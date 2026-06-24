@@ -3,6 +3,7 @@
 import type { PartnersData } from "@/types";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import PartnerLogo from "./PartnerLogo";
 import styles from "./Partners.module.css";
 
 interface PartnersProps {
@@ -38,13 +39,5 @@ export default function Partners({ data }: PartnersProps) {
         </div>
       </div>
     </section>
-  );
-}
-
-function PartnerLogo({ name }: { name: string }) {
-  return (
-    <div className={styles.logoBox}>
-      <span className={styles.logoText}>{name}</span>
-    </div>
   );
 }
