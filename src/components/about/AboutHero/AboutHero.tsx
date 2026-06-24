@@ -1,10 +1,10 @@
 "use client";
 
 import Breadcrumb from "@/components/shared/Breadcrumb/Breadcrumb";
+import Button from "@/components/shared/Button/Button";
 import Container from "@/components/shared/Container/Container";
 import Icon from "@/components/shared/Icon/Icon";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./AboutHero.module.css";
 
 interface Stat {
@@ -63,9 +63,9 @@ export default function AboutHero({
                   {p}
                 </p>
               ))}
-              <Link href={button.href} className={styles.btn}>
+              <Button href={button.href} className={styles.btn}>
                 {button.label}
-              </Link>
+              </Button>
             </div>
             {/* LEFT column: 2×2 stats grid */}
             <div className={`${styles.statsGrid} ${styles.animSlideLeft}`}>
