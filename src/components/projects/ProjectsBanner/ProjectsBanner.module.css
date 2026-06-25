@@ -3,7 +3,8 @@
   display: grid;
   /* RTL: col-1 = right (content ~38%), col-2 = left (image ~62%) */
   grid-template-columns: 38fr 62fr;
-  background: var(--color-bg);
+  /* Always light — image is a bright daytime photo, dark bg would clash */
+  background: #edf1f7;
   min-height: 520px;
   overflow: hidden;
   direction: rtl;
@@ -15,10 +16,11 @@
   flex-direction: column;
   justify-content: space-between;
   padding-top: calc(var(--header-height) + var(--space-6));
-  padding-right: max(
+  padding-right: var(--section-padding-x);
+  /* padding-right: max(
     var(--section-padding-x),
     calc((100vw - 1320px) / 2 + var(--section-padding-x))
-  );
+  ); */
   padding-bottom: var(--space-10);
   padding-left: var(--space-6);
 }
@@ -73,7 +75,8 @@
 .imageEdge {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to left, var(--color-bg) 0%, transparent 12%);
+  /* fade to the same light bg so image blends into text panel */
+  background: linear-gradient(to left, #edf1f7 0%, transparent 28%);
   pointer-events: none;
 }
 
@@ -101,7 +104,7 @@
   }
 
   .imageEdge {
-    background: linear-gradient(to bottom, var(--color-bg) 0%, transparent 14%);
+    background: linear-gradient(to bottom, #edf1f7 0%, transparent 20%);
   }
 }
 

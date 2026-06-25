@@ -28,7 +28,7 @@ export default function ProjectsBanner({
   description,
 }: Props) {
   return (
-    <section className={styles.banner}>
+    <section className={styles.banner} data-theme="light">
       <div className={styles.content}>
         <motion.div className={styles.breadcrumbRow} {...fadeUp(0)}>
           <Breadcrumb items={breadcrumb} />
