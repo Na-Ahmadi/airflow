@@ -32,7 +32,11 @@ export default function Partners({ data }: PartnersProps) {
           <div className={styles.marquee}>
             {items.map((partner, i) => (
               <div key={`${partner.id}-${i}`} className={styles.partnerItem}>
-                <PartnerLogo name={partner.name} src={partner.logo} href={partner.href} />
+                <PartnerLogo
+                  name={partner.name}
+                  src={partner.logo}
+                  href={partner.href}
+                />
               </div>
             ))}
           </div>
