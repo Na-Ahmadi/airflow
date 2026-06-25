@@ -58,11 +58,12 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    const onResize = () => {
-      if (window.innerWidth >= 1024) closeMobileMenu();
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const handler = (e: MediaQueryListEvent) => {
+      if (e.matches) closeMobileMenu();
     };
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
   }, []);
 
   useEffect(() => {
