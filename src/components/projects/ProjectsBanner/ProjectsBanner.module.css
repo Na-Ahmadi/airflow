@@ -2,7 +2,7 @@
 .banner {
   display: grid;
   /* RTL: col-1 = right (content ~38%), col-2 = left (image ~62%) */
-  grid-template-columns: 38fr 62fr;
+  grid-template-columns: 33fr 67fr;
   /* Always light — image is a bright daytime photo, dark bg would clash */
   background: #edf1f7;
   min-height: 520px;
