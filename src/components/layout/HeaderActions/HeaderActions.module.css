@@ -8,7 +8,7 @@
 .ctaBtn {
   display: inline-flex;
   align-items: center;
-  height: 40px;
+  height: var(--btn-height-sm);
   padding: 0 var(--space-5);
   background: var(--gradient-primary);
   color: #fff;
@@ -17,7 +17,7 @@
   font-weight: var(--font-semibold);
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-btn);
-  transition: all var(--transition-base);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
   white-space: nowrap;
 }
 
@@ -48,7 +48,7 @@
   height: 2px;
   background: var(--color-text-primary);
   border-radius: 2px;
-  transition: all var(--transition-base);
+  transition: transform var(--transition-base), opacity var(--transition-base);
   transform-origin: center;
 }
 

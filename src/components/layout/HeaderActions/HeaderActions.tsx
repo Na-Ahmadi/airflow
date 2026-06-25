@@ -37,6 +37,7 @@ export default function HeaderActions({
       </Button>
 
       <button
+        type="button"
         className={styles.hamburger}
         onClick={onHamburgerClick}
         aria-label={hamburgerLabel}
@@ -44,16 +45,19 @@ export default function HeaderActions({
         aria-controls="mobile-menu"
       >
         <span
+          aria-hidden="true"
           className={[styles.bar, mobileOpen ? styles.barOpen1 : ""]
             .filter(Boolean)
             .join(" ")}
         />
         <span
+          aria-hidden="true"
           className={[styles.bar, mobileOpen ? styles.barOpen2 : ""]
             .filter(Boolean)
             .join(" ")}
         />
         <span
+          aria-hidden="true"
           className={[styles.bar, mobileOpen ? styles.barOpen3 : ""]
             .filter(Boolean)
             .join(" ")}
