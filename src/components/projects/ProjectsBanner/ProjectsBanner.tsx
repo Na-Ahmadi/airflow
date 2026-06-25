@@ -30,18 +30,21 @@ export default function ProjectsBanner({
   return (
     <section className={styles.banner}>
       <div className={styles.content}>
-        <motion.div {...fadeUp(0)}>
+        <motion.div className={styles.breadcrumbRow} {...fadeUp(0)}>
           <Breadcrumb items={breadcrumb} />
         </motion.div>
-        <motion.p className={styles.label} {...fadeUp(0.1)}>
-          {label}
-        </motion.p>
-        <motion.h1 className={styles.title} {...fadeUp(0.18)}>
-          {title}
-        </motion.h1>
-        <motion.p className={styles.description} {...fadeUp(0.28)}>
-          {description}
-        </motion.p>
+
+        <div className={styles.main}>
+          <motion.p className={styles.label} {...fadeUp(0.1)}>
+            {label}
+          </motion.p>
+          <motion.h1 className={styles.title} {...fadeUp(0.18)}>
+            {title}
+          </motion.h1>
+          <motion.p className={styles.description} {...fadeUp(0.28)}>
+            {description}
+          </motion.p>
+        </div>
       </div>
 
       <motion.div
