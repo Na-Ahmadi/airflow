@@ -58,6 +58,14 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 1024) closeMobileMenu();
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  useEffect(() => {
     if (mobileOpen) document.body.style.overflow = "hidden";
     else document.body.style.overflow = "";
     return () => {
@@ -88,7 +96,6 @@ export default function Header() {
             scrolled={scrolled}
             isHome={pathname === "/"}
           />
-
           <nav aria-label={lang === "fa" ? "ناوبری اصلی" : "Main navigation"}>
             <Navigation
               items={data.items}
@@ -99,7 +106,6 @@ export default function Header() {
               isHome={pathname === "/"}
             />
           </nav>
-
           <HeaderActions
             cta={data.cta}
             mobileOpen={mobileOpen}
