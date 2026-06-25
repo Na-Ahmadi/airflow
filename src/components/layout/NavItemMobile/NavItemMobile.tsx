@@ -14,7 +14,7 @@ interface NavItemMobileProps {
 
 export default function NavItemMobile({ item, index, isActive, onClose }: NavItemMobileProps) {
   return (
-    <motion.div
+    <motion.li
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: index * 0.06 }}
@@ -35,6 +35,6 @@ export default function NavItemMobile({ item, index, isActive, onClose }: NavIte
           ))}
         </div>
       )}
-    </motion.div>
+    </motion.li>
   );
 }

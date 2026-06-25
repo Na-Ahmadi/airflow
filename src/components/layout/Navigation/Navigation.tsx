@@ -22,18 +22,19 @@ export default function Navigation({
   isHome = false,
 }: NavigationProps) {
   return (
-    <div className={styles.desktopMenu}>
+    <ul className={styles.desktopMenu} role="list">
       {items.map((item) => (
-        <NavItemDesktop
-          key={item.id}
-          item={item}
-          isActive={isActive(item.href)}
-          dropdownOpen={activeDropdown === item.id}
-          onMouseEnter={() => item.children && onDropdownEnter(item.id)}
-          onMouseLeave={onDropdownLeave}
-          isHome={isHome}
-        />
+        <li key={item.id}>
+          <NavItemDesktop
+            item={item}
+            isActive={isActive(item.href)}
+            dropdownOpen={activeDropdown === item.id}
+            onMouseEnter={() => item.children && onDropdownEnter(item.id)}
+            onMouseLeave={onDropdownLeave}
+            isHome={isHome}
+          />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }

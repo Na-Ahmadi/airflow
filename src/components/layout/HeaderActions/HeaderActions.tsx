@@ -10,6 +10,7 @@ interface HeaderActionsProps {
   mobileOpen: boolean;
   onHamburgerClick: () => void;
   onCtaClick: React.MouseEventHandler<HTMLElement>;
+  hamburgerLabel: string;
 }
 
 export default function HeaderActions({
@@ -17,6 +18,7 @@ export default function HeaderActions({
   mobileOpen,
   onHamburgerClick,
   onCtaClick,
+  hamburgerLabel,
 }: HeaderActionsProps) {
   return (
     <div className={styles.actions}>
@@ -37,8 +39,9 @@ export default function HeaderActions({
       <button
         className={styles.hamburger}
         onClick={onHamburgerClick}
-        aria-label="منو"
+        aria-label={hamburgerLabel}
         aria-expanded={mobileOpen}
+        aria-controls="mobile-menu"
       >
         <span
           className={[styles.bar, mobileOpen ? styles.barOpen1 : ""]

@@ -79,7 +79,7 @@ export default function Header() {
       />
 
       {/* Main Nav */}
-      <nav className={styles.nav}>
+      <div className={styles.nav}>
         <div className={styles.navInner}>
           <Logo
             name={data.logo.text}
@@ -89,21 +89,23 @@ export default function Header() {
             isHome={pathname === "/"}
           />
 
-          {/* Navigation */}
-          <Navigation
-            items={data.items}
-            activeDropdown={activeDropdown}
-            onDropdownEnter={setActiveDropdown}
-            onDropdownLeave={() => setActiveDropdown(null)}
-            isActive={isActive}
-            isHome={pathname === "/"}
-          />
+          <nav aria-label={lang === "fa" ? "ناوبری اصلی" : "Main navigation"}>
+            <Navigation
+              items={data.items}
+              activeDropdown={activeDropdown}
+              onDropdownEnter={setActiveDropdown}
+              onDropdownLeave={() => setActiveDropdown(null)}
+              isActive={isActive}
+              isHome={pathname === "/"}
+            />
+          </nav>
 
           <HeaderActions
             cta={data.cta}
             mobileOpen={mobileOpen}
             onHamburgerClick={() => setMobileOpen(!mobileOpen)}
             onCtaClick={scrollToCta}
+            hamburgerLabel={lang === "fa" ? "منو" : "Menu"}
           />
         </div>
 
@@ -111,6 +113,7 @@ export default function Header() {
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
+              id="mobile-menu"
               className={styles.mobileMenu}
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
@@ -118,15 +121,17 @@ export default function Header() {
               transition={{ duration: 0.3 }}
             >
               <div className={styles.mobileMenuInner}>
-                {data.items.map((item, i) => (
-                  <NavItemMobile
-                    key={item.id}
-                    item={item}
-                    index={i}
-                    isActive={isActive(item.href)}
-                    onClose={closeMobileMenu}
-                  />
-                ))}
+                <ul className={styles.mobileNavList}>
+                  {data.items.map((item, i) => (
+                    <NavItemMobile
+                      key={item.id}
+                      item={item}
+                      index={i}
+                      isActive={isActive(item.href)}
+                      onClose={closeMobileMenu}
+                    />
+                  ))}
+                </ul>
                 <Button
                   href={data.cta.href}
                   variant="primary"
@@ -141,7 +146,7 @@ export default function Header() {
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>
+      </div>
     </header>
   );
 }
