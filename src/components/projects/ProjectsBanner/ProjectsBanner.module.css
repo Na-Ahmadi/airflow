@@ -16,7 +16,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding-top: calc(var(--header-height) + var(--space-6));
-  padding-right: 4rem;
+  padding-right: 6rem;
   /* padding-right: max(
     var(--section-padding-x),
     calc((100vw - 1320px) / 2 + var(--section-padding-x))
