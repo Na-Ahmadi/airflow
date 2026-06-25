@@ -4,7 +4,8 @@ import styles from './Logo.module.css';
 
 interface LogoProps {
   name: string;
-  subtitle: string;
+  subtitle?: string;
+  src?: string;
   size?: number;
   href?: string;
   scrolled?: boolean;
@@ -12,7 +13,7 @@ interface LogoProps {
   className?: string;
 }
 
-export default function Logo({ name, subtitle, size = 32, href, scrolled, isHome = false, className }: LogoProps) {
+export default function Logo({ name, subtitle, src = '/icons/airflow-logo.svg', size = 32, href, scrolled, isHome = false, className }: LogoProps) {
   const cls = [styles.logo, className].filter(Boolean).join(' ');
   const attrs = {
     ...(scrolled !== undefined ? { 'data-scrolled': String(scrolled) } : {}),
@@ -22,11 +23,11 @@ export default function Logo({ name, subtitle, size = 32, href, scrolled, isHome
   const inner = (
     <>
       <span className={styles.icon}>
-        <Image src="/icons/airflow-logo.svg" width={size} height={size} alt="" aria-hidden />
+        <Image src={src} width={size} height={size} alt="" aria-hidden />
       </span>
       <span className={styles.text}>
         <span className={styles.name}>{name}</span>
-        <span className={styles.sub}>{subtitle}</span>
+        {subtitle && <span className={styles.sub}>{subtitle}</span>}
       </span>
     </>
   );
