@@ -27,6 +27,7 @@
 
 .breadcrumbRow {
   flex-shrink: 0;
+  transform: translateY(2rem);
 }
 
 .main {
