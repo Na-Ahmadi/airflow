@@ -1,11 +1,11 @@
 "use client";
 
 import type { BreadcrumbItem } from "@/components/shared/Breadcrumb/Breadcrumb";
-import Breadcrumb from "@/components/shared/Breadcrumb/Breadcrumb";
 import Container from "@/components/shared/Container/Container";
 import FilterTabs from "@/components/shared/FilterTabs/FilterTabs";
 import type { TabItem } from "@/components/shared/FilterTabs/FilterTabs";
 import ProjectCard from "@/components/shared/ProjectCard/ProjectCard";
+import ProjectsBanner from "@/components/projects/ProjectsBanner/ProjectsBanner";
 import type { Project } from "@/types";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
@@ -14,6 +14,8 @@ import styles from "./ProjectsPageClient.module.css";
 interface Props {
   breadcrumb: BreadcrumbItem[];
   pageTitle: string;
+  pageLabel: string;
+  pageDescription: string;
   tabs: TabItem[];
   items: Project[];
 }
@@ -21,6 +23,8 @@ interface Props {
 export default function ProjectsPageClient({
   breadcrumb,
   pageTitle,
+  pageLabel,
+  pageDescription,
   tabs,
   items,
 }: Props) {
@@ -31,13 +35,12 @@ export default function ProjectsPageClient({
 
   return (
     <>
-      {/* Page Header */}
-      <div className={styles.pageHeader}>
-        <Container>
-          <h1 className={styles.pageTitle}>{pageTitle}</h1>
-          <Breadcrumb items={breadcrumb} />
-        </Container>
-      </div>
+      <ProjectsBanner
+        breadcrumb={breadcrumb}
+        label={pageLabel}
+        title={pageTitle}
+        description={pageDescription}
+      />
 
       {/* Projects Grid */}
       <section className={styles.section}>

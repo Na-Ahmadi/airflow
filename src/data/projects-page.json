@@ -1,7 +1,9 @@
 {
   "fa": {
     "header": {
-      "title": "پروژه‌ها",
+      "label": "گالری پروژه‌ها",
+      "title": "پروژه‌های ما",
+      "description": "مجموعه‌ای از پروژه‌های موفق اجرا شده را کشف کنید که در آن‌ها راهکارهای نمای ما در برابر متنوع‌ترین الزامات، کیفیت و دقت خود را به اثبات رسانده‌اند. هر پروژه نمادی از کیفیت، دقت و معماری پایدار است.",
       "breadcrumb": [
         { "label": "خانه",      "href": "/"          },
         { "label": "پروژه‌ها",  "href": "/projects"  }
@@ -21,7 +23,9 @@
   },
   "en": {
     "header": {
-      "title": "Projects",
+      "label": "Project Gallery",
+      "title": "Our Projects",
+      "description": "Discover a selection of successfully completed projects where our facade solutions prove their quality across the most diverse requirements. Each project stands for quality, precision and sustainable architecture.",
       "breadcrumb": [
         { "label": "Home",     "href": "/"         },
         { "label": "Projects", "href": "/projects" }
