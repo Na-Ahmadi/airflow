@@ -5,6 +5,12 @@
       "title": "درخواست استعلام",
       "subtitle": "اطلاعات پروژه خود را ثبت کنید تا کارشناسان ما در سریع‌ترین زمان با شما تماس بگیرند."
     },
+    "contactDetails": [
+      { "icon": "phone",    "label": "تلفن تماس",   "value": "۰۲۱-۳۳۵۸۵۷۸" },
+      { "icon": "mail",     "label": "ایمیل",        "value": "info@airflowsystem.ir" },
+      { "icon": "location", "label": "آدرس",         "value": "تهران، شهران، خیابان مطهری، خیابان ستارخان، پلاک ۱۲۳" },
+      { "icon": "clock",    "label": "ساعات کاری",   "value": "شنبه تا چهارشنبه ۸–۱۷ | پنج‌شنبه ۸–۱۳" }
+    ],
     "fields": [
       { "id": "name",        "label": "نام و نام خانوادگی", "type": "text",     "placeholder": "نام و نام خانوادگی",                 "required": true  },
       { "id": "email",       "label": "ایمیل",               "type": "email",    "placeholder": "ایمیل",                               "required": true  },
@@ -40,6 +46,12 @@
       "title": "Request a Quote",
       "subtitle": "Submit your project details and our experts will get in touch with you as soon as possible."
     },
+    "contactDetails": [
+      { "icon": "phone",    "label": "Phone",           "value": "021-33585780" },
+      { "icon": "mail",     "label": "Email",            "value": "info@airflowsystem.ir" },
+      { "icon": "location", "label": "Address",          "value": "Tehran, Shahran, Motahari St., Sattar Khan St., No. 123" },
+      { "icon": "clock",    "label": "Working Hours",    "value": "Sat–Wed 8 AM–5 PM | Thu 8 AM–1 PM" }
+    ],
     "fields": [
       { "id": "name",        "label": "Full Name",               "type": "text",     "placeholder": "Full Name",                     "required": true  },
       { "id": "email",       "label": "Email",                   "type": "email",    "placeholder": "Email",                         "required": true  },

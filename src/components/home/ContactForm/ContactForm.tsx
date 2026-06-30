@@ -7,7 +7,6 @@ import FormField from "@/components/shared/FormField/FormField";
 import FormSelect from "@/components/shared/FormField/FormSelect";
 import Icon from "@/components/shared/Icon/Icon";
 import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
-import { CONTACT_DETAILS } from "@/constants";
 import {
   contactSchema,
   type ContactFormValues as FormValues,
@@ -29,6 +28,7 @@ type ContactField = {
 interface ContactFormProps {
   data: {
     section: { tag: string; title: string; subtitle: string };
+    contactDetails: { icon: string; label: string; value: string }[];
     fields: ContactField[];
     projectTypes: string[];
     fileInfo: { label: string; hint: string };
@@ -75,7 +75,6 @@ export default function ContactForm({ data }: ContactFormProps) {
   };
 
   const f = (id: string) => data.fields.find((field) => field.id === id)!;
-  console.log("f: ", f("phone").label);
   const projectOptions = data.projectTypes.map((pt) => ({
     value: pt,
     label: pt,
@@ -107,7 +106,7 @@ export default function ContactForm({ data }: ContactFormProps) {
               align="start"
             />
             <div className={styles.contactDetails}>
-              {CONTACT_DETAILS.map((detail) => (
+              {data.contactDetails.map((detail) => (
                 <ContactDetail key={detail.icon} {...detail} />
               ))}
             </div>
