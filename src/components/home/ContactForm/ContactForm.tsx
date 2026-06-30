@@ -8,6 +8,7 @@ import FormField from "@/components/shared/FormField/FormField";
 import FormSelect from "@/components/shared/FormField/FormSelect";
 import Icon from "@/components/shared/Icon/Icon";
 import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
+import { CONTACT_DETAILS } from "@/constants";
 import {
   contactSchema,
   type ContactFormValues as FormValues,
@@ -27,20 +28,6 @@ interface ContactFormProps {
   };
 }
 
-const CONTACT_DETAILS = [
-  { icon: "phone", label: "تلفن تماس", value: "۰۲۱-۳۳۵۸۵۷۸" },
-  { icon: "mail", label: "ایمیل", value: "info@airflowsystem.ir" },
-  {
-    icon: "location",
-    label: "آدرس",
-    value: "تهران، شهران، خیابان مطهری، پلاک ۱۲۳",
-  },
-  {
-    icon: "clock",
-    label: "ساعات کاری",
-    value: "شنبه تا چهارشنبه ۸–۱۷ | پنج‌شنبه ۸–۱۳",
-  },
-];
 
 export default function ContactForm({ data }: ContactFormProps) {
   const ref = useRef<HTMLElement>(null);

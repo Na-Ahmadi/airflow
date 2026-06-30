@@ -31,6 +31,17 @@ export const BREAKPOINTS = {
 
 export const SCROLL_THRESHOLD = 50;
 
+export const CONTACT_DETAILS = [
+  { icon: "phone", label: "تلفن تماس", value: SITE_CONFIG.phone },
+  { icon: "mail", label: "ایمیل", value: SITE_CONFIG.email },
+  { icon: "location", label: "آدرس", value: SITE_CONFIG.address },
+  {
+    icon: "clock",
+    label: "ساعات کاری",
+    value: "شنبه تا چهارشنبه ۸–۱۷ | پنج‌شنبه ۸–۱۳",
+  },
+] as const;
+
 export const PRODUCT_CATEGORIES = {
   all: 'همه محصولات',
   linear: 'دریچه‌های خطی',
