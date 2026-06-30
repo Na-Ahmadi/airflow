@@ -22,6 +22,8 @@ export default function ProjectsContent() {
       <ProjectsPageClient
         breadcrumb={page.header.breadcrumb}
         pageTitle={page.header.title}
+        pageLabel={page.header.label}
+        pageDescription={page.header.description}
         tabs={page.tabs}
         items={projects.items as unknown as Project[]}
       />
