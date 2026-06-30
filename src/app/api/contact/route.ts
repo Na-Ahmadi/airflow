@@ -2,7 +2,6 @@ import { contactSchema } from "@/lib/contactSchema";
 import { NextRequest } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const TO_EMAIL = "ahmadi@neoskop.de";
 
 // Rate limiting: max 3 requests per IP per 10 minutes
@@ -35,6 +34,7 @@ function escapeHtml(str: string): string {
 }
 
 export async function POST(request: NextRequest) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const ip =
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
 
