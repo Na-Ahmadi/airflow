@@ -18,12 +18,27 @@ import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import styles from "./ContactForm.module.css";
 
+type ContactField = {
+  id: string;
+  label: string;
+  type: string;
+  placeholder: string;
+  required: boolean;
+};
+
 interface ContactFormProps {
   data: {
     section: { tag: string; title: string; subtitle: string };
+    fields: ContactField[];
     projectTypes: string[];
     fileInfo: { label: string; hint: string };
-    submit: { label: string; loading: string; success: string; error: string };
+    submit: {
+      label: string;
+      loading: string;
+      success: string;
+      error: string;
+      newMessage: string;
+    };
   };
 }
 
@@ -59,6 +74,8 @@ export default function ContactForm({ data }: ContactFormProps) {
     }
   };
 
+  const f = (id: string) => data.fields.find((field) => field.id === id)!;
+  console.log("f: ", f("phone").label);
   const projectOptions = data.projectTypes.map((pt) => ({
     value: pt,
     label: pt,
@@ -116,7 +133,7 @@ export default function ContactForm({ data }: ContactFormProps) {
                     className={styles.resetBtn}
                     onClick={() => setStatus("idle")}
                   >
-                    ارسال پیام جدید
+                    {data.submit.newMessage}
                   </button>
                 </div>
               ) : (
@@ -127,53 +144,53 @@ export default function ContactForm({ data }: ContactFormProps) {
                 >
                   <div className={styles.row}>
                     <FormField
-                      label="نام و نام خانوادگی"
+                      label={f("name").label}
                       error={errors.name?.message}
                       required
                       type="text"
-                      placeholder="نام و نام خانوادگی"
+                      placeholder={f("name").placeholder}
                       {...register("name")}
                     />
                     <FormField
-                      label="ایمیل"
+                      label={f("email").label}
                       error={errors.email?.message}
                       required
                       type="email"
-                      placeholder="ایمیل"
+                      placeholder={f("email").placeholder}
                       {...register("email")}
                     />
                   </div>
                   <div className={styles.row}>
                     <FormField
-                      label="شماره تماس"
+                      label={f("phone").label}
                       error={errors.phone?.message}
                       required
                       type="tel"
-                      placeholder="شماره تماس"
+                      placeholder={f("phone").placeholder}
                       {...register("phone")}
                     />
                     <FormField
-                      label="شرکت / سازمان"
+                      label={f("company").label}
                       error={errors.company?.message}
                       type="text"
-                      placeholder="شرکت / سازمان"
+                      placeholder={f("company").placeholder}
                       {...register("company")}
                     />
                   </div>
                   <FormSelect
-                    label="نوع پروژه"
+                    label={f("projectType").label}
                     error={errors.projectType?.message}
                     required
-                    placeholder="انتخاب کنید"
+                    placeholder={f("projectType").placeholder}
                     options={projectOptions}
                     {...register("projectType")}
                   />
                   <FormField
                     multiline
-                    label="توضیحات پروژه"
+                    label={f("message").label}
                     error={errors.message?.message}
                     required
-                    placeholder="توضیحات پروژه خود را بنویسید..."
+                    placeholder={f("message").placeholder}
                     rows={4}
                     {...register("message")}
                   />
