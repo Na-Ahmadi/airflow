@@ -32,11 +32,27 @@ type BillingualProjects   = { fa: ProjectsData;   en: ProjectsData   };
 type BillingualStatistics = { fa: StatisticsData; en: StatisticsData };
 type BillingualResources  = { fa: ResourcesData;  en: ResourcesData  };
 
+type ContactField = {
+  id: string;
+  label: string;
+  type: string;
+  placeholder: string;
+  required: boolean;
+};
+
+type ContactDetail = {
+  icon: string;
+  label: string;
+  value: string;
+};
+
 type ContactData = {
   section: { tag: string; title: string; subtitle: string };
+  contactDetails: ContactDetail[];
+  fields: ContactField[];
   projectTypes: string[];
   fileInfo: { label: string; hint: string };
-  submit: { label: string; loading: string; success: string; error: string };
+  submit: { label: string; loading: string; success: string; error: string; newMessage: string };
 };
 type BillingualContact = { fa: ContactData; en: ContactData };
 

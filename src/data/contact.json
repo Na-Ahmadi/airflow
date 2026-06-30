@@ -5,11 +5,19 @@
       "title": "درخواست استعلام",
       "subtitle": "اطلاعات پروژه خود را ثبت کنید تا کارشناسان ما در سریع‌ترین زمان با شما تماس بگیرند."
     },
+    "contactDetails": [
+      { "icon": "phone",    "label": "تلفن تماس",   "value": "۰۲۱-۳۳۵۸۵۷۸" },
+      { "icon": "mail",     "label": "ایمیل",        "value": "info@airflowsystem.ir" },
+      { "icon": "location", "label": "آدرس",         "value": "تهران، شهران، خیابان مطهری، خیابان ستارخان، پلاک ۱۲۳" },
+      { "icon": "clock",    "label": "ساعات کاری",   "value": "شنبه تا چهارشنبه ۸–۱۷ | پنج‌شنبه ۸–۱۳" }
+    ],
     "fields": [
-      { "id": "name",    "label": "نام و نام خانوادگی", "type": "text",  "placeholder": "نام و نام خانوادگی",  "required": true  },
-      { "id": "email",   "label": "ایمیل",               "type": "email", "placeholder": "ایمیل",               "required": true  },
-      { "id": "phone",   "label": "شماره تماس",          "type": "tel",   "placeholder": "شماره تماس",          "required": true  },
-      { "id": "company", "label": "شرکت / سازمان",       "type": "text",  "placeholder": "شرکت / سازمان",       "required": false }
+      { "id": "name",        "label": "نام و نام خانوادگی", "type": "text",     "placeholder": "نام و نام خانوادگی",                 "required": true  },
+      { "id": "email",       "label": "ایمیل",               "type": "email",    "placeholder": "ایمیل",                               "required": true  },
+      { "id": "phone",       "label": "شماره تماس",          "type": "tel",      "placeholder": "شماره تماس",                          "required": true  },
+      { "id": "company",     "label": "شرکت / سازمان",       "type": "text",     "placeholder": "شرکت / سازمان",                       "required": false },
+      { "id": "projectType", "label": "نوع پروژه",           "type": "select",   "placeholder": "انتخاب کنید",                         "required": true  },
+      { "id": "message",     "label": "توضیحات پروژه",       "type": "textarea", "placeholder": "توضیحات پروژه خود را بنویسید...",    "required": true  }
     ],
     "projectTypes": [
       "ساختمان اداری",
@@ -25,10 +33,11 @@
       "hint": "فرمت‌های مجاز: PDF, DWG, ZIP (حداکثر ۲۵ مگابایت)"
     },
     "submit": {
-      "label":   "ارسال درخواست",
-      "loading": "در حال ارسال...",
-      "success": "درخواست شما با موفقیت ارسال شد. کارشناسان ما به زودی با شما تماس خواهند گرفت.",
-      "error":   "خطایی رخ داد. لطفاً مجدداً تلاش کنید."
+      "label":      "ارسال درخواست",
+      "loading":    "در حال ارسال...",
+      "success":    "درخواست شما با موفقیت ارسال شد. کارشناسان ما به زودی با شما تماس خواهند گرفت.",
+      "error":      "خطایی رخ داد. لطفاً مجدداً تلاش کنید.",
+      "newMessage": "ارسال پیام جدید"
     }
   },
   "en": {
@@ -37,11 +46,19 @@
       "title": "Request a Quote",
       "subtitle": "Submit your project details and our experts will get in touch with you as soon as possible."
     },
+    "contactDetails": [
+      { "icon": "phone",    "label": "Phone",           "value": "021-33585780" },
+      { "icon": "mail",     "label": "Email",            "value": "info@airflowsystem.ir" },
+      { "icon": "location", "label": "Address",          "value": "Tehran, Shahran, Motahari St., Sattar Khan St., No. 123" },
+      { "icon": "clock",    "label": "Working Hours",    "value": "Sat–Wed 8 AM–5 PM | Thu 8 AM–1 PM" }
+    ],
     "fields": [
-      { "id": "name",    "label": "Full Name",         "type": "text",  "placeholder": "Full Name",         "required": true  },
-      { "id": "email",   "label": "Email",             "type": "email", "placeholder": "Email",             "required": true  },
-      { "id": "phone",   "label": "Phone Number",      "type": "tel",   "placeholder": "Phone Number",      "required": true  },
-      { "id": "company", "label": "Company / Organization", "type": "text",  "placeholder": "Company / Organization", "required": false }
+      { "id": "name",        "label": "Full Name",               "type": "text",     "placeholder": "Full Name",                     "required": true  },
+      { "id": "email",       "label": "Email",                   "type": "email",    "placeholder": "Email",                         "required": true  },
+      { "id": "phone",       "label": "Phone Number",            "type": "tel",      "placeholder": "Phone Number",                  "required": true  },
+      { "id": "company",     "label": "Company / Organization",  "type": "text",     "placeholder": "Company / Organization",        "required": false },
+      { "id": "projectType", "label": "Project Type",            "type": "select",   "placeholder": "Select",                        "required": true  },
+      { "id": "message",     "label": "Project Description",     "type": "textarea", "placeholder": "Describe your project...",      "required": true  }
     ],
     "projectTypes": [
       "Office Building",
@@ -57,10 +74,11 @@
       "hint": "Allowed formats: PDF, DWG, ZIP (max 25 MB)"
     },
     "submit": {
-      "label":   "Submit Request",
-      "loading": "Sending...",
-      "success": "Your request was submitted successfully. Our experts will contact you shortly.",
-      "error":   "An error occurred. Please try again."
+      "label":      "Submit Request",
+      "loading":    "Sending...",
+      "success":    "Your request was submitted successfully. Our experts will contact you shortly.",
+      "error":      "An error occurred. Please try again.",
+      "newMessage": "Send New Message"
     }
   }
 }

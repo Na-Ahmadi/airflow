@@ -3,7 +3,6 @@
 import Button from "@/components/shared/Button/Button";
 import ContactDetail from "@/components/shared/ContactDetail/ContactDetail";
 import Container from "@/components/shared/Container/Container";
-import FileUpload from "@/components/shared/FileUpload/FileUpload";
 import FormField from "@/components/shared/FormField/FormField";
 import FormSelect from "@/components/shared/FormField/FormSelect";
 import Icon from "@/components/shared/Icon/Icon";
@@ -18,29 +17,30 @@ import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import styles from "./ContactForm.module.css";
 
+type ContactField = {
+  id: string;
+  label: string;
+  type: string;
+  placeholder: string;
+  required: boolean;
+};
+
 interface ContactFormProps {
   data: {
     section: { tag: string; title: string; subtitle: string };
+    contactDetails: { icon: string; label: string; value: string }[];
+    fields: ContactField[];
     projectTypes: string[];
     fileInfo: { label: string; hint: string };
-    submit: { label: string; loading: string; success: string; error: string };
+    submit: {
+      label: string;
+      loading: string;
+      success: string;
+      error: string;
+      newMessage: string;
+    };
   };
 }
-
-const CONTACT_DETAILS = [
-  { icon: "phone", label: "تلفن تماس", value: "۰۲۱-۳۳۵۸۵۷۸" },
-  { icon: "mail", label: "ایمیل", value: "info@airflowsystem.ir" },
-  {
-    icon: "location",
-    label: "آدرس",
-    value: "تهران، شهران، خیابان مطهری، پلاک ۱۲۳",
-  },
-  {
-    icon: "clock",
-    label: "ساعات کاری",
-    value: "شنبه تا چهارشنبه ۸–۱۷ | پنج‌شنبه ۸–۱۳",
-  },
-];
 
 export default function ContactForm({ data }: ContactFormProps) {
   const ref = useRef<HTMLElement>(null);
@@ -74,6 +74,7 @@ export default function ContactForm({ data }: ContactFormProps) {
     }
   };
 
+  const f = (id: string) => data.fields.find((field) => field.id === id)!;
   const projectOptions = data.projectTypes.map((pt) => ({
     value: pt,
     label: pt,
@@ -105,7 +106,7 @@ export default function ContactForm({ data }: ContactFormProps) {
               align="start"
             />
             <div className={styles.contactDetails}>
-              {CONTACT_DETAILS.map((detail) => (
+              {data.contactDetails.map((detail) => (
                 <ContactDetail key={detail.icon} {...detail} />
               ))}
             </div>
@@ -131,7 +132,7 @@ export default function ContactForm({ data }: ContactFormProps) {
                     className={styles.resetBtn}
                     onClick={() => setStatus("idle")}
                   >
-                    ارسال پیام جدید
+                    {data.submit.newMessage}
                   </button>
                 </div>
               ) : (
@@ -142,60 +143,60 @@ export default function ContactForm({ data }: ContactFormProps) {
                 >
                   <div className={styles.row}>
                     <FormField
-                      label="نام و نام خانوادگی"
+                      label={f("name").label}
                       error={errors.name?.message}
                       required
                       type="text"
-                      placeholder="نام و نام خانوادگی"
+                      placeholder={f("name").placeholder}
                       {...register("name")}
                     />
                     <FormField
-                      label="ایمیل"
+                      label={f("email").label}
                       error={errors.email?.message}
                       required
                       type="email"
-                      placeholder="ایمیل"
+                      placeholder={f("email").placeholder}
                       {...register("email")}
                     />
                   </div>
                   <div className={styles.row}>
                     <FormField
-                      label="شماره تماس"
+                      label={f("phone").label}
                       error={errors.phone?.message}
                       required
                       type="tel"
-                      placeholder="شماره تماس"
+                      placeholder={f("phone").placeholder}
                       {...register("phone")}
                     />
                     <FormField
-                      label="شرکت / سازمان"
+                      label={f("company").label}
                       error={errors.company?.message}
                       type="text"
-                      placeholder="شرکت / سازمان"
+                      placeholder={f("company").placeholder}
                       {...register("company")}
                     />
                   </div>
                   <FormSelect
-                    label="نوع پروژه"
+                    label={f("projectType").label}
                     error={errors.projectType?.message}
                     required
-                    placeholder="انتخاب کنید"
+                    placeholder={f("projectType").placeholder}
                     options={projectOptions}
                     {...register("projectType")}
                   />
                   <FormField
                     multiline
-                    label="توضیحات پروژه"
+                    label={f("message").label}
                     error={errors.message?.message}
                     required
-                    placeholder="توضیحات پروژه خود را بنویسید..."
+                    placeholder={f("message").placeholder}
                     rows={4}
                     {...register("message")}
                   />
-                  <FileUpload
+                  {/* <FileUpload
                     label={data.fileInfo.label}
                     hint={data.fileInfo.hint}
-                  />
+                  /> */}
                   {status === "error" && (
                     <p className={styles.errorMsg}>{data.submit.error}</p>
                   )}
