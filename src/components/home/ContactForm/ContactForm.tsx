@@ -3,7 +3,6 @@
 import Button from "@/components/shared/Button/Button";
 import ContactDetail from "@/components/shared/ContactDetail/ContactDetail";
 import Container from "@/components/shared/Container/Container";
-import FileUpload from "@/components/shared/FileUpload/FileUpload";
 import FormField from "@/components/shared/FormField/FormField";
 import FormSelect from "@/components/shared/FormField/FormSelect";
 import Icon from "@/components/shared/Icon/Icon";
@@ -178,10 +177,10 @@ export default function ContactForm({ data }: ContactFormProps) {
                     rows={4}
                     {...register("message")}
                   />
-                  <FileUpload
+                  {/* <FileUpload
                     label={data.fileInfo.label}
                     hint={data.fileInfo.hint}
-                  />
+                  /> */}
                   {status === "error" && (
                     <p className={styles.errorMsg}>{data.submit.error}</p>
                   )}
