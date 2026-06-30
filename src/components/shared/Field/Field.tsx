@@ -7,7 +7,12 @@ interface FieldProps {
   children: React.ReactNode;
 }
 
-export default function Field({ label, error, required, children }: FieldProps) {
+export default function Field({
+  label,
+  error,
+  required,
+  children,
+}: FieldProps) {
   return (
     <div className={styles.field}>
       <label className={styles.label}>

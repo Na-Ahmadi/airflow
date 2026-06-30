@@ -28,7 +28,6 @@ interface ContactFormProps {
   };
 }
 
-
 export default function ContactForm({ data }: ContactFormProps) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
