@@ -188,6 +188,28 @@ export default function ProjectDetailClient({
         </Container>
       </section>
 
+      {/* ─── About ──────────────────────────────────────────── */}
+      <section className={styles.about}>
+        <Container>
+          <div className={styles.aboutGrid}>
+            <div className={styles.aboutText}>
+              <h2 className={styles.sectionTitle}>درباره پروژه</h2>
+              <p className={styles.aboutDescription}>{description}</p>
+            </div>
+
+            <div className={styles.aboutImage}>
+              <Image
+                src="/images/project-placeholder.svg"
+                alt={title}
+                fill
+                unoptimized
+                className={styles.aboutImg}
+              />
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* ─── Tabs Section ───────────────────────────────────── */}
       <section className={styles.tabsSection}>
         <Container>

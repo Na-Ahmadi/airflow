@@ -256,6 +256,51 @@
   text-overflow: ellipsis;
 }
 
+/* ─── About ─────────────────────────────────────────────────── */
+.about {
+  background: var(--color-bg);
+  padding: var(--space-12) 0;
+  direction: rtl;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+  align-items: center;
+}
+
+.aboutText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  text-align: right;
+}
+
+.sectionTitle {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-2);
+}
+
+.aboutDescription {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-loose);
+  margin: 0;
+}
+
+.aboutImage {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.aboutImg { object-fit: cover; }
+
 /* ─── Tabs Section ──────────────────────────────────────────── */
 .tabsSection {
   background: var(--color-bg-secondary);
@@ -450,6 +495,9 @@
   .metaCell:nth-child(3n+1) { border-inline-start: 1px solid var(--color-border); }
   .metaCell:nth-child(2n+1) { border-inline-start: none; }
   .metaCell:nth-child(n+3) { border-top: 1px solid var(--color-border); }
+
+  .aboutGrid { grid-template-columns: 1fr; }
+  .aboutImage { order: -1; }
 }
 
 @media (max-width: 480px) {
