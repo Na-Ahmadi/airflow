@@ -5,7 +5,7 @@
   gap: var(--space-2);
   font-family: var(--font-primary);
   font-weight: var(--font-semibold);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
   cursor: pointer;
   border: 2px solid transparent;
   text-decoration: none;
