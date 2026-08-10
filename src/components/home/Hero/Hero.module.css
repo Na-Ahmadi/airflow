@@ -87,7 +87,7 @@
   padding: var(--space-2) var(--space-4);
   background: rgba(30, 111, 207, 0.15);
   border: 1px solid rgba(30, 111, 207, 0.35);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
   color: var(--color-accent);
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
@@ -148,7 +148,7 @@
   gap: var(--space-2);
   height: var(--btn-height-lg);
   padding: 0 var(--space-8);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
   font-size: var(--text-base);
   font-weight: var(--font-semibold);
   text-decoration: none;
