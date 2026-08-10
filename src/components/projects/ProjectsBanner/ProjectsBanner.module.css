@@ -61,6 +61,41 @@
   line-height: var(--leading-relaxed);
 }
 
+.badgeRow {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+.metaItemGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.metaItem svg { color: var(--color-accent); }
+
+.metaDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+  opacity: 0.5;
+}
+
 /* ─── Image panel ───────────────────────────────────────────── */
 .imageWrap {
   position: relative;

@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
-import Badge from "@/components/shared/Badge/Badge";
 import type { BreadcrumbItem } from "@/components/shared/Breadcrumb/Breadcrumb";
-import Breadcrumb from "@/components/shared/Breadcrumb/Breadcrumb";
 import Container from "@/components/shared/Container/Container";
 import Icon from "@/components/shared/Icon/Icon";
+import ProjectsBanner from "@/components/projects/ProjectsBanner/ProjectsBanner";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./ProjectDetailClient.module.css";
 
@@ -57,53 +56,31 @@ export default function ProjectDetailClient({
     {
       icon: "briefcase",
       title: "حوزه خدمات",
-      items: ["مشاوره فنی", "طراحی مهندسی", "تأمین تجهیزات", "اجرا و نصب", "راه‌اندازی و تست نهایی"],
+      items: [
+        "مشاوره فنی",
+        "طراحی مهندسی",
+        "تأمین تجهیزات",
+        "اجرا و نصب",
+        "راه‌اندازی و تست نهایی",
+      ],
     },
     { icon: "file-check", title: "جزئیات اجرا", items: [scope, ...highlights] },
   ];
 
   return (
     <>
-      {/* ─── Breadcrumb ─────────────────────────────────────── */}
-      <div className={styles.breadcrumbBar}>
-        <Container>
-          <Breadcrumb items={breadcrumb} />
-        </Container>
-      </div>
-
-      {/* ─── Hero ───────────────────────────────────────────── */}
-      <section className={styles.hero}>
-        <div className={styles.heroContent}>
-          <div className={styles.badges}>
-            <Badge variant="accent">{category}</Badge>
-          </div>
-          <h1 className={styles.title}>{title}</h1>
-
-          <div className={styles.metaRow}>
-            <span className={styles.metaItem}>
-              <Icon name="location" size={14} />
-              {location}
-            </span>
-            <span className={styles.metaDot} />
-            <span className={styles.metaItem}>
-              <Icon name="calendar" size={14} />
-              {year}
-            </span>
-          </div>
-        </div>
-
-        <div className={styles.heroImageWrap}>
-          <Image
-            src={heroImage}
-            alt={title}
-            fill
-            unoptimized
-            className={styles.heroImg}
-            priority
-          />
-          <div className={styles.heroImageEdge} />
-        </div>
-      </section>
+      {/* ─── Banner ──────────────────────────────────────────── */}
+      <ProjectsBanner
+        breadcrumb={breadcrumb}
+        badge={category}
+        title={title}
+        description={description}
+        image={heroImage}
+        meta={[
+          { icon: "location", value: location },
+          { icon: "calendar", value: year },
+        ]}
+      />
 
       {/* ─── Meta Bar ───────────────────────────────────────── */}
       <section className={styles.metaBar}>
@@ -159,7 +136,11 @@ export default function ProjectDetailClient({
                 <ul className={styles.infoCardList}>
                   {card.items.map((item) => (
                     <li key={item} className={styles.infoCardItem}>
-                      <Icon name="chevron-left" size={14} className={styles.infoCardBullet} />
+                      <Icon
+                        name="chevron-left"
+                        size={14}
+                        className={styles.infoCardBullet}
+                      />
                       <span>{item}</span>
                     </li>
                   ))}
