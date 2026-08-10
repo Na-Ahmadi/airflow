@@ -52,9 +52,6 @@ export default async function ProjectDetailPage(
         category={project.category}
         location={project.location}
         year={project.year}
-        client={project.client}
-        area={project.area}
-        duration={project.duration}
         meta={meta}
         description={project.description}
         scope={project.scope}
