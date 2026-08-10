@@ -36,6 +36,14 @@ export default async function ProjectDetailPage(
     { label: project.title, href: `/projects/${slug}` },
   ];
 
+  const meta = [
+    { icon: 'building', label: 'متراژ پروژه', value: project.area },
+    { icon: 'location', label: 'مکان پروژه',  value: project.location },
+    { icon: 'calendar', label: 'سال اجرا',     value: project.year },
+    { icon: 'design',   label: 'کاربری پروژه', value: project.category },
+    { icon: 'award',    label: 'وضعیت پروژه',  value: project.status },
+  ];
+
   return (
     <main>
       <ProjectDetailClient
@@ -47,10 +55,10 @@ export default async function ProjectDetailPage(
         client={project.client}
         area={project.area}
         duration={project.duration}
+        meta={meta}
         description={project.description}
         scope={project.scope}
         products={project.products}
-        stats={project.stats}
         highlights={project.highlights}
         imageCount={project.imageCount}
       />

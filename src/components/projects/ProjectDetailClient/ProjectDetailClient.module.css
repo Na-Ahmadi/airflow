@@ -73,41 +73,6 @@
   margin: 0;
 }
 
-/* ─── Stats Grid ────────────────────────────────────────────── */
-.statsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-3);
-}
-
-.statCard {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-  padding: var(--space-4);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  text-align: right;
-  transition: border-color var(--transition-fast);
-}
-
-.statCard:hover { border-color: var(--color-border-primary); }
-
-.statValue {
-  font-size: var(--text-base);
-  font-weight: var(--font-bold);
-  color: var(--color-text-primary);
-  direction: ltr;
-  text-align: right;
-}
-
-.statLabel {
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-  font-weight: var(--font-medium);
-}
-
 /* ─── CTA Buttons ───────────────────────────────────────────── */
 .ctaRow {
   display: flex;
@@ -243,6 +208,52 @@
   background: var(--color-primary);
   border-color: var(--color-primary);
   color: #fff;
+}
+
+/* ─── Meta Bar ──────────────────────────────────────────────── */
+.metaBar {
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  direction: rtl;
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.metaCell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-6) var(--space-5);
+  border-inline-start: 1px solid var(--color-border);
+}
+
+.metaCell:first-child { border-inline-start: none; }
+
+.metaIcon { color: var(--color-primary-light); flex-shrink: 0; }
+
+.metaText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.metaLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.metaValue {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ─── Tabs Section ──────────────────────────────────────────── */
@@ -411,6 +422,10 @@
 /* ─── Responsive ────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .heroGrid { gap: var(--space-8); }
+
+  .metaGrid { grid-template-columns: repeat(3, 1fr); }
+  .metaCell:nth-child(3n+1) { border-inline-start: none; }
+  .metaCell:nth-child(n+4) { border-top: 1px solid var(--color-border); }
 }
 
 @media (max-width: 768px) {
@@ -421,8 +436,6 @@
 
   .imageCol { order: -1; }
 
-  .statsGrid { grid-template-columns: repeat(2, 1fr); }
-
   .infoPane { grid-template-columns: 1fr; }
 
   .ctaRow { flex-direction: column; }
@@ -432,9 +445,17 @@
 
   .scopePane { max-width: 100%; }
   .productsPane { max-width: 100%; }
+
+  .metaGrid { grid-template-columns: repeat(2, 1fr); }
+  .metaCell:nth-child(3n+1) { border-inline-start: 1px solid var(--color-border); }
+  .metaCell:nth-child(2n+1) { border-inline-start: none; }
+  .metaCell:nth-child(n+3) { border-top: 1px solid var(--color-border); }
 }
 
 @media (max-width: 480px) {
   .title { font-size: var(--text-3xl); }
-  .statsGrid { grid-template-columns: 1fr 1fr; }
+
+  .metaGrid { grid-template-columns: 1fr; }
+  .metaCell { border-inline-start: none !important; border-top: 1px solid var(--color-border); }
+  .metaCell:first-child { border-top: none; }
 }

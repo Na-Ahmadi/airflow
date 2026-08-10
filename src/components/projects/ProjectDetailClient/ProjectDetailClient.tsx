@@ -13,7 +13,8 @@ import Link from "next/link";
 import styles from "./ProjectDetailClient.module.css";
 
 /* ─── Types ───────────────────────────────────────────────── */
-interface StatItem {
+interface MetaItem {
+  icon: string;
   label: string;
   value: string;
 }
@@ -27,10 +28,10 @@ interface Props {
   client: string;
   area: string;
   duration: string;
+  meta: MetaItem[];
   description: string;
   scope: string;
   products: string[];
-  stats: StatItem[];
   highlights: string[];
   imageCount: number;
 }
@@ -45,10 +46,10 @@ export default function ProjectDetailClient({
   client,
   area,
   duration,
+  meta,
   description,
   scope,
   products,
-  stats,
   highlights,
   imageCount,
 }: Props) {
@@ -98,16 +99,6 @@ export default function ProjectDetailClient({
               </div>
 
               <p className={styles.description}>{description}</p>
-
-              {/* Stats grid */}
-              <div className={styles.statsGrid}>
-                {stats.map((s) => (
-                  <div key={s.label} className={styles.statCard}>
-                    <span className={styles.statValue}>{s.value}</span>
-                    <span className={styles.statLabel}>{s.label}</span>
-                  </div>
-                ))}
-              </div>
 
               {/* CTA */}
               <div className={styles.ctaRow}>
@@ -176,6 +167,23 @@ export default function ProjectDetailClient({
                 </div>
               </div>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* ─── Meta Bar ───────────────────────────────────────── */}
+      <section className={styles.metaBar}>
+        <Container>
+          <div className={styles.metaGrid}>
+            {meta.map((m) => (
+              <div key={m.label} className={styles.metaCell}>
+                <Icon name={m.icon} size={18} className={styles.metaIcon} />
+                <div className={styles.metaText}>
+                  <span className={styles.metaLabel}>{m.label}</span>
+                  <span className={styles.metaValue}>{m.value}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </Container>
       </section>
