@@ -1,20 +1,25 @@
 "use client";
 
-import Badge from "@/components/shared/Badge/Badge";
+import ProjectsBanner from "@/components/projects/ProjectsBanner/ProjectsBanner";
 import type { BreadcrumbItem } from "@/components/shared/Breadcrumb/Breadcrumb";
-import Breadcrumb from "@/components/shared/Breadcrumb/Breadcrumb";
-import Button from "@/components/shared/Button/Button";
 import Container from "@/components/shared/Container/Container";
 import Icon from "@/components/shared/Icon/Icon";
-import ImageGallery from "@/components/shared/ImageGallery/ImageGallery";
-import Tabs from "@/components/shared/Tabs/Tabs";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./ProjectDetailClient.module.css";
 
-/* ─── Types ───────────────────────────────────────────────── */
-interface StatItem {
+interface MetaItem {
+  icon: string;
   label: string;
   value: string;
+}
+
+interface ProductItem {
+  name: string;
+  model: string;
+  description: string;
+  image: string;
+  href: string;
 }
 
 interface Props {
@@ -23,212 +28,149 @@ interface Props {
   category: string;
   location: string;
   year: string;
-  client: string;
-  area: string;
-  duration: string;
+  heroImage: string;
+  meta: MetaItem[];
   description: string;
   scope: string;
-  products: string[];
-  stats: StatItem[];
+  products: ProductItem[];
   highlights: string[];
-  imageCount: number;
 }
 
-/* ─── Component ───────────────────────────────────────────── */
 export default function ProjectDetailClient({
   breadcrumb,
   title,
   category,
   location,
   year,
-  client,
-  area,
-  duration,
+  heroImage,
+  meta,
   description,
   scope,
   products,
-  stats,
   highlights,
-  imageCount,
 }: Props) {
-  const TABS = [
-    { id: "info", label: "اطلاعات پروژه" },
-    { id: "scope", label: "حوزه اجرا" },
-    { id: "products", label: "محصولات استفاده‌شده" },
+  const infoCards = [
+    { icon: "cog", title: "حوزه اجرای پروژه", items: highlights },
+    {
+      icon: "briefcase",
+      title: "حوزه خدمات",
+      items: [
+        "مشاوره فنی",
+        "طراحی مهندسی",
+        "تأمین تجهیزات",
+        "اجرا و نصب",
+        "راه‌اندازی و تست نهایی",
+      ],
+    },
+    { icon: "file-check", title: "جزئیات اجرا", items: [scope, ...highlights] },
   ];
 
   return (
     <>
-      {/* ─── Breadcrumb ─────────────────────────────────────── */}
-      <div className={styles.breadcrumbBar}>
+      <ProjectsBanner
+        breadcrumb={breadcrumb}
+        badge={category}
+        title={title}
+        description={description}
+        image={heroImage}
+        meta={[
+          { icon: "location", value: location },
+          { icon: "calendar", value: year },
+        ]}
+      />
+
+      <section className={styles.metaBar}>
         <Container>
-          <Breadcrumb items={breadcrumb} />
+          <div className={styles.metaGrid}>
+            {meta.map((m) => (
+              <div key={m.label} className={styles.metaCell}>
+                <Icon name={m.icon} size={18} className={styles.metaIcon} />
+                <div className={styles.metaText}>
+                  <span className={styles.metaLabel}>{m.label}</span>
+                  <span className={styles.metaValue}>{m.value}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </Container>
-      </div>
+      </section>
 
-      {/* ─── Hero ───────────────────────────────────────────── */}
-      <section className={styles.hero}>
+      <section className={styles.about}>
         <Container>
-          <div className={styles.heroGrid}>
-            {/* Info column */}
-            <div className={styles.infoCol}>
-              <div className={styles.badges}>
-                <Badge variant="accent">{category}</Badge>
-              </div>
-              <h1 className={styles.title}>{title}</h1>
-
-              <div className={styles.metaRow}>
-                <span className={styles.metaItem}>
-                  <Icon name="location" size={14} />
-                  {location}
-                </span>
-                <span className={styles.metaDot} />
-                <span className={styles.metaItem}>
-                  <Icon name="calendar" size={14} />
-                  {year}
-                </span>
-              </div>
-
-              <p className={styles.description}>{description}</p>
-
-              {/* Stats grid */}
-              <div className={styles.statsGrid}>
-                {stats.map((s) => (
-                  <div key={s.label} className={styles.statCard}>
-                    <span className={styles.statValue}>{s.value}</span>
-                    <span className={styles.statLabel}>{s.label}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* CTA */}
-              <div className={styles.ctaRow}>
-                <Button
-                  href="#contact"
-                  variant="primary"
-                  size="lg"
-                  textColor="white"
-                >
-                  درخواست استعلام
-                </Button>
-                <Button
-                  href="#contact"
-                  variant="outline"
-                  size="lg"
-                >
-                  درخواست طراحی اختصاصی
-                </Button>
-              </div>
+          <div className={styles.aboutGrid}>
+            <div className={styles.aboutText}>
+              <h2 className={styles.sectionTitle}>درباره پروژه</h2>
+              <p className={styles.aboutDescription}>{description}</p>
             </div>
 
-            {/* Image column */}
-            <div className={styles.imageCol}>
-              <ImageGallery
-                images={Array.from({ length: imageCount }, (_, i) => ({
-                  src: "/images/project-placeholder.svg",
-                  alt: `تصویر ${i + 1}`,
-                }))}
+            <div className={styles.aboutImage}>
+              <Image
+                src={heroImage}
+                alt={title}
+                fill
+                unoptimized
+                className={styles.aboutImg}
               />
             </div>
           </div>
         </Container>
       </section>
 
-      {/* ─── Tabs Section ───────────────────────────────────── */}
-      <section className={styles.tabsSection}>
+      <section className={styles.infoSection}>
         <Container>
-          <Tabs tabs={TABS} defaultTab="info">
-            {(activeTab) => (
-              <>
-                {activeTab === "info" && (
-                  <div className={styles.infoPane}>
-                    <div className={styles.infoGrid}>
-                      {[
-                        { label: "کارفرما", value: client },
-                        { label: "موقعیت", value: location },
-                        { label: "سال اجرا", value: year },
-                        { label: "مساحت", value: area },
-                        { label: "مدت اجرا", value: duration },
-                        { label: "دسته‌بندی", value: category },
-                      ].map((row) => (
-                        <div key={row.label} className={styles.infoRow}>
-                          <span className={styles.infoLabel}>{row.label}</span>
-                          <span className={styles.infoValue}>{row.value}</span>
-                        </div>
-                      ))}
-                    </div>
+          <div className={styles.infoCardsGrid}>
+            {infoCards.map((card) => (
+              <div key={card.title} className={styles.infoCard}>
+                <div className={styles.infoCardHeader}>
+                  <span className={styles.infoCardIconWrap}>
+                    <Icon name={card.icon} size={18} />
+                  </span>
+                  <h3 className={styles.infoCardTitle}>{card.title}</h3>
+                </div>
+                <ul className={styles.infoCardList}>
+                  {card.items.map((item) => (
+                    <li key={item} className={styles.infoCardItem}>
+                      <Icon
+                        name="chevron-left"
+                        size={14}
+                        className={styles.infoCardBullet}
+                      />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
 
-                    <div className={styles.highlightsBlock}>
-                      <h3 className={styles.blockTitle}>دستاوردهای کلیدی</h3>
-                      <ul className={styles.highlightsList}>
-                        {highlights.map((h) => (
-                          <li key={h} className={styles.highlightItem}>
-                            <Icon
-                              name="check"
-                              size={16}
-                              style={{ flexShrink: 0 }}
-                            />
-                            <span>{h}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                )}
+      <section className={styles.productsSection}>
+        <Container>
+          <h2 className={styles.sectionTitle}>محصولات استفاده شده</h2>
 
-                {activeTab === "scope" && (
-                  <div className={styles.scopePane}>
-                    <div className={styles.scopeCard}>
-                      <h3 className={styles.blockTitle}>حوزه خدمات</h3>
-                      <p className={styles.scopeText}>{scope}</p>
-                    </div>
-                    <div className={styles.highlightsBlock}>
-                      <h3 className={styles.blockTitle}>جزئیات اجرا</h3>
-                      <ul className={styles.highlightsList}>
-                        {highlights.map((h) => (
-                          <li key={h} className={styles.highlightItem}>
-                            <Icon
-                              name="check"
-                              size={16}
-                              style={{ flexShrink: 0 }}
-                            />
-                            <span>{h}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                )}
-
-                {activeTab === "products" && (
-                  <div className={styles.productsPane}>
-                    <p className={styles.productsPreamble}>
-                      محصولات و سیستم‌های مورد استفاده در این پروژه:
-                    </p>
-                    <div className={styles.productsList}>
-                      {products.map((p) => (
-                        <div key={p} className={styles.productItem}>
-                          <Icon
-                            name="box"
-                            size={16}
-                            style={{ flexShrink: 0 }}
-                          />
-                          <span>{p}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <Link href="/products" className={styles.productsLink}>
-                      مشاهده همه محصولات ›
-                    </Link>
-                  </div>
-                )}
-              </>
-            )}
-          </Tabs>
+          <div className={styles.productsGrid}>
+            {products.map((p) => (
+              <Link key={p.model} href={p.href} className={styles.productCard}>
+                <div className={styles.productImageWrap}>
+                  <Image
+                    src={p.image}
+                    alt={p.name}
+                    fill
+                    unoptimized
+                    className={styles.productImage}
+                  />
+                </div>
+                <div className={styles.productBody}>
+                  <h3 className={styles.productName}>{p.name}</h3>
+                  <span className={styles.productModel}>مدل: {p.model}</span>
+                  <p className={styles.productDescription}>{p.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </Container>
       </section>
     </>
   );
 }
-
-/* ─── Icons ───────────────────────────────────────────────── */

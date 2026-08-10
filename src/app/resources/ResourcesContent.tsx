@@ -25,7 +25,7 @@ export default function ResourcesContent() {
       <div
         style={{
           background: "var(--color-bg-secondary)",
-          paddingTop: "calc(var(--header-height) + 2.5rem)",
+          paddingTop: "calc(var(--header-height) + var(--space-10))",
           paddingBottom: "2rem",
           borderBottom: "1px solid var(--color-border)",
           direction: dir,
