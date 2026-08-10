@@ -23,6 +23,7 @@
       "اجرای موفق با صفر تأخیر در تحویل"
     ],
     "imageCount": 6,
+    "image": "/images/projects/iran-mall.jpg",
     "status": "تکمیل شده"
   },
 
@@ -50,6 +51,7 @@
       "سیستم کنترل مرکزی BMS"
     ],
     "imageCount": 6,
+    "image": "/images/projects/milad-hospital.jpg",
     "status": "تکمیل شده"
   },
 
@@ -77,6 +79,7 @@
       "صفر توقف در عملیات برج حین اجرا"
     ],
     "imageCount": 6,
+    "image": "/images/projects/milad-tower.jpg",
     "status": "تکمیل شده"
   },
 
@@ -104,6 +107,7 @@
       "اجرا در محیط فعال بدون توقف تولید"
     ],
     "imageCount": 6,
+    "image": "/images/projects/iran-khodro.jpg",
     "status": "تکمیل شده"
   },
 
@@ -131,6 +135,7 @@
       "صرفه‌جویی ۲۵٪ در مصرف انرژی"
     ],
     "imageCount": 6,
+    "image": "/images/projects/parsian-hotel.jpg",
     "status": "تکمیل شده"
   },
 
@@ -158,6 +163,7 @@
       "مطابق استانداردهای ایمنی مترو"
     ],
     "imageCount": 6,
+    "image": "/images/projects/tehran-metro.jpg",
     "status": "تکمیل شده"
   },
 
@@ -185,6 +191,7 @@
       "گارانتی ۵ ساله سیستم"
     ],
     "imageCount": 6,
+    "image": "/images/projects/mashhad-mall.jpg",
     "status": "تکمیل شده"
   },
 
@@ -212,6 +219,7 @@
       "مطابق استانداردهای IATA"
     ],
     "imageCount": 6,
+    "image": "/images/projects/shiraz-airport.jpg",
     "status": "تکمیل شده"
   },
 
@@ -239,6 +247,7 @@
       "عمر کاری تضمین‌شده بیش از ۱۵ سال"
     ],
     "imageCount": 6,
+    "image": "/images/projects/esfahan-steel.jpg",
     "status": "تکمیل شده"
   },
 
@@ -266,6 +275,7 @@
       "گارانتی ۳ ساله کامل سیستم"
     ],
     "imageCount": 6,
+    "image": "/images/projects/tehran-university.jpg",
     "status": "تکمیل شده"
   }
 }

@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import ProjectDetailClient from '@/components/projects/ProjectDetailClient/ProjectDetailClient';
 import projectsDetail from '@/data/projects-detail.json';
 import productsCatalog from '@/data/products.json';
-import { getProjectImage } from '@/data/projectImages';
 
 type ProjectsDetail = typeof projectsDetail;
 type Slug = keyof ProjectsDetail;
@@ -76,7 +75,7 @@ export default async function ProjectDetailPage(
         category={project.category}
         location={project.location}
         year={project.year}
-        heroImage={getProjectImage(slug)}
+        heroImage={project.image}
         meta={meta}
         description={project.description}
         scope={project.scope}
