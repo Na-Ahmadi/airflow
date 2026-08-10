@@ -1,14 +1,13 @@
 "use client";
 
+import ProjectsBanner from "@/components/projects/ProjectsBanner/ProjectsBanner";
 import type { BreadcrumbItem } from "@/components/shared/Breadcrumb/Breadcrumb";
 import Container from "@/components/shared/Container/Container";
 import Icon from "@/components/shared/Icon/Icon";
-import ProjectsBanner from "@/components/projects/ProjectsBanner/ProjectsBanner";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./ProjectDetailClient.module.css";
 
-/* ─── Types ───────────────────────────────────────────────── */
 interface MetaItem {
   icon: string;
   label: string;
@@ -37,7 +36,6 @@ interface Props {
   highlights: string[];
 }
 
-/* ─── Component ───────────────────────────────────────────── */
 export default function ProjectDetailClient({
   breadcrumb,
   title,
@@ -69,7 +67,6 @@ export default function ProjectDetailClient({
 
   return (
     <>
-      {/* ─── Banner ──────────────────────────────────────────── */}
       <ProjectsBanner
         breadcrumb={breadcrumb}
         badge={category}
@@ -82,7 +79,6 @@ export default function ProjectDetailClient({
         ]}
       />
 
-      {/* ─── Meta Bar ───────────────────────────────────────── */}
       <section className={styles.metaBar}>
         <Container>
           <div className={styles.metaGrid}>
@@ -99,7 +95,6 @@ export default function ProjectDetailClient({
         </Container>
       </section>
 
-      {/* ─── About ──────────────────────────────────────────── */}
       <section className={styles.about}>
         <Container>
           <div className={styles.aboutGrid}>
@@ -121,7 +116,6 @@ export default function ProjectDetailClient({
         </Container>
       </section>
 
-      {/* ─── Info Cards ─────────────────────────────────────── */}
       <section className={styles.infoSection}>
         <Container>
           <div className={styles.infoCardsGrid}>
@@ -151,7 +145,6 @@ export default function ProjectDetailClient({
         </Container>
       </section>
 
-      {/* ─── Products Section ───────────────────────────────── */}
       <section className={styles.productsSection}>
         <Container>
           <h2 className={styles.sectionTitle}>محصولات استفاده شده</h2>
@@ -181,5 +174,3 @@ export default function ProjectDetailClient({
     </>
   );
 }
-
-/* ─── Icons ───────────────────────────────────────────────── */
