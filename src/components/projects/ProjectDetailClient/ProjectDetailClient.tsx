@@ -1,11 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Badge from "@/components/shared/Badge/Badge";
 import type { BreadcrumbItem } from "@/components/shared/Breadcrumb/Breadcrumb";
 import Breadcrumb from "@/components/shared/Breadcrumb/Breadcrumb";
-import Button from "@/components/shared/Button/Button";
 import Container from "@/components/shared/Container/Container";
 import Icon from "@/components/shared/Icon/Icon";
 import Link from "next/link";
@@ -37,7 +35,6 @@ interface Props {
   scope: string;
   products: ProductItem[];
   highlights: string[];
-  imageCount: number;
 }
 
 /* ─── Component ───────────────────────────────────────────── */
@@ -52,7 +49,6 @@ export default function ProjectDetailClient({
   scope,
   products,
   highlights,
-  imageCount,
 }: Props) {
   const infoCards = [
     { icon: "cog", title: "حوزه اجرای پروژه", items: highlights },
@@ -63,13 +59,6 @@ export default function ProjectDetailClient({
     },
     { icon: "file-check", title: "جزئیات اجرا", items: [scope, ...highlights] },
   ];
-
-  const images = Array.from({ length: imageCount }, (_, i) => ({
-    src: "/images/project-placeholder.svg",
-    alt: `${title} - تصویر ${i + 1}`,
-  }));
-  const [active, setActive] = useState(0);
-  const goTo = (i: number) => setActive((i + images.length) % images.length);
 
   return (
     <>
@@ -106,49 +95,14 @@ export default function ProjectDetailClient({
 
             {/* Image column */}
             <div className={styles.imageCol}>
-              <div className={styles.slider}>
-                <div className={styles.sliderFrame}>
-                  <Image
-                    key={active}
-                    src={images[active].src}
-                    alt={images[active].alt}
-                    fill
-                    unoptimized
-                    className={styles.sliderImg}
-                  />
-
-                  <div className={styles.sliderControls}>
-                    <span className={styles.sliderCount}>
-                      {String(active + 1).padStart(2, "0")}
-                      <span className={styles.sliderTrack}>
-                        <span
-                          className={styles.sliderProgress}
-                          style={{ width: `${((active + 1) / images.length) * 100}%` }}
-                        />
-                      </span>
-                      {String(images.length).padStart(2, "0")}
-                    </span>
-
-                    <div className={styles.sliderArrows}>
-                      <button
-                        type="button"
-                        className={styles.sliderArrow}
-                        onClick={() => goTo(active - 1)}
-                        aria-label="تصویر قبلی"
-                      >
-                        <Icon name="arrow-right" size={16} />
-                      </button>
-                      <button
-                        type="button"
-                        className={styles.sliderArrow}
-                        onClick={() => goTo(active + 1)}
-                        aria-label="تصویر بعدی"
-                      >
-                        <Icon name="arrow-left" size={16} />
-                      </button>
-                    </div>
-                  </div>
-                </div>
+              <div className={styles.heroImageFrame}>
+                <Image
+                  src="/images/project-placeholder.svg"
+                  alt={title}
+                  fill
+                  unoptimized
+                  className={styles.heroImg}
+                />
               </div>
             </div>
           </div>
@@ -179,15 +133,6 @@ export default function ProjectDetailClient({
             <div className={styles.aboutText}>
               <h2 className={styles.sectionTitle}>درباره پروژه</h2>
               <p className={styles.aboutDescription}>{description}</p>
-
-              <div className={styles.ctaRow}>
-                <Button href="#contact" variant="primary" size="lg" textColor="white">
-                  درخواست استعلام
-                </Button>
-                <Button href="#contact" variant="outline" size="lg">
-                  درخواست طراحی اختصاصی
-                </Button>
-              </div>
             </div>
 
             <div className={styles.aboutImage}>

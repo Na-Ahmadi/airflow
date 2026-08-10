@@ -80,7 +80,6 @@ export default async function ProjectDetailPage(
         scope={project.scope}
         products={project.products.map(resolveProduct)}
         highlights={project.highlights}
-        imageCount={project.imageCount}
       />
     </main>
   );
