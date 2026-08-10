@@ -8,6 +8,11 @@ type ProjectsDetail = typeof projectsDetail;
 type Slug = keyof ProjectsDetail;
 
 const FALLBACK_PRODUCT_IMAGE = '/images/product-detail-placeholder.svg';
+const FALLBACK_HERO_IMAGE = '/images/project-placeholder.svg';
+
+const HERO_IMAGES: Partial<Record<string, string>> = {
+  'milad-hospital': '/images/projects/milad-hospital.jpg',
+};
 
 function resolveProduct(label: string) {
   const seriesMatch = label.match(/[A-Z]{2,3}(?:-\d+)?/);
@@ -75,6 +80,7 @@ export default async function ProjectDetailPage(
         category={project.category}
         location={project.location}
         year={project.year}
+        heroImage={HERO_IMAGES[slug] ?? FALLBACK_HERO_IMAGE}
         meta={meta}
         description={project.description}
         scope={project.scope}

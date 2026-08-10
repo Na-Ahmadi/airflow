@@ -30,6 +30,7 @@ interface Props {
   category: string;
   location: string;
   year: string;
+  heroImage: string;
   meta: MetaItem[];
   description: string;
   scope: string;
@@ -44,6 +45,7 @@ export default function ProjectDetailClient({
   category,
   location,
   year,
+  heroImage,
   meta,
   description,
   scope,
@@ -71,42 +73,36 @@ export default function ProjectDetailClient({
 
       {/* ─── Hero ───────────────────────────────────────────── */}
       <section className={styles.hero}>
-        <Container>
-          <div className={styles.heroGrid}>
-            {/* Info column */}
-            <div className={styles.infoCol}>
-              <div className={styles.badges}>
-                <Badge variant="accent">{category}</Badge>
-              </div>
-              <h1 className={styles.title}>{title}</h1>
-
-              <div className={styles.metaRow}>
-                <span className={styles.metaItem}>
-                  <Icon name="location" size={14} />
-                  {location}
-                </span>
-                <span className={styles.metaDot} />
-                <span className={styles.metaItem}>
-                  <Icon name="calendar" size={14} />
-                  {year}
-                </span>
-              </div>
-            </div>
-
-            {/* Image column */}
-            <div className={styles.imageCol}>
-              <div className={styles.heroImageFrame}>
-                <Image
-                  src="/images/project-placeholder.svg"
-                  alt={title}
-                  fill
-                  unoptimized
-                  className={styles.heroImg}
-                />
-              </div>
-            </div>
+        <div className={styles.heroContent}>
+          <div className={styles.badges}>
+            <Badge variant="accent">{category}</Badge>
           </div>
-        </Container>
+          <h1 className={styles.title}>{title}</h1>
+
+          <div className={styles.metaRow}>
+            <span className={styles.metaItem}>
+              <Icon name="location" size={14} />
+              {location}
+            </span>
+            <span className={styles.metaDot} />
+            <span className={styles.metaItem}>
+              <Icon name="calendar" size={14} />
+              {year}
+            </span>
+          </div>
+        </div>
+
+        <div className={styles.heroImageWrap}>
+          <Image
+            src={heroImage}
+            alt={title}
+            fill
+            unoptimized
+            className={styles.heroImg}
+            priority
+          />
+          <div className={styles.heroImageEdge} />
+        </div>
       </section>
 
       {/* ─── Meta Bar ───────────────────────────────────────── */}
