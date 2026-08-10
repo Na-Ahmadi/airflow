@@ -1,12 +1,13 @@
 "use client";
 
+import { useState } from "react";
+import Image from "next/image";
 import Badge from "@/components/shared/Badge/Badge";
 import type { BreadcrumbItem } from "@/components/shared/Breadcrumb/Breadcrumb";
 import Breadcrumb from "@/components/shared/Breadcrumb/Breadcrumb";
 import Button from "@/components/shared/Button/Button";
 import Container from "@/components/shared/Container/Container";
 import Icon from "@/components/shared/Icon/Icon";
-import ImageGallery from "@/components/shared/ImageGallery/ImageGallery";
 import Tabs from "@/components/shared/Tabs/Tabs";
 import Link from "next/link";
 import styles from "./ProjectDetailClient.module.css";
@@ -56,6 +57,13 @@ export default function ProjectDetailClient({
     { id: "scope", label: "حوزه اجرا" },
     { id: "products", label: "محصولات استفاده‌شده" },
   ];
+
+  const images = Array.from({ length: imageCount }, (_, i) => ({
+    src: "/images/project-placeholder.svg",
+    alt: `${title} - تصویر ${i + 1}`,
+  }));
+  const [active, setActive] = useState(0);
+  const goTo = (i: number) => setActive((i + images.length) % images.length);
 
   return (
     <>
@@ -123,12 +131,50 @@ export default function ProjectDetailClient({
 
             {/* Image column */}
             <div className={styles.imageCol}>
-              <ImageGallery
-                images={Array.from({ length: imageCount }, (_, i) => ({
-                  src: "/images/project-placeholder.svg",
-                  alt: `تصویر ${i + 1}`,
-                }))}
-              />
+              <div className={styles.slider}>
+                <div className={styles.sliderFrame}>
+                  <Image
+                    key={active}
+                    src={images[active].src}
+                    alt={images[active].alt}
+                    fill
+                    unoptimized
+                    className={styles.sliderImg}
+                  />
+                </div>
+
+                <div className={styles.sliderControls}>
+                  <span className={styles.sliderCount}>
+                    {String(active + 1).padStart(2, "0")}
+                    <span className={styles.sliderTrack}>
+                      <span
+                        className={styles.sliderProgress}
+                        style={{ width: `${((active + 1) / images.length) * 100}%` }}
+                      />
+                    </span>
+                    {String(images.length).padStart(2, "0")}
+                  </span>
+
+                  <div className={styles.sliderArrows}>
+                    <button
+                      type="button"
+                      className={styles.sliderArrow}
+                      onClick={() => goTo(active - 1)}
+                      aria-label="تصویر قبلی"
+                    >
+                      <Icon name="arrow-right" size={16} />
+                    </button>
+                    <button
+                      type="button"
+                      className={styles.sliderArrow}
+                      onClick={() => goTo(active + 1)}
+                      aria-label="تصویر بعدی"
+                    >
+                      <Icon name="arrow-left" size={16} />
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </Container>
