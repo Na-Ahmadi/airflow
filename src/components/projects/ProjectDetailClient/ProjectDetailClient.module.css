@@ -66,13 +66,6 @@
   opacity: 0.5;
 }
 
-.description {
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
-  line-height: var(--leading-loose);
-  margin: 0;
-}
-
 /* ─── CTA Buttons ───────────────────────────────────────────── */
 .ctaRow {
   display: flex;

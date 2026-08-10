@@ -97,27 +97,6 @@ export default function ProjectDetailClient({
                   {year}
                 </span>
               </div>
-
-              <p className={styles.description}>{description}</p>
-
-              {/* CTA */}
-              <div className={styles.ctaRow}>
-                <Button
-                  href="#contact"
-                  variant="primary"
-                  size="lg"
-                  textColor="white"
-                >
-                  درخواست استعلام
-                </Button>
-                <Button
-                  href="#contact"
-                  variant="outline"
-                  size="lg"
-                >
-                  درخواست طراحی اختصاصی
-                </Button>
-              </div>
             </div>
 
             {/* Image column */}
@@ -195,6 +174,15 @@ export default function ProjectDetailClient({
             <div className={styles.aboutText}>
               <h2 className={styles.sectionTitle}>درباره پروژه</h2>
               <p className={styles.aboutDescription}>{description}</p>
+
+              <div className={styles.ctaRow}>
+                <Button href="#contact" variant="primary" size="lg" textColor="white">
+                  درخواست استعلام
+                </Button>
+                <Button href="#contact" variant="outline" size="lg">
+                  درخواست طراحی اختصاصی
+                </Button>
+              </div>
             </div>
 
             <div className={styles.aboutImage}>
