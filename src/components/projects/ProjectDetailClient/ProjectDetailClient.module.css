@@ -16,7 +16,7 @@
 
 .heroGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 3fr;
   gap: var(--space-10);
   align-items: start;
 }
@@ -131,7 +131,6 @@
 .slider {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
 }
 
 .sliderFrame {
@@ -146,9 +145,12 @@
 .sliderImg { object-fit: cover; }
 
 .sliderControls {
+  position: absolute;
+  inset: auto var(--space-5) var(--space-5) var(--space-5);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  direction: ltr;
 }
 
 .sliderCount {
@@ -157,7 +159,7 @@
   gap: var(--space-3);
   font-size: var(--text-sm);
   font-weight: var(--font-semibold);
-  color: var(--color-text-primary);
+  color: #fff;
   direction: ltr;
 }
 
@@ -165,7 +167,7 @@
   position: relative;
   width: 90px;
   height: 2px;
-  background: var(--color-border);
+  background: rgba(255, 255, 255, 0.35);
   border-radius: 999px;
   overflow: hidden;
 }
@@ -173,7 +175,7 @@
 .sliderProgress {
   position: absolute;
   inset: 0 auto 0 0;
-  background: var(--color-primary);
+  background: #fff;
   border-radius: 999px;
   transition: width var(--transition-base);
 }
@@ -190,8 +192,8 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
   color: var(--color-text-primary);
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -199,7 +201,6 @@
 
 .sliderArrow:hover {
   background: var(--color-primary);
-  border-color: var(--color-primary);
   color: #fff;
 }
 
@@ -327,7 +328,19 @@
   gap: var(--space-3);
 }
 
-.infoCardHeader svg { color: var(--color-primary-light); flex-shrink: 0; }
+.infoCardIconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  flex-shrink: 0;
+}
+
+.infoCardIconWrap svg { color: var(--color-text-primary); }
 
 .infoCardTitle {
   font-size: var(--text-base);

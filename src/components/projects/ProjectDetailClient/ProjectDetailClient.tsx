@@ -116,37 +116,37 @@ export default function ProjectDetailClient({
                     unoptimized
                     className={styles.sliderImg}
                   />
-                </div>
 
-                <div className={styles.sliderControls}>
-                  <span className={styles.sliderCount}>
-                    {String(active + 1).padStart(2, "0")}
-                    <span className={styles.sliderTrack}>
-                      <span
-                        className={styles.sliderProgress}
-                        style={{ width: `${((active + 1) / images.length) * 100}%` }}
-                      />
+                  <div className={styles.sliderControls}>
+                    <span className={styles.sliderCount}>
+                      {String(active + 1).padStart(2, "0")}
+                      <span className={styles.sliderTrack}>
+                        <span
+                          className={styles.sliderProgress}
+                          style={{ width: `${((active + 1) / images.length) * 100}%` }}
+                        />
+                      </span>
+                      {String(images.length).padStart(2, "0")}
                     </span>
-                    {String(images.length).padStart(2, "0")}
-                  </span>
 
-                  <div className={styles.sliderArrows}>
-                    <button
-                      type="button"
-                      className={styles.sliderArrow}
-                      onClick={() => goTo(active - 1)}
-                      aria-label="تصویر قبلی"
-                    >
-                      <Icon name="arrow-right" size={16} />
-                    </button>
-                    <button
-                      type="button"
-                      className={styles.sliderArrow}
-                      onClick={() => goTo(active + 1)}
-                      aria-label="تصویر بعدی"
-                    >
-                      <Icon name="arrow-left" size={16} />
-                    </button>
+                    <div className={styles.sliderArrows}>
+                      <button
+                        type="button"
+                        className={styles.sliderArrow}
+                        onClick={() => goTo(active - 1)}
+                        aria-label="تصویر قبلی"
+                      >
+                        <Icon name="arrow-right" size={16} />
+                      </button>
+                      <button
+                        type="button"
+                        className={styles.sliderArrow}
+                        onClick={() => goTo(active + 1)}
+                        aria-label="تصویر بعدی"
+                      >
+                        <Icon name="arrow-left" size={16} />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -210,7 +210,9 @@ export default function ProjectDetailClient({
             {infoCards.map((card) => (
               <div key={card.title} className={styles.infoCard}>
                 <div className={styles.infoCardHeader}>
-                  <Icon name={card.icon} size={18} />
+                  <span className={styles.infoCardIconWrap}>
+                    <Icon name={card.icon} size={18} />
+                  </span>
                   <h3 className={styles.infoCardTitle}>{card.title}</h3>
                 </div>
                 <ul className={styles.infoCardList}>
