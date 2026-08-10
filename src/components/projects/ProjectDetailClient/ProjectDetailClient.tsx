@@ -18,6 +18,14 @@ interface MetaItem {
   value: string;
 }
 
+interface ProductItem {
+  name: string;
+  model: string;
+  description: string;
+  image: string;
+  href: string;
+}
+
 interface Props {
   breadcrumb: BreadcrumbItem[];
   title: string;
@@ -27,7 +35,7 @@ interface Props {
   meta: MetaItem[];
   description: string;
   scope: string;
-  products: string[];
+  products: ProductItem[];
   highlights: string[];
   imageCount: number;
 }
@@ -220,21 +228,29 @@ export default function ProjectDetailClient({
       </section>
 
       {/* ─── Products Section ───────────────────────────────── */}
-      <section className={styles.tabsSection}>
+      <section className={styles.productsSection}>
         <Container>
-          <div className={styles.productsPane}>
-            <h2 className={styles.sectionTitle}>محصولات استفاده شده</h2>
-            <div className={styles.productsList}>
-              {products.map((p) => (
-                <div key={p} className={styles.productItem}>
-                  <Icon name="box" size={16} style={{ flexShrink: 0 }} />
-                  <span>{p}</span>
+          <h2 className={styles.sectionTitle}>محصولات استفاده شده</h2>
+
+          <div className={styles.productsGrid}>
+            {products.map((p) => (
+              <Link key={p.model} href={p.href} className={styles.productCard}>
+                <div className={styles.productImageWrap}>
+                  <Image
+                    src={p.image}
+                    alt={p.name}
+                    fill
+                    unoptimized
+                    className={styles.productImage}
+                  />
                 </div>
-              ))}
-            </div>
-            <Link href="/products" className={styles.productsLink}>
-              مشاهده همه محصولات ›
-            </Link>
+                <div className={styles.productBody}>
+                  <h3 className={styles.productName}>{p.name}</h3>
+                  <span className={styles.productModel}>مدل: {p.model}</span>
+                  <p className={styles.productDescription}>{p.description}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </Container>
       </section>
