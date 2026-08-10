@@ -246,7 +246,5 @@
 }
 
 @media (max-width: 480px) {
-  .metaGrid { grid-template-columns: 1fr; }
-
   .productsGrid { grid-template-columns: 1fr; }
 }
