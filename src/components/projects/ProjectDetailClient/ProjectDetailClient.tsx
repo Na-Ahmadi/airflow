@@ -133,7 +133,7 @@ export default function ProjectDetailClient({
 
             <div className={styles.aboutImage}>
               <Image
-                src="/images/project-placeholder.svg"
+                src={heroImage}
                 alt={title}
                 fill
                 unoptimized
