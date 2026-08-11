@@ -7,6 +7,7 @@ import Container from "@/components/shared/Container/Container";
 import FilterTabs from "@/components/shared/FilterTabs/FilterTabs";
 import type { TabItem } from "@/components/shared/FilterTabs/FilterTabs";
 import { AnimatePresence, motion } from "framer-motion";
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import type { ProductItem } from "./ProductCard";
 import ProductCard from "./ProductCard";
@@ -33,7 +34,13 @@ export default function ProductsPageClient({
   items,
   cta,
 }: Props) {
-  const [activeTab, setActiveTab] = useState("all");
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get("category");
+  const initialTab =
+    categoryParam && tabs.some((t) => t.id === categoryParam)
+      ? categoryParam
+      : "all";
+  const [activeTab, setActiveTab] = useState(initialTab);
 
   const filtered =
     activeTab === "all" ? items : items.filter((p) => p.category === activeTab);

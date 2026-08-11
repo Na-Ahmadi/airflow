@@ -15,11 +15,11 @@
         "id": "products",
         "title": "محصولات",
         "links": [
-          { "label": "دریچه‌های خطی",  "href": "/products/linear-diffusers"  },
-          { "label": "دریچه‌های سقفی", "href": "/products/ceiling-diffusers" },
-          { "label": "دمپرها",          "href": "/products/dampers"           },
-          { "label": "ملتیواها",        "href": "/products/multiways"         },
-          { "label": "مانتوعات",        "href": "/products/accessories"       }
+          { "label": "دریچه‌ها",           "href": "/products?category=vents"       },
+          { "label": "دمپرها",             "href": "/products?category=dampers"     },
+          { "label": "تجهیزات کنترل",      "href": "/products?category=control"     },
+          { "label": "ملزومات",            "href": "/products?category=accessories" },
+          { "label": "مشاهده همه محصولات", "href": "/products"                      }
         ]
       },
       {
@@ -72,11 +72,11 @@
         "id": "products",
         "title": "Products",
         "links": [
-          { "label": "Linear Diffusers",  "href": "/products/linear-diffusers"  },
-          { "label": "Ceiling Diffusers", "href": "/products/ceiling-diffusers" },
-          { "label": "Dampers",           "href": "/products/dampers"           },
-          { "label": "Multiways",         "href": "/products/multiways"         },
-          { "label": "Accessories",       "href": "/products/accessories"       }
+          { "label": "Diffusers",         "href": "/products?category=vents"       },
+          { "label": "Dampers",           "href": "/products?category=dampers"     },
+          { "label": "Control Equipment", "href": "/products?category=control"     },
+          { "label": "Accessories",       "href": "/products?category=accessories" },
+          { "label": "View All Products", "href": "/products"                      }
         ]
       },
       {
