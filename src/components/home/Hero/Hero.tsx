@@ -3,11 +3,11 @@
 import AnimatedCounter from "@/components/shared/AnimatedCounter/AnimatedCounter";
 import Button from "@/components/shared/Button/Button";
 import Icon from "@/components/shared/Icon/Icon";
+import { useInViewOnce } from "@/hooks/useInViewOnce";
 import type { HeroData } from "@/types";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
 import styles from "./Hero.module.css";
 
 const EASE = [0.4, 0, 0.2, 1] as [number, number, number, number];
@@ -30,8 +30,7 @@ function formatStatValue(display: number, sample: string) {
 }
 
 export default function Hero({ data }: HeroProps) {
-  const statsRef = useRef<HTMLDivElement>(null);
-  const statsInView = useInView(statsRef, { once: true, margin: "-100px" });
+  const { ref: statsRef, inView: statsInView } = useInViewOnce<HTMLDivElement>();
 
   return (
     <section className={styles.hero} aria-label="بخش اصلی">

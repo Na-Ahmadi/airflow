@@ -3,9 +3,9 @@
 import AnimatedCounter from "@/components/shared/AnimatedCounter/AnimatedCounter";
 import Container from "@/components/shared/Container/Container";
 import Icon from "@/components/shared/Icon/Icon";
+import { useInViewOnce } from "@/hooks/useInViewOnce";
 import type { StatisticsData } from "@/types";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import styles from "./Statistics.module.css";
 
 interface StatisticsProps {
@@ -13,8 +13,7 @@ interface StatisticsProps {
 }
 
 export default function Statistics({ data }: StatisticsProps) {
-  const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const { ref, inView } = useInViewOnce<HTMLElement>();
 
   return (
     <section className={styles.section} ref={ref} aria-label="آمار و ارقام">
