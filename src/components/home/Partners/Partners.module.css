@@ -24,6 +24,7 @@
 .track {
   overflow: hidden;
   position: relative;
+  direction: ltr;
 }
 
 /* Fade edges */
