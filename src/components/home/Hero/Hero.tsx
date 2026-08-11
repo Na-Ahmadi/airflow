@@ -1,11 +1,13 @@
 "use client";
 
+import AnimatedCounter from "@/components/shared/AnimatedCounter/AnimatedCounter";
 import Button from "@/components/shared/Button/Button";
 import Icon from "@/components/shared/Icon/Icon";
 import type { HeroData } from "@/types";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 import styles from "./Hero.module.css";
 
 const EASE = [0.4, 0, 0.2, 1] as [number, number, number, number];
@@ -20,7 +22,17 @@ interface HeroProps {
   data: HeroData;
 }
 
+function formatStatValue(display: number, sample: string) {
+  if (sample.includes("M")) {
+    return `${(display / 1000000).toLocaleString("fa-IR", { maximumFractionDigits: 1 })}M`;
+  }
+  return display.toLocaleString("fa-IR");
+}
+
 export default function Hero({ data }: HeroProps) {
+  const statsRef = useRef<HTMLDivElement>(null);
+  const statsInView = useInView(statsRef, { once: true, margin: "-100px" });
+
   return (
     <section className={styles.hero} aria-label="بخش اصلی">
       {/* ── Full-screen background image ── */}
@@ -87,12 +99,17 @@ export default function Hero({ data }: HeroProps) {
         </div>
 
         {/* ── Stats row ── */}
-        <motion.div className={styles.statsRow} {...fadeUp(0.6)}>
+        <motion.div className={styles.statsRow} ref={statsRef} {...fadeUp(0.6)}>
           {data.stats.map((stat, i) => (
             <div key={stat.id} className={styles.stat}>
               {i > 0 && <div className={styles.statDivider} />}
-              <span className={styles.statValue}>
-                {stat.value}
+              <span className={styles.statValueRow}>
+                <AnimatedCounter
+                  value={stat.numericValue}
+                  active={statsInView}
+                  className={styles.statValue}
+                  formatValue={(display) => formatStatValue(display, stat.value)}
+                />
                 <span className={styles.statSuffix}>{stat.suffix}</span>
               </span>
               <span className={styles.statLabel}>{stat.label}</span>

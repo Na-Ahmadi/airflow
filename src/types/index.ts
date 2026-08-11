@@ -24,6 +24,7 @@ export interface NavData {
 export interface HeroStat {
   id: string;
   value: string;
+  numericValue: number;
   suffix: string;
   label: string;
 }
