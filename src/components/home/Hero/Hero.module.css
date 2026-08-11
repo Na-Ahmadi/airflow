@@ -263,13 +263,15 @@
 .statValueRow {
   display: inline-flex;
   align-items: baseline;
-}
-
-.statValue {
   font-size: var(--text-2xl);
   font-weight: var(--font-extrabold);
   color: var(--color-text-primary);
   line-height: 1;
+}
+
+.statValue {
+  font: inherit;
+  color: inherit;
   font-variant-numeric: tabular-nums;
 }
 
