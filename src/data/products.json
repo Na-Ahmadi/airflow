@@ -6,6 +6,11 @@
       "subtitle": "گستره کاملی از محصولات توزیع هوا برای هر نوع پروژه",
       "viewAll": { "label": "مشاهده همه محصولات", "href": "/products" }
     },
+    "bestSellers": {
+      "tag": "پرفروش‌ترین‌ها",
+      "title": "پرفروش‌ترین محصولات",
+      "subtitle": "محصولاتی که بیشترین اعتماد مشتریان ما را جذب کرده‌اند"
+    },
     "tabs": [
       { "id": "all",      "label": "همه محصولات",    "active": true  },
       { "id": "linear",   "label": "دریچه‌های خطی",  "active": false },
@@ -31,6 +36,11 @@
       "title": "Our Products",
       "subtitle": "A complete range of air distribution products for every project type",
       "viewAll": { "label": "View All Products", "href": "/products" }
+    },
+    "bestSellers": {
+      "tag": "Best Sellers",
+      "title": "Best-Selling Products",
+      "subtitle": "The products our customers trust the most"
     },
     "tabs": [
       { "id": "all",      "label": "All Products",       "active": true  },
