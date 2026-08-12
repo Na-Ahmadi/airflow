@@ -32,11 +32,15 @@
 
 /* Mobile Menu */
 .mobileMenu {
+  background: var(--color-bg);
+  border-top: 1px solid var(--glass-border);
+  overflow: hidden;
+}
+
+:global([data-theme="light"]) .mobileMenu {
   background: var(--glass-bg);
   backdrop-filter: var(--blur-xl);
   -webkit-backdrop-filter: var(--blur-xl);
-  border-top: 1px solid var(--glass-border);
-  overflow: hidden;
 }
 
 .mobileMenuInner {
