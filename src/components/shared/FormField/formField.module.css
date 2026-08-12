@@ -49,3 +49,9 @@
 :global([data-theme="light"]) .input:focus {
   background: rgba(30, 111, 207, 0.04);
 }
+
+@media (max-width: 767px) {
+  .input {
+    font-size: 16px;
+  }
+}
