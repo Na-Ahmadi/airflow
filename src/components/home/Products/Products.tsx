@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -18,14 +19,20 @@ import 'swiper/css/pagination';
 
 interface ProductsProps { data: ProductsData; }
 
+// Homepage category ids map to the broader tabs on the /products page.
+const CATEGORY_TO_PRODUCTS_TAB: Record<string, string> = {
+  linear: 'vents',
+  ceiling: 'vents',
+  multiway: 'vents',
+  damper: 'dampers',
+  accessory: 'accessories',
+};
+
 export default function Products({ data }: ProductsProps) {
-  const [activeTab, setActiveTab] = useState('all');
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: '-100px' });
 
-  const filtered = activeTab === 'all'
-    ? data.items
-    : data.items.filter((p) => p.category === activeTab);
+  const categories = data.tabs.filter((tab) => tab.id !== 'all');
 
   return (
     <section className={styles.section} ref={ref} aria-label={data.section.title}>
@@ -41,22 +48,39 @@ export default function Products({ data }: ProductsProps) {
           </Link>
         </div>
 
-        {/* Tabs */}
+        {/* Category Cards */}
         <motion.div
-          className={styles.tabs}
+          className={styles.categoryGrid}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4 }}
         >
-          {data.tabs.map((tab) => (
-            <button
-              key={tab.id}
-              className={[styles.tab, activeTab === tab.id ? styles.tabActive : ''].filter(Boolean).join(' ')}
-              onClick={() => setActiveTab(tab.id)}
-            >
-              {tab.label}
-            </button>
-          ))}
+          {categories.map((category) => {
+            const image = data.items.find((p) => p.category === category.id)?.image;
+            const productsTab = CATEGORY_TO_PRODUCTS_TAB[category.id] ?? 'all';
+
+            return (
+              <Link
+                key={category.id}
+                href={`/products?category=${productsTab}`}
+                className={styles.categoryCard}
+              >
+                <div className={styles.categoryImgWrap}>
+                  {image && (
+                    <Image
+                      src={image}
+                      alt={category.label}
+                      fill
+                      className={styles.categoryImg}
+                      sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 220px"
+                    />
+                  )}
+                  <div className={styles.categoryOverlay} aria-hidden />
+                  <span className={styles.categoryLabel}>{category.label}</span>
+                </div>
+              </Link>
+            );
+          })}
         </motion.div>
 
         {/* Swiper */}
@@ -77,7 +101,7 @@ export default function Products({ data }: ProductsProps) {
             }}
             pagination={{ clickable: true, el: '.products-pagination' }}
             autoplay={{ delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true }}
-            loop={filtered.length > 4}
+            loop={data.items.length > 4}
             breakpoints={{
               480:  { slidesPerView: 2,   spaceBetween: 16 },
               768:  { slidesPerView: 3,   spaceBetween: 20 },
@@ -86,7 +110,7 @@ export default function Products({ data }: ProductsProps) {
             }}
             className={styles.swiper}
           >
-            {filtered.map((product) => (
+            {data.items.map((product) => (
               <SwiperSlide key={product.id}>
                 <ProductCard product={product} />
               </SwiperSlide>
