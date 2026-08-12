@@ -10,9 +10,11 @@ interface NavItemMobileProps {
   index: number;
   isActive: boolean;
   onClose: () => void;
+  onHashClick?: (hash: string) => React.MouseEventHandler<HTMLElement>;
 }
 
-export default function NavItemMobile({ item, index, isActive, onClose }: NavItemMobileProps) {
+export default function NavItemMobile({ item, index, isActive, onClose, onHashClick }: NavItemMobileProps) {
+  const isHash = item.href.startsWith('#');
   return (
     <motion.li
       initial={{ opacity: 0, x: 20 }}
@@ -22,7 +24,7 @@ export default function NavItemMobile({ item, index, isActive, onClose }: NavIte
       <Link
         href={item.href}
         className={[styles.mobileLink, isActive ? styles.mobileLinkActive : ''].filter(Boolean).join(' ')}
-        onClick={onClose}
+        onClick={isHash ? onHashClick?.(item.href) : onClose}
       >
         {item.label}
       </Link>

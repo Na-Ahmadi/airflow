@@ -13,6 +13,7 @@ interface NavItemDesktopProps {
   onMouseEnter: () => void;
   onMouseLeave: () => void;
   isHome?: boolean;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
 export default function NavItemDesktop({
@@ -22,6 +23,7 @@ export default function NavItemDesktop({
   onMouseEnter,
   onMouseLeave,
   isHome = false,
+  onClick,
 }: NavItemDesktopProps) {
   return (
     <div
@@ -31,6 +33,7 @@ export default function NavItemDesktop({
     >
       <Link
         href={item.href}
+        onClick={onClick}
         className={[styles.menuLink, isActive ? styles.active : ""]
           .filter(Boolean)
           .join(" ")}

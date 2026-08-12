@@ -15,7 +15,8 @@
       { "id": "products",  "label": "محصولات",    "href": "/products",  "active": false },
       { "id": "projects",  "label": "پروژه‌ها",   "href": "/projects",  "active": false },
       { "id": "about",     "label": "با ما",       "href": "/about",     "active": false },
-      { "id": "resources", "label": "منابع ما",    "href": "/resources", "active": false }
+      { "id": "resources", "label": "منابع ما",    "href": "/resources", "active": false },
+      { "id": "contact",   "label": "تماس با ما",  "href": "#contact",   "active": false }
     ],
     "cta": { "label": "درخواست استعلام", "href": "#contact" },
     "languages": [
@@ -39,7 +40,8 @@
       { "id": "products",  "label": "Products",  "href": "/products",  "active": false },
       { "id": "projects",  "label": "Projects",  "href": "/projects",  "active": false },
       { "id": "about",     "label": "About",     "href": "/about",     "active": false },
-      { "id": "resources", "label": "Resources", "href": "/resources", "active": false }
+      { "id": "resources", "label": "Resources", "href": "/resources", "active": false },
+      { "id": "contact",   "label": "Contact Us", "href": "#contact",  "active": false }
     ],
     "cta": { "label": "Request Quote", "href": "#contact" },
     "languages": [

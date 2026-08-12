@@ -11,7 +11,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import navRaw from "@/data/navigation.json";
 import type { NavData } from "@/types";
 import { AnimatePresence, motion } from "framer-motion";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
 
@@ -24,6 +24,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
+  const router = useRouter();
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -33,23 +34,46 @@ export default function Header() {
     setMobileOpen(false);
   };
 
-  const scrollToCta: React.MouseEventHandler<HTMLElement> = (e) => {
-    const target = document.querySelector(data.cta.href);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth" });
+  const scrollToHash = (hash: string) => {
+    if (pathname !== "/") {
+      router.push(`/${hash}`);
+      return;
     }
+    document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    if (pathname === "/" && window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) target.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [pathname]);
+
+  const scrollToCta: React.MouseEventHandler<HTMLElement> = (e) => {
+    e.preventDefault();
+    scrollToHash(data.cta.href);
   };
 
   const handleMobileCta: React.MouseEventHandler<HTMLElement> = (e) => {
     e.preventDefault();
     closeMobileMenu();
-    setTimeout(() => {
-      document
-        .querySelector(data.cta.href)
-        ?.scrollIntoView({ behavior: "smooth" });
-    }, 50);
+    setTimeout(() => scrollToHash(data.cta.href), 50);
   };
+
+  const handleNavHashClick =
+    (hash: string): React.MouseEventHandler<HTMLElement> =>
+    (e) => {
+      e.preventDefault();
+      scrollToHash(hash);
+    };
+
+  const handleMobileNavHashClick =
+    (hash: string): React.MouseEventHandler<HTMLElement> =>
+    (e) => {
+      e.preventDefault();
+      closeMobileMenu();
+      setTimeout(() => scrollToHash(hash), 50);
+    };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > SCROLL_THRESHOLD);
@@ -105,6 +129,7 @@ export default function Header() {
               onDropdownLeave={() => setActiveDropdown(null)}
               isActive={isActive}
               isHome={pathname === "/"}
+              onHashClick={handleNavHashClick}
             />
           </nav>
           <HeaderActions
@@ -138,6 +163,7 @@ export default function Header() {
                       index={i}
                       isActive={isActive(item.href)}
                       onClose={closeMobileMenu}
+                      onHashClick={handleMobileNavHashClick}
                     />
                   ))}
                 </ul>
