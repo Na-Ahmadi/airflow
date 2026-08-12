@@ -6,6 +6,7 @@ export const SITE_CONFIG = {
   locale: 'fa_IR',
   direction: 'rtl' as const,
   phone: '۰۲۱-۳۳۵۸۵۷۸',
+  whatsapp: '989123947902',
   email: 'info@airflowsystem.ir',
   address: 'تهران، شهران، خیابان مطهری، خیابان ستارخان، پلاک ۱۲۳',
 };

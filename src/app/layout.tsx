@@ -6,6 +6,7 @@ import { SITE_CONFIG } from '@/constants';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { LanguageProvider } from '@/context/LanguageContext';
 import ScrollToTop from '@/components/shared/ScrollToTop/ScrollToTop';
+import WhatsAppButton from '@/components/shared/WhatsAppButton/WhatsAppButton';
 import Header from '@/components/layout/Header/Header';
 import Footer from '@/components/layout/Footer/Footer';
 
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
             <Footer />
             <ScrollToTop />
+            <WhatsAppButton />
           </LanguageProvider>
         </ThemeProvider>
       </body>
