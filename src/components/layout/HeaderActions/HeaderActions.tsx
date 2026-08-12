@@ -28,7 +28,7 @@ export default function HeaderActions({
     <div className={styles.actions}>
       <LanguageSwitch />
 
-      <ThemeToggle />
+      <ThemeToggle scrolled={scrolled} isHome={isHome} />
 
       <Button
         href={cta.href}

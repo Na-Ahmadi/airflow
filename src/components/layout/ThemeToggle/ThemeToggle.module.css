@@ -18,3 +18,10 @@
   border-color: var(--color-border-primary);
   color: var(--color-primary-light);
 }
+
+/* Light theme + home page + not scrolled: white icon over dark hero */
+:global([data-theme="light"]) .themeToggle[data-home="true"][data-scrolled="false"] {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
