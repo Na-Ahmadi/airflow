@@ -124,9 +124,9 @@ export default function Header() {
             <motion.div
               id="mobile-menu"
               className={styles.mobileMenu}
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.3 }}
             >
               <div className={styles.mobileMenuInner}>

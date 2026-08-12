@@ -20,6 +20,10 @@
   box-shadow: var(--glass-shadow);
 }
 
+.scrolled .mobileMenu {
+  top: var(--header-height-scrolled);
+}
+
 .navInner {
   max-width: 100%;
   padding-inline: clamp(1rem, 3vw, 3.5rem);
@@ -32,15 +36,14 @@
 
 /* Mobile Menu */
 .mobileMenu {
+  position: fixed;
+  top: var(--header-height);
+  inset-inline: 0;
+  bottom: 0;
   background: var(--color-bg);
   border-top: 1px solid var(--glass-border);
-  overflow: hidden;
-}
-
-:global([data-theme="light"]) .mobileMenu {
-  background: var(--glass-bg);
-  backdrop-filter: var(--blur-xl);
-  -webkit-backdrop-filter: var(--blur-xl);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobileMenuInner {
