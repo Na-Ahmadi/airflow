@@ -1,76 +1,76 @@
 .header {
   position: fixed;
   top: 0;
-  inset-inline: 0;
   z-index: var(--z-header);
   transition: all var(--transition-base);
+  inset-inline: 0;
 }
 
 /* Main Nav */
 .nav {
-  background: transparent;
   transition: all var(--transition-base);
+  background: transparent;
 }
 
 .scrolled .nav {
-  background: var(--glass-bg);
   backdrop-filter: var(--blur-lg);
+  background: var(--glass-bg);
   -webkit-backdrop-filter: var(--blur-lg);
-  border-bottom: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .navInner {
-  max-width: 100%;
-  padding-inline: clamp(1rem, 3vw, 3.5rem);
-  height: var(--header-height);
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: var(--space-6);
+  padding-inline: clamp(1rem, 3vw, 3.5rem);
+  max-width: 100%;
+  height: var(--header-height);
 }
 
 /* Mobile Menu */
 .mobileMenu {
   position: fixed;
   top: var(--header-height);
-  inset-inline: 0;
   bottom: 0;
-  background: var(--color-bg);
+  z-index: var(--z-overlay);
+  inset-inline: 0;
   border-top: 1px solid var(--glass-border);
+  background: var(--color-bg);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 
 .mobileMenuInner {
-  max-width: var(--container-max);
-  margin-inline: auto;
-  padding: var(--space-4) var(--section-padding-x) var(--space-6);
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
+  margin-inline: auto;
+  padding: var(--space-4) var(--section-padding-x) var(--space-6);
+  max-width: var(--container-max);
 }
 
 .mobileNavList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .mobileCta {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: var(--btn-height-md);
-  background: var(--gradient-primary);
-  color: #fff;
-  text-decoration: none;
-  font-weight: var(--font-semibold);
-  border-radius: var(--radius-full);
+  align-items: center;
   margin-top: var(--space-4);
   box-shadow: var(--shadow-btn);
+  border-radius: var(--radius-full);
+  background: var(--gradient-primary);
+  height: var(--btn-height-md);
+  color: #fff;
+  font-weight: var(--font-semibold);
+  text-decoration: none;
 }
-

@@ -147,6 +147,7 @@
   --z-modal: 400;
   --z-toast: 500;
   --z-tooltip: 600;
+  --z-overlay: 700;
 
   /* ─── Opacity ─────────────────────────────────────────────── */
   --opacity-disabled: 0.5;
