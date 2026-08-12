@@ -20,10 +20,6 @@
   box-shadow: var(--glass-shadow);
 }
 
-.scrolled .mobileMenu {
-  top: var(--header-height-scrolled);
-}
-
 .navInner {
   max-width: 100%;
   padding-inline: clamp(1rem, 3vw, 3.5rem);
