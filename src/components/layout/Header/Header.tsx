@@ -113,6 +113,8 @@ export default function Header() {
             onHamburgerClick={() => setMobileOpen(!mobileOpen)}
             onCtaClick={scrollToCta}
             hamburgerLabel={lang === "fa" ? "منو" : "Menu"}
+            scrolled={scrolled}
+            isHome={pathname === "/"}
           />
         </div>
 
