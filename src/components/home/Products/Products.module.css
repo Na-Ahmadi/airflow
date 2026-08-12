@@ -4,6 +4,10 @@
   position: relative;
 }
 
+.section + .section {
+  background: var(--color-bg);
+}
+
 .header {
   display: flex;
   align-items: flex-start;

@@ -96,6 +96,11 @@ export interface ProductsData {
     subtitle: string;
     viewAll: { label: string; href: string };
   };
+  bestSellers: {
+    tag: string;
+    title: string;
+    subtitle: string;
+  };
   tabs: ProductTab[];
   items: Product[];
 }
