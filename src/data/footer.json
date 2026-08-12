@@ -51,6 +51,7 @@
       "items": [
         { "icon": "location", "label": "آدرس",       "value": "تهران، شهران، خیابان مطهری، خیابان ستارخان، پلاک ۱۲۳" },
         { "icon": "phone",    "label": "تلفن تماس",  "value": "۰۲۱-۳۳۵۸۵۷۸"        },
+        { "icon": "whatsapp", "label": "واتساپ",      "value": "گفتگو در واتساپ", "href": "https://wa.me/989123947902" },
         { "icon": "mail",     "label": "ایمیل",       "value": "info@airflowsystem.ir" }
       ]
     },
@@ -108,6 +109,7 @@
       "items": [
         { "icon": "location", "label": "Address", "value": "Tehran, Shahran, Motahari St., Sattar Khan St., No. 123" },
         { "icon": "phone",    "label": "Phone",   "value": "021-33585780"         },
+        { "icon": "whatsapp", "label": "WhatsApp", "value": "Chat on WhatsApp", "href": "https://wa.me/989123947902" },
         { "icon": "mail",     "label": "Email",   "value": "info@airflowsystem.ir" }
       ]
     },

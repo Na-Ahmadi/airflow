@@ -194,7 +194,7 @@ export interface Social {
 export interface FooterData {
   company: { name: string; tagline: string; socials: Social[] };
   columns: FooterColumn[];
-  contact: { title: string; items: { icon: string; label: string; value: string }[] };
+  contact: { title: string; items: { icon: string; label: string; value: string; href?: string }[] };
   copyright: string;
 }
 
