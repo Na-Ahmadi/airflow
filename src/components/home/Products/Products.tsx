@@ -95,6 +95,7 @@ export default function Products({ data }: ProductsProps) {
                             sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 220px"
                           />
                         )}
+                        <div className={styles.categoryOverlay} aria-hidden />
                       </div>
                       <span className={styles.categoryLabel}>{category.label}</span>
                     </Link>
