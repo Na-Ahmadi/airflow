@@ -2,7 +2,7 @@
   "fa": {
     "section": {
       "tag": "محصولات",
-      "title": "محصولات ما",
+      "title": "دسته‌بندی محصولات",
       "subtitle": "گستره کاملی از محصولات توزیع هوا برای هر نوع پروژه",
       "viewAll": { "label": "مشاهده همه محصولات", "href": "/products" }
     },
@@ -33,7 +33,7 @@
   "en": {
     "section": {
       "tag": "Products",
-      "title": "Our Products",
+      "title": "Product Categories",
       "subtitle": "A complete range of air distribution products for every project type",
       "viewAll": { "label": "View All Products", "href": "/products" }
     },

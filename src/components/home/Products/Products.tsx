@@ -54,37 +54,62 @@ export default function Products({ data }: ProductsProps) {
 
           {/* Category Cards */}
           <motion.div
-            className={styles.categoryGrid}
+            className={styles.categorySliderWrap}
             initial={{ opacity: 0, y: 20 }}
             animate={categoriesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4 }}
           >
-            {categories.map((category) => {
-              const image = data.items.find((p) => p.category === category.id)?.image;
-              const productsTab = CATEGORY_TO_PRODUCTS_TAB[category.id] ?? 'all';
+            <Swiper
+              modules={[Navigation]}
+              spaceBetween={16}
+              slidesPerView={2.2}
+              navigation={{
+                nextEl: '.categories-next',
+                prevEl: '.categories-prev',
+              }}
+              breakpoints={{
+                480:  { slidesPerView: 2.5, spaceBetween: 16 },
+                768:  { slidesPerView: 3,   spaceBetween: 16 },
+                1024: { slidesPerView: 4,   spaceBetween: 16 },
+                1280: { slidesPerView: 5,   spaceBetween: 16 },
+              }}
+              className={styles.categorySwiper}
+            >
+              {categories.map((category) => {
+                const image = data.items.find((p) => p.category === category.id)?.image;
+                const productsTab = CATEGORY_TO_PRODUCTS_TAB[category.id] ?? 'all';
 
-              return (
-                <Link
-                  key={category.id}
-                  href={`/products?category=${productsTab}`}
-                  className={styles.categoryCard}
-                >
-                  <div className={styles.categoryImgWrap}>
-                    {image && (
-                      <Image
-                        src={image}
-                        alt={category.label}
-                        fill
-                        className={styles.categoryImg}
-                        sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 220px"
-                      />
-                    )}
-                    <div className={styles.categoryOverlay} aria-hidden />
-                    <span className={styles.categoryLabel}>{category.label}</span>
-                  </div>
-                </Link>
-              );
-            })}
+                return (
+                  <SwiperSlide key={category.id}>
+                    <Link
+                      href={`/products?category=${productsTab}`}
+                      className={styles.categoryCard}
+                    >
+                      <div className={styles.categoryImgWrap}>
+                        {image && (
+                          <Image
+                            src={image}
+                            alt={category.label}
+                            fill
+                            className={styles.categoryImg}
+                            sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 220px"
+                          />
+                        )}
+                        <div className={styles.categoryOverlay} aria-hidden />
+                      </div>
+                      <span className={styles.categoryLabel}>{category.label}</span>
+                    </Link>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+
+            <button className={`${styles.navBtn} ${styles.navPrev} categories-prev`} aria-label="قبلی">
+              <Icon name="chevron-right" size={20} />
+            </button>
+            <button className={`${styles.navBtn} ${styles.navNext} categories-next`} aria-label="بعدی">
+              <Icon name="chevron-left" size={20} />
+            </button>
           </motion.div>
         </Container>
       </section>
