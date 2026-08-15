@@ -2,10 +2,10 @@
   "fa": {
     "badge": "راهکارهای هوشمند HVAC",
     "title": {
-      "main": "طراحی و اجرای سیستم‌های توزیع هوا",
-      "highlight": "برای فضاهای حرفه‌ای"
+      "main": "تولید تخصصی دریچه و دمپرهای هوا",
+      "highlight": "برای پروژه‌های حرفه‌ای HVAC"
     },
-    "subtitle": "راهکارهای مهندسی برای جریان هوای بهینه، کارایی انرژی بیشتر و آسایش پایدار در هر پروژه.",
+    "subtitle": "طراحی، تولید و تأمین تجهیزات توزیع هوا برای پروژه‌های تجاری، صنعتی، درمانی و ساختمانی با پشتیبانی مهندسی.",
     "buttons": [
       { "id": "consult", "label": "درخواست مشاوره تخصصی", "href": "#contact", "variant": "primary",  "icon": "arrow-left"  },
       { "id": "video",   "label": "مشاهده ویدیو معرفی",    "href": "#video",   "variant": "outline", "icon": "instagram"   }
@@ -26,10 +26,10 @@
   "en": {
     "badge": "Smart HVAC Solutions",
     "title": {
-      "main":      "Design & Installation of Air Distribution Systems",
-      "highlight": "For Professional Spaces"
+      "main":      "Specialized Manufacturing of Air Grilles & Dampers",
+      "highlight": "For Professional HVAC Projects"
     },
-    "subtitle": "Engineering solutions for optimal airflow, energy efficiency, and lasting comfort in every project.",
+    "subtitle": "Design, manufacturing, and supply of air distribution equipment for commercial, industrial, healthcare, and building projects with engineering support.",
     "buttons": [
       { "id": "consult", "label": "Request Expert Consultation", "href": "#contact", "variant": "primary",  "icon": "arrow-left" },
       { "id": "video",   "label": "Watch Introduction Video",    "href": "#video",   "variant": "outline", "icon": "instagram"  }
