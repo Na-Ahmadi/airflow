@@ -203,3 +203,6 @@ export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'dan
 export type ButtonSize = 'sm' | 'md' | 'lg';
 export type ButtonTextColor = 'default' | 'white' | 'light' | 'accent';
 export type Direction = 'rtl' | 'ltr';
+
+export type CardVariant = 'default' | 'elevated' | 'outline';
+export type CardPadding = 'sm' | 'md' | 'lg';

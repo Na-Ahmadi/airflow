@@ -1,10 +1,10 @@
 "use client";
 
+import Icon from "@/components/shared/Icon/Icon";
 import type { NavItem } from "@/types";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import styles from "./NavItemDesktop.module.css";
-import Icon from "@/components/shared/Icon/Icon";
 
 interface NavItemDesktopProps {
   item: NavItem;
@@ -27,7 +27,10 @@ export default function NavItemDesktop({
 }: NavItemDesktopProps) {
   return (
     <div
-      className={[styles.menuItem, isHome ? styles.onHome : styles.onInner].join(' ')}
+      className={[
+        styles.menuItem,
+        isHome ? styles.onHome : styles.onInner,
+      ].join(" ")}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
