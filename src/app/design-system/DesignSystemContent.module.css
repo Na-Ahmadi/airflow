@@ -1,0 +1,151 @@
+.page {
+  padding: var(--space-12) 0 var(--space-32);
+}
+
+.breadcrumbRow {
+  margin-bottom: var(--space-8);
+}
+
+.section {
+  margin-top: var(--space-16);
+}
+
+.sectionHeading {
+  font-size: var(--text-h2);
+  font-weight: var(--weight-h2);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-8);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ─── Colors ──────────────────────────────────────────────── */
+.colorGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--space-6);
+}
+
+.colorItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.swatch {
+  height: 64px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.colorName {
+  font-size: var(--text-caption);
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+}
+
+.tokenName {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* ─── Typography ──────────────────────────────────────────── */
+.typeList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.typeRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.typeMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.typeSample {
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: var(--leading-snug);
+}
+
+/* ─── Spacing ─────────────────────────────────────────────── */
+.spaceList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.spaceRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.spaceRow .tokenName {
+  width: 110px;
+  flex-shrink: 0;
+}
+
+.spaceBar {
+  height: 16px;
+  background: var(--gradient-accent);
+  border-radius: var(--radius-sm);
+}
+
+.spacePx {
+  font-size: var(--text-caption);
+  color: var(--color-text-secondary);
+}
+
+/* ─── Components ──────────────────────────────────────────── */
+.componentBlock {
+  margin-bottom: var(--space-12);
+}
+
+.componentTitle {
+  font-size: var(--text-h3);
+  font-weight: var(--weight-h3);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-1);
+}
+
+.componentPath {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-5);
+}
+
+.demoRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.cardDemoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-6);
+}
+
+.cardDemoText {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--text-body);
+}
+
+.formDemoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+  max-width: 640px;
+}
