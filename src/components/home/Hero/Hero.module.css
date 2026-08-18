@@ -16,7 +16,7 @@
 
 .bgImg {
   object-fit: cover;
-  object-position: 30% center;
+  object-position: 22% center;
 }
 
 /* main dark overlay – RTL: text is on right, image on left */
@@ -25,8 +25,8 @@
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(4, 10, 22, 0.15) 0%,
-    rgba(4, 10, 22, 0.55) 45%,
+    rgba(4, 10, 22, 0.02) 0%,
+    rgba(4, 10, 22, 0.5) 45%,
     rgba(4, 10, 22, 0.88) 75%,
     rgba(4, 10, 22, 0.97) 100%
   );
