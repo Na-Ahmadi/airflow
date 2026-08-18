@@ -180,8 +180,8 @@
   box-shadow: var(--shadow-glow-primary);
 }
 
-.navPrev { right: 4px; }
-.navNext { left: 4px; }
+.navPrev { right: var(--space-6); }
+.navNext { left: var(--space-6); }
 
 /* ─── Pagination ──────────────────────────────────────────── */
 .pagination {
