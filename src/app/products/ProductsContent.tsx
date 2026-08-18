@@ -9,7 +9,6 @@ type BillingualPage = { fa: PageData; en: PageData };
 
 export default function ProductsContent() {
   const { lang } = useLanguage();
-
   const page = (pageRaw as unknown as BillingualPage)[lang];
 
   return (

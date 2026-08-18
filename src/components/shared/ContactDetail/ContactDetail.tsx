@@ -5,11 +5,15 @@ interface ContactDetailProps {
   icon: string;
   label: string;
   value: string;
+  href?: string;
 }
 
-export default function ContactDetail({ icon, label, value }: ContactDetailProps) {
+export default function ContactDetail({ icon, label, value, href }: ContactDetailProps) {
+  const Wrapper = href ? "a" : "div";
+  const wrapperProps = href ? { href, target: "_blank", rel: "noopener noreferrer" } : {};
+
   return (
-    <div className={styles.contactItem}>
+    <Wrapper className={styles.contactItem} {...wrapperProps}>
       <div className={styles.contactIcon}>
         <div className={styles.iconSvg}>
           <Icon name={icon} />
@@ -19,6 +23,6 @@ export default function ContactDetail({ icon, label, value }: ContactDetailProps
         <span className={styles.contactLabel}>{label}</span>
         <span className={styles.contactValue}>{value}</span>
       </div>
-    </div>
+    </Wrapper>
   );
 }

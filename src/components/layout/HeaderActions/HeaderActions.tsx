@@ -11,6 +11,8 @@ interface HeaderActionsProps {
   onHamburgerClick: () => void;
   onCtaClick: React.MouseEventHandler<HTMLElement>;
   hamburgerLabel: string;
+  scrolled?: boolean;
+  isHome?: boolean;
 }
 
 export default function HeaderActions({
@@ -19,12 +21,14 @@ export default function HeaderActions({
   onHamburgerClick,
   onCtaClick,
   hamburgerLabel,
+  scrolled,
+  isHome = false,
 }: HeaderActionsProps) {
   return (
     <div className={styles.actions}>
       <LanguageSwitch />
 
-      <ThemeToggle />
+      <ThemeToggle scrolled={scrolled} isHome={isHome} />
 
       <Button
         href={cta.href}
@@ -43,6 +47,8 @@ export default function HeaderActions({
         aria-label={hamburgerLabel}
         aria-expanded={mobileOpen}
         aria-controls="mobile-menu"
+        {...(scrolled !== undefined ? { "data-scrolled": String(scrolled) } : {})}
+        data-home={String(isHome)}
       >
         <span
           aria-hidden="true"

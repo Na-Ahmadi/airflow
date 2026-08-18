@@ -1,10 +1,10 @@
 "use client";
 
+import Icon from "@/components/shared/Icon/Icon";
 import type { NavItem } from "@/types";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import styles from "./NavItemDesktop.module.css";
-import Icon from "@/components/shared/Icon/Icon";
 
 interface NavItemDesktopProps {
   item: NavItem;
@@ -13,6 +13,7 @@ interface NavItemDesktopProps {
   onMouseEnter: () => void;
   onMouseLeave: () => void;
   isHome?: boolean;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
 export default function NavItemDesktop({
@@ -22,15 +23,20 @@ export default function NavItemDesktop({
   onMouseEnter,
   onMouseLeave,
   isHome = false,
+  onClick,
 }: NavItemDesktopProps) {
   return (
     <div
-      className={[styles.menuItem, isHome ? styles.onHome : styles.onInner].join(' ')}
+      className={[
+        styles.menuItem,
+        isHome ? styles.onHome : styles.onInner,
+      ].join(" ")}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       <Link
         href={item.href}
+        onClick={onClick}
         className={[styles.menuLink, isActive ? styles.active : ""]
           .filter(Boolean)
           .join(" ")}

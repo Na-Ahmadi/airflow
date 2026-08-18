@@ -1,0 +1,37 @@
+.card {
+  display: block;
+  border-radius: var(--radius-xl);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-base);
+}
+
+/* ─── Variants ────────────────────────────────────────────── */
+.default {
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+}
+
+.elevated {
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+}
+
+.outline {
+  background: transparent;
+  border: 1px solid var(--color-border);
+}
+
+/* ─── Padding ─────────────────────────────────────────────── */
+.paddingSm { padding: var(--space-4); }
+.paddingMd { padding: var(--space-6); }
+.paddingLg { padding: var(--space-8); }
+
+/* ─── Hoverable ───────────────────────────────────────────── */
+.hoverable:hover {
+  border-color: var(--color-border-primary);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}

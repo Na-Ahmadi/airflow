@@ -24,6 +24,7 @@ export interface NavData {
 export interface HeroStat {
   id: string;
   value: string;
+  numericValue: number;
   suffix: string;
   label: string;
 }
@@ -94,6 +95,11 @@ export interface ProductsData {
     title: string;
     subtitle: string;
     viewAll: { label: string; href: string };
+  };
+  bestSellers: {
+    tag: string;
+    title: string;
+    subtitle: string;
   };
   tabs: ProductTab[];
   items: Product[];
@@ -188,7 +194,7 @@ export interface Social {
 export interface FooterData {
   company: { name: string; tagline: string; socials: Social[] };
   columns: FooterColumn[];
-  contact: { title: string; items: { icon: string; label: string; value: string }[] };
+  contact: { title: string; items: { icon: string; label: string; value: string; href?: string }[] };
   copyright: string;
 }
 
@@ -197,3 +203,6 @@ export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'dan
 export type ButtonSize = 'sm' | 'md' | 'lg';
 export type ButtonTextColor = 'default' | 'white' | 'light' | 'accent';
 export type Direction = 'rtl' | 'ltr';
+
+export type CardVariant = 'default' | 'elevated' | 'outline';
+export type CardPadding = 'sm' | 'md' | 'lg';

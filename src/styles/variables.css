@@ -88,6 +88,21 @@
   --space-24: 6rem;
   --space-32: 8rem;
 
+  /* ─── Typography roles ───────────────────────────────────── */
+  --text-h1: var(--text-6xl);
+  --text-h2: var(--text-4xl);
+  --text-h3: var(--text-2xl);
+  --text-body: var(--text-base);
+  --text-caption: var(--text-sm);
+  --text-label: var(--text-xs);
+
+  --weight-h1: var(--font-extrabold);
+  --weight-h2: var(--font-bold);
+  --weight-h3: var(--font-semibold);
+  --weight-body: var(--font-normal);
+  --weight-caption: var(--font-normal);
+  --weight-label: var(--font-medium);
+
   --section-padding-y: clamp(4rem, 8vw, 7rem);
   --section-padding-x: clamp(1rem, 4vw, 2rem);
 
@@ -147,6 +162,7 @@
   --z-modal: 400;
   --z-toast: 500;
   --z-tooltip: 600;
+  --z-overlay: 700;
 
   /* ─── Opacity ─────────────────────────────────────────────── */
   --opacity-disabled: 0.5;

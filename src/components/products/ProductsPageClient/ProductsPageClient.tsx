@@ -4,10 +4,11 @@ import type { BreadcrumbItem } from "@/components/shared/Breadcrumb/Breadcrumb";
 import Breadcrumb from "@/components/shared/Breadcrumb/Breadcrumb";
 import Button from "@/components/shared/Button/Button";
 import Container from "@/components/shared/Container/Container";
-import FilterTabs from "@/components/shared/FilterTabs/FilterTabs";
 import type { TabItem } from "@/components/shared/FilterTabs/FilterTabs";
+import FilterTabs from "@/components/shared/FilterTabs/FilterTabs";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useCallback, useState } from "react";
 import type { ProductItem } from "./ProductCard";
 import ProductCard from "./ProductCard";
 import styles from "./ProductsPageClient.module.css";
@@ -33,7 +34,36 @@ export default function ProductsPageClient({
   items,
   cta,
 }: Props) {
-  const [activeTab, setActiveTab] = useState("all");
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get("category");
+  const initialTab =
+    categoryParam && tabs.some((t) => t.id === categoryParam)
+      ? categoryParam
+      : "all";
+  const [activeTab, setActiveTab] = useState(initialTab);
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleTabChange = useCallback(
+    (tabId: string) => {
+      setActiveTab(tabId);
+
+      const params = new URLSearchParams(searchParams.toString());
+
+      if (tabId === "all") {
+        params.delete("category");
+      } else {
+        params.set("category", tabId);
+      }
+
+      const query = params.toString();
+
+      router.replace(query ? `${pathname}?${query}` : pathname, {
+        scroll: false,
+      });
+    },
+    [pathname, router, searchParams],
+  );
 
   const filtered =
     activeTab === "all" ? items : items.filter((p) => p.category === activeTab);
@@ -52,7 +82,11 @@ export default function ProductsPageClient({
       <section className={styles.section}>
         <Container>
           {/* Tabs */}
-          <FilterTabs tabs={tabs} activeTab={activeTab} onChange={setActiveTab} />
+          <FilterTabs
+            tabs={tabs}
+            activeTab={activeTab}
+            onChange={handleTabChange}
+          />
 
           {/* Grid */}
           <motion.div className={styles.grid} layout>

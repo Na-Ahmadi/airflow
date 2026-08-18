@@ -6,9 +6,11 @@ import styles from "./AnimatedCounter.module.css";
 interface AnimatedCounterProps {
   value: number;
   active: boolean;
+  className?: string;
+  formatValue?: (display: number) => string;
 }
 
-export default function AnimatedCounter({ value, active }: AnimatedCounterProps) {
+export default function AnimatedCounter({ value, active, className, formatValue }: AnimatedCounterProps) {
   const [display, setDisplay] = useState(0);
   const duration = 2000;
 
@@ -25,11 +27,11 @@ export default function AnimatedCounter({ value, active }: AnimatedCounterProps)
     requestAnimationFrame(step);
   }, [active, value]);
 
-  return (
-    <span className={styles.value}>
-      {display >= 1000
-        ? `${(display / 1000).toFixed(display % 1000 === 0 ? 0 : 1)}K`
-        : display.toLocaleString("fa-IR")}
-    </span>
-  );
+  const text = formatValue
+    ? formatValue(display)
+    : display >= 1000
+      ? `${(display / 1000).toFixed(display % 1000 === 0 ? 0 : 1)}K`
+      : display.toLocaleString("fa-IR");
+
+  return <span className={className ?? styles.value}>{text}</span>;
 }
