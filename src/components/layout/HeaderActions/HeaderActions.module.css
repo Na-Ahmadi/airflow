@@ -15,7 +15,7 @@
   text-decoration: none;
   font-size: var(--text-sm);
   font-weight: var(--font-semibold);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
   box-shadow: var(--shadow-btn);
   transition: box-shadow var(--transition-base), transform var(--transition-base);
   white-space: nowrap;

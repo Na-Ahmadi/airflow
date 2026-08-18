@@ -92,7 +92,7 @@
   gap: var(--space-2);
   backdrop-filter: var(--blur-sm);
   border: 1px solid rgba(30, 111, 207, 0.35);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
   background: rgba(30, 111, 207, 0.15);
   padding: var(--space-2) var(--space-4);
   width: fit-content;
@@ -158,7 +158,7 @@
   align-items: center;
   gap: var(--space-2);
   transition: all var(--transition-base);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
   padding: 0 var(--space-8);
   height: var(--btn-height-lg);
   font-weight: var(--font-semibold);
@@ -435,8 +435,8 @@
     font-size: var(--text-lg);
   }
   .statLabel {
-    white-space: normal;
     font-size: 10px;
     text-align: center;
+    white-space: normal;
   }
 }
