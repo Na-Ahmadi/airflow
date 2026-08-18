@@ -38,7 +38,7 @@ export default function Hero({ data }: HeroProps) {
       {/* ── Full-screen background image ── */}
       <div className={styles.bgWrap} aria-hidden>
         <Image
-          src="/images/banners/hero-bg2.webp"
+          src="/images/banners/hero-bg-home.webp"
           alt=""
           fill
           priority
