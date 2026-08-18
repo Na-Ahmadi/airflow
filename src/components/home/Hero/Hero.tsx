@@ -30,14 +30,15 @@ function formatStatValue(display: number, sample: string) {
 }
 
 export default function Hero({ data }: HeroProps) {
-  const { ref: statsRef, inView: statsInView } = useInViewOnce<HTMLDivElement>();
+  const { ref: statsRef, inView: statsInView } =
+    useInViewOnce<HTMLDivElement>();
 
   return (
     <section className={styles.hero} aria-label="بخش اصلی">
       {/* ── Full-screen background image ── */}
       <div className={styles.bgWrap} aria-hidden>
         <Image
-          src="/images/banners/hero-bg.webp"
+          src="/images/banners/hero-bg2.webp"
           alt=""
           fill
           priority
@@ -107,7 +108,9 @@ export default function Hero({ data }: HeroProps) {
                   value={stat.numericValue}
                   active={statsInView}
                   className={styles.statValue}
-                  formatValue={(display) => formatStatValue(display, stat.value)}
+                  formatValue={(display) =>
+                    formatStatValue(display, stat.value)
+                  }
                 />
                 <span className={styles.statSuffix}>{stat.suffix}</span>
               </span>
