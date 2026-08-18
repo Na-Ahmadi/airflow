@@ -92,17 +92,9 @@
   gap: var(--space-2);
   backdrop-filter: var(--blur-sm);
   border: 1px solid rgba(30, 111, 207, 0.35);
-<<<<<<< HEAD
   border-radius: var(--radius-sm);
-  color: var(--color-accent);
-  font-size: var(--text-sm);
-  font-weight: var(--font-medium);
-  backdrop-filter: var(--blur-sm);
-=======
-  border-radius: var(--radius-full);
   background: rgba(30, 111, 207, 0.15);
   padding: var(--space-2) var(--space-4);
->>>>>>> main
   width: fit-content;
   color: var(--color-accent);
   font-weight: var(--font-medium);
@@ -165,17 +157,8 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-<<<<<<< HEAD
-  height: var(--btn-height-lg);
-  padding: 0 var(--space-8);
-  border-radius: var(--radius-sm);
-  font-size: var(--text-base);
-  font-weight: var(--font-semibold);
-  text-decoration: none;
-=======
->>>>>>> main
   transition: all var(--transition-base);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
   padding: 0 var(--space-8);
   height: var(--btn-height-lg);
   font-weight: var(--font-semibold);
@@ -452,8 +435,8 @@
     font-size: var(--text-lg);
   }
   .statLabel {
-    white-space: normal;
     font-size: 10px;
     text-align: center;
+    white-space: normal;
   }
 }
