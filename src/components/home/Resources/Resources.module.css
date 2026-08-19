@@ -1,6 +1,6 @@
 .section {
   padding: var(--section-padding-y) 0;
-  background: var(--color-bg);
+  background: var(--color-bg-secondary);
 }
 
 .sectionHeader {
@@ -22,6 +22,11 @@
   transition: color var(--transition-fast);
 }
 .viewAll:hover { color: var(--color-accent); }
+
+/* Darker than Statistics, to continue the alternating section rhythm */
+:global([data-theme="light"]) .section {
+  background: #e8ecf3;
+}
 
 .grid {
   display: grid;
