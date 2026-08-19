@@ -7,7 +7,6 @@ import { useInViewOnce } from "@/hooks/useInViewOnce";
 import type { HeroData } from "@/types";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./Hero.module.css";
 
 const EASE = [0.4, 0, 0.2, 1] as [number, number, number, number];
@@ -121,7 +120,7 @@ export default function Hero({ data }: HeroProps) {
       </div>
 
       {/* ── Product badge – floats over the image area (left in RTL) ── */}
-      <motion.div className={styles.productBadge} {...fadeUp(0.55)}>
+      {/* <motion.div className={styles.productBadge} {...fadeUp(0.55)}>
         <Link href={data.productCard.href} className={styles.productBadgeInner}>
           <span className={styles.productBadgeCategory}>
             {data.productCard.category}
@@ -131,7 +130,7 @@ export default function Hero({ data }: HeroProps) {
           </span>
           <span className={styles.productBadgeLink}>مشاهده جزئیات →</span>
         </Link>
-      </motion.div>
+      </motion.div> */}
 
       {/* Scroll indicator */}
       <div className={styles.scrollIndicator} aria-hidden>
