@@ -1,11 +1,6 @@
 .section {
   padding: var(--section-padding-y) 0;
-  background: #0d1c33;
-}
-
-/* Darker than WhyUs, to keep the alternating section rhythm distinct */
-:global([data-theme="light"]) .section {
-  background: #e8ecf3;
+  background: var(--color-bg);
 }
 
 .sectionHeader {

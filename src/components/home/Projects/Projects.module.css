@@ -5,11 +5,6 @@
   overflow: hidden;
 }
 
-/* Darker than neighboring bg sections, to keep the alternating rhythm distinct */
-:global([data-theme="light"]) .section {
-  background: #e8ecf3;
-}
-
 .sectionHeader {
   display: flex;
   align-items: flex-start;
