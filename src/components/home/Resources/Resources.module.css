@@ -1,6 +1,11 @@
 .section {
   padding: var(--section-padding-y) 0;
-  background: var(--color-bg-secondary);
+  background: #0d1c33;
+}
+
+/* Darker than WhyUs, to keep the alternating section rhythm distinct */
+:global([data-theme="light"]) .section {
+  background: #e8ecf3;
 }
 
 .sectionHeader {
@@ -22,11 +27,6 @@
   transition: color var(--transition-fast);
 }
 .viewAll:hover { color: var(--color-accent); }
-
-/* Darker than Statistics, to continue the alternating section rhythm */
-:global([data-theme="light"]) .section {
-  background: #e8ecf3;
-}
 
 .grid {
   display: grid;

@@ -5,6 +5,11 @@
   overflow: hidden;
 }
 
+/* Darker than neighboring bg sections, to keep the alternating rhythm distinct */
+:global([data-theme="light"]) .section {
+  background: #e8ecf3;
+}
+
 .sectionHeader {
   display: flex;
   align-items: flex-start;
@@ -192,11 +197,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-}
-
-/* Slightly darker than --color-bg-secondary to stand out from its neighbors in the alternating section rhythm */
-:global([data-theme="light"]) .section {
-  background: #e8ecf3;
 }
 
 /* ─── Responsive ──────────────────────────────────────────── */

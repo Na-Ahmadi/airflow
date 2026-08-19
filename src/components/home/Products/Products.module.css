@@ -1,11 +1,7 @@
 .section {
   position: relative;
-  background: var(--color-bg-secondary);
-  padding: var(--section-padding-y) 0;
-}
-
-.section + .section {
   background: var(--color-bg);
+  padding: var(--section-padding-y) 0;
 }
 
 .header {

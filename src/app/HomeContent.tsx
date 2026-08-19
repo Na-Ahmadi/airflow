@@ -84,10 +84,10 @@ export default function HomeContent() {
     <main>
       <Hero data={hero} />
       <Partners data={partners} />
-      <WhyUs data={whyUs} />
       <Products data={products} />
       <Projects data={projects} />
       <Statistics data={statistics} />
+      <WhyUs data={whyUs} />
       <Resources data={resources} />
       <ContactForm data={contact} />
     </main>
