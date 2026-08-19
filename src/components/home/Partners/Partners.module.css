@@ -63,7 +63,7 @@
 
 /* ─── Light Mode ──────────────────────────────────────────── */
 :global([data-theme="light"]) .section {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg);
 }
 
 .partnerItem {

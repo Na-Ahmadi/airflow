@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  background: var(--color-bg);
+  background: var(--color-bg-secondary);
   padding: var(--section-padding-y) 0;
 }
 
