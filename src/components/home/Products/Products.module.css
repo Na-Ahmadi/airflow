@@ -4,6 +4,12 @@
   padding: var(--section-padding-y) 0;
 }
 
+.sectionAlt {
+  position: relative;
+  background: var(--color-bg);
+  padding: var(--section-padding-y) 0;
+}
+
 .header {
   display: flex;
   justify-content: space-between;

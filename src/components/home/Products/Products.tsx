@@ -114,7 +114,7 @@ export default function Products({ data }: ProductsProps) {
         </Container>
       </section>
 
-      <section className={styles.section} ref={bestSellersRef} aria-label={data.bestSellers.title}>
+      <section className={styles.sectionAlt} ref={bestSellersRef} aria-label={data.bestSellers.title}>
         <Container>
           <div className={styles.header}>
             <SectionTitle
