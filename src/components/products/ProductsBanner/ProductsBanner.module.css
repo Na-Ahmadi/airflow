@@ -1,8 +1,8 @@
 /* ─── Banner wrapper ────────────────────────────────────────── */
 .banner {
   display: grid;
-  /* RTL: col-1 = right (content ~38%), col-2 = left (image ~62%) */
-  grid-template-columns: 33fr 67fr;
+  /* RTL: col-1 = right (content ~22%), col-2 = left (image ~78%) */
+  grid-template-columns: 22fr 78fr;
   /* Always light — image is a bright product shot, dark bg would clash */
   background: #edf1f7;
   min-height: 420px;
@@ -16,7 +16,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding-top: calc(var(--header-height) + var(--space-10));
-  padding-right: 6rem;
+  padding-right: 4rem;
   padding-bottom: var(--space-10);
   padding-left: var(--space-6);
 }
@@ -55,8 +55,8 @@
 .imageEdge {
   position: absolute;
   inset: 0;
-  /* fade to the same light bg so image blends into text panel */
-  background: linear-gradient(to left, #edf1f7 0%, transparent 28%);
+  /* narrower, more transparent fade so more of the image stays visible */
+  background: linear-gradient(to left, rgba(237, 241, 247, 0.55) 0%, transparent 16%);
   pointer-events: none;
 }
 
