@@ -5,9 +5,10 @@ import Button from "@/components/shared/Button/Button";
 import Icon from "@/components/shared/Icon/Icon";
 import { useInViewOnce } from "@/hooks/useInViewOnce";
 import type { HeroData } from "@/types";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 import styles from "./Hero.module.css";
 
 const EASE = [0.4, 0, 0.2, 1] as [number, number, number, number];
@@ -33,8 +34,18 @@ export default function Hero({ data }: HeroProps) {
   const { ref: statsRef, inView: statsInView } =
     useInViewOnce<HTMLDivElement>();
 
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  const rotateX = useTransform(scrollYProgress, [0, 1], [12, -32]);
+  const rotateY = useTransform(scrollYProgress, [0, 1], [-20, 20]);
+  const translateY = useTransform(scrollYProgress, [0, 1], [0, -80]);
+
   return (
-    <section className={styles.hero} aria-label="بخش اصلی">
+    <section className={styles.hero} aria-label="بخش اصلی" ref={sectionRef}>
       {/* ── Full-screen background image ── */}
       <div className={styles.bgWrap} aria-hidden>
         <Image
@@ -119,6 +130,26 @@ export default function Hero({ data }: HeroProps) {
           ))}
         </motion.div>
       </div>
+
+      {/* ── Rotating 3D product image – floats over the image area (left in RTL) ── */}
+      <motion.div
+        className={styles.productImageStage}
+        {...fadeUp(0.5)}
+        aria-hidden
+      >
+        <motion.div
+          className={styles.productImageTilt}
+          style={{ rotateX, rotateY, y: translateY }}
+        >
+          <Image
+            src={data.productCard.image}
+            alt=""
+            fill
+            sizes="(max-width: 900px) 0px, 38vw"
+            className={styles.productImage}
+          />
+        </motion.div>
+      </motion.div>
 
       {/* ── Product badge – floats over the image area (left in RTL) ── */}
       <motion.div className={styles.productBadge} {...fadeUp(0.55)}>

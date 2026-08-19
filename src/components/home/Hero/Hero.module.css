@@ -189,6 +189,35 @@
   background: rgba(255, 255, 255, 0.15);
 }
 
+/* ─── Rotating 3D product image (left side in RTL) ─── */
+.productImageStage {
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  z-index: 1;
+  transform: translateY(-50%);
+  perspective: 1400px;
+  width: 40vw;
+  max-width: 620px;
+  height: 60vh;
+  max-height: 560px;
+  pointer-events: none;
+}
+
+.productImageTilt {
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.productImage {
+  object-fit: contain;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.55));
+}
+
 /* ─── Product badge – floats over the image (left side in RTL) ─── */
 .productBadge {
   position: absolute;
@@ -383,6 +412,9 @@
 
 @media (max-width: 900px) {
   .productBadge {
+    display: none;
+  }
+  .productImageStage {
     display: none;
   }
 }
