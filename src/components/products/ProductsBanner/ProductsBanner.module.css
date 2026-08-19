@@ -80,11 +80,11 @@
     min-height: unset;
   }
 
-  /* Two-zone gradient: subtle dark top (breadcrumb) + strong dark bottom (text) */
+  /* Two-zone gradient: subtle dark top (breadcrumb) + dark bottom (text) — lightened so the product image stays visible */
   .imageEdge {
     background:
-      linear-gradient(to bottom, rgba(6, 8, 18, 0.62) 0%, transparent 24%),
-      linear-gradient(to top, rgba(6, 8, 18, 0.88) 0%, rgba(6, 8, 18, 0.42) 48%, transparent 72%);
+      linear-gradient(to bottom, rgba(6, 8, 18, 0.4) 0%, transparent 24%),
+      linear-gradient(to top, rgba(6, 8, 18, 0.72) 0%, rgba(6, 8, 18, 0.28) 48%, transparent 72%);
   }
 
   .content {
