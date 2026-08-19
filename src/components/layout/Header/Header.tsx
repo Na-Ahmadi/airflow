@@ -104,12 +104,14 @@ export default function Header() {
         .filter(Boolean)
         .join(" ")}
     >
-      <TopBar
-        phone={data.topbar.phone}
-        email={data.topbar.email}
-        address={data.topbar.address}
-        scrolled={scrolled}
-      />
+      {pathname === "/" && (
+        <TopBar
+          phone={data.topbar.phone}
+          email={data.topbar.email}
+          address={data.topbar.address}
+          scrolled={scrolled}
+        />
+      )}
 
       {/* Main Nav */}
       <div className={styles.nav}>
