@@ -403,13 +403,7 @@
     justify-content: center;
   }
   .statsRow {
-    flex-wrap: nowrap;
-    justify-content: center;
-    padding-inline: var(--space-3);
-    width: 100%;
-  }
-  .stat {
-    padding-inline: var(--space-3);
+    display: none;
   }
   .bgOverlay {
     background: rgba(4, 10, 22, 0.75);
@@ -422,21 +416,5 @@
 @media (max-width: 480px) {
   .title {
     font-size: var(--text-4xl);
-  }
-  .statsRow {
-    gap: 0;
-    padding-inline: var(--space-2);
-  }
-  .stat {
-    gap: 2px;
-    padding-inline: var(--space-2);
-  }
-  .statValueRow {
-    font-size: var(--text-lg);
-  }
-  .statLabel {
-    font-size: 10px;
-    text-align: center;
-    white-space: normal;
   }
 }
