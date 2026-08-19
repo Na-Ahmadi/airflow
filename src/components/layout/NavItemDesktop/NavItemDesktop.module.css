@@ -82,21 +82,22 @@
 
 /* Inner pages: nav sits over light/glass background → dark/primary text */
 :global([data-theme="light"]) .onInner .menuLink {
-  color: #334155;
+  color: #1e293b;
 }
 :global([data-theme="light"]) .onInner .menuLink:hover {
-  color: var(--color-primary);
-  background: rgba(30, 111, 207, 0.08);
+  color: var(--color-primary-dark);
+  background: rgba(30, 111, 207, 0.14);
 }
 
 :global([data-theme="light"]) .menuLink.active {
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
+  font-weight: var(--font-semibold);
 }
 
 :global([data-theme="light"]) .dropdownItem {
-  color: #334155;
+  color: #1e293b;
 }
 :global([data-theme="light"]) .dropdownItem:hover {
-  color: var(--color-primary);
-  background: rgba(30, 111, 207, 0.08);
+  color: var(--color-primary-dark);
+  background: rgba(30, 111, 207, 0.14);
 }

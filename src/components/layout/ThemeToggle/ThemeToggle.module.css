@@ -19,9 +19,29 @@
   color: var(--color-primary-light);
 }
 
+/* Light theme: subtle surface tokens are nearly invisible on the light banners
+   used across inner pages — give the toggle a visible border/background at rest. */
+:global([data-theme="light"]) .themeToggle {
+  background: rgba(10, 37, 64, 0.06);
+  border-color: rgba(10, 37, 64, 0.16);
+  color: #1e293b;
+}
+
+:global([data-theme="light"]) .themeToggle:hover {
+  background: rgba(30, 111, 207, 0.14);
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+}
+
 /* Light theme + home page + not scrolled: white icon over dark hero */
 :global([data-theme="light"]) .themeToggle[data-home="true"][data-scrolled="false"] {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+:global([data-theme="light"]) .themeToggle[data-home="true"][data-scrolled="false"]:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #ffffff;
   color: #ffffff;
 }
