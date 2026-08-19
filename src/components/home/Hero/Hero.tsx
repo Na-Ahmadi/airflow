@@ -40,8 +40,8 @@ export default function Hero({ data }: HeroProps) {
     offset: ["start start", "end start"],
   });
 
-  const rotateX = useTransform(scrollYProgress, [0, 1], [12, -32]);
-  const rotateY = useTransform(scrollYProgress, [0, 1], [-20, 20]);
+  // Full 360° spin spread exactly across the hero's own scrollable height.
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
   const translateY = useTransform(scrollYProgress, [0, 1], [0, -80]);
 
   return (
@@ -139,7 +139,7 @@ export default function Hero({ data }: HeroProps) {
       >
         <motion.div
           className={styles.productImageTilt}
-          style={{ rotateX, rotateY, y: translateY }}
+          style={{ rotate, y: translateY }}
         >
           <Image
             src={data.productCard.image}
