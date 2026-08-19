@@ -19,21 +19,6 @@
   object-position: 22% center;
 }
 
-.bgImgMobile {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .bgImgDesktop {
-    display: none;
-  }
-  .bgImgMobile {
-    display: block;
-    object-fit: contain;
-    object-position: center top;
-  }
-}
-
 /* main dark overlay – RTL: text is on right, image on left */
 .bgOverlay {
   position: absolute;
@@ -403,11 +388,6 @@
 }
 
 @media (max-width: 768px) {
-  .inner {
-    justify-content: flex-end;
-    padding-top: calc(var(--header-height) + 16px);
-    padding-bottom: var(--space-16);
-  }
   .content {
     align-self: stretch;
     max-width: 100%;

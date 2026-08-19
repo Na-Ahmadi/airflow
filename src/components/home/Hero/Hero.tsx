@@ -42,16 +42,7 @@ export default function Hero({ data }: HeroProps) {
           fill
           priority
           quality={90}
-          className={`${styles.bgImg} ${styles.bgImgDesktop}`}
-          sizes="100vw"
-        />
-        <Image
-          src="/images/banners/hero-bg-home-mobile.webp"
-          alt=""
-          fill
-          priority
-          quality={90}
-          className={`${styles.bgImg} ${styles.bgImgMobile}`}
+          className={styles.bgImg}
           sizes="100vw"
         />
         {/* dark overlay so text stays readable */}
