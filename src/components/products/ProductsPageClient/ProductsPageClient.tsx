@@ -1,11 +1,11 @@
 "use client";
 
 import type { BreadcrumbItem } from "@/components/shared/Breadcrumb/Breadcrumb";
-import Breadcrumb from "@/components/shared/Breadcrumb/Breadcrumb";
 import Button from "@/components/shared/Button/Button";
 import Container from "@/components/shared/Container/Container";
 import type { TabItem } from "@/components/shared/FilterTabs/FilterTabs";
 import FilterTabs from "@/components/shared/FilterTabs/FilterTabs";
+import ProductsBanner from "@/components/products/ProductsBanner/ProductsBanner";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useState } from "react";
@@ -70,13 +70,8 @@ export default function ProductsPageClient({
 
   return (
     <>
-      {/* Page Header */}
-      <div className={styles.pageHeader}>
-        <Container>
-          <h1 className={styles.pageTitle}>{pageTitle}</h1>
-          <Breadcrumb items={breadcrumb} />
-        </Container>
-      </div>
+      {/* Page Banner */}
+      <ProductsBanner breadcrumb={breadcrumb} title={pageTitle} />
 
       {/* Products Grid */}
       <section className={styles.section}>
