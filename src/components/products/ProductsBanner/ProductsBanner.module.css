@@ -55,8 +55,8 @@
 .imageEdge {
   position: absolute;
   inset: 0;
-  /* narrower, more transparent fade so more of the image stays visible */
-  background: linear-gradient(to left, rgba(237, 241, 247, 0.55) 0%, transparent 16%);
+  /* fade to the same light bg so image blends into text panel */
+  background: linear-gradient(to left, #edf1f7 0%, transparent 28%);
   pointer-events: none;
 }
 
