@@ -32,6 +32,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ─── Image protection ────────────────────────────────────── */
+img {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+}
+
+@media print {
+  img {
+    display: none !important;
+  }
+}
+
 /* ─── Typography ──────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
   font-weight: var(--font-bold);
