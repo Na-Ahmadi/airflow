@@ -12,7 +12,10 @@
       { "id": "vents",       "label": "دریچه‌ها"       },
       { "id": "dampers",     "label": "دمپرها"         },
       { "id": "control",     "label": "تجهیزات کنترل" },
-      { "id": "accessories", "label": "ملزومات"        }
+      { "id": "accessories", "label": "ملزومات"        },
+      { "id": "chimney",     "label": "کلاهک دودکش و دریچه بازدید" },
+      { "id": "fancoil",     "label": "دریچه فن کویل"  },
+      { "id": "wall",        "label": "دریچه کولر و دیواری" }
     ],
     "items": [
       { "id": "ls-300",  "category": "vents",       "image": "/images/products/dc-400.webp",  "name": "دریچه خطی شیاردار",    "series": "LS Series",  "href": "/products/ls-300",  "badge": null    },
@@ -44,7 +47,10 @@
       { "id": "vents",       "label": "Diffusers"       },
       { "id": "dampers",     "label": "Dampers"         },
       { "id": "control",     "label": "Control Equipment" },
-      { "id": "accessories", "label": "Accessories"     }
+      { "id": "accessories", "label": "Accessories"     },
+      { "id": "chimney",     "label": "Chimney Caps & Access Panels" },
+      { "id": "fancoil",     "label": "Fan Coil Grilles" },
+      { "id": "wall",        "label": "Wall & Cooler Grilles" }
     ],
     "items": [
       { "id": "ls-300",  "category": "vents",       "image": "/images/products/dc-400.webp",  "name": "Slotted Linear Diffuser", "series": "LS Series",  "href": "/products/ls-300",  "badge": null  },
