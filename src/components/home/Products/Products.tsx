@@ -12,6 +12,8 @@ import Container from '@/components/shared/Container/Container';
 import Icon from '@/components/shared/Icon/Icon';
 import ProductCard from './ProductCard';
 import styles from './Products.module.css';
+import productsPageRaw from '@/data/products-page.json';
+import { useLanguage } from '@/context/LanguageContext';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -19,12 +21,25 @@ import 'swiper/css/pagination';
 
 interface ProductsProps { data: ProductsData; }
 
+// Homepage category cards share the same category filter as the /products page.
+const CATEGORY_ICON: Record<string, string> = {
+  vents: 'ceiling',
+  dampers: 'gear',
+  control: 'cog',
+  accessories: 'box',
+};
+
 export default function Products({ data }: ProductsProps) {
+  const { lang } = useLanguage();
+  const productsPage = productsPageRaw[lang];
+
   const categoriesRef = useRef<HTMLElement>(null);
   const categoriesInView = useInView(categoriesRef, { once: true, margin: '-100px' });
 
   const bestSellersRef = useRef<HTMLElement>(null);
   const bestSellersInView = useInView(bestSellersRef, { once: true, margin: '-100px' });
+
+  const categories = productsPage.tabs.filter((tab) => tab.id !== 'all');
 
   return (
     <>
@@ -43,40 +58,45 @@ export default function Products({ data }: ProductsProps) {
 
           {/* Category Showcase */}
           <div className={styles.categoryGrid}>
-            {data.categories.map((category, index) => (
-              <motion.div
-                key={category.id}
-                className={styles.categoryGridItem}
-                initial={{ opacity: 0, y: 24 }}
-                animate={categoriesInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1, ease: [0.4, 0, 0.2, 1] }}
-              >
-                <Link href={category.href} className={styles.categoryCard}>
-                  <div className={styles.categoryImgWrap}>
-                    <Image
-                      src={category.image}
-                      alt={category.title}
-                      fill
-                      className={styles.categoryImg}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 620px"
-                      priority={index < 2}
-                    />
-                    <div className={styles.categoryOverlay} aria-hidden />
-                  </div>
-                  <div className={styles.categoryContent}>
-                    <span className={styles.categoryIcon} aria-hidden>
-                      <Icon name={category.icon} size={22} />
-                    </span>
-                    <h3 className={styles.categoryTitle}>{category.title}</h3>
-                    <p className={styles.categorySubtitle}>{category.subtitle}</p>
-                    <span className={styles.categoryCta}>
-                      {data.categoryCta}
-                      <Icon name="arrow-left" size={16} />
-                    </span>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
+            {categories.map((category, index) => {
+              const image = productsPage.items.find((p) => p.category === category.id)?.image;
+
+              return (
+                <motion.div
+                  key={category.id}
+                  className={styles.categoryGridItem}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={categoriesInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: index * 0.1, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <Link href={`/products?category=${category.id}`} className={styles.categoryCard}>
+                    <div className={styles.categoryImgWrap}>
+                      {image && (
+                        <Image
+                          src={image}
+                          alt={category.label}
+                          fill
+                          className={styles.categoryImg}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 620px"
+                          priority={index < 2}
+                        />
+                      )}
+                      <div className={styles.categoryOverlay} aria-hidden />
+                    </div>
+                    <div className={styles.categoryContent}>
+                      <span className={styles.categoryIcon} aria-hidden>
+                        <Icon name={CATEGORY_ICON[category.id] ?? 'box'} size={22} />
+                      </span>
+                      <h3 className={styles.categoryTitle}>{category.label}</h3>
+                      <span className={styles.categoryCta}>
+                        مشاهده محصولات
+                        <Icon name="arrow-left" size={16} />
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
         </Container>
       </section>

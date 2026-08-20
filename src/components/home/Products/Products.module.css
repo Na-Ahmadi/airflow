@@ -121,14 +121,6 @@
   line-height: var(--leading-tight);
 }
 
-.categorySubtitle {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: var(--text-sm);
-  line-height: var(--leading-relaxed);
-  max-width: 42ch;
-}
-
 .categoryCta {
   display: inline-flex;
   align-items: center;

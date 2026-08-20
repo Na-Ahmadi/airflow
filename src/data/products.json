@@ -11,41 +11,6 @@
       "title": "پرفروش‌ترین محصولات",
       "subtitle": "محصولاتی که بیشترین اعتماد مشتریان ما را جذب کرده‌اند"
     },
-    "categoryCta": "مشاهده محصولات",
-    "categories": [
-      {
-        "id": "grilles",
-        "title": "دریچه‌های هوا",
-        "subtitle": "دریچه‌های تنظیم و توزیع هوا با کیفیت ساخت صنعتی برای انواع پروژه",
-        "image": "/images/products/rd1030.webp",
-        "href": "/products?category=vents",
-        "icon": "air"
-      },
-      {
-        "id": "diffusers",
-        "title": "دیفیوزرها",
-        "subtitle": "توزیع یکنواخت هوا با طراحی سقفی و خطی برای فضاهای تجاری و اداری",
-        "image": "/images/products/dc-400.webp",
-        "href": "/products?category=vents",
-        "icon": "ceiling"
-      },
-      {
-        "id": "dampers",
-        "title": "دمپرها",
-        "subtitle": "کنترل دقیق جریان هوا و ایمنی حریق با دمپرهای حجمی و ضد حریق",
-        "image": "/images/products/dc-400.webp",
-        "href": "/products?category=dampers",
-        "icon": "gear"
-      },
-      {
-        "id": "accessories",
-        "title": "متعلقات و لوازم جانبی",
-        "subtitle": "قطعات تکمیلی و لوازم جانبی برای نصب و اجرای حرفه‌ای سیستم توزیع هوا",
-        "image": "/images/banners/hvac_showroom_high_quality.webp",
-        "href": "/products?category=accessories",
-        "icon": "box"
-      }
-    ],
     "tabs": [
       { "id": "all",      "label": "همه محصولات",    "active": true  },
       { "id": "linear",   "label": "دریچه‌های خطی",  "active": false },
@@ -77,41 +42,6 @@
       "title": "Best-Selling Products",
       "subtitle": "The products our customers trust the most"
     },
-    "categoryCta": "View Products",
-    "categories": [
-      {
-        "id": "grilles",
-        "title": "Air Grilles",
-        "subtitle": "Industrial-grade air control and distribution grilles for every project type",
-        "image": "/images/products/rd1030.webp",
-        "href": "/products?category=vents",
-        "icon": "air"
-      },
-      {
-        "id": "diffusers",
-        "title": "Diffusers",
-        "subtitle": "Even air distribution with ceiling and linear designs for commercial spaces",
-        "image": "/images/products/dc-400.webp",
-        "href": "/products?category=vents",
-        "icon": "ceiling"
-      },
-      {
-        "id": "dampers",
-        "title": "Dampers",
-        "subtitle": "Precise airflow control and fire safety with volume and fire dampers",
-        "image": "/images/products/dc-400.webp",
-        "href": "/products?category=dampers",
-        "icon": "gear"
-      },
-      {
-        "id": "accessories",
-        "title": "Accessories",
-        "subtitle": "Complementary parts and accessories for professional installation",
-        "image": "/images/banners/hvac_showroom_high_quality.webp",
-        "href": "/products?category=accessories",
-        "icon": "box"
-      }
-    ],
     "tabs": [
       { "id": "all",      "label": "All Products",       "active": true  },
       { "id": "linear",   "label": "Linear Diffusers",   "active": false },

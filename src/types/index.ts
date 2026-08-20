@@ -89,15 +89,6 @@ export interface Product {
   badge: string | null;
 }
 
-export interface ProductCategoryShowcase {
-  id: string;
-  title: string;
-  subtitle: string;
-  image: string;
-  href: string;
-  icon: string;
-}
-
 export interface ProductsData {
   section: {
     tag: string;
@@ -110,8 +101,6 @@ export interface ProductsData {
     title: string;
     subtitle: string;
   };
-  categoryCta: string;
-  categories: ProductCategoryShowcase[];
   tabs: ProductTab[];
   items: Product[];
 }
