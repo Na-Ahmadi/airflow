@@ -260,22 +260,10 @@
       { "icon": "material", "label": "ورق گالوانیزه با دوام" }
     ],
     "images": [
-      {
-        "src": "/images/product-detail-placeholder.svg",
-        "alt": "دمپر کنترل حجم VCD-200 - نما ۱"
-      },
-      {
-        "src": "/images/product-detail-placeholder.svg",
-        "alt": "دمپر کنترل حجم VCD-200 - نما ۲"
-      },
-      {
-        "src": "/images/product-detail-placeholder.svg",
-        "alt": "دمپر کنترل حجم VCD-200 - نما ۳"
-      },
-      {
-        "src": "/images/product-detail-placeholder.svg",
-        "alt": "دمپر کنترل حجم VCD-200 - نما ۴"
-      }
+      { "src": "/images/products/vcd-200-damper.webp", "alt": "دمپر کنترل حجم VCD-200 - نمای اصلی" },
+      { "src": "/images/products/vcd-200-damper.webp", "alt": "دمپر کنترل حجم VCD-200 - نمای جانبی" },
+      { "src": "/images/products/vcd-200-damper.webp", "alt": "دمپر کنترل حجم VCD-200 - جزئیات اهرم" },
+      { "src": "/images/products/vcd-200-damper.webp", "alt": "دمپر کنترل حجم VCD-200 - نمای تیغه‌ها" }
     ],
     "specs": [
       { "label": "مدل", "value": "VCD-200" },
