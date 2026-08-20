@@ -1,10 +1,16 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
-const ALLOWED_HOSTS = ['airflowsystem.ir', 'www.airflowsystem.ir', 'localhost', '127.0.0.1'];
+const ALLOWED_HOSTS = [
+  "airflowsystem.ir",
+  "www.airflowsystem.ir",
+  "airflow-chi.vercel.app",
+  "localhost",
+  "127.0.0.1",
+];
 
 export function middleware(request: NextRequest) {
-  const referer = request.headers.get('referer');
+  const referer = request.headers.get("referer");
 
   if (referer) {
     try {
@@ -21,5 +27,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: '/images/:path*',
+  matcher: "/images/:path*",
 };
