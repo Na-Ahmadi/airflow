@@ -6,12 +6,19 @@ import Container from "@/components/shared/Container/Container";
 import type { TabItem } from "@/components/shared/FilterTabs/FilterTabs";
 import FilterTabs from "@/components/shared/FilterTabs/FilterTabs";
 import ProductsBanner from "@/components/products/ProductsBanner/ProductsBanner";
+import ProductSearchBar from "@/components/products/ProductSearchBar/ProductSearchBar";
+import { useLanguage } from "@/context/LanguageContext";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import type { ProductItem } from "./ProductCard";
 import ProductCard from "./ProductCard";
 import styles from "./ProductsPageClient.module.css";
+
+const EMPTY_COPY = {
+  fa: "محصولی با این مشخصات یافت نشد.",
+  en: "No products match your search.",
+} as const;
 
 interface Cta {
   title: string;
@@ -34,6 +41,7 @@ export default function ProductsPageClient({
   items,
   cta,
 }: Props) {
+  const { lang } = useLanguage();
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("category");
   const initialTab =
@@ -41,6 +49,7 @@ export default function ProductsPageClient({
       ? categoryParam
       : "all";
   const [activeTab, setActiveTab] = useState(initialTab);
+  const [query, setQuery] = useState("");
   const router = useRouter();
   const pathname = usePathname();
 
@@ -65,8 +74,18 @@ export default function ProductsPageClient({
     [pathname, router, searchParams],
   );
 
-  const filtered =
+  const byCategory =
     activeTab === "all" ? items : items.filter((p) => p.category === activeTab);
+
+  const normalizedQuery = query.trim().toLocaleLowerCase();
+  const filtered = useMemo(() => {
+    if (!normalizedQuery) return byCategory;
+    return byCategory.filter((p) =>
+      `${p.name} ${p.model} ${p.series} ${p.id}`
+        .toLocaleLowerCase()
+        .includes(normalizedQuery),
+    );
+  }, [byCategory, normalizedQuery]);
 
   return (
     <>
@@ -76,6 +95,9 @@ export default function ProductsPageClient({
       {/* Products Grid */}
       <section className={styles.section}>
         <Container>
+          {/* Search */}
+          <ProductSearchBar value={query} onChange={setQuery} />
+
           {/* Tabs */}
           <FilterTabs
             tabs={tabs}
@@ -87,9 +109,7 @@ export default function ProductsPageClient({
           <motion.div className={styles.grid} layout>
             <AnimatePresence mode="popLayout">
               {filtered.length === 0 ? (
-                <p className={styles.empty}>
-                  محصولی در این دسته‌بندی یافت نشد.
-                </p>
+                <p className={styles.empty}>{EMPTY_COPY[lang]}</p>
               ) : (
                 filtered.map((product) => (
                   <motion.div
