@@ -1,0 +1,219 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: var(--color-overlay);
+  backdrop-filter: var(--blur-sm);
+  padding: var(--space-4);
+  padding-top: clamp(var(--space-8), 12vh, 140px);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 640px;
+  max-height: 74vh;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-2xl);
+  background: var(--glass-bg);
+  box-shadow: var(--shadow-xl);
+  backdrop-filter: var(--blur-lg);
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-4) var(--space-5);
+}
+
+.inputIcon {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--color-text-primary);
+  font-family: var(--font-primary);
+  font-size: var(--text-lg);
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.closeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.closeBtn:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text-primary);
+}
+
+.results {
+  overflow-y: auto;
+  padding: var(--space-3) var(--space-3) var(--space-4);
+}
+
+.hint {
+  margin: 0;
+  padding: var(--space-6) var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  text-align: center;
+}
+
+.resultsCount {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+}
+
+.resultsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.resultItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2) var(--space-3);
+  color: inherit;
+  text-decoration: none;
+  transition: background var(--transition-fast);
+}
+
+.resultItem:hover,
+.resultItem:focus-visible {
+  background: var(--color-surface-hover);
+}
+
+.resultImgWrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-secondary);
+}
+
+.resultImg {
+  object-fit: cover;
+}
+
+.resultBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.resultName {
+  overflow: hidden;
+  color: var(--color-text-primary);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.resultMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+.resultDot {
+  opacity: 0.6;
+}
+
+.resultModel {
+  color: var(--color-primary-light);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wide);
+}
+
+.resultArrow {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+
+:global([dir="ltr"]) .resultArrow {
+  transform: scaleX(-1);
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-10) var(--space-4);
+  text-align: center;
+}
+
+.emptyIcon {
+  color: var(--color-text-muted);
+  opacity: 0.6;
+}
+
+.emptyTitle {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-base);
+}
+
+.emptyHint {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 640px) {
+  .backdrop {
+    padding-top: var(--space-4);
+    align-items: stretch;
+  }
+
+  .panel {
+    max-height: 100%;
+    height: 100%;
+    border-radius: var(--radius-lg);
+  }
+}
