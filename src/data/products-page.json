@@ -26,7 +26,11 @@
       { "id": "fd-100",  "category": "dampers",     "image": "/images/products/dc-400.webp",  "name": "دمپر ضد حریق",        "series": "FD Series",  "href": "/products/fd-100",  "badge": null    },
       { "id": "mw-300",  "category": "vents",       "image": "/images/products/dc-400.webp",  "name": "ملتیوا چهار طرفه",    "series": "MW Series",  "href": "/products/mw-300",  "badge": null    },
       { "id": "gr-100",  "category": "accessories", "image": "/images/products/rd1030.webp",  "name": "گریل برگشت هوا",      "series": "GR Series",  "href": "/products/gr-100",  "badge": null    },
-      { "id": "ec-200",  "category": "accessories", "image": "/images/products/dc-400.webp",  "name": "کلاهک خروجی هوا",     "series": "EC Series",  "href": "/products/ec-200",  "badge": null    }
+      { "id": "ec-200",  "category": "accessories", "image": "/images/products/dc-400.webp",  "name": "کلاهک خروجی هوا",     "series": "EC Series",  "href": "/products/ec-200",  "badge": null    },
+      { "id": "fc-150",  "category": "fancoil",     "image": "/images/products/dc-400.webp",           "name": "دریچه فن کویل روکار",    "series": "FC Series", "href": "/products/fc-150", "badge": null },
+      { "id": "fc-250",  "category": "fancoil",     "image": "/images/products/dc-400.webp",           "name": "دریچه فن کویل توکار",    "series": "FC Series", "href": "/products/fc-250", "badge": "جدید" },
+      { "id": "wg-400",  "category": "wall",        "image": "/images/product-detail-placeholder.svg", "name": "دریچه دیواری تهویه",     "series": "WG Series", "href": "/products/wg-400", "badge": null },
+      { "id": "wg-500",  "category": "wall",        "image": "/images/product-detail-placeholder.svg", "name": "دریچه کولر آبی",         "series": "WG Series", "href": "/products/wg-500", "badge": null }
     ],
     "cta": {
       "title":    "به دنبال محصول خاصی هستید؟",
@@ -61,7 +65,11 @@
       { "id": "fd-100",  "category": "dampers",     "image": "/images/products/dc-400.webp",  "name": "Fire Damper",             "series": "FD Series",  "href": "/products/fd-100",  "badge": null  },
       { "id": "mw-300",  "category": "vents",       "image": "/images/products/dc-400.webp",  "name": "4-Way Multiway",          "series": "MW Series",  "href": "/products/mw-300",  "badge": null  },
       { "id": "gr-100",  "category": "accessories", "image": "/images/products/rd1030.webp",  "name": "Return Air Grille",       "series": "GR Series",  "href": "/products/gr-100",  "badge": null  },
-      { "id": "ec-200",  "category": "accessories", "image": "/images/products/dc-400.webp",  "name": "Exhaust Air Cap",         "series": "EC Series",  "href": "/products/ec-200",  "badge": null  }
+      { "id": "ec-200",  "category": "accessories", "image": "/images/products/dc-400.webp",  "name": "Exhaust Air Cap",         "series": "EC Series",  "href": "/products/ec-200",  "badge": null  },
+      { "id": "fc-150",  "category": "fancoil",     "image": "/images/products/dc-400.webp",           "name": "Surface-Mount Fan Coil Grille", "series": "FC Series", "href": "/products/fc-150", "badge": null },
+      { "id": "fc-250",  "category": "fancoil",     "image": "/images/products/dc-400.webp",           "name": "Concealed Fan Coil Grille",    "series": "FC Series", "href": "/products/fc-250", "badge": "New" },
+      { "id": "wg-400",  "category": "wall",        "image": "/images/product-detail-placeholder.svg", "name": "Wall Ventilation Grille",    "series": "WG Series", "href": "/products/wg-400", "badge": null },
+      { "id": "wg-500",  "category": "wall",        "image": "/images/product-detail-placeholder.svg", "name": "Evaporative Cooler Grille",  "series": "WG Series", "href": "/products/wg-500", "badge": null }
     ],
     "cta": {
       "title":    "Looking for a Specific Product?",
