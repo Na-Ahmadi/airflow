@@ -1,5 +1,6 @@
 "use client";
 
+import CompactSearchBar from "@/components/home/CompactSearchBar/CompactSearchBar";
 import Container from "@/components/shared/Container/Container";
 import Icon from "@/components/shared/Icon/Icon";
 import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
@@ -161,6 +162,8 @@ export default function Products({ data }: ProductsProps) {
           )}
         </Container>
       </section>
+
+      <CompactSearchBar />
 
       <section
         className={styles.sectionAlt}
