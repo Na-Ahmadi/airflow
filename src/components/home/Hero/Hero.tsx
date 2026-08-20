@@ -91,7 +91,7 @@ export default function Hero({ data }: HeroProps) {
                 size="lg"
                 iconStart={
                   btn.variant === "outline" ? (
-                    <Icon name="play" size={18} />
+                    <Icon name={btn.icon ?? "play"} size={18} />
                   ) : undefined
                 }
                 iconEnd={

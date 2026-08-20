@@ -8,7 +8,7 @@
     "subtitle": "طراحی، تولید و تأمین تجهیزات توزیع هوا برای پروژه‌های تجاری، صنعتی، درمانی و ساختمانی با پشتیبانی مهندسی.",
     "buttons": [
       { "id": "consult", "label": "درخواست مشاوره تخصصی", "href": "#contact", "variant": "primary",  "icon": "arrow-left"  },
-      { "id": "video",   "label": "مشاهده ویدیو معرفی",    "href": "#video",   "variant": "outline", "icon": "instagram"   }
+      { "id": "products", "label": "مشاهده محصولات",       "href": "/products", "variant": "outline", "icon": "box"         }
     ],
     "stats": [
       { "id": "experience",   "value": "۱۸",  "numericValue": 18,       "suffix": "+", "label": "سال تجربه"       },
@@ -32,7 +32,7 @@
     "subtitle": "Design, manufacturing, and supply of air distribution equipment for commercial, industrial, healthcare, and building projects with engineering support.",
     "buttons": [
       { "id": "consult", "label": "Request Expert Consultation", "href": "#contact", "variant": "primary",  "icon": "arrow-left" },
-      { "id": "video",   "label": "Watch Introduction Video",    "href": "#video",   "variant": "outline", "icon": "instagram"  }
+      { "id": "products", "label": "View Products",               "href": "/products", "variant": "outline", "icon": "box"        }
     ],
     "stats": [
       { "id": "experience",   "value": "18",  "numericValue": 18,       "suffix": "+", "label": "Years of Experience"  },
