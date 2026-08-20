@@ -3,6 +3,7 @@
 import LanguageSwitch from "@/components/layout/LanguageSwitch/LanguageSwitch";
 import ThemeToggle from "@/components/layout/ThemeToggle/ThemeToggle";
 import Button from "@/components/shared/Button/Button";
+import SearchTrigger from "@/components/shared/SearchTrigger/SearchTrigger";
 import styles from "./HeaderActions.module.css";
 
 interface HeaderActionsProps {
@@ -27,6 +28,8 @@ export default function HeaderActions({
   return (
     <div className={styles.actions}>
       <LanguageSwitch />
+
+      <SearchTrigger scrolled={scrolled} isHome={isHome} />
 
       <ThemeToggle scrolled={scrolled} isHome={isHome} />
 

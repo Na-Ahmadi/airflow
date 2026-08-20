@@ -85,6 +85,7 @@ export interface Product {
   image: string;
   name: string;
   series: string;
+  model: string;
   href: string;
   badge: string | null;
 }

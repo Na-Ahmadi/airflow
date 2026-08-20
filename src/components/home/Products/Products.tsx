@@ -162,6 +162,8 @@ export default function Products({ data }: ProductsProps) {
         </Container>
       </section>
 
+      {/* CompactSearchBar disabled per request — component kept for potential future use */}
+
       <section
         className={styles.sectionAlt}
         ref={bestSellersRef}
