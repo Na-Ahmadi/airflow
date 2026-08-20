@@ -19,23 +19,12 @@ import 'swiper/css/pagination';
 
 interface ProductsProps { data: ProductsData; }
 
-// Homepage category ids map to the broader tabs on the /products page.
-const CATEGORY_TO_PRODUCTS_TAB: Record<string, string> = {
-  linear: 'vents',
-  ceiling: 'vents',
-  multiway: 'vents',
-  damper: 'dampers',
-  accessory: 'accessories',
-};
-
 export default function Products({ data }: ProductsProps) {
   const categoriesRef = useRef<HTMLElement>(null);
   const categoriesInView = useInView(categoriesRef, { once: true, margin: '-100px' });
 
   const bestSellersRef = useRef<HTMLElement>(null);
   const bestSellersInView = useInView(bestSellersRef, { once: true, margin: '-100px' });
-
-  const categories = data.tabs.filter((tab) => tab.id !== 'all');
 
   return (
     <>
@@ -52,65 +41,43 @@ export default function Products({ data }: ProductsProps) {
             </Link>
           </div>
 
-          {/* Category Cards */}
-          <motion.div
-            className={styles.categorySliderWrap}
-            initial={{ opacity: 0, y: 20 }}
-            animate={categoriesInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4 }}
-          >
-            <Swiper
-              modules={[Navigation]}
-              spaceBetween={16}
-              slidesPerView={2.2}
-              navigation={{
-                nextEl: '.categories-next',
-                prevEl: '.categories-prev',
-              }}
-              breakpoints={{
-                480:  { slidesPerView: 2.5, spaceBetween: 16 },
-                768:  { slidesPerView: 3,   spaceBetween: 16 },
-                1024: { slidesPerView: 4,   spaceBetween: 16 },
-                1280: { slidesPerView: 5,   spaceBetween: 16 },
-              }}
-              className={styles.categorySwiper}
-            >
-              {categories.map((category) => {
-                const image = data.items.find((p) => p.category === category.id)?.image;
-                const productsTab = CATEGORY_TO_PRODUCTS_TAB[category.id] ?? 'all';
-
-                return (
-                  <SwiperSlide key={category.id}>
-                    <Link
-                      href={`/products?category=${productsTab}`}
-                      className={styles.categoryCard}
-                    >
-                      <div className={styles.categoryImgWrap}>
-                        {image && (
-                          <Image
-                            src={image}
-                            alt={category.label}
-                            fill
-                            className={styles.categoryImg}
-                            sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 220px"
-                          />
-                        )}
-                        <div className={styles.categoryOverlay} aria-hidden />
-                      </div>
-                      <span className={styles.categoryLabel}>{category.label}</span>
-                    </Link>
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-
-            <button className={`${styles.navBtn} ${styles.navPrev} categories-prev`} aria-label="قبلی">
-              <Icon name="chevron-right" size={20} />
-            </button>
-            <button className={`${styles.navBtn} ${styles.navNext} categories-next`} aria-label="بعدی">
-              <Icon name="chevron-left" size={20} />
-            </button>
-          </motion.div>
+          {/* Category Showcase */}
+          <div className={styles.categoryGrid}>
+            {data.categories.map((category, index) => (
+              <motion.div
+                key={category.id}
+                className={styles.categoryGridItem}
+                initial={{ opacity: 0, y: 24 }}
+                animate={categoriesInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1, ease: [0.4, 0, 0.2, 1] }}
+              >
+                <Link href={category.href} className={styles.categoryCard}>
+                  <div className={styles.categoryImgWrap}>
+                    <Image
+                      src={category.image}
+                      alt={category.title}
+                      fill
+                      className={styles.categoryImg}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 620px"
+                      priority={index < 2}
+                    />
+                    <div className={styles.categoryOverlay} aria-hidden />
+                  </div>
+                  <div className={styles.categoryContent}>
+                    <span className={styles.categoryIcon} aria-hidden>
+                      <Icon name={category.icon} size={22} />
+                    </span>
+                    <h3 className={styles.categoryTitle}>{category.title}</h3>
+                    <p className={styles.categorySubtitle}>{category.subtitle}</p>
+                    <span className={styles.categoryCta}>
+                      {data.categoryCta}
+                      <Icon name="arrow-left" size={16} />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
         </Container>
       </section>
 
