@@ -19,11 +19,11 @@
       { "id": "dc-400",  "category": "vents",       "image": "/images/products/dc-400.webp",  "name": "دریچه گرد سقفی",      "series": "DC Series",  "href": "/products/dc-400",  "badge": null    },
       { "id": "aq-500",  "category": "vents",       "image": "/images/products/dc-400.webp",  "name": "دریچه چهار طرفه",     "series": "AQ Series",  "href": "/products/aq-500",  "badge": "جدید"  },
       { "id": "wd-200",  "category": "vents",       "image": "/images/products/dc-400.webp",  "name": "دریچه دیواری",        "series": "WD Series",  "href": "/products/wd-200",  "badge": null    },
-      { "id": "vcd-200", "category": "control",     "image": "/images/products/rd1030.webp",  "name": "دمپر کنترل حجم هوا",  "series": "VCD Series", "href": "/products/vcd-200", "badge": null    },
-      { "id": "fd-100",  "category": "dampers",     "image": "/images/products/rd1030.webp",  "name": "دمپر ضد حریق",        "series": "FD Series",  "href": "/products/fd-100",  "badge": null    },
+      { "id": "vcd-200", "category": "control",     "image": "/images/products/dc-400.webp",  "name": "دمپر کنترل حجم هوا",  "series": "VCD Series", "href": "/products/vcd-200", "badge": null    },
+      { "id": "fd-100",  "category": "dampers",     "image": "/images/products/dc-400.webp",  "name": "دمپر ضد حریق",        "series": "FD Series",  "href": "/products/fd-100",  "badge": null    },
       { "id": "mw-300",  "category": "vents",       "image": "/images/products/dc-400.webp",  "name": "ملتیوا چهار طرفه",    "series": "MW Series",  "href": "/products/mw-300",  "badge": null    },
       { "id": "gr-100",  "category": "accessories", "image": "/images/products/rd1030.webp",  "name": "گریل برگشت هوا",      "series": "GR Series",  "href": "/products/gr-100",  "badge": null    },
-      { "id": "ec-200",  "category": "accessories", "image": "/images/products/rd1030.webp",  "name": "کلاهک خروجی هوا",     "series": "EC Series",  "href": "/products/ec-200",  "badge": null    }
+      { "id": "ec-200",  "category": "accessories", "image": "/images/products/dc-400.webp",  "name": "کلاهک خروجی هوا",     "series": "EC Series",  "href": "/products/ec-200",  "badge": null    }
     ],
     "cta": {
       "title":    "به دنبال محصول خاصی هستید؟",
@@ -51,11 +51,11 @@
       { "id": "dc-400",  "category": "vents",       "image": "/images/products/dc-400.webp",  "name": "Round Ceiling Diffuser",  "series": "DC Series",  "href": "/products/dc-400",  "badge": null  },
       { "id": "aq-500",  "category": "vents",       "image": "/images/products/dc-400.webp",  "name": "4-Way Ceiling Diffuser",  "series": "AQ Series",  "href": "/products/aq-500",  "badge": "New" },
       { "id": "wd-200",  "category": "vents",       "image": "/images/products/dc-400.webp",  "name": "Wall Diffuser",           "series": "WD Series",  "href": "/products/wd-200",  "badge": null  },
-      { "id": "vcd-200", "category": "control",     "image": "/images/products/rd1030.webp",  "name": "Volume Control Damper",   "series": "VCD Series", "href": "/products/vcd-200", "badge": null  },
-      { "id": "fd-100",  "category": "dampers",     "image": "/images/products/rd1030.webp",  "name": "Fire Damper",             "series": "FD Series",  "href": "/products/fd-100",  "badge": null  },
+      { "id": "vcd-200", "category": "control",     "image": "/images/products/dc-400.webp",  "name": "Volume Control Damper",   "series": "VCD Series", "href": "/products/vcd-200", "badge": null  },
+      { "id": "fd-100",  "category": "dampers",     "image": "/images/products/dc-400.webp",  "name": "Fire Damper",             "series": "FD Series",  "href": "/products/fd-100",  "badge": null  },
       { "id": "mw-300",  "category": "vents",       "image": "/images/products/dc-400.webp",  "name": "4-Way Multiway",          "series": "MW Series",  "href": "/products/mw-300",  "badge": null  },
       { "id": "gr-100",  "category": "accessories", "image": "/images/products/rd1030.webp",  "name": "Return Air Grille",       "series": "GR Series",  "href": "/products/gr-100",  "badge": null  },
-      { "id": "ec-200",  "category": "accessories", "image": "/images/products/rd1030.webp",  "name": "Exhaust Air Cap",         "series": "EC Series",  "href": "/products/ec-200",  "badge": null  }
+      { "id": "ec-200",  "category": "accessories", "image": "/images/products/dc-400.webp",  "name": "Exhaust Air Cap",         "series": "EC Series",  "href": "/products/ec-200",  "badge": null  }
     ],
     "cta": {
       "title":    "Looking for a Specific Product?",
