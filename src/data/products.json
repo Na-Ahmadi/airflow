@@ -20,14 +20,14 @@
       { "id": "accessory","label": "مانتوعات",        "active": false }
     ],
     "items": [
-      { "id": "ls-300",  "category": "linear",   "image": "/images/products/dc-400.webp",  "name": "دریچه خطی شیاردار",      "series": "سری LS",  "href": "/products/ls-300",  "badge": null    },
-      { "id": "dc-400",  "category": "ceiling",  "image": "/images/products/dc-400.webp",  "name": "دریچه گرد سقفی",        "series": "سری DC",  "href": "/products/dc-400",  "badge": null    },
-      { "id": "4d-500",  "category": "ceiling",  "image": "/images/products/dc-400.webp",  "name": "دریچه چهار طرفه",       "series": "سری 4D",  "href": "/products/4d-500",  "badge": "جدید"  },
-      { "id": "vcd-200", "category": "damper",   "image": "/images/products/dc-400.webp",  "name": "دمپر کنترل حجم هوا",    "series": "سری VCD", "href": "/products/vcd-200", "badge": null    },
-      { "id": "fd-100",  "category": "damper",   "image": "/images/products/dc-400.webp",  "name": "دمپر ضد حریق",          "series": "سری FD",  "href": "/products/fd-100",  "badge": null    },
-      { "id": "mw-300",  "category": "multiway", "image": "/images/products/dc-400.webp",  "name": "ملتیوا چهار طرفه",      "series": "سری MW",  "href": "/products/mw-300",  "badge": null    },
-      { "id": "gr-100",  "category": "accessory","image": "/images/products/rd1030.webp",  "name": "گریل برگشت هوا",        "series": "سری GR",  "href": "/products/gr-100",  "badge": null    },
-      { "id": "ec-200",  "category": "accessory","image": "/images/products/dc-400.webp",  "name": "کلاهک خروجی هوا",       "series": "سری EC",  "href": "/products/ec-200",  "badge": null    }
+      { "id": "ls-300",  "category": "linear",   "image": "/images/products/dc-400.webp",  "name": "دریچه خطی شیاردار",      "series": "سری LS",  "model": "LS-300",  "href": "/products/ls-300",  "badge": null    },
+      { "id": "dc-400",  "category": "ceiling",  "image": "/images/products/dc-400.webp",  "name": "دریچه گرد سقفی",        "series": "سری DC",  "model": "DC-400",  "href": "/products/dc-400",  "badge": null    },
+      { "id": "4d-500",  "category": "ceiling",  "image": "/images/products/dc-400.webp",  "name": "دریچه چهار طرفه",       "series": "سری 4D",  "model": "4D-500",  "href": "/products/4d-500",  "badge": "جدید"  },
+      { "id": "vcd-200", "category": "damper",   "image": "/images/products/dc-400.webp",  "name": "دمپر کنترل حجم هوا",    "series": "سری VCD", "model": "VCD-200", "href": "/products/vcd-200", "badge": null    },
+      { "id": "fd-100",  "category": "damper",   "image": "/images/products/dc-400.webp",  "name": "دمپر ضد حریق",          "series": "سری FD",  "model": "FD-100",  "href": "/products/fd-100",  "badge": null    },
+      { "id": "mw-300",  "category": "multiway", "image": "/images/products/dc-400.webp",  "name": "ملتیوا چهار طرفه",      "series": "سری MW",  "model": "MW-300",  "href": "/products/mw-300",  "badge": null    },
+      { "id": "gr-100",  "category": "accessory","image": "/images/products/rd1030.webp",  "name": "گریل برگشت هوا",        "series": "سری GR",  "model": "GR-100",  "href": "/products/gr-100",  "badge": null    },
+      { "id": "ec-200",  "category": "accessory","image": "/images/products/dc-400.webp",  "name": "کلاهک خروجی هوا",       "series": "سری EC",  "model": "EC-200",  "href": "/products/ec-200",  "badge": null    }
     ]
   },
   "en": {
@@ -51,14 +51,14 @@
       { "id": "accessory","label": "Accessories",        "active": false }
     ],
     "items": [
-      { "id": "ls-300",  "category": "linear",   "image": "/images/products/dc-400.webp",  "name": "Slotted Linear Diffuser", "series": "LS Series",  "href": "/products/ls-300",  "badge": null  },
-      { "id": "dc-400",  "category": "ceiling",  "image": "/images/products/dc-400.webp",  "name": "Round Ceiling Diffuser",  "series": "DC Series",  "href": "/products/dc-400",  "badge": null  },
-      { "id": "4d-500",  "category": "ceiling",  "image": "/images/products/dc-400.webp",  "name": "4-Way Ceiling Diffuser",  "series": "4D Series",  "href": "/products/4d-500",  "badge": "New" },
-      { "id": "vcd-200", "category": "damper",   "image": "/images/products/dc-400.webp",  "name": "Volume Control Damper",   "series": "VCD Series", "href": "/products/vcd-200", "badge": null  },
-      { "id": "fd-100",  "category": "damper",   "image": "/images/products/dc-400.webp",  "name": "Fire Damper",             "series": "FD Series",  "href": "/products/fd-100",  "badge": null  },
-      { "id": "mw-300",  "category": "multiway", "image": "/images/products/dc-400.webp",  "name": "4-Way Multiway",          "series": "MW Series",  "href": "/products/mw-300",  "badge": null  },
-      { "id": "gr-100",  "category": "accessory","image": "/images/products/rd1030.webp",  "name": "Return Air Grille",       "series": "GR Series",  "href": "/products/gr-100",  "badge": null  },
-      { "id": "ec-200",  "category": "accessory","image": "/images/products/dc-400.webp",  "name": "Exhaust Air Cap",         "series": "EC Series",  "href": "/products/ec-200",  "badge": null  }
+      { "id": "ls-300",  "category": "linear",   "image": "/images/products/dc-400.webp",  "name": "Slotted Linear Diffuser", "series": "LS Series",  "model": "LS-300",  "href": "/products/ls-300",  "badge": null  },
+      { "id": "dc-400",  "category": "ceiling",  "image": "/images/products/dc-400.webp",  "name": "Round Ceiling Diffuser",  "series": "DC Series",  "model": "DC-400",  "href": "/products/dc-400",  "badge": null  },
+      { "id": "4d-500",  "category": "ceiling",  "image": "/images/products/dc-400.webp",  "name": "4-Way Ceiling Diffuser",  "series": "4D Series",  "model": "4D-500",  "href": "/products/4d-500",  "badge": "New" },
+      { "id": "vcd-200", "category": "damper",   "image": "/images/products/dc-400.webp",  "name": "Volume Control Damper",   "series": "VCD Series", "model": "VCD-200", "href": "/products/vcd-200", "badge": null  },
+      { "id": "fd-100",  "category": "damper",   "image": "/images/products/dc-400.webp",  "name": "Fire Damper",             "series": "FD Series",  "model": "FD-100",  "href": "/products/fd-100",  "badge": null  },
+      { "id": "mw-300",  "category": "multiway", "image": "/images/products/dc-400.webp",  "name": "4-Way Multiway",          "series": "MW Series",  "model": "MW-300",  "href": "/products/mw-300",  "badge": null  },
+      { "id": "gr-100",  "category": "accessory","image": "/images/products/rd1030.webp",  "name": "Return Air Grille",       "series": "GR Series",  "model": "GR-100",  "href": "/products/gr-100",  "badge": null  },
+      { "id": "ec-200",  "category": "accessory","image": "/images/products/dc-400.webp",  "name": "Exhaust Air Cap",         "series": "EC Series",  "model": "EC-200",  "href": "/products/ec-200",  "badge": null  }
     ]
   }
 }
