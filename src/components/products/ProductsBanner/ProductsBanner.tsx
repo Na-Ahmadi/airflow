@@ -23,7 +23,7 @@ const fadeUp = (delay = 0) => ({
 export default function ProductsBanner({
   breadcrumb,
   title,
-  image = "/images/banners/hero-products.webp",
+  image = "/images/banners/hvac_showroom_high_quality.webp",
 }: Props) {
   return (
     <section className={styles.banner} data-theme="light">
