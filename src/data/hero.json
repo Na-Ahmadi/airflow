@@ -1,15 +1,16 @@
 {
   "fa": {
-    "badge": "راهکارهای هوشمند HVAC",
+    "badge": "ENGINEERED HVAC SOLUTIONS",
     "title": {
-      "main": "تولید تخصصی دریچه و دمپرهای هوا",
-      "highlight": "برای پروژه‌های حرفه‌ای HVAC"
+      "main": "راهکارهای مهندسی‌شده برای",
+      "highlight": "توزیع و کنترل هوا"
     },
-    "subtitle": "طراحی، تولید و تأمین تجهیزات توزیع هوا برای پروژه‌های تجاری، صنعتی، درمانی و ساختمانی با پشتیبانی مهندسی.",
+    "subtitle": "تولید تخصصی دریچه، دمپر و تجهیزات HVAC با امکان سفارشی‌سازی، پشتیبانی مهندسی و تأمین مطمئن برای پروژه‌های تجاری، صنعتی و درمانی.",
     "buttons": [
-      { "id": "consult", "label": "درخواست مشاوره تخصصی", "href": "#contact", "variant": "primary",  "icon": "arrow-left"  },
+      { "id": "consult", "label": "درخواست مشاوره فنی", "href": "#contact", "variant": "primary",  "icon": "arrow-left"  },
       { "id": "products", "label": "مشاهده محصولات",       "href": "/products", "variant": "outline", "icon": "box"         }
     ],
+    "capabilities": ["تولید سفارشی", "مشاوره مهندسی", "CAD / BIM", "تأمین پروژه"],
     "stats": [
       { "id": "experience",   "value": "۱۸",  "numericValue": 18,       "suffix": "+", "label": "سال تجربه"       },
       { "id": "projects",     "value": "۸۵۰", "numericValue": 850,      "suffix": "+", "label": "پروژه موفق"      },
@@ -34,6 +35,7 @@
       { "id": "consult", "label": "Request Expert Consultation", "href": "#contact", "variant": "primary",  "icon": "arrow-left" },
       { "id": "products", "label": "View Products",               "href": "/products", "variant": "outline", "icon": "box"        }
     ],
+    "capabilities": ["Custom Manufacturing", "Engineering Consultation", "CAD / BIM", "Project Supply"],
     "stats": [
       { "id": "experience",   "value": "18",  "numericValue": 18,       "suffix": "+", "label": "Years of Experience"  },
       { "id": "projects",     "value": "850", "numericValue": 850,      "suffix": "+", "label": "Successful Projects"   },

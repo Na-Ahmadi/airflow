@@ -104,6 +104,15 @@ export default function Hero({ data }: HeroProps) {
               </Button>
             ))}
           </motion.div>
+
+          <motion.div className={styles.capabilities} {...fadeUp(0.52)}>
+            {data.capabilities.map((cap, i) => (
+              <span key={cap} className={styles.capabilityItemGroup}>
+                {i > 0 && <span className={styles.capabilityDot} />}
+                <span className={styles.capabilityItem}>{cap}</span>
+              </span>
+            ))}
+          </motion.div>
         </div>
 
         {/* ── Stats row ── */}

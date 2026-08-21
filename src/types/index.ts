@@ -42,6 +42,7 @@ export interface HeroData {
   title: { main: string; highlight: string };
   subtitle: string;
   buttons: HeroButton[];
+  capabilities: string[];
   stats: HeroStat[];
   productCard: { image: string; category: string; name: string; href: string };
 }

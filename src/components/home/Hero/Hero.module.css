@@ -204,6 +204,35 @@
   background: rgba(255, 255, 255, 0.15);
 }
 
+/* ─── Capabilities row ────────────────────────────────────── */
+.capabilities {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.capabilityItemGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.capabilityItem {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: var(--text-sm);
+  white-space: nowrap;
+}
+
+.capabilityDot {
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  width: 3px;
+  height: 3px;
+}
+
 /* ─── Product badge – floats over the image (left side in RTL) ─── */
 .productBadge {
   position: absolute;
