@@ -23,12 +23,14 @@ export default function WhatsAppButton() {
 
   return (
     <div className={styles.wrapper}>
-      <span
+      <a
         className={`${styles.bubble} ${showBubble ? styles.bubbleVisible : ''}`}
-        aria-hidden="true"
+        href={`https://wa.me/${SITE_CONFIG.whatsapp}`}
+        target="_blank"
+        rel="noopener noreferrer"
       >
         استعلام سریع در واتساپ
-      </span>
+      </a>
       <a
         className={styles.btn}
         href={`https://wa.me/${SITE_CONFIG.whatsapp}`}

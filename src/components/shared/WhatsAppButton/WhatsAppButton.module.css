@@ -5,7 +5,7 @@
   z-index: var(--z-sticky);
 
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: center;
   gap: 0.625rem;
 }
@@ -38,7 +38,6 @@
 
 .bubble {
   position: relative;
-  order: -1;
   unicode-bidi: plaintext;
 
   padding: 0.5rem 0.875rem;
@@ -47,6 +46,7 @@
   color: #111b21;
   font-size: 0.8125rem;
   font-weight: 500;
+  text-decoration: none;
   white-space: nowrap;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 
@@ -54,10 +54,15 @@
   transform: translateX(0.5rem) scale(0.9);
   visibility: hidden;
   pointer-events: none;
+  cursor: pointer;
   transition:
     opacity 0.3s ease,
     transform 0.3s ease,
     visibility 0.3s;
+}
+
+.bubble:hover {
+  color: #111b21;
 }
 
 .bubble::after {
@@ -75,6 +80,7 @@
   opacity: 1;
   transform: translateX(0) scale(1);
   visibility: visible;
+  pointer-events: auto;
   animation: bubblePop 0.35s ease;
 }
 
