@@ -66,6 +66,13 @@
   background: var(--color-bg);
 }
 
+:global([data-theme="light"]) .track::before {
+  background: linear-gradient(to left, var(--color-bg), transparent);
+}
+:global([data-theme="light"]) .track::after {
+  background: linear-gradient(to right, var(--color-bg), transparent);
+}
+
 .partnerItem {
   flex-shrink: 0;
 }
