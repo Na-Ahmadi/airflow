@@ -7,7 +7,7 @@
     },
     "subtitle": "تولید تخصصی و سفارشی انواع دریچه هوا، گریل، دمپر و تجهیزات توزیع هوا، با امکان ساخت در ابعاد و مشخصات موردنیاز و ارسال به سراسر ایران",
     "buttons": [
-      { "id": "consult", "label": "درخواست مشاوره فنی", "href": "#contact", "variant": "primary",  "icon": "arrow-left"  },
+      { "id": "consult", "label": "درخواست قیمت", "href": "#contact", "variant": "primary",  "icon": "arrow-left"  },
       { "id": "products", "label": "مشاهده محصولات",       "href": "/products", "variant": "outline", "icon": "box"         }
     ],
     "capabilities": ["تولید سفارشی", "مشاوره مهندسی", "CAD / BIM", "تأمین پروژه"],
@@ -32,7 +32,7 @@
     },
     "subtitle": "Design, manufacturing, and supply of air distribution equipment for commercial, industrial, healthcare, and building projects with engineering support.",
     "buttons": [
-      { "id": "consult", "label": "Request Expert Consultation", "href": "#contact", "variant": "primary",  "icon": "arrow-left" },
+      { "id": "consult", "label": "Request a Quote", "href": "#contact", "variant": "primary",  "icon": "arrow-left" },
       { "id": "products", "label": "View Products",               "href": "/products", "variant": "outline", "icon": "box"        }
     ],
     "capabilities": ["Custom Manufacturing", "Engineering Consultation", "CAD / BIM", "Project Supply"],

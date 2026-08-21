@@ -7,6 +7,7 @@ import Container from "@/components/shared/Container/Container";
 import Icon from "@/components/shared/Icon/Icon";
 import ImageGallery from "@/components/shared/ImageGallery/ImageGallery";
 import Tabs from "@/components/shared/Tabs/Tabs";
+import { useQuoteModal } from "@/context/QuoteModalContext";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
@@ -19,7 +20,7 @@ interface Feature {
 }
 interface CtaConfig {
   label: string;
-  href: string;
+  href?: string;
 }
 interface Tab {
   id: string;
@@ -40,6 +41,7 @@ interface ImageItem {
 
 interface Props {
   breadcrumb: BreadcrumbItem[];
+  slug: string;
   name: string;
   model: string;
   description: string;
@@ -53,6 +55,7 @@ interface Props {
 
 export default function ProductDetailClient({
   breadcrumb,
+  slug,
   name,
   model,
   description,
@@ -64,6 +67,7 @@ export default function ProductDetailClient({
   faq,
 }: Props) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const { openQuoteModal } = useQuoteModal();
 
   const half = Math.ceil(specs.length / 2);
   const specsLeft = specs.slice(0, half);
@@ -103,7 +107,14 @@ export default function ProductDetailClient({
               {/* CTA Buttons */}
               <div className={styles.ctaButtons}>
                 <Button
-                  href={cta.inquiry.href}
+                  onClick={() =>
+                    openQuoteModal({
+                      id: slug,
+                      name,
+                      category: name,
+                      model,
+                    })
+                  }
                   variant="primary"
                   size="lg"
                   iconStart={<span>›</span>}

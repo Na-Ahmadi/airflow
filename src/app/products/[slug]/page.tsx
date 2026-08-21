@@ -54,13 +54,14 @@ export default async function ProductDetailPage({
     <main>
       <ProductDetailClient
         breadcrumb={breadcrumb}
+        slug={slug}
         name={product.name}
         model={product.model}
         description={product.description}
         features={product.features}
         images={images}
         cta={{
-          inquiry: { label: "درخواست استعلام", href: "#contact" },
+          inquiry: { label: "درخواست قیمت برای این محصول" },
           catalog: { label: "دانلود کاتالوگ", href: "#catalog" },
         }}
         tabs={TABS}

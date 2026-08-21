@@ -5,6 +5,7 @@ import './globals.css';
 import { SITE_CONFIG } from '@/constants';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { LanguageProvider } from '@/context/LanguageContext';
+import { QuoteModalProvider } from '@/context/QuoteModalContext';
 import ScrollToTop from '@/components/shared/ScrollToTop/ScrollToTop';
 import WhatsAppButton from '@/components/shared/WhatsAppButton/WhatsAppButton';
 import Header from '@/components/layout/Header/Header';
@@ -82,11 +83,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <ThemeProvider>
           <LanguageProvider>
-            <Header />
-            {children}
-            <Footer />
-            <ScrollToTop />
-            <WhatsAppButton />
+            <QuoteModalProvider>
+              <Header />
+              {children}
+              <Footer />
+              <ScrollToTop />
+              <WhatsAppButton />
+            </QuoteModalProvider>
           </LanguageProvider>
         </ThemeProvider>
       </body>

@@ -3,6 +3,7 @@
 import AnimatedCounter from "@/components/shared/AnimatedCounter/AnimatedCounter";
 import Button from "@/components/shared/Button/Button";
 import Icon from "@/components/shared/Icon/Icon";
+import { useQuoteModal } from "@/context/QuoteModalContext";
 import { useInViewOnce } from "@/hooks/useInViewOnce";
 import type { HeroData } from "@/types";
 import { motion } from "framer-motion";
@@ -31,6 +32,7 @@ function formatStatValue(display: number, sample: string) {
 export default function Hero({ data }: HeroProps) {
   const { ref: statsRef, inView: statsInView } =
     useInViewOnce<HTMLDivElement>();
+  const { openQuoteModal } = useQuoteModal();
 
   return (
     <section className={styles.hero} aria-label="بخش اصلی">
@@ -86,7 +88,10 @@ export default function Hero({ data }: HeroProps) {
             {data.buttons.map((btn) => (
               <Button
                 key={btn.id}
-                href={btn.href}
+                href={btn.id === "consult" ? undefined : btn.href}
+                onClick={
+                  btn.id === "consult" ? () => openQuoteModal() : undefined
+                }
                 variant={btn.variant}
                 size="lg"
                 iconStart={
