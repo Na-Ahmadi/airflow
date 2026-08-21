@@ -27,7 +27,7 @@ export default function HeaderActions({
 }: HeaderActionsProps) {
   return (
     <div className={styles.actions}>
-      <LanguageSwitch />
+      <LanguageSwitch scrolled={scrolled} isHome={isHome} />
 
       <SearchTrigger scrolled={scrolled} isHome={isHome} />
 

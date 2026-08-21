@@ -8,11 +8,20 @@ const languages: { code: Lang; label: string }[] = [
   { code: 'en', label: 'EN' },
 ];
 
-export default function LanguageSwitch() {
+interface LanguageSwitchProps {
+  scrolled?: boolean;
+  isHome?: boolean;
+}
+
+export default function LanguageSwitch({ scrolled, isHome = false }: LanguageSwitchProps) {
   const { lang, setLang } = useLanguage();
 
   return (
-    <div className={styles.langSwitch}>
+    <div
+      className={styles.langSwitch}
+      {...(scrolled !== undefined ? { 'data-scrolled': String(scrolled) } : {})}
+      data-home={String(isHome)}
+    >
       {languages.map((l) => (
         <button
           key={l.code}
