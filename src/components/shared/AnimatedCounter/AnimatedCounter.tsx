@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 import styles from "./AnimatedCounter.module.css";
 
 interface AnimatedCounterProps {
@@ -11,6 +12,7 @@ interface AnimatedCounterProps {
 }
 
 export default function AnimatedCounter({ value, active, className, formatValue }: AnimatedCounterProps) {
+  const { lang } = useLanguage();
   const [display, setDisplay] = useState(0);
   const duration = 2000;
 
@@ -31,7 +33,7 @@ export default function AnimatedCounter({ value, active, className, formatValue 
     ? formatValue(display)
     : display >= 1000
       ? `${(display / 1000).toFixed(display % 1000 === 0 ? 0 : 1)}K`
-      : display.toLocaleString("fa-IR");
+      : display.toLocaleString(lang === "fa" ? "fa-IR" : "en-US");
 
   return <span className={className ?? styles.value}>{text}</span>;
 }
