@@ -44,7 +44,8 @@ export interface HeroData {
   buttons: HeroButton[];
   capabilities: string[];
   stats: HeroStat[];
-  productCard: { image: string; category: string; name: string; href: string };
+  productCard: { image: string; category: string; name: string; href: string; link: string };
+  ariaLabel: string;
 }
 
 // ─── Partners ─────────────────────────────────────────────────
@@ -103,6 +104,10 @@ export interface ProductsData {
     title: string;
     subtitle: string;
   };
+  categoryCta: string;
+  viewDetails: string;
+  viewDetailsPlain: string;
+  nav: { prev: string; next: string };
   tabs: ProductTab[];
   items: Product[];
 }
@@ -125,6 +130,8 @@ export interface ProjectsData {
     subtitle: string;
     viewAll: { label: string; href: string };
   };
+  nav: { prev: string; next: string };
+  card: { viewDetails: string; viewCaseStudy: string };
   items: Project[];
 }
 
@@ -198,6 +205,7 @@ export interface FooterData {
   columns: FooterColumn[];
   contact: { title: string; items: { icon: string; label: string; value: string; href?: string }[] };
   copyright: string;
+  termsLink: string;
 }
 
 // ─── Shared ───────────────────────────────────────────────────
