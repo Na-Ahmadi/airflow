@@ -16,7 +16,6 @@ export default function SectionTitle({ title, highlight, subtitle, align = 'cent
         {highlight && <span className={styles.highlight}> {highlight}</span>}
       </h2>
       {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
-      <div className={styles.divider} />
     </div>
   );
 }
