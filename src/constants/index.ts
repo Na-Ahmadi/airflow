@@ -38,5 +38,5 @@ export const PRODUCT_CATEGORIES = {
   ceiling: 'دریچه‌های سقفی',
   damper: 'دمپرها',
   multiway: 'ملتیواها',
-  accessory: 'مانتوعات',
+  accessory: 'متعلقات',
 } as const;
