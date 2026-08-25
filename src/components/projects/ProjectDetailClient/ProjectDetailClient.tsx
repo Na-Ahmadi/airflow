@@ -22,6 +22,14 @@ interface ProductItem {
   href: string;
 }
 
+interface SectionLabels {
+  scope: string;
+  services: string;
+  executionDetails: string;
+  about: string;
+  productsUsed: string;
+}
+
 interface Props {
   breadcrumb: BreadcrumbItem[];
   title: string;
@@ -34,6 +42,9 @@ interface Props {
   scope: string;
   products: ProductItem[];
   highlights: string[];
+  sectionLabels: SectionLabels;
+  serviceItems: string[];
+  modelLabel: string;
 }
 
 export default function ProjectDetailClient({
@@ -48,21 +59,18 @@ export default function ProjectDetailClient({
   scope,
   products,
   highlights,
+  sectionLabels,
+  serviceItems,
+  modelLabel,
 }: Props) {
   const infoCards = [
-    { icon: "cog", title: "حوزه اجرای پروژه", items: highlights },
+    { icon: "cog", title: sectionLabels.scope, items: highlights },
     {
       icon: "briefcase",
-      title: "حوزه خدمات",
-      items: [
-        "مشاوره فنی",
-        "طراحی مهندسی",
-        "تأمین تجهیزات",
-        "اجرا و نصب",
-        "راه‌اندازی و تست نهایی",
-      ],
+      title: sectionLabels.services,
+      items: serviceItems,
     },
-    { icon: "file-check", title: "جزئیات اجرا", items: [scope, ...highlights] },
+    { icon: "file-check", title: sectionLabels.executionDetails, items: [scope, ...highlights] },
   ];
 
   return (
@@ -99,7 +107,7 @@ export default function ProjectDetailClient({
         <Container>
           <div className={styles.aboutGrid}>
             <div className={styles.aboutText}>
-              <h2 className={styles.sectionTitle}>درباره پروژه</h2>
+              <h2 className={styles.sectionTitle}>{sectionLabels.about}</h2>
               <p className={styles.aboutDescription}>{description}</p>
             </div>
 
@@ -147,7 +155,7 @@ export default function ProjectDetailClient({
 
       <section className={styles.productsSection}>
         <Container>
-          <h2 className={styles.sectionTitle}>محصولات استفاده شده</h2>
+          <h2 className={styles.sectionTitle}>{sectionLabels.productsUsed}</h2>
 
           <div className={styles.productsGrid}>
             {products.map((p) => (
@@ -163,7 +171,7 @@ export default function ProjectDetailClient({
                 </div>
                 <div className={styles.productBody}>
                   <h3 className={styles.productName}>{p.name}</h3>
-                  <span className={styles.productModel}>مدل: {p.model}</span>
+                  <span className={styles.productModel}>{modelLabel.replace("{model}", p.model)}</span>
                   <p className={styles.productDescription}>{p.description}</p>
                 </div>
               </Link>

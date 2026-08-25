@@ -19,7 +19,32 @@
       { "id": "آموزشی",     "label": "آموزشی"       },
       { "id": "حمل‌ونقل",   "label": "حمل‌ونقل"    },
       { "id": "فرودگاهی",   "label": "فرودگاهی"    }
-    ]
+    ],
+    "detail": {
+      "breadcrumb": { "home": "خانه", "projects": "پروژه‌ها" },
+      "meta": {
+        "area":     "متراژ پروژه",
+        "location": "مکان پروژه",
+        "year":     "سال اجرا",
+        "category": "کاربری پروژه",
+        "status":   "وضعیت پروژه"
+      },
+      "sections": {
+        "scope":            "حوزه اجرای پروژه",
+        "services":          "حوزه خدمات",
+        "executionDetails":  "جزئیات اجرا",
+        "about":             "درباره پروژه",
+        "productsUsed":      "محصولات استفاده شده"
+      },
+      "serviceItems": [
+        "مشاوره فنی",
+        "طراحی مهندسی",
+        "تأمین تجهیزات",
+        "اجرا و نصب",
+        "راه‌اندازی و تست نهایی"
+      ],
+      "modelLabel": "مدل: {model}"
+    }
   },
   "en": {
     "header": {
@@ -41,6 +66,31 @@
       { "id": "Education",    "label": "Education"    },
       { "id": "Transport",    "label": "Transport"    },
       { "id": "Airport",      "label": "Airport"      }
-    ]
+    ],
+    "detail": {
+      "breadcrumb": { "home": "Home", "projects": "Projects" },
+      "meta": {
+        "area":     "Project Area",
+        "location": "Project Location",
+        "year":     "Year Completed",
+        "category": "Project Use",
+        "status":   "Project Status"
+      },
+      "sections": {
+        "scope":            "Project Scope",
+        "services":          "Service Scope",
+        "executionDetails":  "Execution Details",
+        "about":             "About the Project",
+        "productsUsed":      "Products Used"
+      },
+      "serviceItems": [
+        "Technical Consultation",
+        "Engineering Design",
+        "Equipment Supply",
+        "Installation & Execution",
+        "Commissioning & Final Testing"
+      ],
+      "modelLabel": "Model: {model}"
+    }
   }
 }

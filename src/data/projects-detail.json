@@ -1,417 +1,1124 @@
 {
-  "iran-mall": {
-    "title": "ایران مال",
-    "category": "تجاری",
-    "location": "تهران",
-    "year": "۱۴۰۱",
-    "client": "گروه سرمایه‌گذاری ایران مال",
-    "area": "۲۱۰,۰۰۰ m²",
-    "duration": "۱۸ ماه",
-    "description": "ایران مال یکی از بزرگ‌ترین مجتمع‌های تجاری-تفریحی خاورمیانه است. پروژه تهویه این مجتمع شامل طراحی و اجرای سیستم‌های توزیع هوا برای بیش از ۲۱۰ هزار مترمربع فضای تجاری، رستوران، سینما و پارکینگ بود.",
-    "scope": "طراحی، تأمین و نصب سیستم توزیع هوا برای تمام طبقات تجاری",
-    "products": [
-      "دریچه‌های خطی LS Series",
-      "دریچه‌های سقفی CC Series",
-      "دمپر VCD Series"
-    ],
-    "stats": [
-      { "label": "مساحت", "value": "۲۱۰,۰۰۰ m²" },
-      { "label": "تعداد دریچه", "value": "بیش از ۱۲,۰۰۰" },
-      { "label": "مدت اجرا", "value": "۱۸ ماه" },
-      { "label": "سال تحویل", "value": "۱۴۰۱" }
-    ],
-    "highlights": [
-      "بزرگ‌ترین پروژه تهویه تجاری در ایران",
-      "طراحی سیستم توزیع هوا برای ۴ طبقه تجاری",
-      "بهره‌وری انرژی بالاتر از استاندارد ASHRAE",
-      "اجرای موفق با صفر تأخیر در تحویل"
-    ],
-    "imageCount": 6,
-    "image": "/images/projects/iran-mall.png",
-    "status": "تکمیل شده"
+  "fa": {
+    "iran-mall": {
+      "title": "ایران مال",
+      "category": "تجاری",
+      "location": "تهران",
+      "year": "۱۴۰۱",
+      "client": "گروه سرمایه‌گذاری ایران مال",
+      "area": "۲۱۰,۰۰۰ m²",
+      "duration": "۱۸ ماه",
+      "description": "ایران مال یکی از بزرگ‌ترین مجتمع‌های تجاری-تفریحی خاورمیانه است. پروژه تهویه این مجتمع شامل طراحی و اجرای سیستم‌های توزیع هوا برای بیش از ۲۱۰ هزار مترمربع فضای تجاری، رستوران، سینما و پارکینگ بود.",
+      "scope": "طراحی، تأمین و نصب سیستم توزیع هوا برای تمام طبقات تجاری",
+      "products": [
+        "دریچه‌های خطی LS Series",
+        "دریچه‌های سقفی CC Series",
+        "دمپر VCD Series"
+      ],
+      "stats": [
+        {
+          "label": "مساحت",
+          "value": "۲۱۰,۰۰۰ m²"
+        },
+        {
+          "label": "تعداد دریچه",
+          "value": "بیش از ۱۲,۰۰۰"
+        },
+        {
+          "label": "مدت اجرا",
+          "value": "۱۸ ماه"
+        },
+        {
+          "label": "سال تحویل",
+          "value": "۱۴۰۱"
+        }
+      ],
+      "highlights": [
+        "بزرگ‌ترین پروژه تهویه تجاری در ایران",
+        "طراحی سیستم توزیع هوا برای ۴ طبقه تجاری",
+        "بهره‌وری انرژی بالاتر از استاندارد ASHRAE",
+        "اجرای موفق با صفر تأخیر در تحویل"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/iran-mall.png",
+      "status": "تکمیل شده"
+    },
+    "milad-hospital": {
+      "title": "بیمارستان میلاد",
+      "category": "درمانی",
+      "location": "تهران",
+      "year": "۱۴۰۰",
+      "client": "سازمان تأمین اجتماعی",
+      "area": "۸۵,۰۰۰ m²",
+      "duration": "۲۴ ماه",
+      "description": "بیمارستان میلاد تهران با ۱۰۰۰ تخت بیمارستانی، یکی از بزرگ‌ترین مراکز درمانی کشور است. سیستم تهویه بیمارستانی نیازمند دقت بالا در کنترل جریان هوا، فیلتراسیون و کنترل آلودگی میکروبی بود.",
+      "scope": "طراحی و اجرای سیستم HVAC برای بخش‌های ICU، اتاق عمل، اورژانس و بخش‌های بستری",
+      "products": [
+        "دریچه‌های خطی LS-300",
+        "دمپر ضدحریق FD Series",
+        "گریل برگشت GR Series"
+      ],
+      "stats": [
+        {
+          "label": "مساحت",
+          "value": "۸۵,۰۰۰ m²"
+        },
+        {
+          "label": "تعداد تخت",
+          "value": "۱,۰۰۰"
+        },
+        {
+          "label": "مدت اجرا",
+          "value": "۲۴ ماه"
+        },
+        {
+          "label": "سال تحویل",
+          "value": "۱۴۰۰"
+        }
+      ],
+      "highlights": [
+        "سیستم فیلتراسیون HEPA برای اتاق‌های عمل",
+        "کنترل فشار مثبت/منفی در ICU",
+        "مطابق استانداردهای WHO و وزارت بهداشت",
+        "سیستم کنترل مرکزی BMS"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/milad-hospital.png",
+      "status": "تکمیل شده"
+    },
+    "milad-tower": {
+      "title": "برج میلاد",
+      "category": "اداری",
+      "location": "تهران",
+      "year": "۱۳۹۸",
+      "client": "شرکت مادر تخصصی برج میلاد",
+      "area": "۱۳۵,۰۰۰ m²",
+      "duration": "۱۲ ماه",
+      "description": "برج میلاد تهران با ارتفاع ۴۳۵ متر، بلندترین برج ایران و ششمین برج بلند دنیا است. نوسازی و بهینه‌سازی سیستم تهویه طبقات اداری، هتل و رستوران‌های برج در این پروژه انجام شد.",
+      "scope": "نوسازی سیستم توزیع هوا برای طبقات اداری، هتل برج و سالن‌های اجتماعات",
+      "products": [
+        "دریچه‌های چهارطرفه AQ-500",
+        "ملتی‌وی MW Series",
+        "دمپر VCD Series"
+      ],
+      "stats": [
+        {
+          "label": "مساحت",
+          "value": "۱۳۵,۰۰۰ m²"
+        },
+        {
+          "label": "تعداد طبقه",
+          "value": "۵۴ طبقه"
+        },
+        {
+          "label": "مدت اجرا",
+          "value": "۱۲ ماه"
+        },
+        {
+          "label": "سال تحویل",
+          "value": "۱۳۹۸"
+        }
+      ],
+      "highlights": [
+        "سیستم VAV برای طبقات اداری",
+        "کنترل هوشمند با سیستم BMS مرکزی",
+        "کاهش ۳۰٪ مصرف انرژی نسبت به سیستم قبلی",
+        "صفر توقف در عملیات برج حین اجرا"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/milad-tower.png",
+      "status": "تکمیل شده"
+    },
+    "iran-khodro": {
+      "title": "کارخانه ایران خودرو",
+      "category": "صنعتی",
+      "location": "کرج",
+      "year": "۱۳۹۹",
+      "client": "شرکت ایران خودرو",
+      "area": "۴۵۰,۰۰۰ m²",
+      "duration": "۳۶ ماه",
+      "description": "کارخانه تولید خودروی ایران خودرو در کرج نیازمند سیستم تهویه صنعتی برای سالن‌های رنگ، جوشکاری و مونتاژ بود. این پروژه شامل طراحی خاص برای محیط‌های آلوده صنعتی و دماهای بالا بود.",
+      "scope": "طراحی و اجرای سیستم تهویه صنعتی برای سالن‌های تولید و مونتاژ",
+      "products": [
+        "دریچه‌های دیواری WD Series",
+        "کلاهک خروجی EC Series",
+        "دمپر ضدحریق FD Series"
+      ],
+      "stats": [
+        {
+          "label": "مساحت",
+          "value": "۴۵۰,۰۰۰ m²"
+        },
+        {
+          "label": "تعداد سالن",
+          "value": "۱۸ سالن تولید"
+        },
+        {
+          "label": "مدت اجرا",
+          "value": "۳۶ ماه"
+        },
+        {
+          "label": "سال تحویل",
+          "value": "۱۳۹۹"
+        }
+      ],
+      "highlights": [
+        "مقاومت در برابر بخارات شیمیایی و رنگ",
+        "سیستم تخلیه دود اضطراری",
+        "دمپرهای ضدحریق در تمام کانال‌های اصلی",
+        "اجرا در محیط فعال بدون توقف تولید"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/iran-khodro.png",
+      "status": "تکمیل شده"
+    },
+    "parsian-hotel": {
+      "title": "هتل پارسیان",
+      "category": "هتل",
+      "location": "اصفهان",
+      "year": "۱۴۰۲",
+      "client": "گروه هتل‌های پارسیان",
+      "area": "۳۸,۰۰۰ m²",
+      "duration": "۱۴ ماه",
+      "description": "هتل پارسیان اصفهان با رتبه ۵ ستاره، نیازمند سیستم تهویه ساکت و بهینه برای اتاق‌های مهمان، رستوران، سالن‌های کنفرانس و لابی بود. آرامش صوتی و یکنواختی دمای هوا از اولویت‌های اصلی پروژه بود.",
+      "scope": "طراحی و اجرای سیستم تهویه هتل شامل اتاق‌های مهمان، رستوران و سالن‌های کنفرانس",
+      "products": [
+        "دریچه‌های خطی LS-300",
+        "دریچه‌های گرد CC-400",
+        "دمپر VCD Series"
+      ],
+      "stats": [
+        {
+          "label": "مساحت",
+          "value": "۳۸,۰۰۰ m²"
+        },
+        {
+          "label": "تعداد اتاق",
+          "value": "۲۸۰ اتاق"
+        },
+        {
+          "label": "مدت اجرا",
+          "value": "۱۴ ماه"
+        },
+        {
+          "label": "سال تحویل",
+          "value": "۱۴۰۲"
+        }
+      ],
+      "highlights": [
+        "سطح صدای کمتر از NC-25 در اتاق‌ها",
+        "سیستم FCU برای کنترل فردی هر اتاق",
+        "طراحی معماری پنهان در دکوراسیون",
+        "صرفه‌جویی ۲۵٪ در مصرف انرژی"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/parsian-hotel.png",
+      "status": "تکمیل شده"
+    },
+    "tehran-metro": {
+      "title": "مترو تهران خط ۷",
+      "category": "حمل‌ونقل",
+      "location": "تهران",
+      "year": "۱۴۰۱",
+      "client": "شرکت مترو تهران",
+      "area": "۶۲,۰۰۰ m²",
+      "duration": "۳۰ ماه",
+      "description": "خط ۷ مترو تهران با ۲۶ ایستگاه، نیازمند سیستم تهویه مخصوص محیط‌های زیرزمینی بود. کنترل دما، رطوبت و کیفیت هوا در ایستگاه‌ها و تونل‌ها از چالش‌های اصلی این پروژه بود.",
+      "scope": "تأمین و نصب سیستم توزیع هوا برای ۲۶ ایستگاه مترو",
+      "products": [
+        "دریچه‌های دیواری WD Series",
+        "گریل برگشت GR Series",
+        "دمپر ضدحریق FD Series"
+      ],
+      "stats": [
+        {
+          "label": "تعداد ایستگاه",
+          "value": "۲۶ ایستگاه"
+        },
+        {
+          "label": "طول خط",
+          "value": "۲۷ km"
+        },
+        {
+          "label": "مدت اجرا",
+          "value": "۳۰ ماه"
+        },
+        {
+          "label": "سال تحویل",
+          "value": "۱۴۰۱"
+        }
+      ],
+      "highlights": [
+        "مقاومت در برابر رطوبت و ارتعاش",
+        "سیستم اطفا حریق یکپارچه با دمپرها",
+        "نصب در شرایط دشوار محیط زیرزمینی",
+        "مطابق استانداردهای ایمنی مترو"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/tehran-metro.png",
+      "status": "تکمیل شده"
+    },
+    "mashhad-mall": {
+      "title": "پردیس مشهد",
+      "category": "تجاری",
+      "location": "مشهد",
+      "year": "۱۴۰۲",
+      "client": "گروه توسعه پردیس",
+      "area": "۹۵,۰۰۰ m²",
+      "duration": "۲۰ ماه",
+      "description": "مجتمع تجاری پردیس مشهد یکی از بزرگ‌ترین مراکز خرید شمال شرق کشور است. سیستم تهویه این مجتمع شامل توزیع هوا برای گالری‌های تجاری، فودکورت، سینما و پارکینگ بود.",
+      "scope": "طراحی و اجرای سیستم توزیع هوا برای کل مجتمع تجاری",
+      "products": [
+        "دریچه‌های چهارطرفه AQ-500",
+        "ملتی‌وی MW-300",
+        "دمپر VCD Series"
+      ],
+      "stats": [
+        {
+          "label": "مساحت",
+          "value": "۹۵,۰۰۰ m²"
+        },
+        {
+          "label": "تعداد واحد",
+          "value": "بیش از ۴۰۰"
+        },
+        {
+          "label": "مدت اجرا",
+          "value": "۲۰ ماه"
+        },
+        {
+          "label": "سال تحویل",
+          "value": "۱۴۰۲"
+        }
+      ],
+      "highlights": [
+        "سیستم یکپارچه BMS برای کنترل مرکزی",
+        "بهینه‌سازی مصرف انرژی با VAV",
+        "اجرا موازی با عملیات ساختمانی",
+        "گارانتی ۵ ساله سیستم"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/mashhad-mall.png",
+      "status": "تکمیل شده"
+    },
+    "shiraz-airport": {
+      "title": "فرودگاه شیراز",
+      "category": "فرودگاهی",
+      "location": "شیراز",
+      "year": "۱۴۰۰",
+      "client": "شرکت فرودگاه‌های کشور",
+      "area": "۱۸۰,۰۰۰ m²",
+      "duration": "۲۸ ماه",
+      "description": "ترمینال جدید فرودگاه بین‌المللی شیراز با ظرفیت ۸ میلیون مسافر در سال، نیازمند سیستم تهویه مطبوع گسترده برای سالن‌های انتظار، گیت‌ها، مسیرهای رفت‌وآمد و پارکینگ بود.",
+      "scope": "تأمین و نصب کامل سیستم توزیع هوا برای ترمینال مسافری",
+      "products": [
+        "دریچه‌های خطی LS Series",
+        "ملتی‌وی MW Series",
+        "دمپر FD Series"
+      ],
+      "stats": [
+        {
+          "label": "مساحت",
+          "value": "۱۸۰,۰۰۰ m²"
+        },
+        {
+          "label": "ظرفیت سالانه",
+          "value": "۸ میلیون مسافر"
+        },
+        {
+          "label": "مدت اجرا",
+          "value": "۲۸ ماه"
+        },
+        {
+          "label": "سال تحویل",
+          "value": "۱۴۰۰"
+        }
+      ],
+      "highlights": [
+        "طراحی معماری بدون لوله‌کشی نمایان",
+        "سیستم مقاوم در برابر گردوخاک فرودگاهی",
+        "کنترل اتوماتیک بر اساس تعداد مسافر",
+        "مطابق استانداردهای IATA"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/shiraz-airport.png",
+      "status": "تکمیل شده"
+    },
+    "esfahan-steel": {
+      "title": "فولاد مبارکه اصفهان",
+      "category": "صنعتی",
+      "location": "اصفهان",
+      "year": "۱۳۹۷",
+      "client": "شرکت فولاد مبارکه اصفهان",
+      "area": "۵۲۰,۰۰۰ m²",
+      "duration": "۴۸ ماه",
+      "description": "مجتمع صنعتی فولاد مبارکه یکی از بزرگ‌ترین کارخانه‌های فولاد در خاورمیانه است. سیستم تهویه صنعتی برای محیط‌های با دمای بالا، گازهای صنعتی و ذرات معلق طراحی شد.",
+      "scope": "طراحی و اجرای سیستم تهویه صنعتی در سالن‌های نورد، ریخته‌گری و اداری",
+      "products": [
+        "کلاهک خروجی EC Series",
+        "دمپر ضدحریق FD Series",
+        "دریچه‌های دیواری WD Series"
+      ],
+      "stats": [
+        {
+          "label": "مساحت",
+          "value": "۵۲۰,۰۰۰ m²"
+        },
+        {
+          "label": "ظرفیت تولید",
+          "value": "۷.۲ میلیون تن/سال"
+        },
+        {
+          "label": "مدت اجرا",
+          "value": "۴۸ ماه"
+        },
+        {
+          "label": "سال تحویل",
+          "value": "۱۳۹۷"
+        }
+      ],
+      "highlights": [
+        "مقاومت در برابر دمای بالای ۸۰°C",
+        "مواد ضدخوردگی برای محیط‌های صنعتی",
+        "سیستم اضطراری تخلیه دود و گاز",
+        "عمر کاری تضمین‌شده بیش از ۱۵ سال"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/esfahan-steel.png",
+      "status": "تکمیل شده"
+    },
+    "tehran-university": {
+      "title": "دانشگاه تهران",
+      "category": "آموزشی",
+      "location": "تهران",
+      "year": "۱۴۰۲",
+      "client": "دانشگاه تهران",
+      "area": "۴۲,۰۰۰ m²",
+      "duration": "۱۶ ماه",
+      "description": "نوسازی سیستم تهویه مطبوع دانشکده‌های فنی و علوم دانشگاه تهران شامل کلاس‌های درس، آزمایشگاه‌ها، کتابخانه و سالن‌های اجتماعات بود. صرفه‌جویی در مصرف انرژی و کیفیت هوای بهتر از اهداف اصلی بود.",
+      "scope": "نوسازی سیستم توزیع هوا برای ۶ دانشکده",
+      "products": [
+        "دریچه‌های خطی LS-300",
+        "دریچه‌های گرد CC-400",
+        "دمپر VCD Series"
+      ],
+      "stats": [
+        {
+          "label": "مساحت",
+          "value": "۴۲,۰۰۰ m²"
+        },
+        {
+          "label": "تعداد دانشکده",
+          "value": "۶ دانشکده"
+        },
+        {
+          "label": "مدت اجرا",
+          "value": "۱۶ ماه"
+        },
+        {
+          "label": "سال تحویل",
+          "value": "۱۴۰۲"
+        }
+      ],
+      "highlights": [
+        "اجرا در تعطیلات دانشگاهی برای حداقل اختلال",
+        "کاهش ۴۰٪ مصرف انرژی نسبت به سیستم قدیم",
+        "سیستم CO₂ Sensor برای کنترل کیفیت هوا",
+        "گارانتی ۳ ساله کامل سیستم"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/tehran-university.png",
+      "status": "تکمیل شده"
+    },
+    "imam-khomeini-airport": {
+      "title": "فرودگاه امام خمینی",
+      "category": "فرودگاهی",
+      "location": "تهران",
+      "year": "۱۳۹۹",
+      "client": "شرکت فرودگاه‌های کشور",
+      "area": "۲۲۰,۰۰۰ m²",
+      "duration": "۳۲ ماه",
+      "description": "ترمینال بین‌المللی فرودگاه امام خمینی، دروازه اصلی ورود و خروج مسافران بین‌المللی کشور است. سیستم تهویه این ترمینال شامل کنترل دما و کیفیت هوا برای سالن‌های ترانزیت، گیت‌های پروازی و مسیرهای گمرکی بود.",
+      "scope": "طراحی، تأمین و نصب سیستم توزیع هوا برای ترمینال بین‌المللی و مسیرهای ترانزیت",
+      "products": [
+        "دریچه‌های خطی LS Series",
+        "ملتی‌وی MW Series",
+        "دمپر FD Series"
+      ],
+      "stats": [
+        {
+          "label": "مساحت",
+          "value": "۲۲۰,۰۰۰ m²"
+        },
+        {
+          "label": "ظرفیت سالانه",
+          "value": "۱۴ میلیون مسافر"
+        },
+        {
+          "label": "مدت اجرا",
+          "value": "۳۲ ماه"
+        },
+        {
+          "label": "سال تحویل",
+          "value": "۱۳۹۹"
+        }
+      ],
+      "highlights": [
+        "طراحی بدون لوله‌کشی نمایان در سقف‌های بلند",
+        "سیستم کنترل کیفیت هوا برای سالن‌های ترانزیت",
+        "هماهنگی کامل با سیستم‌های ایمنی فرودگاهی",
+        "مطابق استانداردهای بین‌المللی IATA"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/imam-khomeini-airport.png",
+      "status": "تکمیل شده"
+    },
+    "elahieh-complex": {
+      "title": "مجتمع اداری الهیه",
+      "category": "اداری",
+      "location": "تهران",
+      "year": "۱۴۰۱",
+      "client": "گروه ساختمانی الهیه",
+      "area": "۵۶,۰۰۰ m²",
+      "duration": "۱۵ ماه",
+      "description": "مجتمع اداری الهیه یکی از پروژه‌های شاخص منطقه شمال تهران است که شامل چند بلوک اداری و فضاهای مشترک می‌شود. سیستم تهویه این مجتمع با هدف بهره‌وری انرژی و آرامش صوتی طراحی و اجرا شد.",
+      "scope": "طراحی و اجرای سیستم توزیع هوا برای بلوک‌های اداری و فضاهای مشترک",
+      "products": [
+        "دریچه‌های چهارطرفه AQ-500",
+        "ملتی‌وی MW Series",
+        "دمپر VCD Series"
+      ],
+      "stats": [
+        {
+          "label": "مساحت",
+          "value": "۵۶,۰۰۰ m²"
+        },
+        {
+          "label": "تعداد بلوک",
+          "value": "۴ بلوک اداری"
+        },
+        {
+          "label": "مدت اجرا",
+          "value": "۱۵ ماه"
+        },
+        {
+          "label": "سال تحویل",
+          "value": "۱۴۰۱"
+        }
+      ],
+      "highlights": [
+        "سیستم VAV برای کنترل مستقل هر بلوک",
+        "کنترل هوشمند با سیستم BMS مرکزی",
+        "طراحی معماری پنهان در سقف کاذب",
+        "بهره‌وری انرژی بالاتر از استاندارد ASHRAE"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/elahieh-complex.png",
+      "status": "تکمیل شده"
+    },
+    "sharif-university": {
+      "title": "دانشگاه صنعتی شریف",
+      "category": "آموزشی",
+      "location": "تهران",
+      "year": "۱۴۰۰",
+      "client": "دانشگاه صنعتی شریف",
+      "area": "۳۸,۰۰۰ m²",
+      "duration": "۱۴ ماه",
+      "description": "نوسازی سیستم تهویه مطبوع دانشکده‌های مهندسی دانشگاه صنعتی شریف شامل کلاس‌های درس، آزمایشگاه‌های تخصصی و سالن‌های اجتماعات بود. کیفیت هوای آزمایشگاهی و صرفه‌جویی انرژی از اهداف اصلی پروژه بود.",
+      "scope": "نوسازی سیستم توزیع هوا برای دانشکده‌های مهندسی و آزمایشگاه‌ها",
+      "products": [
+        "دریچه‌های خطی LS-300",
+        "گریل برگشت GR Series",
+        "دمپر VCD Series"
+      ],
+      "stats": [
+        {
+          "label": "مساحت",
+          "value": "۳۸,۰۰۰ m²"
+        },
+        {
+          "label": "تعداد آزمایشگاه",
+          "value": "۲۲ آزمایشگاه"
+        },
+        {
+          "label": "مدت اجرا",
+          "value": "۱۴ ماه"
+        },
+        {
+          "label": "سال تحویل",
+          "value": "۱۴۰۰"
+        }
+      ],
+      "highlights": [
+        "سیستم تهویه اختصاصی برای آزمایشگاه‌های شیمی",
+        "کاهش ۳۵٪ مصرف انرژی نسبت به سیستم قدیم",
+        "اجرا در تعطیلات دانشگاهی برای حداقل اختلال",
+        "گارانتی ۳ ساله کامل سیستم"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/sharif-university.png",
+      "status": "تکمیل شده"
+    }
   },
-
-  "milad-hospital": {
-    "title": "بیمارستان میلاد",
-    "category": "درمانی",
-    "location": "تهران",
-    "year": "۱۴۰۰",
-    "client": "سازمان تأمین اجتماعی",
-    "area": "۸۵,۰۰۰ m²",
-    "duration": "۲۴ ماه",
-    "description": "بیمارستان میلاد تهران با ۱۰۰۰ تخت بیمارستانی، یکی از بزرگ‌ترین مراکز درمانی کشور است. سیستم تهویه بیمارستانی نیازمند دقت بالا در کنترل جریان هوا، فیلتراسیون و کنترل آلودگی میکروبی بود.",
-    "scope": "طراحی و اجرای سیستم HVAC برای بخش‌های ICU، اتاق عمل، اورژانس و بخش‌های بستری",
-    "products": [
-      "دریچه‌های خطی LS-300",
-      "دمپر ضدحریق FD Series",
-      "گریل برگشت GR Series"
-    ],
-    "stats": [
-      { "label": "مساحت", "value": "۸۵,۰۰۰ m²" },
-      { "label": "تعداد تخت", "value": "۱,۰۰۰" },
-      { "label": "مدت اجرا", "value": "۲۴ ماه" },
-      { "label": "سال تحویل", "value": "۱۴۰۰" }
-    ],
-    "highlights": [
-      "سیستم فیلتراسیون HEPA برای اتاق‌های عمل",
-      "کنترل فشار مثبت/منفی در ICU",
-      "مطابق استانداردهای WHO و وزارت بهداشت",
-      "سیستم کنترل مرکزی BMS"
-    ],
-    "imageCount": 6,
-    "image": "/images/projects/milad-hospital.png",
-    "status": "تکمیل شده"
-  },
-
-  "milad-tower": {
-    "title": "برج میلاد",
-    "category": "اداری",
-    "location": "تهران",
-    "year": "۱۳۹۸",
-    "client": "شرکت مادر تخصصی برج میلاد",
-    "area": "۱۳۵,۰۰۰ m²",
-    "duration": "۱۲ ماه",
-    "description": "برج میلاد تهران با ارتفاع ۴۳۵ متر، بلندترین برج ایران و ششمین برج بلند دنیا است. نوسازی و بهینه‌سازی سیستم تهویه طبقات اداری، هتل و رستوران‌های برج در این پروژه انجام شد.",
-    "scope": "نوسازی سیستم توزیع هوا برای طبقات اداری، هتل برج و سالن‌های اجتماعات",
-    "products": [
-      "دریچه‌های چهارطرفه AQ-500",
-      "ملتی‌وی MW Series",
-      "دمپر VCD Series"
-    ],
-    "stats": [
-      { "label": "مساحت", "value": "۱۳۵,۰۰۰ m²" },
-      { "label": "تعداد طبقه", "value": "۵۴ طبقه" },
-      { "label": "مدت اجرا", "value": "۱۲ ماه" },
-      { "label": "سال تحویل", "value": "۱۳۹۸" }
-    ],
-    "highlights": [
-      "سیستم VAV برای طبقات اداری",
-      "کنترل هوشمند با سیستم BMS مرکزی",
-      "کاهش ۳۰٪ مصرف انرژی نسبت به سیستم قبلی",
-      "صفر توقف در عملیات برج حین اجرا"
-    ],
-    "imageCount": 6,
-    "image": "/images/projects/milad-tower.png",
-    "status": "تکمیل شده"
-  },
-
-  "iran-khodro": {
-    "title": "کارخانه ایران خودرو",
-    "category": "صنعتی",
-    "location": "کرج",
-    "year": "۱۳۹۹",
-    "client": "شرکت ایران خودرو",
-    "area": "۴۵۰,۰۰۰ m²",
-    "duration": "۳۶ ماه",
-    "description": "کارخانه تولید خودروی ایران خودرو در کرج نیازمند سیستم تهویه صنعتی برای سالن‌های رنگ، جوشکاری و مونتاژ بود. این پروژه شامل طراحی خاص برای محیط‌های آلوده صنعتی و دماهای بالا بود.",
-    "scope": "طراحی و اجرای سیستم تهویه صنعتی برای سالن‌های تولید و مونتاژ",
-    "products": [
-      "دریچه‌های دیواری WD Series",
-      "کلاهک خروجی EC Series",
-      "دمپر ضدحریق FD Series"
-    ],
-    "stats": [
-      { "label": "مساحت", "value": "۴۵۰,۰۰۰ m²" },
-      { "label": "تعداد سالن", "value": "۱۸ سالن تولید" },
-      { "label": "مدت اجرا", "value": "۳۶ ماه" },
-      { "label": "سال تحویل", "value": "۱۳۹۹" }
-    ],
-    "highlights": [
-      "مقاومت در برابر بخارات شیمیایی و رنگ",
-      "سیستم تخلیه دود اضطراری",
-      "دمپرهای ضدحریق در تمام کانال‌های اصلی",
-      "اجرا در محیط فعال بدون توقف تولید"
-    ],
-    "imageCount": 6,
-    "image": "/images/projects/iran-khodro.png",
-    "status": "تکمیل شده"
-  },
-
-  "parsian-hotel": {
-    "title": "هتل پارسیان",
-    "category": "هتل",
-    "location": "اصفهان",
-    "year": "۱۴۰۲",
-    "client": "گروه هتل‌های پارسیان",
-    "area": "۳۸,۰۰۰ m²",
-    "duration": "۱۴ ماه",
-    "description": "هتل پارسیان اصفهان با رتبه ۵ ستاره، نیازمند سیستم تهویه ساکت و بهینه برای اتاق‌های مهمان، رستوران، سالن‌های کنفرانس و لابی بود. آرامش صوتی و یکنواختی دمای هوا از اولویت‌های اصلی پروژه بود.",
-    "scope": "طراحی و اجرای سیستم تهویه هتل شامل اتاق‌های مهمان، رستوران و سالن‌های کنفرانس",
-    "products": [
-      "دریچه‌های خطی LS-300",
-      "دریچه‌های گرد CC-400",
-      "دمپر VCD Series"
-    ],
-    "stats": [
-      { "label": "مساحت", "value": "۳۸,۰۰۰ m²" },
-      { "label": "تعداد اتاق", "value": "۲۸۰ اتاق" },
-      { "label": "مدت اجرا", "value": "۱۴ ماه" },
-      { "label": "سال تحویل", "value": "۱۴۰۲" }
-    ],
-    "highlights": [
-      "سطح صدای کمتر از NC-25 در اتاق‌ها",
-      "سیستم FCU برای کنترل فردی هر اتاق",
-      "طراحی معماری پنهان در دکوراسیون",
-      "صرفه‌جویی ۲۵٪ در مصرف انرژی"
-    ],
-    "imageCount": 6,
-    "image": "/images/projects/parsian-hotel.png",
-    "status": "تکمیل شده"
-  },
-
-  "tehran-metro": {
-    "title": "مترو تهران خط ۷",
-    "category": "حمل‌ونقل",
-    "location": "تهران",
-    "year": "۱۴۰۱",
-    "client": "شرکت مترو تهران",
-    "area": "۶۲,۰۰۰ m²",
-    "duration": "۳۰ ماه",
-    "description": "خط ۷ مترو تهران با ۲۶ ایستگاه، نیازمند سیستم تهویه مخصوص محیط‌های زیرزمینی بود. کنترل دما، رطوبت و کیفیت هوا در ایستگاه‌ها و تونل‌ها از چالش‌های اصلی این پروژه بود.",
-    "scope": "تأمین و نصب سیستم توزیع هوا برای ۲۶ ایستگاه مترو",
-    "products": [
-      "دریچه‌های دیواری WD Series",
-      "گریل برگشت GR Series",
-      "دمپر ضدحریق FD Series"
-    ],
-    "stats": [
-      { "label": "تعداد ایستگاه", "value": "۲۶ ایستگاه" },
-      { "label": "طول خط", "value": "۲۷ km" },
-      { "label": "مدت اجرا", "value": "۳۰ ماه" },
-      { "label": "سال تحویل", "value": "۱۴۰۱" }
-    ],
-    "highlights": [
-      "مقاومت در برابر رطوبت و ارتعاش",
-      "سیستم اطفا حریق یکپارچه با دمپرها",
-      "نصب در شرایط دشوار محیط زیرزمینی",
-      "مطابق استانداردهای ایمنی مترو"
-    ],
-    "imageCount": 6,
-    "image": "/images/projects/tehran-metro.png",
-    "status": "تکمیل شده"
-  },
-
-  "mashhad-mall": {
-    "title": "پردیس مشهد",
-    "category": "تجاری",
-    "location": "مشهد",
-    "year": "۱۴۰۲",
-    "client": "گروه توسعه پردیس",
-    "area": "۹۵,۰۰۰ m²",
-    "duration": "۲۰ ماه",
-    "description": "مجتمع تجاری پردیس مشهد یکی از بزرگ‌ترین مراکز خرید شمال شرق کشور است. سیستم تهویه این مجتمع شامل توزیع هوا برای گالری‌های تجاری، فودکورت، سینما و پارکینگ بود.",
-    "scope": "طراحی و اجرای سیستم توزیع هوا برای کل مجتمع تجاری",
-    "products": [
-      "دریچه‌های چهارطرفه AQ-500",
-      "ملتی‌وی MW-300",
-      "دمپر VCD Series"
-    ],
-    "stats": [
-      { "label": "مساحت", "value": "۹۵,۰۰۰ m²" },
-      { "label": "تعداد واحد", "value": "بیش از ۴۰۰" },
-      { "label": "مدت اجرا", "value": "۲۰ ماه" },
-      { "label": "سال تحویل", "value": "۱۴۰۲" }
-    ],
-    "highlights": [
-      "سیستم یکپارچه BMS برای کنترل مرکزی",
-      "بهینه‌سازی مصرف انرژی با VAV",
-      "اجرا موازی با عملیات ساختمانی",
-      "گارانتی ۵ ساله سیستم"
-    ],
-    "imageCount": 6,
-    "image": "/images/projects/mashhad-mall.png",
-    "status": "تکمیل شده"
-  },
-
-  "shiraz-airport": {
-    "title": "فرودگاه شیراز",
-    "category": "فرودگاهی",
-    "location": "شیراز",
-    "year": "۱۴۰۰",
-    "client": "شرکت فرودگاه‌های کشور",
-    "area": "۱۸۰,۰۰۰ m²",
-    "duration": "۲۸ ماه",
-    "description": "ترمینال جدید فرودگاه بین‌المللی شیراز با ظرفیت ۸ میلیون مسافر در سال، نیازمند سیستم تهویه مطبوع گسترده برای سالن‌های انتظار، گیت‌ها، مسیرهای رفت‌وآمد و پارکینگ بود.",
-    "scope": "تأمین و نصب کامل سیستم توزیع هوا برای ترمینال مسافری",
-    "products": [
-      "دریچه‌های خطی LS Series",
-      "ملتی‌وی MW Series",
-      "دمپر FD Series"
-    ],
-    "stats": [
-      { "label": "مساحت", "value": "۱۸۰,۰۰۰ m²" },
-      { "label": "ظرفیت سالانه", "value": "۸ میلیون مسافر" },
-      { "label": "مدت اجرا", "value": "۲۸ ماه" },
-      { "label": "سال تحویل", "value": "۱۴۰۰" }
-    ],
-    "highlights": [
-      "طراحی معماری بدون لوله‌کشی نمایان",
-      "سیستم مقاوم در برابر گردوخاک فرودگاهی",
-      "کنترل اتوماتیک بر اساس تعداد مسافر",
-      "مطابق استانداردهای IATA"
-    ],
-    "imageCount": 6,
-    "image": "/images/projects/shiraz-airport.png",
-    "status": "تکمیل شده"
-  },
-
-  "esfahan-steel": {
-    "title": "فولاد مبارکه اصفهان",
-    "category": "صنعتی",
-    "location": "اصفهان",
-    "year": "۱۳۹۷",
-    "client": "شرکت فولاد مبارکه اصفهان",
-    "area": "۵۲۰,۰۰۰ m²",
-    "duration": "۴۸ ماه",
-    "description": "مجتمع صنعتی فولاد مبارکه یکی از بزرگ‌ترین کارخانه‌های فولاد در خاورمیانه است. سیستم تهویه صنعتی برای محیط‌های با دمای بالا، گازهای صنعتی و ذرات معلق طراحی شد.",
-    "scope": "طراحی و اجرای سیستم تهویه صنعتی در سالن‌های نورد، ریخته‌گری و اداری",
-    "products": [
-      "کلاهک خروجی EC Series",
-      "دمپر ضدحریق FD Series",
-      "دریچه‌های دیواری WD Series"
-    ],
-    "stats": [
-      { "label": "مساحت", "value": "۵۲۰,۰۰۰ m²" },
-      { "label": "ظرفیت تولید", "value": "۷.۲ میلیون تن/سال" },
-      { "label": "مدت اجرا", "value": "۴۸ ماه" },
-      { "label": "سال تحویل", "value": "۱۳۹۷" }
-    ],
-    "highlights": [
-      "مقاومت در برابر دمای بالای ۸۰°C",
-      "مواد ضدخوردگی برای محیط‌های صنعتی",
-      "سیستم اضطراری تخلیه دود و گاز",
-      "عمر کاری تضمین‌شده بیش از ۱۵ سال"
-    ],
-    "imageCount": 6,
-    "image": "/images/projects/esfahan-steel.png",
-    "status": "تکمیل شده"
-  },
-
-  "tehran-university": {
-    "title": "دانشگاه تهران",
-    "category": "آموزشی",
-    "location": "تهران",
-    "year": "۱۴۰۲",
-    "client": "دانشگاه تهران",
-    "area": "۴۲,۰۰۰ m²",
-    "duration": "۱۶ ماه",
-    "description": "نوسازی سیستم تهویه مطبوع دانشکده‌های فنی و علوم دانشگاه تهران شامل کلاس‌های درس، آزمایشگاه‌ها، کتابخانه و سالن‌های اجتماعات بود. صرفه‌جویی در مصرف انرژی و کیفیت هوای بهتر از اهداف اصلی بود.",
-    "scope": "نوسازی سیستم توزیع هوا برای ۶ دانشکده",
-    "products": [
-      "دریچه‌های خطی LS-300",
-      "دریچه‌های گرد CC-400",
-      "دمپر VCD Series"
-    ],
-    "stats": [
-      { "label": "مساحت", "value": "۴۲,۰۰۰ m²" },
-      { "label": "تعداد دانشکده", "value": "۶ دانشکده" },
-      { "label": "مدت اجرا", "value": "۱۶ ماه" },
-      { "label": "سال تحویل", "value": "۱۴۰۲" }
-    ],
-    "highlights": [
-      "اجرا در تعطیلات دانشگاهی برای حداقل اختلال",
-      "کاهش ۴۰٪ مصرف انرژی نسبت به سیستم قدیم",
-      "سیستم CO₂ Sensor برای کنترل کیفیت هوا",
-      "گارانتی ۳ ساله کامل سیستم"
-    ],
-    "imageCount": 6,
-    "image": "/images/projects/tehran-university.png",
-    "status": "تکمیل شده"
-  },
-
-  "imam-khomeini-airport": {
-    "title": "فرودگاه امام خمینی",
-    "category": "فرودگاهی",
-    "location": "تهران",
-    "year": "۱۳۹۹",
-    "client": "شرکت فرودگاه‌های کشور",
-    "area": "۲۲۰,۰۰۰ m²",
-    "duration": "۳۲ ماه",
-    "description": "ترمینال بین‌المللی فرودگاه امام خمینی، دروازه اصلی ورود و خروج مسافران بین‌المللی کشور است. سیستم تهویه این ترمینال شامل کنترل دما و کیفیت هوا برای سالن‌های ترانزیت، گیت‌های پروازی و مسیرهای گمرکی بود.",
-    "scope": "طراحی، تأمین و نصب سیستم توزیع هوا برای ترمینال بین‌المللی و مسیرهای ترانزیت",
-    "products": [
-      "دریچه‌های خطی LS Series",
-      "ملتی‌وی MW Series",
-      "دمپر FD Series"
-    ],
-    "stats": [
-      { "label": "مساحت", "value": "۲۲۰,۰۰۰ m²" },
-      { "label": "ظرفیت سالانه", "value": "۱۴ میلیون مسافر" },
-      { "label": "مدت اجرا", "value": "۳۲ ماه" },
-      { "label": "سال تحویل", "value": "۱۳۹۹" }
-    ],
-    "highlights": [
-      "طراحی بدون لوله‌کشی نمایان در سقف‌های بلند",
-      "سیستم کنترل کیفیت هوا برای سالن‌های ترانزیت",
-      "هماهنگی کامل با سیستم‌های ایمنی فرودگاهی",
-      "مطابق استانداردهای بین‌المللی IATA"
-    ],
-    "imageCount": 6,
-    "image": "/images/projects/imam-khomeini-airport.png",
-    "status": "تکمیل شده"
-  },
-
-  "elahieh-complex": {
-    "title": "مجتمع اداری الهیه",
-    "category": "اداری",
-    "location": "تهران",
-    "year": "۱۴۰۱",
-    "client": "گروه ساختمانی الهیه",
-    "area": "۵۶,۰۰۰ m²",
-    "duration": "۱۵ ماه",
-    "description": "مجتمع اداری الهیه یکی از پروژه‌های شاخص منطقه شمال تهران است که شامل چند بلوک اداری و فضاهای مشترک می‌شود. سیستم تهویه این مجتمع با هدف بهره‌وری انرژی و آرامش صوتی طراحی و اجرا شد.",
-    "scope": "طراحی و اجرای سیستم توزیع هوا برای بلوک‌های اداری و فضاهای مشترک",
-    "products": [
-      "دریچه‌های چهارطرفه AQ-500",
-      "ملتی‌وی MW Series",
-      "دمپر VCD Series"
-    ],
-    "stats": [
-      { "label": "مساحت", "value": "۵۶,۰۰۰ m²" },
-      { "label": "تعداد بلوک", "value": "۴ بلوک اداری" },
-      { "label": "مدت اجرا", "value": "۱۵ ماه" },
-      { "label": "سال تحویل", "value": "۱۴۰۱" }
-    ],
-    "highlights": [
-      "سیستم VAV برای کنترل مستقل هر بلوک",
-      "کنترل هوشمند با سیستم BMS مرکزی",
-      "طراحی معماری پنهان در سقف کاذب",
-      "بهره‌وری انرژی بالاتر از استاندارد ASHRAE"
-    ],
-    "imageCount": 6,
-    "image": "/images/projects/elahieh-complex.png",
-    "status": "تکمیل شده"
-  },
-
-  "sharif-university": {
-    "title": "دانشگاه صنعتی شریف",
-    "category": "آموزشی",
-    "location": "تهران",
-    "year": "۱۴۰۰",
-    "client": "دانشگاه صنعتی شریف",
-    "area": "۳۸,۰۰۰ m²",
-    "duration": "۱۴ ماه",
-    "description": "نوسازی سیستم تهویه مطبوع دانشکده‌های مهندسی دانشگاه صنعتی شریف شامل کلاس‌های درس، آزمایشگاه‌های تخصصی و سالن‌های اجتماعات بود. کیفیت هوای آزمایشگاهی و صرفه‌جویی انرژی از اهداف اصلی پروژه بود.",
-    "scope": "نوسازی سیستم توزیع هوا برای دانشکده‌های مهندسی و آزمایشگاه‌ها",
-    "products": [
-      "دریچه‌های خطی LS-300",
-      "گریل برگشت GR Series",
-      "دمپر VCD Series"
-    ],
-    "stats": [
-      { "label": "مساحت", "value": "۳۸,۰۰۰ m²" },
-      { "label": "تعداد آزمایشگاه", "value": "۲۲ آزمایشگاه" },
-      { "label": "مدت اجرا", "value": "۱۴ ماه" },
-      { "label": "سال تحویل", "value": "۱۴۰۰" }
-    ],
-    "highlights": [
-      "سیستم تهویه اختصاصی برای آزمایشگاه‌های شیمی",
-      "کاهش ۳۵٪ مصرف انرژی نسبت به سیستم قدیم",
-      "اجرا در تعطیلات دانشگاهی برای حداقل اختلال",
-      "گارانتی ۳ ساله کامل سیستم"
-    ],
-    "imageCount": 6,
-    "image": "/images/projects/sharif-university.png",
-    "status": "تکمیل شده"
+  "en": {
+    "iran-mall": {
+      "title": "Iran Mall",
+      "category": "Commercial",
+      "location": "Tehran",
+      "year": "1401",
+      "client": "Iran Mall Investment Group",
+      "area": "210,000 m²",
+      "duration": "18 months",
+      "description": "Iran Mall is one of the largest commercial-recreational complexes in the Middle East. The HVAC project included the design and installation of air distribution systems for over 210,000 square meters of retail space, restaurants, cinemas, and parking areas.",
+      "scope": "Design, supply, and installation of the air distribution system for all commercial floors",
+      "products": [
+        "LS Series linear diffusers",
+        "CC Series ceiling diffusers",
+        "VCD Series dampers"
+      ],
+      "stats": [
+        {
+          "label": "Area",
+          "value": "210,000 m²"
+        },
+        {
+          "label": "Number of diffusers",
+          "value": "Over 12,000"
+        },
+        {
+          "label": "Duration",
+          "value": "18 months"
+        },
+        {
+          "label": "Delivery year",
+          "value": "1401"
+        }
+      ],
+      "highlights": [
+        "The largest commercial HVAC project in Iran",
+        "Air distribution system design for 4 commercial floors",
+        "Energy efficiency above the ASHRAE standard",
+        "Successful delivery with zero delays"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/iran-mall.png",
+      "status": "Completed"
+    },
+    "milad-hospital": {
+      "title": "Milad Hospital",
+      "category": "Healthcare",
+      "location": "Tehran",
+      "year": "1400",
+      "client": "Social Security Organization",
+      "area": "85,000 m²",
+      "duration": "24 months",
+      "description": "Milad Hospital in Tehran, with 1,000 beds, is one of the country's largest medical centers. The hospital HVAC system required high precision in airflow control, filtration, and microbial contamination control.",
+      "scope": "Design and installation of the HVAC system for ICU, operating rooms, emergency, and inpatient wards",
+      "products": [
+        "LS-300 linear diffusers",
+        "FD Series fire dampers",
+        "GR Series return grilles"
+      ],
+      "stats": [
+        {
+          "label": "Area",
+          "value": "85,000 m²"
+        },
+        {
+          "label": "Number of beds",
+          "value": "1,000"
+        },
+        {
+          "label": "Duration",
+          "value": "24 months"
+        },
+        {
+          "label": "Delivery year",
+          "value": "1400"
+        }
+      ],
+      "highlights": [
+        "HEPA filtration system for operating rooms",
+        "Positive/negative pressure control in the ICU",
+        "Compliant with WHO and Ministry of Health standards",
+        "Central BMS control system"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/milad-hospital.png",
+      "status": "Completed"
+    },
+    "milad-tower": {
+      "title": "Milad Tower",
+      "category": "Office",
+      "location": "Tehran",
+      "year": "1398",
+      "client": "Milad Tower Holding Company",
+      "area": "135,000 m²",
+      "duration": "12 months",
+      "description": "Milad Tower in Tehran, standing 435 meters tall, is Iran's tallest tower and the sixth tallest in the world. This project involved the renovation and optimization of the HVAC system across the tower's office floors, hotel, and restaurants.",
+      "scope": "Renovation of the air distribution system for office floors, the tower hotel, and conference halls",
+      "products": [
+        "AQ-500 4-way diffusers",
+        "MW Series multiways",
+        "VCD Series dampers"
+      ],
+      "stats": [
+        {
+          "label": "Area",
+          "value": "135,000 m²"
+        },
+        {
+          "label": "Number of floors",
+          "value": "54 floors"
+        },
+        {
+          "label": "Duration",
+          "value": "12 months"
+        },
+        {
+          "label": "Delivery year",
+          "value": "1398"
+        }
+      ],
+      "highlights": [
+        "VAV system for office floors",
+        "Smart control via central BMS system",
+        "30% reduction in energy consumption versus the previous system",
+        "Zero downtime for tower operations during installation"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/milad-tower.png",
+      "status": "Completed"
+    },
+    "iran-khodro": {
+      "title": "Iran Khodro Factory",
+      "category": "Industrial",
+      "location": "Karaj",
+      "year": "1399",
+      "client": "Iran Khodro Company",
+      "area": "450,000 m²",
+      "duration": "36 months",
+      "description": "The Iran Khodro automobile manufacturing plant in Karaj required an industrial HVAC system for its paint, welding, and assembly halls. This project involved a specialized design for contaminated industrial environments and high temperatures.",
+      "scope": "Design and installation of the industrial HVAC system for production and assembly halls",
+      "products": [
+        "WD Series wall diffusers",
+        "EC Series exhaust caps",
+        "FD Series fire dampers"
+      ],
+      "stats": [
+        {
+          "label": "Area",
+          "value": "450,000 m²"
+        },
+        {
+          "label": "Number of halls",
+          "value": "18 production halls"
+        },
+        {
+          "label": "Duration",
+          "value": "36 months"
+        },
+        {
+          "label": "Delivery year",
+          "value": "1399"
+        }
+      ],
+      "highlights": [
+        "Resistant to chemical and paint vapors",
+        "Emergency smoke exhaust system",
+        "Fire dampers on all main ducts",
+        "Installed in an active facility without halting production"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/iran-khodro.png",
+      "status": "Completed"
+    },
+    "parsian-hotel": {
+      "title": "Parsian Hotel",
+      "category": "Hotel",
+      "location": "Isfahan",
+      "year": "1402",
+      "client": "Parsian Hotels Group",
+      "area": "38,000 m²",
+      "duration": "14 months",
+      "description": "The 5-star Parsian Hotel in Isfahan required a quiet, optimized HVAC system for its guest rooms, restaurant, conference halls, and lobby. Acoustic comfort and uniform temperature were top priorities for the project.",
+      "scope": "Design and installation of the hotel HVAC system, including guest rooms, restaurant, and conference halls",
+      "products": [
+        "LS-300 linear diffusers",
+        "CC-400 round diffusers",
+        "VCD Series dampers"
+      ],
+      "stats": [
+        {
+          "label": "Area",
+          "value": "38,000 m²"
+        },
+        {
+          "label": "Number of rooms",
+          "value": "280 rooms"
+        },
+        {
+          "label": "Duration",
+          "value": "14 months"
+        },
+        {
+          "label": "Delivery year",
+          "value": "1402"
+        }
+      ],
+      "highlights": [
+        "Noise level below NC-25 in guest rooms",
+        "FCU system for individual room control",
+        "Architecturally concealed design in the decor",
+        "25% savings in energy consumption"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/parsian-hotel.png",
+      "status": "Completed"
+    },
+    "tehran-metro": {
+      "title": "Tehran Metro Line 7",
+      "category": "Transportation",
+      "location": "Tehran",
+      "year": "1401",
+      "client": "Tehran Metro Company",
+      "area": "62,000 m²",
+      "duration": "30 months",
+      "description": "Tehran Metro Line 7, with 26 stations, required a ventilation system specifically designed for underground environments. Controlling temperature, humidity, and air quality in the stations and tunnels was a major challenge of this project.",
+      "scope": "Supply and installation of the air distribution system for 26 metro stations",
+      "products": [
+        "WD Series wall diffusers",
+        "GR Series return grilles",
+        "FD Series fire dampers"
+      ],
+      "stats": [
+        {
+          "label": "Number of stations",
+          "value": "26 stations"
+        },
+        {
+          "label": "Line length",
+          "value": "27 km"
+        },
+        {
+          "label": "Duration",
+          "value": "30 months"
+        },
+        {
+          "label": "Delivery year",
+          "value": "1401"
+        }
+      ],
+      "highlights": [
+        "Resistant to humidity and vibration",
+        "Fire suppression system integrated with the dampers",
+        "Installed under difficult underground conditions",
+        "Compliant with metro safety standards"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/tehran-metro.png",
+      "status": "Completed"
+    },
+    "mashhad-mall": {
+      "title": "Mashhad Paradis Mall",
+      "category": "Commercial",
+      "location": "Mashhad",
+      "year": "1402",
+      "client": "Paradis Development Group",
+      "area": "95,000 m²",
+      "duration": "20 months",
+      "description": "The Paradis commercial complex in Mashhad is one of the largest shopping centers in northeastern Iran. The HVAC system for this complex included air distribution for retail galleries, the food court, cinema, and parking.",
+      "scope": "Design and installation of the air distribution system for the entire commercial complex",
+      "products": [
+        "AQ-500 4-way diffusers",
+        "MW-300 multiway",
+        "VCD Series dampers"
+      ],
+      "stats": [
+        {
+          "label": "Area",
+          "value": "95,000 m²"
+        },
+        {
+          "label": "Number of units",
+          "value": "Over 400"
+        },
+        {
+          "label": "Duration",
+          "value": "20 months"
+        },
+        {
+          "label": "Delivery year",
+          "value": "1402"
+        }
+      ],
+      "highlights": [
+        "Integrated BMS system for central control",
+        "Energy optimization with VAV",
+        "Executed in parallel with construction operations",
+        "5-year system warranty"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/mashhad-mall.png",
+      "status": "Completed"
+    },
+    "shiraz-airport": {
+      "title": "Shiraz Airport",
+      "category": "Airport",
+      "location": "Shiraz",
+      "year": "1400",
+      "client": "Iran Airports Company",
+      "area": "180,000 m²",
+      "duration": "28 months",
+      "description": "The new terminal at Shiraz International Airport, with a capacity of 8 million passengers per year, required an extensive HVAC system for waiting halls, gates, circulation routes, and parking areas.",
+      "scope": "Complete supply and installation of the air distribution system for the passenger terminal",
+      "products": [
+        "LS Series linear diffusers",
+        "MW Series multiways",
+        "FD Series dampers"
+      ],
+      "stats": [
+        {
+          "label": "Area",
+          "value": "180,000 m²"
+        },
+        {
+          "label": "Annual capacity",
+          "value": "8 million passengers"
+        },
+        {
+          "label": "Duration",
+          "value": "28 months"
+        },
+        {
+          "label": "Delivery year",
+          "value": "1400"
+        }
+      ],
+      "highlights": [
+        "Architectural design with no exposed piping",
+        "System resistant to airport dust and debris",
+        "Automatic control based on passenger volume",
+        "Compliant with IATA standards"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/shiraz-airport.png",
+      "status": "Completed"
+    },
+    "esfahan-steel": {
+      "title": "Mobarakeh Steel Isfahan",
+      "category": "Industrial",
+      "location": "Isfahan",
+      "year": "1397",
+      "client": "Mobarakeh Steel Company",
+      "area": "520,000 m²",
+      "duration": "48 months",
+      "description": "Mobarakeh Steel Complex is one of the largest steel plants in the Middle East. Its industrial HVAC system was designed for high-temperature environments, industrial gases, and suspended particulates.",
+      "scope": "Design and installation of the industrial HVAC system in the rolling, casting, and office halls",
+      "products": [
+        "EC Series exhaust caps",
+        "FD Series fire dampers",
+        "WD Series wall diffusers"
+      ],
+      "stats": [
+        {
+          "label": "Area",
+          "value": "520,000 m²"
+        },
+        {
+          "label": "Production capacity",
+          "value": "7.2 million tons/year"
+        },
+        {
+          "label": "Duration",
+          "value": "48 months"
+        },
+        {
+          "label": "Delivery year",
+          "value": "1397"
+        }
+      ],
+      "highlights": [
+        "Resistant to temperatures above 80°C",
+        "Corrosion-resistant materials for industrial environments",
+        "Emergency smoke and gas exhaust system",
+        "Guaranteed service life of over 15 years"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/esfahan-steel.png",
+      "status": "Completed"
+    },
+    "tehran-university": {
+      "title": "University of Tehran",
+      "category": "Education",
+      "location": "Tehran",
+      "year": "1402",
+      "client": "University of Tehran",
+      "area": "42,000 m²",
+      "duration": "16 months",
+      "description": "This project involved renovating the HVAC system of the University of Tehran's engineering and science faculties, including classrooms, laboratories, the library, and conference halls. Energy savings and improved air quality were the main objectives.",
+      "scope": "Renovation of the air distribution system for 6 faculties",
+      "products": [
+        "LS-300 linear diffusers",
+        "CC-400 round diffusers",
+        "VCD Series dampers"
+      ],
+      "stats": [
+        {
+          "label": "Area",
+          "value": "42,000 m²"
+        },
+        {
+          "label": "Number of faculties",
+          "value": "6 faculties"
+        },
+        {
+          "label": "Duration",
+          "value": "16 months"
+        },
+        {
+          "label": "Delivery year",
+          "value": "1402"
+        }
+      ],
+      "highlights": [
+        "Executed during academic recess to minimize disruption",
+        "40% reduction in energy consumption versus the old system",
+        "CO₂ sensor system for air quality control",
+        "Full 3-year system warranty"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/tehran-university.png",
+      "status": "Completed"
+    },
+    "imam-khomeini-airport": {
+      "title": "Imam Khomeini Airport",
+      "category": "Airport",
+      "location": "Tehran",
+      "year": "1399",
+      "client": "Iran Airports Company",
+      "area": "220,000 m²",
+      "duration": "32 months",
+      "description": "The international terminal at Imam Khomeini Airport is the country's main gateway for international passenger traffic. The terminal's HVAC system included temperature and air quality control for transit halls, boarding gates, and customs corridors.",
+      "scope": "Design, supply, and installation of the air distribution system for the international terminal and transit corridors",
+      "products": [
+        "LS Series linear diffusers",
+        "MW Series multiways",
+        "FD Series dampers"
+      ],
+      "stats": [
+        {
+          "label": "Area",
+          "value": "220,000 m²"
+        },
+        {
+          "label": "Annual capacity",
+          "value": "14 million passengers"
+        },
+        {
+          "label": "Duration",
+          "value": "32 months"
+        },
+        {
+          "label": "Delivery year",
+          "value": "1399"
+        }
+      ],
+      "highlights": [
+        "Design with no exposed piping in the high ceilings",
+        "Air quality control system for transit halls",
+        "Full coordination with airport safety systems",
+        "Compliant with international IATA standards"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/imam-khomeini-airport.png",
+      "status": "Completed"
+    },
+    "elahieh-complex": {
+      "title": "Elahieh Office Complex",
+      "category": "Office",
+      "location": "Tehran",
+      "year": "1401",
+      "client": "Elahieh Construction Group",
+      "area": "56,000 m²",
+      "duration": "15 months",
+      "description": "The Elahieh office complex is a landmark project in northern Tehran, comprising several office blocks and shared spaces. The complex's HVAC system was designed and executed with a focus on energy efficiency and acoustic comfort.",
+      "scope": "Design and installation of the air distribution system for the office blocks and shared spaces",
+      "products": [
+        "AQ-500 4-way diffusers",
+        "MW Series multiways",
+        "VCD Series dampers"
+      ],
+      "stats": [
+        {
+          "label": "Area",
+          "value": "56,000 m²"
+        },
+        {
+          "label": "Number of blocks",
+          "value": "4 office blocks"
+        },
+        {
+          "label": "Duration",
+          "value": "15 months"
+        },
+        {
+          "label": "Delivery year",
+          "value": "1401"
+        }
+      ],
+      "highlights": [
+        "VAV system for independent control of each block",
+        "Smart control via central BMS system",
+        "Architecturally concealed design in the suspended ceiling",
+        "Energy efficiency above the ASHRAE standard"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/elahieh-complex.png",
+      "status": "Completed"
+    },
+    "sharif-university": {
+      "title": "Sharif University of Technology",
+      "category": "Education",
+      "location": "Tehran",
+      "year": "1400",
+      "client": "Sharif University of Technology",
+      "area": "38,000 m²",
+      "duration": "14 months",
+      "description": "This project involved renovating the HVAC system of Sharif University of Technology's engineering faculties, including classrooms, specialized laboratories, and conference halls. Laboratory air quality and energy savings were the main project objectives.",
+      "scope": "Renovation of the air distribution system for the engineering faculties and laboratories",
+      "products": [
+        "LS-300 linear diffusers",
+        "GR Series return grilles",
+        "VCD Series dampers"
+      ],
+      "stats": [
+        {
+          "label": "Area",
+          "value": "38,000 m²"
+        },
+        {
+          "label": "Number of laboratories",
+          "value": "22 laboratories"
+        },
+        {
+          "label": "Duration",
+          "value": "14 months"
+        },
+        {
+          "label": "Delivery year",
+          "value": "1400"
+        }
+      ],
+      "highlights": [
+        "Dedicated ventilation system for chemistry laboratories",
+        "35% reduction in energy consumption versus the old system",
+        "Executed during academic recess to minimize disruption",
+        "Full 3-year system warranty"
+      ],
+      "imageCount": 6,
+      "image": "/images/projects/sharif-university.png",
+      "status": "Completed"
+    }
   }
 }
