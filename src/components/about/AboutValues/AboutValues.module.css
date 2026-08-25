@@ -51,29 +51,7 @@
   overflow: hidden;
   direction: rtl;
   text-align: right;
-  transition: border-color var(--transition-slow), transform var(--transition-slow), box-shadow var(--transition-slow);
 }
-
-.card:hover {
-  border-color: var(--color-border-primary);
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-glow-primary), var(--shadow-lg);
-}
-
-.cardGlow {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 40%;
-  background: radial-gradient(ellipse at 50% 0%, rgba(30, 111, 207, 0.1) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity var(--transition-slow);
-  pointer-events: none;
-}
-
-.card:hover .cardGlow { opacity: 1; }
 
 /* ─── Icon row ─────────────────────────────────────────────── */
 .iconsRow {
@@ -94,12 +72,6 @@
   border-radius: var(--radius-sm);
   color: var(--color-primary-light);
   flex-shrink: 0;
-  transition: background var(--transition-base), border-color var(--transition-base);
-}
-
-.card:hover .iconWrap {
-  background: rgba(30, 111, 207, 0.2);
-  border-color: rgba(30, 111, 207, 0.45);
 }
 
 .iconSvg {
@@ -128,22 +100,4 @@
   line-height: var(--leading-relaxed);
   margin: 0;
   flex: 1;
-}
-
-/* ─── Bottom accent line ───────────────────────────────────── */
-.cardBorder {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--gradient-primary);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform var(--transition-slow);
-}
-
-.card:hover .cardBorder {
-  transform: scaleX(1);
-  transform-origin: left;
 }

@@ -26,7 +26,6 @@ export default function AboutValues({ title, items }: Props) {
         <div className={styles.grid}>
           {items.map((item) => (
             <div key={item.id} className={styles.card}>
-              <div className={styles.cardGlow} aria-hidden />
               <div className={styles.iconsRow}>
                 {item.icons.map((icon) => (
                   <div key={icon} className={styles.iconWrap}>
@@ -38,7 +37,6 @@ export default function AboutValues({ title, items }: Props) {
               </div>
               <h3 className={styles.cardTitle}>{item.title}</h3>
               <p className={styles.cardDesc}>{item.description}</p>
-              <div className={styles.cardBorder} aria-hidden />
             </div>
           ))}
         </div>
