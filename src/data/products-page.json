@@ -39,6 +39,26 @@
       "title":    "به دنبال محصول خاصی هستید؟",
       "subtitle": "تیم مهندسی ما آماده طراحی و تولید محصول مطابق نیاز پروژه شماست.",
       "button": { "label": "درخواست طراحی اختصاصی", "href": "#contact" }
+    },
+    "detail": {
+      "breadcrumb": { "home": "خانه", "products": "محصولات" },
+      "tabs": {
+        "specs":      "مشخصات فنی",
+        "dimensions": "نقشه و ابعاد",
+        "documents":  "مستندات",
+        "faq":        "سوالات متداول"
+      },
+      "cta": {
+        "inquiry": "درخواست استعلام",
+        "catalog": "دانلود کاتالوگ"
+      },
+      "dimensionsNote": "نقشه‌های فنی دقیق در کاتالوگ محصول موجود است.",
+      "documents": [
+        { "name": "کاتالوگ محصول LS-300",     "size": "2.4 MB", "type": "PDF" },
+        { "name": "دفترچه نصب و راه‌اندازی",  "size": "1.1 MB", "type": "PDF" },
+        { "name": "جدول مشخصات فنی",           "size": "0.6 MB", "type": "PDF" }
+      ],
+      "downloadLabel": "دانلود {name}"
     }
   },
   "en": {
@@ -81,6 +101,26 @@
       "title":    "Looking for a Specific Product?",
       "subtitle": "Our engineering team is ready to design and manufacture a product tailored to your project.",
       "button": { "label": "Request Custom Design", "href": "#contact" }
+    },
+    "detail": {
+      "breadcrumb": { "home": "Home", "products": "Products" },
+      "tabs": {
+        "specs":      "Technical Specifications",
+        "dimensions": "Drawing & Dimensions",
+        "documents":  "Documentation",
+        "faq":        "FAQ"
+      },
+      "cta": {
+        "inquiry": "Request a Quote",
+        "catalog": "Download Catalog"
+      },
+      "dimensionsNote": "Detailed technical drawings are available in the product catalog.",
+      "documents": [
+        { "name": "LS-300 Product Catalog",        "size": "2.4 MB", "type": "PDF" },
+        { "name": "Installation & Setup Manual",   "size": "1.1 MB", "type": "PDF" },
+        { "name": "Technical Specification Sheet", "size": "0.6 MB", "type": "PDF" }
+      ],
+      "downloadLabel": "Download {name}"
     }
   }
 }

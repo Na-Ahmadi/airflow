@@ -37,6 +37,11 @@ interface ImageItem {
   src: string;
   alt: string;
 }
+interface DocumentItem {
+  name: string;
+  size: string;
+  type: string;
+}
 
 interface Props {
   breadcrumb: BreadcrumbItem[];
@@ -49,6 +54,9 @@ interface Props {
   tabs: Tab[];
   specs: SpecItem[];
   faq: FaqItem[];
+  dimensionsNote: string;
+  documents: DocumentItem[];
+  downloadLabel: string;
 }
 
 export default function ProductDetailClient({
@@ -62,6 +70,9 @@ export default function ProductDetailClient({
   tabs,
   specs,
   faq,
+  dimensionsNote,
+  documents,
+  downloadLabel,
 }: Props) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -153,27 +164,13 @@ export default function ProductDetailClient({
                         className={styles.dimSvg}
                       />
                     </div>
-                    <p className={styles.dimNote}>
-                      نقشه‌های فنی دقیق در کاتالوگ محصول موجود است.
-                    </p>
+                    <p className={styles.dimNote}>{dimensionsNote}</p>
                   </div>
                 )}
 
                 {activeTab === "documents" && (
                   <div className={styles.documentsPane}>
-                    {[
-                      {
-                        name: "کاتالوگ محصول LS-300",
-                        size: "2.4 MB",
-                        type: "PDF",
-                      },
-                      {
-                        name: "دفترچه نصب و راه‌اندازی",
-                        size: "1.1 MB",
-                        type: "PDF",
-                      },
-                      { name: "جدول مشخصات فنی", size: "0.6 MB", type: "PDF" },
-                    ].map((doc) => (
+                    {documents.map((doc) => (
                       <div key={doc.name} className={styles.docItem}>
                         <span className={styles.docIcon}>
                           <Icon name="file-pdf" />
@@ -186,7 +183,7 @@ export default function ProductDetailClient({
                         </div>
                         <button
                           className={styles.docDownload}
-                          aria-label={`دانلود ${doc.name}`}
+                          aria-label={downloadLabel.replace("{name}", doc.name)}
                         >
                           <Icon name="download" size={18} />
                         </button>
