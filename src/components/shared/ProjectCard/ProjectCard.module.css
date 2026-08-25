@@ -174,3 +174,13 @@
 }
 
 .card:hover .cardLink { gap: var(--space-3); }
+
+/* ─── LTR Overrides ─────────────────────────────────────────── */
+:global([dir="ltr"]) .cardContent,
+:global([dir="ltr"]) .cardLink {
+  direction: ltr;
+}
+
+:global([dir="ltr"]) .cardContent {
+  text-align: left;
+}

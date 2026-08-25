@@ -101,3 +101,13 @@
   margin: 0;
   flex: 1;
 }
+
+/* ─── LTR Overrides ─────────────────────────────────────────── */
+:global([dir="ltr"]) .title,
+:global([dir="ltr"]) .card {
+  direction: ltr;
+}
+
+:global([dir="ltr"]) .card {
+  text-align: left;
+}

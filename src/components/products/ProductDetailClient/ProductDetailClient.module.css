@@ -420,6 +420,27 @@
   text-align: right;
 }
 
+/* ─── LTR Overrides ─────────────────────────────────────────── */
+:global([dir="ltr"]) .breadcrumbBar,
+:global([dir="ltr"]) .hero,
+:global([dir="ltr"]) .tabsSection,
+:global([dir="ltr"]) .featureItem,
+:global([dir="ltr"]) .docItem,
+:global([dir="ltr"]) .faqQuestion,
+:global([dir="ltr"]) .faqAnswer {
+  direction: ltr;
+}
+
+:global([dir="ltr"]) .infoCol,
+:global([dir="ltr"]) .modelTag,
+:global([dir="ltr"]) .specLabel,
+:global([dir="ltr"]) .specValue,
+:global([dir="ltr"]) .docMeta,
+:global([dir="ltr"]) .faqQuestion,
+:global([dir="ltr"]) .faqAnswer {
+  text-align: left;
+}
+
 /* ─── Responsive ────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .heroGrid { gap: var(--space-8); }

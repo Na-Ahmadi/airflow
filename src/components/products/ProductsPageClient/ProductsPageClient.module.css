@@ -195,6 +195,15 @@
   box-shadow: 0 8px 28px rgba(30, 111, 207, 0.5);
 }
 
+/* ─── LTR Overrides ─────────────────────────────────────────── */
+:global([dir="ltr"]) .ctaInner {
+  direction: ltr;
+}
+
+:global([dir="ltr"]) .ctaText {
+  text-align: left;
+}
+
 @media (max-width: 640px) {
   .ctaInner {
     flex-direction: column;

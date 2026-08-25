@@ -19,6 +19,10 @@ html {
   font-size: 16px;
 }
 
+html[dir="ltr"] {
+  direction: ltr;
+}
+
 body {
   font-family: var(--font-primary);
   font-size: var(--text-base);

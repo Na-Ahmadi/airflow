@@ -115,6 +115,11 @@
   pointer-events: none;
 }
 
+/* ─── LTR Overrides ─────────────────────────────────────────── */
+:global([dir="ltr"]) .banner {
+  direction: ltr;
+}
+
 /* ─── Responsive ────────────────────────────────────────────── */
 @media (max-width: 960px) {
   .banner {

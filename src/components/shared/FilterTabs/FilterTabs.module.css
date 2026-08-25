@@ -34,3 +34,8 @@
   background: var(--gradient-primary) !important;
   color: #fff !important;
 }
+
+/* ─── LTR Overrides ─────────────────────────────────────────── */
+:global([dir="ltr"]) .tabs {
+  direction: ltr;
+}

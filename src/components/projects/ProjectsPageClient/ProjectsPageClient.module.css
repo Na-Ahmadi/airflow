@@ -136,3 +136,13 @@
   text-align: center;
 }
 
+/* ─── LTR Overrides ─────────────────────────────────────────── */
+:global([dir="ltr"]) .cardContent,
+:global([dir="ltr"]) .cardLink {
+  direction: ltr;
+}
+
+:global([dir="ltr"]) .cardContent {
+  text-align: left;
+}
+

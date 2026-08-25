@@ -230,6 +230,20 @@
   margin: var(--space-1) 0 0;
 }
 
+/* ─── LTR Overrides ─────────────────────────────────────────── */
+:global([dir="ltr"]) .metaBar,
+:global([dir="ltr"]) .about,
+:global([dir="ltr"]) .infoSection,
+:global([dir="ltr"]) .productsSection {
+  direction: ltr;
+}
+
+:global([dir="ltr"]) .aboutText,
+:global([dir="ltr"]) .infoCardItem,
+:global([dir="ltr"]) .productBody {
+  text-align: left;
+}
+
 /* ─── Responsive ────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .metaGrid { grid-template-columns: repeat(3, 1fr); }

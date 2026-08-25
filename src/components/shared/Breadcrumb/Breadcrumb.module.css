@@ -18,3 +18,8 @@
 .sep { opacity: 0.4; font-size: var(--text-xs); }
 
 .current { color: var(--color-text-secondary); }
+
+/* ─── LTR Overrides ─────────────────────────────────────────── */
+:global([dir="ltr"]) .nav {
+  direction: ltr;
+}
