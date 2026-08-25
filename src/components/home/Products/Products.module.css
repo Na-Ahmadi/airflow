@@ -99,20 +99,6 @@
   width: 100%;
 }
 
-.categoryIcon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: var(--space-2);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-full);
-  background: var(--glass-bg);
-  backdrop-filter: var(--blur-md);
-  width: 44px;
-  height: 44px;
-  color: var(--color-accent);
-}
-
 .categoryTitle {
   margin: 0;
   color: #ffffff;

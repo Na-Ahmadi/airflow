@@ -23,17 +23,6 @@ interface ProductsProps {
   data: ProductsData;
 }
 
-// Homepage category cards share the same category filter as the /products page.
-const CATEGORY_ICON: Record<string, string> = {
-  vents: "ceiling",
-  dampers: "gear",
-  control: "cog",
-  accessories: "box",
-  chimney: "shield",
-  fancoil: "energy",
-  wall: "air",
-};
-
 const VISIBLE_CATEGORY_COUNT = 6;
 
 const SHOW_MORE_LABEL: Record<"fa" | "en", { more: string; less: string }> = {
@@ -119,12 +108,6 @@ export default function Products({ data }: ProductsProps) {
                       <div className={styles.categoryOverlay} aria-hidden />
                     </div>
                     <div className={styles.categoryContent}>
-                      <span className={styles.categoryIcon} aria-hidden>
-                        <Icon
-                          name={CATEGORY_ICON[category.id] ?? "box"}
-                          size={22}
-                        />
-                      </span>
                       <h3 className={styles.categoryTitle}>{category.label}</h3>
                       <span className={styles.categoryCta}>
                         مشاهده محصولات
