@@ -5,7 +5,7 @@
   padding: var(--space-4) var(--space-5);
   background: rgba(255, 255, 255, 0.03);
   border: 1px dashed var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all var(--transition-base);
   color: var(--color-text-secondary);
