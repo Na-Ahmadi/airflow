@@ -8,9 +8,10 @@ import FormSelect from "@/components/shared/FormField/FormSelect";
 import Icon from "@/components/shared/Icon/Icon";
 import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
 import {
-  contactSchema,
+  getContactSchema,
   type ContactFormValues as FormValues,
 } from "@/lib/contactSchema";
+import { useLanguage } from "@/context/LanguageContext";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
@@ -43,6 +44,7 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ data }: ContactFormProps) {
+  const { lang } = useLanguage();
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [status, setStatus] = useState<
@@ -55,7 +57,7 @@ export default function ContactForm({ data }: ContactFormProps) {
     reset,
     formState: { errors },
   } = useForm<FormValues>({
-    resolver: zodResolver(contactSchema),
+    resolver: zodResolver(getContactSchema(lang)),
   });
 
   const onSubmit = async (values: FormValues) => {

@@ -1,6 +1,8 @@
-import { contactSchema } from "@/lib/contactSchema";
+import { getContactSchema } from "@/lib/contactSchema";
 import { NextRequest } from "next/server";
 import { Resend } from "resend";
+
+const contactSchema = getContactSchema("en");
 
 const TO_EMAIL = "ahmadi@neoskop.de";
 
@@ -40,20 +42,20 @@ export async function POST(request: NextRequest) {
 
   if (process.env.NODE_ENV === "production" && isRateLimited(ip)) {
     return Response.json(
-      { error: "Zu viele Anfragen. Bitte warte 10 Minuten." },
+      { error: "Too many requests. Please wait 10 minutes." },
       { status: 429 },
     );
   }
 
   const body = await request.json().catch(() => null);
   if (!body) {
-    return Response.json({ error: "Ungültige Anfrage." }, { status: 400 });
+    return Response.json({ error: "Invalid request." }, { status: 400 });
   }
 
   const parsed = contactSchema.safeParse(body);
   if (!parsed.success) {
     return Response.json(
-      { error: "Ungültige Formulardaten." },
+      { error: "Invalid form data." },
       { status: 422 },
     );
   }
@@ -64,32 +66,32 @@ export async function POST(request: NextRequest) {
     `<tr><td style="padding:8px 12px;font-weight:600;background:#f5f5f5;width:140px">${label}</td><td style="padding:8px 12px">${escapeHtml(value)}</td></tr>`;
 
   const { error } = await resend.emails.send({
-    from: "Airflow Kontaktformular <onboarding@resend.dev>",
+    from: "Airflow Contact Form <onboarding@resend.dev>",
     to: TO_EMAIL,
     replyTo: email,
-    subject: `Neue Anfrage: ${escapeHtml(projectType)} – ${escapeHtml(name)}`,
+    subject: `New inquiry: ${escapeHtml(projectType)} – ${escapeHtml(name)}`,
     html: `
       <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
-        <h2 style="background:#0f172a;color:#fff;padding:20px 24px;margin:0">Neue Kontaktanfrage</h2>
+        <h2 style="background:#0f172a;color:#fff;padding:20px 24px;margin:0">New Contact Inquiry</h2>
         <table cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;border:1px solid #e2e8f0">
           ${row("Name", name)}
-          ${row("E-Mail", email)}
-          ${row("Telefon", phone)}
-          ${company ? row("Firma", company) : ""}
-          ${row("Projekttyp", projectType)}
+          ${row("Email", email)}
+          ${row("Phone", phone)}
+          ${company ? row("Company", company) : ""}
+          ${row("Project Type", projectType)}
           <tr>
-            <td style="padding:8px 12px;font-weight:600;background:#f5f5f5;vertical-align:top">Nachricht</td>
+            <td style="padding:8px 12px;font-weight:600;background:#f5f5f5;vertical-align:top">Message</td>
             <td style="padding:8px 12px;white-space:pre-wrap">${escapeHtml(message)}</td>
           </tr>
         </table>
-        <p style="color:#94a3b8;font-size:12px;padding:16px">Diese E-Mail wurde über das Kontaktformular auf airflowsystem.ir gesendet.</p>
+        <p style="color:#94a3b8;font-size:12px;padding:16px">This email was sent via the contact form on airflowsystem.ir.</p>
       </div>
     `,
   });
 
   if (error) {
     return Response.json(
-      { error: "E-Mail konnte nicht gesendet werden." },
+      { error: "Email could not be sent." },
       { status: 500 },
     );
   }
