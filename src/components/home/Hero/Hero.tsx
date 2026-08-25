@@ -65,11 +65,6 @@ export default function Hero({ data }: HeroProps) {
       {/* ── Content ── */}
       <div className={styles.inner}>
         <div className={styles.content}>
-          <motion.span className={styles.badge} {...fadeUp(0.15)}>
-            <span className={styles.badgeDot} />
-            {data.badge}
-          </motion.span>
-
           <motion.h1 className={styles.title} {...fadeUp(0.25)}>
             {data.title.main}
             <br />
