@@ -1,14 +1,21 @@
 "use client";
 
 import Icon from "@/components/shared/Icon/Icon";
+import { useLanguage } from "@/context/LanguageContext";
 import { SITE_CONFIG } from "@/constants";
+import contactRaw from "@/data/contact.json";
 import { useEffect, useState } from "react";
 import styles from "./WhatsAppButton.module.css";
 
 const SHOW_INTERVAL_MS = 10000;
 const SHOW_DURATION_MS = 3000;
 
+type WhatsappWidgetCopy = { bubble: string; ariaLabel: string };
+type BillingualContact = { fa: { whatsappWidget: WhatsappWidgetCopy }; en: { whatsappWidget: WhatsappWidgetCopy } };
+
 export default function WhatsAppButton() {
+  const { lang } = useLanguage();
+  const t = (contactRaw as unknown as BillingualContact)[lang].whatsappWidget;
   const [showBubble, setShowBubble] = useState(false);
 
   useEffect(() => {
@@ -32,14 +39,14 @@ export default function WhatsAppButton() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        استعلام سریع در واتساپ
+        {t.bubble}
       </a>
       <a
         className={styles.btn}
         href={`https://wa.me/${SITE_CONFIG.whatsapp}`}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="گفتگو در واتساپ"
+        aria-label={t.ariaLabel}
       >
         <Icon name="whatsapp" size={26} />
       </a>

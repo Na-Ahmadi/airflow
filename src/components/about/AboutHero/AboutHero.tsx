@@ -19,6 +19,7 @@ interface Props {
   paragraphs: string[];
   button: { label: string; href: string };
   image: string;
+  imageAlt: string;
   stats: Stat[];
 }
 
@@ -28,6 +29,7 @@ export default function AboutHero({
   paragraphs,
   button,
   image,
+  imageAlt,
   stats,
 }: Props) {
   return (
@@ -48,7 +50,7 @@ export default function AboutHero({
             <div className={`${styles.imgWrap} ${styles.animSlideRight}`}>
               <Image
                 src={image}
-                alt="ابرفلو سیستم"
+                alt={imageAlt}
                 fill
                 className={styles.img}
                 sizes="(max-width: 1024px) 100vw, 340px"

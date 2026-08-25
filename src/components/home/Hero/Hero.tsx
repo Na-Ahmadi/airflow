@@ -33,7 +33,7 @@ export default function Hero({ data }: HeroProps) {
     useInViewOnce<HTMLDivElement>();
 
   return (
-    <section className={styles.hero} aria-label="بخش اصلی">
+    <section className={styles.hero} aria-label={data.ariaLabel}>
       {/* ── Full-screen background image ── */}
       <div className={styles.bgWrap} aria-hidden>
         <Image
@@ -141,7 +141,7 @@ export default function Hero({ data }: HeroProps) {
           <span className={styles.productBadgeName}>
             {data.productCard.name}
           </span>
-          <span className={styles.productBadgeLink}>مشاهده جزئیات →</span>
+          <span className={styles.productBadgeLink}>{data.productCard.link}</span>
         </Link>
       </motion.div> */}
 

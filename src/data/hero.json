@@ -21,8 +21,10 @@
       "image":    "/images/products/ls-300-hero.png",
       "category": "دریچه خطی شیاردار",
       "name":     "LS-300",
-      "href":     "/products/ls-300"
-    }
+      "href":     "/products/ls-300",
+      "link":     "مشاهده جزئیات →"
+    },
+    "ariaLabel": "بخش اصلی"
   },
   "en": {
     "badge": "Smart HVAC Solutions",
@@ -46,7 +48,9 @@
       "image":    "/images/products/ls-300-hero.png",
       "category": "Slotted Linear Diffuser",
       "name":     "LS-300",
-      "href":     "/products/ls-300"
-    }
+      "href":     "/products/ls-300",
+      "link":     "View details →"
+    },
+    "ariaLabel": "Main section"
   }
 }

@@ -2,6 +2,8 @@
 
 import Badge from "@/components/shared/Badge/Badge";
 import Icon from "@/components/shared/Icon/Icon";
+import { useLanguage } from "@/context/LanguageContext";
+import projectsRaw from "@/data/projects.json";
 import type { Project } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,6 +20,8 @@ const FALLBACK_SRC = "/images/project-placeholder.svg";
 
 export default function ProjectCard({ project, variant = "grid" }: Props) {
   const isCarousel = variant === "carousel";
+  const { lang } = useLanguage();
+  const t = projectsRaw[lang].card;
   const [imgSrc, setImgSrc] = useState(project.image);
   const [imgFailed, setImgFailed] = useState(false);
 
@@ -75,7 +79,7 @@ export default function ProjectCard({ project, variant = "grid" }: Props) {
             </div>
             <span className={styles.cardLink}>
               <Icon name="arrow-right" size={14} />
-              مشاهده جزئیات
+              {t.viewDetails}
             </span>
           </div>
         )}
@@ -83,7 +87,7 @@ export default function ProjectCard({ project, variant = "grid" }: Props) {
       {isCarousel && (
         <div className={styles.cardBody}>
           <h3 className={styles.title}>{project.title}</h3>
-          <span className={styles.link}>مشاهده مطالعه موردی →</span>
+          <span className={styles.link}>{t.viewCaseStudy}</span>
         </div>
       )}
     </Link>

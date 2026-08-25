@@ -110,7 +110,7 @@ export default function Products({ data }: ProductsProps) {
                     <div className={styles.categoryContent}>
                       <h3 className={styles.categoryTitle}>{category.label}</h3>
                       <span className={styles.categoryCta}>
-                        مشاهده محصولات
+                        {data.categoryCta}
                         <Icon name="arrow-left" size={16} />
                       </span>
                     </div>
@@ -200,13 +200,13 @@ export default function Products({ data }: ProductsProps) {
             {/* Custom Nav */}
             <button
               className={`${styles.navBtn} ${styles.navPrev} products-prev`}
-              aria-label="قبلی"
+              aria-label={data.nav.prev}
             >
               <Icon name="chevron-right" size={20} />
             </button>
             <button
               className={`${styles.navBtn} ${styles.navNext} products-next`}
-              aria-label="بعدی"
+              aria-label={data.nav.next}
             >
               <Icon name="chevron-left" size={20} />
             </button>

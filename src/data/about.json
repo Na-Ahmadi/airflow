@@ -12,6 +12,7 @@
       ],
       "button": { "label": "بیشتر درباره ما", "href": "#values" },
       "image": "/images/banners/hero-bg.webp",
+      "imageAlt": "ایرفلو سیستم",
       "stats": [
         { "id": "exp",  "icon": "gear",    "value": "۱۸+",  "label": "سال تجربه"       },
         { "id": "proj", "icon": "cog",     "value": "۸۵۰+", "label": "پروژه موفق"      },
@@ -42,6 +43,7 @@
       ],
       "button": { "label": "More About Us", "href": "#values" },
       "image": "/images/banners/hero-bg.webp",
+      "imageAlt": "Airflow System",
       "stats": [
         { "id": "exp",  "icon": "gear",    "value": "18+",  "label": "Years of Experience"  },
         { "id": "proj", "icon": "cog",     "value": "850+", "label": "Successful Projects"   },

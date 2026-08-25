@@ -56,7 +56,8 @@
         { "icon": "mail",     "label": "ایمیل",       "value": "info@airflowsystem.ir" }
       ]
     },
-    "copyright": "تمامی حقوق محفوظ است © ۱۴۰۳ | ایرفلو سیستم"
+    "copyright": "تمامی حقوق محفوظ است © ۱۴۰۳ | ایرفلو سیستم",
+    "termsLink": "شرایط استفاده"
   },
   "en": {
     "company": {
@@ -115,6 +116,7 @@
         { "icon": "mail",     "label": "Email",   "value": "info@airflowsystem.ir" }
       ]
     },
-    "copyright": "All rights reserved © 2024 | Airflow System"
+    "copyright": "All rights reserved © 2024 | Airflow System",
+    "termsLink": "Terms of Use"
   }
 }

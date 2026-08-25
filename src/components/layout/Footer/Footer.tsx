@@ -65,7 +65,7 @@ export default function Footer() {
       <div className={styles.footerBottom}>
         <div className={styles.bottomInner}>
           <p className={styles.copyright}>{data.copyright}</p>
-          <Link href="/" className={styles.termsLink}>شرایط استفاده</Link>
+          <Link href="/" className={styles.termsLink}>{data.termsLink}</Link>
         </div>
       </div>
     </footer>

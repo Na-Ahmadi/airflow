@@ -70,10 +70,10 @@ export default function Projects({ data }: ProjectsProps) {
           ))}
         </Swiper>
 
-        <button className={`${styles.navBtn} ${styles.navPrev} projects-prev`} aria-label="قبلی">
+        <button className={`${styles.navBtn} ${styles.navPrev} projects-prev`} aria-label={data.nav.prev}>
           <Icon name="chevron-right" size={20} />
         </button>
-        <button className={`${styles.navBtn} ${styles.navNext} projects-next`} aria-label="بعدی">
+        <button className={`${styles.navBtn} ${styles.navNext} projects-next`} aria-label={data.nav.next}>
           <Icon name="chevron-left" size={20} />
         </button>
 

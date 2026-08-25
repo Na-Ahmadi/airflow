@@ -21,6 +21,7 @@ export default function AboutContent() {
         paragraphs={about.hero.paragraphs}
         button={about.hero.button}
         image={about.hero.image}
+        imageAlt={about.hero.imageAlt}
         stats={about.hero.stats}
       />
       <AboutValues title={about.values.title} items={about.values.items} />

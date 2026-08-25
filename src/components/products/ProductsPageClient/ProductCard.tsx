@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Badge from "@/components/shared/Badge/Badge";
+import { useLanguage } from "@/context/LanguageContext";
+import productsRaw from "@/data/products.json";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./ProductsPageClient.module.css";
@@ -18,6 +20,8 @@ export interface ProductItem {
 }
 
 export default function ProductCard({ product }: { product: ProductItem }) {
+  const { lang } = useLanguage();
+  const viewDetails = productsRaw[lang].viewDetailsPlain;
   const [imgError, setImgError] = useState(false);
 
   const showPlaceholder = !product.image || imgError;
@@ -53,7 +57,7 @@ export default function ProductCard({ product }: { product: ProductItem }) {
       <div className={styles.cardBody}>
         <h3 className={styles.cardName}>{product.name}</h3>
         <span className={styles.cardSeries}>{product.series}</span>
-        <span className={styles.cardBtn}>مشاهده جزئیات</span>
+        <span className={styles.cardBtn}>{viewDetails}</span>
       </div>
     </Link>
   );

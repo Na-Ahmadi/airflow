@@ -6,6 +6,8 @@
       "subtitle": "نمونه‌ای از پروژه‌های موفق ما در سراسر ایران",
       "viewAll": { "label": "مشاهده همه پروژه‌ها", "href": "/projects" }
     },
+    "nav": { "prev": "قبلی", "next": "بعدی" },
+    "card": { "viewDetails": "مشاهده جزئیات", "viewCaseStudy": "مشاهده مطالعه موردی →" },
     "items": [
       { "id": "iran-mall",             "image": "/images/projects/iran-mall.png",             "category": "تجاری",     "title": "ایران مال",                  "location": "تهران",   "href": "/projects/iran-mall",             "featured": true  },
       { "id": "milad-hospital",        "image": "/images/projects/milad-hospital.png",        "category": "درمانی",    "title": "بیمارستان میلاد",            "location": "تهران",   "href": "/projects/milad-hospital",        "featured": true  },
@@ -28,6 +30,8 @@
       "subtitle": "A selection of our successful projects across Iran",
       "viewAll": { "label": "View All Projects", "href": "/projects" }
     },
+    "nav": { "prev": "Previous", "next": "Next" },
+    "card": { "viewDetails": "View Details", "viewCaseStudy": "View Case Study →" },
     "items": [
       { "id": "iran-mall",             "image": "/images/projects/iran-mall.png",             "category": "Commercial", "title": "Iran Mall",                   "location": "Tehran",   "href": "/projects/iran-mall",             "featured": true  },
       { "id": "milad-hospital",        "image": "/images/projects/milad-hospital.png",        "category": "Healthcare", "title": "Milad Hospital",              "location": "Tehran",   "href": "/projects/milad-hospital",        "featured": true  },

@@ -39,6 +39,10 @@
       "success":    "درخواست شما با موفقیت ارسال شد. کارشناسان ما به زودی با شما تماس خواهند گرفت.",
       "error":      "خطایی رخ داد. لطفاً مجدداً تلاش کنید.",
       "newMessage": "ارسال پیام جدید"
+    },
+    "whatsappWidget": {
+      "bubble":    "استعلام سریع در واتساپ",
+      "ariaLabel": "گفتگو در واتساپ"
     }
   },
   "en": {
@@ -81,6 +85,10 @@
       "success":    "Your request was submitted successfully. Our experts will contact you shortly.",
       "error":      "An error occurred. Please try again.",
       "newMessage": "Send New Message"
+    },
+    "whatsappWidget": {
+      "bubble":    "Quick inquiry on WhatsApp",
+      "ariaLabel": "Chat on WhatsApp"
     }
   }
 }
