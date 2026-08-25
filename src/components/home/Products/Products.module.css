@@ -151,7 +151,7 @@
   transition: all var(--transition-base);
   cursor: pointer;
   border: 1px solid var(--glass-border);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
   background: var(--glass-bg);
   backdrop-filter: var(--blur-md);
   padding: var(--space-3) var(--space-6);
