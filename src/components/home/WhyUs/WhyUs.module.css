@@ -20,7 +20,7 @@
   padding: var(--space-8) var(--space-5);
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-2xl);
+  border-radius: 8px;
   overflow: hidden;
   cursor: default;
 }
