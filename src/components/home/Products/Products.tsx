@@ -111,7 +111,7 @@ export default function Products({ data }: ProductsProps) {
                       <h3 className={styles.categoryTitle}>{category.label}</h3>
                       <span className={styles.categoryCta}>
                         {data.categoryCta}
-                        <Icon name="arrow-left" size={16} />
+                        <Icon name={lang === "fa" ? "arrow-left" : "arrow-right"} size={16} />
                       </span>
                     </div>
                   </Link>
