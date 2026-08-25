@@ -30,13 +30,11 @@ export default function WhyUs({ data }: WhyUsProps) {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1, ease: [0.4, 0, 0.2, 1] }}
             >
-              <div className={styles.cardGlow} aria-hidden />
               <div className={styles.iconWrap}>
                 <div className={styles.svgWrap}><Icon name={item.icon} /></div>
               </div>
               <h3 className={styles.cardTitle}>{item.title}</h3>
               <p className={styles.cardDesc}>{item.description}</p>
-              <div className={styles.cardBorder} aria-hidden />
             </motion.div>
           ))}
         </div>
