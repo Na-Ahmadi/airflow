@@ -13,6 +13,7 @@ interface NavItemDesktopProps {
   onMouseEnter: () => void;
   onMouseLeave: () => void;
   isHome?: boolean;
+  scrolled?: boolean;
   onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
@@ -23,13 +24,14 @@ export default function NavItemDesktop({
   onMouseEnter,
   onMouseLeave,
   isHome = false,
+  scrolled = false,
   onClick,
 }: NavItemDesktopProps) {
   return (
     <div
       className={[
         styles.menuItem,
-        isHome ? styles.onHome : styles.onInner,
+        isHome && !scrolled ? styles.onHome : styles.onInner,
       ].join(" ")}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}

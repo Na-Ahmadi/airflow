@@ -131,6 +131,7 @@ export default function Header() {
               onDropdownLeave={() => setActiveDropdown(null)}
               isActive={isActive}
               isHome={pathname === "/"}
+              scrolled={scrolled}
               onHashClick={handleNavHashClick}
             />
           </nav>

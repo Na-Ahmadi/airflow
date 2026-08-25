@@ -11,6 +11,7 @@ interface NavigationProps {
   onDropdownLeave: () => void;
   isActive: (href: string) => boolean;
   isHome?: boolean;
+  scrolled?: boolean;
   onHashClick?: (hash: string) => React.MouseEventHandler<HTMLElement>;
 }
 
@@ -21,6 +22,7 @@ export default function Navigation({
   onDropdownLeave,
   isActive,
   isHome = false,
+  scrolled = false,
   onHashClick,
 }: NavigationProps) {
   return (
@@ -34,6 +36,7 @@ export default function Navigation({
             onMouseEnter={() => item.children && onDropdownEnter(item.id)}
             onMouseLeave={onDropdownLeave}
             isHome={isHome}
+            scrolled={scrolled}
             onClick={item.href.startsWith("#") ? onHashClick?.(item.href) : undefined}
           />
         </li>
