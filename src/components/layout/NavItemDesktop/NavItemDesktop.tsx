@@ -14,6 +14,7 @@ interface NavItemDesktopProps {
   onMouseLeave: () => void;
   isHome?: boolean;
   scrolled?: boolean;
+  lightBanner?: boolean;
   onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
@@ -25,14 +26,18 @@ export default function NavItemDesktop({
   onMouseLeave,
   isHome = false,
   scrolled = false,
+  lightBanner = false,
   onClick,
 }: NavItemDesktopProps) {
+  const itemClass = isHome && !scrolled
+    ? styles.onHome
+    : lightBanner && !scrolled
+      ? styles.onLightBanner
+      : styles.onInner;
+
   return (
     <div
-      className={[
-        styles.menuItem,
-        isHome && !scrolled ? styles.onHome : styles.onInner,
-      ].join(" ")}
+      className={[styles.menuItem, itemClass].join(" ")}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >

@@ -29,6 +29,8 @@ export default function Header() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
+  const lightBanner = pathname === "/products" || pathname === "/projects";
+
   const closeMobileMenu = () => {
     document.body.style.overflow = "";
     setMobileOpen(false);
@@ -132,6 +134,7 @@ export default function Header() {
               isActive={isActive}
               isHome={pathname === "/"}
               scrolled={scrolled}
+              lightBanner={lightBanner}
               onHashClick={handleNavHashClick}
             />
           </nav>

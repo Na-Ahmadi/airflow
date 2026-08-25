@@ -21,6 +21,16 @@
   background: rgba(255, 255, 255, 0.06);
 }
 
+/* Pages with an always-bright photo banner (products/projects list pages):
+   text must stay dark even in dark mode, since the banner ignores theme. */
+.onLightBanner .menuLink {
+  color: #1e293b;
+}
+.onLightBanner .menuLink:hover {
+  color: var(--color-primary-dark);
+  background: rgba(30, 111, 207, 0.14);
+}
+
 .menuLink.active {
   color: var(--color-primary-light);
   position: relative;

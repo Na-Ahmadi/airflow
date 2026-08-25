@@ -12,6 +12,7 @@ interface NavigationProps {
   isActive: (href: string) => boolean;
   isHome?: boolean;
   scrolled?: boolean;
+  lightBanner?: boolean;
   onHashClick?: (hash: string) => React.MouseEventHandler<HTMLElement>;
 }
 
@@ -23,6 +24,7 @@ export default function Navigation({
   isActive,
   isHome = false,
   scrolled = false,
+  lightBanner = false,
   onHashClick,
 }: NavigationProps) {
   return (
@@ -37,6 +39,7 @@ export default function Navigation({
             onMouseLeave={onDropdownLeave}
             isHome={isHome}
             scrolled={scrolled}
+            lightBanner={lightBanner}
             onClick={item.href.startsWith("#") ? onHashClick?.(item.href) : undefined}
           />
         </li>
