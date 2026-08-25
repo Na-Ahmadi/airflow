@@ -11,7 +11,7 @@
 }
 
 .wrap:has(.input:focus) {
-  border-color: var(--color-border-primary);
+  border-color: var(--color-primary);
 }
 
 .icon {
