@@ -36,6 +36,10 @@
   color: #1e293b;
 }
 
+:global([data-theme="light"]) .langSwitch .langActive {
+  color: #fff;
+}
+
 /* Light theme + home page + not scrolled: white text over dark hero */
 :global([data-theme="light"]) .langSwitch[data-home="true"][data-scrolled="false"] {
   background: rgba(255, 255, 255, 0.12);
