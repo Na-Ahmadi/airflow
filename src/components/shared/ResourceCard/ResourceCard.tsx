@@ -7,12 +7,16 @@ interface ResourceCardProps {
   resource: Resource;
 }
 
+// Downloadability is determined by the href pointing at an actual file
+// (rather than by the localized `type` label, which varies by language).
+const DOWNLOADABLE_FILE_PATTERN = /\.(pdf|zip|dwg)$/i;
+
 export default function ResourceCard({ resource }: ResourceCardProps) {
   return (
     <Link
       href={resource.href}
       className={styles.card}
-      download={resource.type !== "آنلاین"}
+      download={DOWNLOADABLE_FILE_PATTERN.test(resource.href)}
     >
       <div className={styles.cardTop}>
         <div className={styles.iconWrap}>
