@@ -27,7 +27,6 @@ export default function Projects({ data }: ProjectsProps) {
       <Container>
         <div className={styles.sectionHeader}>
           <SectionTitle
-            tag={data.section.tag}
             title={data.section.title}
             subtitle={data.section.subtitle}
             align="start"

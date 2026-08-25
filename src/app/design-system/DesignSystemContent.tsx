@@ -81,7 +81,6 @@ export default function DesignSystemContent() {
         </div>
 
         <SectionTitle
-          tag="مرجع داخلی"
           title="Design System"
           subtitle="مرجع زنده‌ی توکن‌ها و کامپوننت‌های مشترک پروژه — منبع واحد برای ساخت هر صفحه‌ی جدید."
           align="start"

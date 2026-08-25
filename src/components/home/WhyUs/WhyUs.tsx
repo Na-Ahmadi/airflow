@@ -18,7 +18,6 @@ export default function WhyUs({ data }: WhyUsProps) {
     <section className={styles.section} ref={ref} aria-label={data.section.title}>
       <Container>
         <SectionTitle
-          tag={data.section.tag}
           title={data.section.title}
           subtitle={data.section.subtitle}
         />

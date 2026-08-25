@@ -1,7 +1,6 @@
 import styles from './SectionTitle.module.css';
 
 interface SectionTitleProps {
-  tag?: string;
   title: string;
   highlight?: string;
   subtitle?: string;
@@ -9,10 +8,9 @@ interface SectionTitleProps {
   light?: boolean;
 }
 
-export default function SectionTitle({ tag, title, highlight, subtitle, align = 'center', light = false }: SectionTitleProps) {
+export default function SectionTitle({ title, highlight, subtitle, align = 'center', light = false }: SectionTitleProps) {
   return (
     <div className={[styles.wrapper, styles[align], light ? styles.light : ''].filter(Boolean).join(' ')}>
-      {tag && <span className={styles.tag}>{tag}</span>}
       <h2 className={styles.title}>
         {title}
         {highlight && <span className={styles.highlight}> {highlight}</span>}

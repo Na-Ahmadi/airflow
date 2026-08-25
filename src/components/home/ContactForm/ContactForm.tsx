@@ -100,7 +100,6 @@ export default function ContactForm({ data }: ContactFormProps) {
             transition={{ duration: 0.6 }}
           >
             <SectionTitle
-              tag={data.section.tag}
               title={data.section.title}
               subtitle={data.section.subtitle}
               align="start"

@@ -74,7 +74,6 @@ export default function Products({ data }: ProductsProps) {
         <Container>
           <div className={styles.header}>
             <SectionTitle
-              tag={data.section.tag}
               title={data.section.title}
               subtitle={data.section.subtitle}
             />
@@ -172,7 +171,6 @@ export default function Products({ data }: ProductsProps) {
         <Container>
           <div className={styles.header}>
             <SectionTitle
-              tag={data.bestSellers.tag}
               title={data.bestSellers.title}
               subtitle={data.bestSellers.subtitle}
             />

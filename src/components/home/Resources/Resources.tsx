@@ -26,7 +26,6 @@ export default function Resources({ data }: ResourcesProps) {
       <Container>
         <div className={styles.sectionHeader}>
           <SectionTitle
-            tag={data.section.tag}
             title={data.section.title}
             subtitle={data.section.subtitle}
             align="start"
