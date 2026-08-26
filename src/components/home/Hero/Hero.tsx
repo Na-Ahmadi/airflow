@@ -22,11 +22,11 @@ interface HeroProps {
   data: HeroData;
 }
 
-function formatStatValue(display: number, sample: string) {
+function formatStatValue(display: number, sample: string, locale: string) {
   if (sample.includes("M")) {
-    return `${(display / 1000000).toLocaleString("fa-IR", { maximumFractionDigits: 1 })}M`;
+    return `${(display / 1000000).toLocaleString(locale, { maximumFractionDigits: 1 })}M`;
   }
-  return display.toLocaleString("fa-IR");
+  return display.toLocaleString(locale);
 }
 
 export default function Hero({ data }: HeroProps) {
@@ -126,7 +126,11 @@ export default function Hero({ data }: HeroProps) {
                   active={statsInView}
                   className={styles.statValue}
                   formatValue={(display) =>
-                    formatStatValue(display, stat.value)
+                    formatStatValue(
+                      display,
+                      stat.value,
+                      lang === "fa" ? "fa-IR" : "en-US",
+                    )
                   }
                 />
                 <span className={styles.statSuffix}>{stat.suffix}</span>
