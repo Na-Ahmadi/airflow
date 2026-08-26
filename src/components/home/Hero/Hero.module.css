@@ -34,6 +34,12 @@
   }
 }
 
+/* LTR: text moves to the left, so mirror the desktop banner to keep the
+   subject on the opposite side of the text (now the right) */
+:global([dir="ltr"]) .bgImgDesktop {
+  transform: scaleX(-1);
+}
+
 /* main dark overlay – RTL: text is on right, image on left */
 .bgOverlay {
   position: absolute;
@@ -53,6 +59,25 @@
   inset: 0;
   background: radial-gradient(
     ellipse 60% 80% at 100% 50%,
+    rgba(14, 50, 120, 0.35) 0%,
+    transparent 70%
+  );
+}
+
+/* LTR: text sits on the left, so mirror the overlay and accent gradient too */
+:global([dir="ltr"]) .bgOverlay {
+  background: linear-gradient(
+    to left,
+    rgba(4, 10, 22, 0.02) 0%,
+    rgba(4, 10, 22, 0.5) 45%,
+    rgba(4, 10, 22, 0.88) 75%,
+    rgba(4, 10, 22, 0.97) 100%
+  );
+}
+
+:global([dir="ltr"]) .bgGradLeft {
+  background: radial-gradient(
+    ellipse 60% 80% at 0% 50%,
     rgba(14, 50, 120, 0.35) 0%,
     transparent 70%
   );
@@ -379,6 +404,14 @@
   .bgOverlay {
     background: linear-gradient(
       to right,
+      rgba(4, 10, 22, 0.3) 0%,
+      rgba(4, 10, 22, 0.75) 55%,
+      rgba(4, 10, 22, 0.95) 100%
+    );
+  }
+  :global([dir="ltr"]) .bgOverlay {
+    background: linear-gradient(
+      to left,
       rgba(4, 10, 22, 0.3) 0%,
       rgba(4, 10, 22, 0.75) 55%,
       rgba(4, 10, 22, 0.95) 100%
