@@ -3,6 +3,7 @@
 import AnimatedCounter from "@/components/shared/AnimatedCounter/AnimatedCounter";
 import Button from "@/components/shared/Button/Button";
 import Icon from "@/components/shared/Icon/Icon";
+import { useLanguage } from "@/context/LanguageContext";
 import { useInViewOnce } from "@/hooks/useInViewOnce";
 import type { HeroData } from "@/types";
 import { motion } from "framer-motion";
@@ -29,6 +30,7 @@ function formatStatValue(display: number, sample: string) {
 }
 
 export default function Hero({ data }: HeroProps) {
+  const { lang } = useLanguage();
   const { ref: statsRef, inView: statsInView } =
     useInViewOnce<HTMLDivElement>();
 
@@ -91,7 +93,10 @@ export default function Hero({ data }: HeroProps) {
                 }
                 iconEnd={
                   btn.variant === "primary" ? (
-                    <Icon name="arrow-left" size={18} />
+                    <Icon
+                      name={lang === "fa" ? "arrow-left" : "arrow-right"}
+                      size={18}
+                    />
                   ) : undefined
                 }
               >
