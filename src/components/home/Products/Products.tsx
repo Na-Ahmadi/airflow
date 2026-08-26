@@ -67,7 +67,8 @@ export default function Products({ data }: ProductsProps) {
               subtitle={data.section.subtitle}
             />
             <Link href={data.section.viewAll.href} className={styles.viewAll}>
-              {data.section.viewAll.label} →
+              {data.section.viewAll.label}
+              <Icon name={lang === "fa" ? "arrow-left" : "arrow-right"} size={14} />
             </Link>
           </div>
 

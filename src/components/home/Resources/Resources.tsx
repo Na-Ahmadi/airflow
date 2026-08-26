@@ -1,8 +1,10 @@
 "use client";
 
 import Container from "@/components/shared/Container/Container";
+import Icon from "@/components/shared/Icon/Icon";
 import ResourceCard from "@/components/shared/ResourceCard/ResourceCard";
 import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
+import { useLanguage } from "@/context/LanguageContext";
 import type { ResourcesData } from "@/types";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
@@ -14,6 +16,7 @@ interface ResourcesProps {
 }
 
 export default function Resources({ data }: ResourcesProps) {
+  const { lang } = useLanguage();
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -31,7 +34,8 @@ export default function Resources({ data }: ResourcesProps) {
             align="start"
           />
           <Link href={data.section.viewAll.href} className={styles.viewAll}>
-            {data.section.viewAll.label} →
+            {data.section.viewAll.label}
+            <Icon name={lang === "fa" ? "arrow-left" : "arrow-right"} size={14} />
           </Link>
         </div>
         <div className={styles.grid}>
