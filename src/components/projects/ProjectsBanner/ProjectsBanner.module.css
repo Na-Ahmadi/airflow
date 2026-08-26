@@ -120,6 +120,23 @@
   direction: ltr;
 }
 
+/* LTR: text sits on the left and the image column moves to the right,
+   so mirror the image and flip the fade edge to blend on the correct side */
+:global([dir="ltr"]) .image {
+  transform: scaleX(-1);
+}
+
+:global([dir="ltr"]) .imageEdge {
+  background: linear-gradient(to right, #edf1f7 0%, transparent 28%);
+}
+
+@media (max-width: 960px) {
+  /* mobile: image is a full-bleed background, not a side-by-side column */
+  :global([dir="ltr"]) .image {
+    transform: none;
+  }
+}
+
 /* ─── Responsive ────────────────────────────────────────────── */
 @media (max-width: 960px) {
   .banner {
