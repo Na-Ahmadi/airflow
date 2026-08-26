@@ -62,6 +62,7 @@
 }
 
 :global([data-theme="light"]) .input:focus {
+  border-color: var(--color-primary);
   background-color: rgba(30, 111, 207, 0.04);
 }
 
