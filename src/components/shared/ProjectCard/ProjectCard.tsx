@@ -78,7 +78,7 @@ export default function ProjectCard({ project, variant = "grid" }: Props) {
               <span>{project.location}</span>
             </div>
             <span className={styles.cardLink}>
-              <Icon name="arrow-right" size={14} />
+              <Icon name={lang === "fa" ? "arrow-left" : "arrow-right"} size={14} />
               {t.viewDetails}
             </span>
           </div>
@@ -87,7 +87,10 @@ export default function ProjectCard({ project, variant = "grid" }: Props) {
       {isCarousel && (
         <div className={styles.cardBody}>
           <h3 className={styles.title}>{project.title}</h3>
-          <span className={styles.link}>{t.viewCaseStudy}</span>
+          <span className={styles.link}>
+            {t.viewCaseStudy}
+            <Icon name={lang === "fa" ? "arrow-left" : "arrow-right"} size={12} />
+          </span>
         </div>
       )}
     </Link>
