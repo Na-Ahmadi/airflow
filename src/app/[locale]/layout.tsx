@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 import { Vazirmatn } from 'next/font/google';
 import Script from 'next/script';
-import './globals.css';
+import '../globals.css';
 import { SITE_CONFIG } from '@/constants';
 import { ThemeProvider } from '@/context/ThemeContext';
-import { LanguageProvider } from '@/context/LanguageContext';
+import { routing, type Locale } from '@/i18n/routing';
+import { LOCALE_DIR } from '@/i18n/direction';
 import ScrollToTop from '@/components/shared/ScrollToTop/ScrollToTop';
 import WhatsAppButton from '@/components/shared/WhatsAppButton/WhatsAppButton';
 import Header from '@/components/layout/Header/Header';
@@ -16,6 +20,10 @@ const vazir = Vazirmatn({
   display: 'swap',
   weight: ['300', '400', '500', '600', '700', '800'],
 });
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export const metadata: Metadata = {
   title: {
@@ -46,22 +54,34 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  if (!routing.locales.includes(locale as Locale)) {
+    notFound();
+  }
+
+  const messages = await getMessages();
+
   return (
-    <html lang="fa" dir="rtl" className={vazir.variable} suppressHydrationWarning>
+    <html
+      lang={locale}
+      dir={LOCALE_DIR[locale as Locale]}
+      className={vazir.variable}
+      suppressHydrationWarning
+    >
       <body>
         <Script
           id="theme-init"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`,
-          }}
-        />
-        <Script
-          id="lang-init"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var l=localStorage.getItem('lang');var en=l==='en';document.documentElement.setAttribute('lang',en?'en':'fa');document.documentElement.setAttribute('dir',en?'ltr':'rtl');}catch(e){}})();`,
           }}
         />
         <Script
@@ -80,15 +100,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             })();`,
           }}
         />
-        <ThemeProvider>
-          <LanguageProvider>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider>
             <Header />
             {children}
             <Footer />
             <ScrollToTop />
             <WhatsAppButton />
-          </LanguageProvider>
-        </ThemeProvider>
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
