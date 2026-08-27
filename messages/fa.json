@@ -1,0 +1,66 @@
+{
+  "resources": {
+    "title": "منابع فنی",
+    "home": "خانه"
+  },
+  "compactSearchBar": {
+    "placeholder": "جستجوی محصول یا کد محصول…"
+  },
+  "themeToggle": {
+    "toLight": "تغییر به حالت روشن",
+    "toDark": "تغییر به حالت تاریک",
+    "light": "حالت روشن",
+    "dark": "حالت تاریک"
+  },
+  "productSearchBar": {
+    "placeholder": "جستجوی نام محصول یا کد محصول…",
+    "clear": "پاک کردن"
+  },
+  "productsPageClient": {
+    "empty": "محصولی با این مشخصات یافت نشد."
+  },
+  "projectsPageClient": {
+    "empty": "پروژه‌ای در این دسته‌بندی یافت نشد."
+  },
+  "scrollToTop": {
+    "label": "بازگشت به بالا"
+  },
+  "searchOverlay": {
+    "placeholder": "جستجوی محصول یا کد محصول…",
+    "close": "بستن",
+    "noResultsTitle": "نتیجه‌ای یافت نشد",
+    "noResultsHint": "نام محصول، کد محصول یا دسته‌بندی دیگری را جستجو کنید.",
+    "hint": "برای بستن ESC را بزنید",
+    "resultsCount": "{count, plural, other {# نتیجه}}"
+  },
+  "partners": {
+    "ariaLabel": "شرکای تجاری"
+  },
+  "statistics": {
+    "ariaLabel": "آمار و ارقام"
+  },
+  "productsSection": {
+    "showMore": "نمایش بیشتر",
+    "showLess": "نمایش کمتر"
+  },
+  "header": {
+    "mainNavigation": "ناوبری اصلی",
+    "menu": "منو"
+  },
+  "searchTrigger": {
+    "label": "جستجو"
+  },
+  "projectDetail": {
+    "fallbackDescription": "یکی از محصولات استاندارد استفاده‌شده در این پروژه، مطابق مشخصات فنی مورد نیاز طرح."
+  },
+  "productDetail": {
+    "inquiryMessage": "سلام، من به محصول {productName} {productModel} علاقه‌مندم و می‌خواهم استعلام قیمت بگیرم.\n{productUrl}"
+  },
+  "contactSchema": {
+    "name": "نام باید حداقل ۲ کاراکتر باشد",
+    "email": "ایمیل معتبر نیست",
+    "phone": "شماره تلفن معتبر نیست",
+    "projectType": "لطفاً نوع پروژه را انتخاب کنید",
+    "message": "پیام باید حداقل ۱۰ کاراکتر باشد"
+  }
+}

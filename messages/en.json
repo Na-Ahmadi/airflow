@@ -1,0 +1,66 @@
+{
+  "resources": {
+    "title": "Technical Resources",
+    "home": "Home"
+  },
+  "compactSearchBar": {
+    "placeholder": "Search product or product code…"
+  },
+  "themeToggle": {
+    "toLight": "Switch to light mode",
+    "toDark": "Switch to dark mode",
+    "light": "Light mode",
+    "dark": "Dark mode"
+  },
+  "productSearchBar": {
+    "placeholder": "Search by product name or product code…",
+    "clear": "Clear"
+  },
+  "productsPageClient": {
+    "empty": "No products match your search."
+  },
+  "projectsPageClient": {
+    "empty": "No projects found in this category."
+  },
+  "scrollToTop": {
+    "label": "Back to top"
+  },
+  "searchOverlay": {
+    "placeholder": "Search product or product code…",
+    "close": "Close",
+    "noResultsTitle": "No results found",
+    "noResultsHint": "Try another product name, code, or category.",
+    "hint": "Press ESC to close",
+    "resultsCount": "{count, plural, one {# result} other {# results}}"
+  },
+  "partners": {
+    "ariaLabel": "Business partners"
+  },
+  "statistics": {
+    "ariaLabel": "Statistics"
+  },
+  "productsSection": {
+    "showMore": "Show More",
+    "showLess": "Show Less"
+  },
+  "header": {
+    "mainNavigation": "Main navigation",
+    "menu": "Menu"
+  },
+  "searchTrigger": {
+    "label": "Search"
+  },
+  "projectDetail": {
+    "fallbackDescription": "One of the standard products used in this project, matching the technical specifications required by the design."
+  },
+  "productDetail": {
+    "inquiryMessage": "Hello, I'm interested in {productName} {productModel} and would like to request a quote.\n{productUrl}"
+  },
+  "contactSchema": {
+    "name": "Name must be at least 2 characters",
+    "email": "Invalid email address",
+    "phone": "Invalid phone number",
+    "projectType": "Please select a project type",
+    "message": "Message must be at least 10 characters"
+  }
+}
