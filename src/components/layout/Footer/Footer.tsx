@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import type { FooterData } from '@/types';
-import styles from './Footer.module.css';
-import Icon from '@/components/shared/Icon/Icon';
-import ContactDetail from '@/components/shared/ContactDetail/ContactDetail';
-import Logo from '@/components/layout/Logo/Logo';
-import { useLanguage } from '@/context/LanguageContext';
-import footerRaw from '@/data/footer.json';
+import Logo from "@/components/layout/Logo/Logo";
+import ContactDetail from "@/components/shared/ContactDetail/ContactDetail";
+import Icon from "@/components/shared/Icon/Icon";
+import { useLanguage } from "@/context/LanguageContext";
+import footerRaw from "@/data/footer.json";
+import type { FooterData } from "@/types";
+import Link from "next/link";
+import styles from "./Footer.module.css";
 
 type BillingualFooter = { fa: FooterData; en: FooterData };
 
@@ -29,7 +29,14 @@ export default function Footer() {
             <p className={styles.companyDesc}>{data.company.tagline}</p>
             <div className={styles.socials}>
               {data.company.socials.map((s) => (
-                <a key={s.id} href={s.href} className={styles.socialLink} aria-label={s.label} target="_blank" rel="noopener noreferrer">
+                <a
+                  key={s.id}
+                  href={s.href}
+                  className={styles.socialLink}
+                  aria-label={s.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Icon name={s.icon} size={18} />
                 </a>
               ))}
@@ -43,7 +50,9 @@ export default function Footer() {
               <ul className={styles.linkList}>
                 {col.links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className={styles.footerLink}>{link.label}</Link>
+                    <Link href={link.href} className={styles.footerLink}>
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -65,7 +74,9 @@ export default function Footer() {
       <div className={styles.footerBottom}>
         <div className={styles.bottomInner}>
           <p className={styles.copyright}>{data.copyright}</p>
-          <Link href="/" className={styles.termsLink}>{data.termsLink}</Link>
+          <Link href="/" className={styles.termsLink}>
+            {data.termsLink}
+          </Link>
         </div>
       </div>
     </footer>

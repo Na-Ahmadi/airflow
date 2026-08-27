@@ -4,11 +4,36 @@
       "name": "ایرفلو سیستم",
       "tagline": "تولید کننده تخصصی انواع دریچه‌ها و دمپرهای هوا، تجهیزات تهویه مطبوع با بیش از ۱۸ سال سابقه درخشان در صنعت.",
       "socials": [
-        { "id": "instagram", "icon": "instagram", "href": "https://instagram.com",           "label": "اینستاگرام" },
-        { "id": "linkedin",  "icon": "linkedin",  "href": "https://linkedin.com",             "label": "لینکدین"    },
-        { "id": "whatsapp",  "icon": "whatsapp",  "href": "https://wa.me/989123947902",       "label": "واتساپ"     },
-        { "id": "telegram",  "icon": "telegram",  "href": "https://t.me",                     "label": "تلگرام"     },
-        { "id": "youtube",   "icon": "youtube",   "href": "https://youtube.com",              "label": "یوتیوب"     }
+        {
+          "id": "instagram",
+          "icon": "instagram",
+          "href": "https://instagram.com",
+          "label": "اینستاگرام"
+        },
+        {
+          "id": "linkedin",
+          "icon": "linkedin",
+          "href": "https://linkedin.com",
+          "label": "لینکدین"
+        },
+        {
+          "id": "whatsapp",
+          "icon": "whatsapp",
+          "href": "https://wa.me/989123947902",
+          "label": "واتساپ"
+        },
+        {
+          "id": "telegram",
+          "icon": "telegram",
+          "href": "https://t.me",
+          "label": "تلگرام"
+        },
+        {
+          "id": "youtube",
+          "icon": "youtube",
+          "href": "https://youtube.com",
+          "label": "یوتیوب"
+        }
       ]
     },
     "columns": [
@@ -16,44 +41,53 @@
         "id": "products",
         "title": "محصولات",
         "links": [
-          { "label": "دریچه‌ها",           "href": "/products?category=vents"       },
-          { "label": "دمپرها",             "href": "/products?category=dampers"     },
-          { "label": "تجهیزات کنترل",      "href": "/products?category=control"     },
-          { "label": "ملزومات",            "href": "/products?category=accessories" },
-          { "label": "مشاهده همه محصولات", "href": "/products"                      }
+          { "label": "دریچه‌ها", "href": "/products?category=vents" },
+          { "label": "دمپرها", "href": "/products?category=dampers" },
+          { "label": "تجهیزات کنترل", "href": "/products?category=control" },
+          { "label": "ملزومات", "href": "/products?category=accessories" },
+          { "label": "مشاهده همه محصولات", "href": "/products" }
         ]
       },
       {
         "id": "solutions",
         "title": "راهکارها",
         "links": [
-          { "label": "ساختمان‌های اداری", "href": "/solutions/office"       },
-          { "label": "مراکز تجاری",       "href": "/solutions/commercial"   },
-          { "label": "مجتمع‌های مسکونی", "href": "/solutions/residential"  },
-          { "label": "فضاهای صنعتی",     "href": "/solutions/industrial"   },
-          { "label": "مراکز درمانی",      "href": "/solutions/healthcare"   },
-          { "label": "تاسیسات عمومی",     "href": "/solutions/public"       }
+          { "label": "ساختمان‌های اداری", "href": "/solutions/office" },
+          { "label": "مراکز تجاری", "href": "/solutions/commercial" },
+          { "label": "مجتمع‌های مسکونی", "href": "/solutions/residential" },
+          { "label": "فضاهای صنعتی", "href": "/solutions/industrial" },
+          { "label": "مراکز درمانی", "href": "/solutions/healthcare" },
+          { "label": "تاسیسات عمومی", "href": "/solutions/public" }
         ]
       },
       {
         "id": "resources",
         "title": "منابع",
         "links": [
-          { "label": "کاتالوگ‌ها",       "href": "/resources/catalog"   },
-          { "label": "نقشه‌های فنی",     "href": "/resources/technical" },
-          { "label": "مقالات آموزشی",    "href": "/resources/articles"  },
-          { "label": "استانداردها",       "href": "/resources/standards" },
-          { "label": "ویدیوها",           "href": "/resources/videos"    }
+          { "label": "کاتالوگ‌ها", "href": "/resources/catalog" },
+          { "label": "نقشه‌های فنی", "href": "/resources/technical" },
+          { "label": "مقالات آموزشی", "href": "/resources/articles" },
+          { "label": "استانداردها", "href": "/resources/standards" },
+          { "label": "ویدیوها", "href": "/resources/videos" }
         ]
       }
     ],
     "contact": {
       "title": "اطلاعات تماس",
       "items": [
-        { "icon": "location", "label": "آدرس",       "value": "تهران، شهران، خیابان مطهری، خیابان ستارخان، پلاک ۱۲۳" },
-        { "icon": "phone",    "label": "تلفن تماس",  "value": "۰۲۱-۳۳۵۸۵۷۸"        },
-        { "icon": "whatsapp", "label": "واتساپ",      "value": "گفتگو در واتساپ", "href": "https://wa.me/989123947902" },
-        { "icon": "mail",     "label": "ایمیل",       "value": "info@airflowsystem.ir" }
+        {
+          "icon": "whatsapp",
+          "label": "واتساپ",
+          "value": "گفتگو در واتساپ",
+          "href": "https://wa.me/989123947902"
+        },
+        { "icon": "phone", "label": "تلفن تماس", "value": "۰۲۱-۳۳۵۸۵۷۸" },
+        { "icon": "mail", "label": "ایمیل", "value": "info@airflowsystem.ir" },
+        {
+          "icon": "location",
+          "label": "آدرس",
+          "value": "تهران، شهران، خیابان مطهری، خیابان ستارخان، پلاک ۱۲۳"
+        }
       ]
     },
     "copyright": "تمامی حقوق محفوظ است © ۱۴۰۳ | ایرفلو سیستم",
@@ -64,11 +98,36 @@
       "name": "Airflow System",
       "tagline": "Specialist manufacturer of air diffusers, dampers, and HVAC equipment with over 18 years of excellence in the industry.",
       "socials": [
-        { "id": "instagram", "icon": "instagram", "href": "https://instagram.com",     "label": "Instagram" },
-        { "id": "linkedin",  "icon": "linkedin",  "href": "https://linkedin.com",       "label": "LinkedIn"  },
-        { "id": "whatsapp",  "icon": "whatsapp",  "href": "https://wa.me/989123947902", "label": "WhatsApp"  },
-        { "id": "telegram",  "icon": "telegram",  "href": "https://t.me",               "label": "Telegram"  },
-        { "id": "youtube",   "icon": "youtube",   "href": "https://youtube.com",        "label": "YouTube"   }
+        {
+          "id": "instagram",
+          "icon": "instagram",
+          "href": "https://instagram.com",
+          "label": "Instagram"
+        },
+        {
+          "id": "linkedin",
+          "icon": "linkedin",
+          "href": "https://linkedin.com",
+          "label": "LinkedIn"
+        },
+        {
+          "id": "whatsapp",
+          "icon": "whatsapp",
+          "href": "https://wa.me/989123947902",
+          "label": "WhatsApp"
+        },
+        {
+          "id": "telegram",
+          "icon": "telegram",
+          "href": "https://t.me",
+          "label": "Telegram"
+        },
+        {
+          "id": "youtube",
+          "icon": "youtube",
+          "href": "https://youtube.com",
+          "label": "YouTube"
+        }
       ]
     },
     "columns": [
@@ -76,44 +135,56 @@
         "id": "products",
         "title": "Products",
         "links": [
-          { "label": "Diffusers",         "href": "/products?category=vents"       },
-          { "label": "Dampers",           "href": "/products?category=dampers"     },
-          { "label": "Control Equipment", "href": "/products?category=control"     },
-          { "label": "Accessories",       "href": "/products?category=accessories" },
-          { "label": "View All Products", "href": "/products"                      }
+          { "label": "Diffusers", "href": "/products?category=vents" },
+          { "label": "Dampers", "href": "/products?category=dampers" },
+          {
+            "label": "Control Equipment",
+            "href": "/products?category=control"
+          },
+          { "label": "Accessories", "href": "/products?category=accessories" },
+          { "label": "View All Products", "href": "/products" }
         ]
       },
       {
         "id": "solutions",
         "title": "Solutions",
         "links": [
-          { "label": "Office Buildings",  "href": "/solutions/office"      },
-          { "label": "Commercial Centers","href": "/solutions/commercial"  },
-          { "label": "Residential",       "href": "/solutions/residential" },
-          { "label": "Industrial",        "href": "/solutions/industrial"  },
-          { "label": "Healthcare",        "href": "/solutions/healthcare"  },
-          { "label": "Public Facilities", "href": "/solutions/public"      }
+          { "label": "Office Buildings", "href": "/solutions/office" },
+          { "label": "Commercial Centers", "href": "/solutions/commercial" },
+          { "label": "Residential", "href": "/solutions/residential" },
+          { "label": "Industrial", "href": "/solutions/industrial" },
+          { "label": "Healthcare", "href": "/solutions/healthcare" },
+          { "label": "Public Facilities", "href": "/solutions/public" }
         ]
       },
       {
         "id": "resources",
         "title": "Resources",
         "links": [
-          { "label": "Catalogs",           "href": "/resources/catalog"   },
+          { "label": "Catalogs", "href": "/resources/catalog" },
           { "label": "Technical Drawings", "href": "/resources/technical" },
-          { "label": "Articles",           "href": "/resources/articles"  },
-          { "label": "Standards",          "href": "/resources/standards" },
-          { "label": "Videos",             "href": "/resources/videos"    }
+          { "label": "Articles", "href": "/resources/articles" },
+          { "label": "Standards", "href": "/resources/standards" },
+          { "label": "Videos", "href": "/resources/videos" }
         ]
       }
     ],
     "contact": {
       "title": "Contact Info",
       "items": [
-        { "icon": "location", "label": "Address", "value": "Tehran, Shahran, Motahari St., Sattar Khan St., No. 123" },
-        { "icon": "phone",    "label": "Phone",   "value": "021-33585780"         },
-        { "icon": "whatsapp", "label": "WhatsApp", "value": "Chat on WhatsApp", "href": "https://wa.me/989123947902" },
-        { "icon": "mail",     "label": "Email",   "value": "info@airflowsystem.ir" }
+        {
+          "icon": "whatsapp",
+          "label": "WhatsApp",
+          "value": "Chat on WhatsApp",
+          "href": "https://wa.me/989123947902"
+        },
+        { "icon": "phone", "label": "Phone", "value": "021-33585780" },
+        { "icon": "mail", "label": "Email", "value": "info@airflowsystem.ir" },
+        {
+          "icon": "location",
+          "label": "Address",
+          "value": "Tehran, Shahran, Motahari St., Sattar Khan St., No. 123"
+        }
       ]
     },
     "copyright": "All rights reserved © 2024 | Airflow System",
