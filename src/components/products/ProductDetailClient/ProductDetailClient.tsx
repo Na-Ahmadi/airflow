@@ -7,6 +7,8 @@ import Container from "@/components/shared/Container/Container";
 import Icon from "@/components/shared/Icon/Icon";
 import ImageGallery from "@/components/shared/ImageGallery/ImageGallery";
 import Tabs from "@/components/shared/Tabs/Tabs";
+import { SITE_CONFIG } from "@/constants";
+import { useLanguage } from "@/context/LanguageContext";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
@@ -74,11 +76,21 @@ export default function ProductDetailClient({
   documents,
   downloadLabel,
 }: Props) {
+  const { lang } = useLanguage();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const half = Math.ceil(specs.length / 2);
   const specsLeft = specs.slice(0, half);
   const specsRight = specs.slice(half);
+
+  const SITE_URL = "https://airflow-chi.vercel.app";
+  const productUrl =
+    typeof window !== "undefined" ? `${SITE_URL}${window.location.pathname}` : "";
+  const whatsappMessage =
+    lang === "fa"
+      ? `سلام، من به محصول ${name} ${model} علاقه‌مندم و می‌خواهم استعلام قیمت بگیرم.\n${productUrl}`
+      : `Hello, I'm interested in ${name} ${model} and would like to request a quote.\n${productUrl}`;
+  const whatsappHref = `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <>
@@ -114,10 +126,14 @@ export default function ProductDetailClient({
               {/* CTA Buttons */}
               <div className={styles.ctaButtons}>
                 <Button
-                  href={cta.inquiry.href}
+                  href={whatsappHref}
                   variant="primary"
                   size="lg"
-                  iconStart={<span>›</span>}
+                  iconStart={<Icon name="whatsapp" size={18} />}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open(whatsappHref, "_blank", "noopener,noreferrer");
+                  }}
                 >
                   {cta.inquiry.label}
                 </Button>

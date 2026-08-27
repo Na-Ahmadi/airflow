@@ -44,7 +44,7 @@ export default function ProductDetailContent({ slug }: Props) {
         features={product.features}
         images={product.images}
         cta={{
-          inquiry: { label: t.cta.inquiry, href: "#contact" },
+          inquiry: { label: t.cta.inquiry, href: "/#contact" },
           catalog: { label: t.cta.catalog, href: "#catalog" },
         }}
         tabs={tabs}
