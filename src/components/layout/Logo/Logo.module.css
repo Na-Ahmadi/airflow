@@ -28,3 +28,16 @@
   color: var(--color-text-secondary);
   font-size: var(--text-xs);
 }
+
+/* Light theme + home page + not scrolled: white text over dark hero */
+:global([data-theme="light"])
+  .logo[data-home="true"][data-scrolled="false"]
+  .name {
+  color: #ffffff;
+}
+
+:global([data-theme="light"])
+  .logo[data-home="true"][data-scrolled="false"]
+  .sub {
+  color: rgba(255, 255, 255, 0.65);
+}
