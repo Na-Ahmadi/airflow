@@ -1,9 +1,11 @@
 'use client';
 
-import { useLanguage, type Lang } from '@/context/LanguageContext';
+import { useLocale } from 'next-intl';
+import { usePathname, useRouter } from '@/i18n/navigation';
+import type { Locale } from '@/i18n/routing';
 import styles from './LanguageSwitch.module.css';
 
-const languages: { code: Lang; label: string }[] = [
+const languages: { code: Locale; label: string }[] = [
   { code: 'fa', label: 'FA' },
   { code: 'en', label: 'EN' },
 ];
@@ -14,7 +16,9 @@ interface LanguageSwitchProps {
 }
 
 export default function LanguageSwitch({ scrolled, isHome = false }: LanguageSwitchProps) {
-  const { lang, setLang } = useLanguage();
+  const locale = useLocale() as Locale;
+  const pathname = usePathname();
+  const router = useRouter();
 
   return (
     <div
@@ -25,8 +29,8 @@ export default function LanguageSwitch({ scrolled, isHome = false }: LanguageSwi
       {languages.map((l) => (
         <button
           key={l.code}
-          onClick={() => setLang(l.code)}
-          className={[styles.langBtn, lang === l.code ? styles.langActive : ''].filter(Boolean).join(' ')}
+          onClick={() => router.replace(pathname, { locale: l.code })}
+          className={[styles.langBtn, locale === l.code ? styles.langActive : ''].filter(Boolean).join(' ')}
         >
           {l.label}
         </button>

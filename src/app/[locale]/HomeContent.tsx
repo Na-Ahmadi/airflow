@@ -8,7 +8,9 @@ import Projects from "@/components/home/Projects/Projects";
 import Resources from "@/components/home/Resources/Resources";
 import Statistics from "@/components/home/Statistics/Statistics";
 import WhyUs from "@/components/home/WhyUs/WhyUs";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLocale } from "next-intl";
+import type { Locale } from "@/i18n/routing";
+import { pickLocale } from "@/lib/pickLocale";
 
 import type {
   HeroData,
@@ -69,16 +71,16 @@ type ContactData = {
 type BillingualContact = { fa: ContactData; en: ContactData };
 
 export default function HomeContent() {
-  const { lang } = useLanguage();
+  const locale = useLocale() as Locale;
 
-  const hero = (heroRaw as unknown as BillingualHero)[lang];
-  const partners = (partnersRaw as unknown as BillingualPartners)[lang];
-  const whyUs = (whyUsRaw as unknown as BillingualWhyUs)[lang];
-  const products = (productsRaw as unknown as BillingualProducts)[lang];
-  const projects = (projectsRaw as unknown as BillingualProjects)[lang];
-  const statistics = (statisticsRaw as unknown as BillingualStatistics)[lang];
-  const resources = (resourcesRaw as unknown as BillingualResources)[lang];
-  const contact = (contactRaw as unknown as BillingualContact)[lang];
+  const hero = pickLocale(heroRaw as unknown as BillingualHero, locale);
+  const partners = pickLocale(partnersRaw as unknown as BillingualPartners, locale);
+  const whyUs = pickLocale(whyUsRaw as unknown as BillingualWhyUs, locale);
+  const products = pickLocale(productsRaw as unknown as BillingualProducts, locale);
+  const projects = pickLocale(projectsRaw as unknown as BillingualProjects, locale);
+  const statistics = pickLocale(statisticsRaw as unknown as BillingualStatistics, locale);
+  const resources = pickLocale(resourcesRaw as unknown as BillingualResources, locale);
+  const contact = pickLocale(contactRaw as unknown as BillingualContact, locale);
 
   return (
     <main>

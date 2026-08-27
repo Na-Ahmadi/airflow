@@ -3,7 +3,9 @@
 import AnimatedCounter from "@/components/shared/AnimatedCounter/AnimatedCounter";
 import Button from "@/components/shared/Button/Button";
 import Icon from "@/components/shared/Icon/Icon";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLocale } from "next-intl";
+import { BCP47 } from "@/i18n/bcp47";
+import type { Locale } from "@/i18n/routing";
 import { useInViewOnce } from "@/hooks/useInViewOnce";
 import type { HeroData } from "@/types";
 import { motion } from "framer-motion";
@@ -30,7 +32,7 @@ function formatStatValue(display: number, sample: string, locale: string) {
 }
 
 export default function Hero({ data }: HeroProps) {
-  const { lang } = useLanguage();
+  const locale = useLocale() as Locale;
   const { ref: statsRef, inView: statsInView } =
     useInViewOnce<HTMLDivElement>();
 
@@ -94,7 +96,7 @@ export default function Hero({ data }: HeroProps) {
                 iconEnd={
                   btn.variant === "primary" ? (
                     <Icon
-                      name={lang === "fa" ? "arrow-left" : "arrow-right"}
+                      name={locale === "fa" ? "arrow-left" : "arrow-right"}
                       size={18}
                     />
                   ) : undefined
@@ -126,11 +128,7 @@ export default function Hero({ data }: HeroProps) {
                   active={statsInView}
                   className={styles.statValue}
                   formatValue={(display) =>
-                    formatStatValue(
-                      display,
-                      stat.value,
-                      lang === "fa" ? "fa-IR" : "en-US",
-                    )
+                    formatStatValue(display, stat.value, BCP47[locale])
                   }
                 />
                 <span className={styles.statSuffix}>{stat.suffix}</span>
