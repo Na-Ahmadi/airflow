@@ -2,13 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import Icon from '@/components/shared/Icon/Icon';
-import { useLanguage } from '@/context/LanguageContext';
+import { useTranslations } from 'next-intl';
 import styles from './ScrollToTop.module.css';
 
-const LABEL = { fa: 'بازگشت به بالا', en: 'Back to top' };
-
 export default function ScrollToTop() {
-  const { lang } = useLanguage();
+  const t = useTranslations('scrollToTop');
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -23,7 +21,7 @@ export default function ScrollToTop() {
     <button
       className={`${styles.btn} ${visible ? styles.visible : ''}`}
       onClick={scrollUp}
-      aria-label={LABEL[lang]}
+      aria-label={t('label')}
     >
       <Icon name="chevron-up" size={20} />
     </button>

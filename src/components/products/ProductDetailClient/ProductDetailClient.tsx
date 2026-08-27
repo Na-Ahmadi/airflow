@@ -8,7 +8,7 @@ import Icon from "@/components/shared/Icon/Icon";
 import ImageGallery from "@/components/shared/ImageGallery/ImageGallery";
 import Tabs from "@/components/shared/Tabs/Tabs";
 import { SITE_CONFIG } from "@/constants";
-import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
@@ -76,7 +76,7 @@ export default function ProductDetailClient({
   documents,
   downloadLabel,
 }: Props) {
-  const { lang } = useLanguage();
+  const t = useTranslations("productDetail");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const half = Math.ceil(specs.length / 2);
@@ -86,10 +86,11 @@ export default function ProductDetailClient({
   const SITE_URL = "https://airflow-chi.vercel.app";
   const productUrl =
     typeof window !== "undefined" ? `${SITE_URL}${window.location.pathname}` : "";
-  const whatsappMessage =
-    lang === "fa"
-      ? `سلام، من به محصول ${name} ${model} علاقه‌مندم و می‌خواهم استعلام قیمت بگیرم.\n${productUrl}`
-      : `Hello, I'm interested in ${name} ${model} and would like to request a quote.\n${productUrl}`;
+  const whatsappMessage = t("inquiryMessage", {
+    productName: name,
+    productModel: model,
+    productUrl,
+  });
   const whatsappHref = `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (

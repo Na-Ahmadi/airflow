@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Icon from "@/components/shared/Icon/Icon";
 import SearchOverlay from "@/components/shared/SearchOverlay/SearchOverlay";
-import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "next-intl";
 import styles from "./SearchTrigger.module.css";
 
 interface SearchTriggerProps {
@@ -12,10 +12,10 @@ interface SearchTriggerProps {
 }
 
 export default function SearchTrigger({ scrolled, isHome = false }: SearchTriggerProps) {
-  const { lang } = useLanguage();
+  const t = useTranslations("searchTrigger");
   const [isOpen, setIsOpen] = useState(false);
 
-  const label = lang === "fa" ? "جستجو" : "Search";
+  const label = t("label");
 
   return (
     <>

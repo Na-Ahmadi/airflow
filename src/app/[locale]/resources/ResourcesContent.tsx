@@ -3,22 +3,21 @@
 import Resources from "@/components/home/Resources/Resources";
 import Breadcrumb from "@/components/shared/Breadcrumb/Breadcrumb";
 import Container from "@/components/shared/Container/Container";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLocale, useTranslations } from "next-intl";
+import type { Locale } from "@/i18n/routing";
+import { LOCALE_DIR } from "@/i18n/direction";
+import { pickLocale } from "@/lib/pickLocale";
 import resourcesRaw from "@/data/resources.json";
 import type { ResourcesData } from "@/types";
 
 type BillingualResources = { fa: ResourcesData; en: ResourcesData };
 
-const labels = {
-  fa: { title: "منابع فنی", home: "خانه" },
-  en: { title: "Technical Resources", home: "Home" },
-};
-
 export default function ResourcesContent() {
-  const { lang, dir } = useLanguage();
+  const locale = useLocale() as Locale;
+  const dir = LOCALE_DIR[locale];
+  const t = useTranslations("resources");
 
-  const resources = (resourcesRaw as unknown as BillingualResources)[lang];
-  const t = labels[lang];
+  const resources = pickLocale(resourcesRaw as unknown as BillingualResources, locale);
 
   return (
     <main>
@@ -40,12 +39,12 @@ export default function ResourcesContent() {
               margin: "0 0 0.75rem",
             }}
           >
-            {t.title}
+            {t("title")}
           </h1>
           <Breadcrumb
             items={[
-              { label: t.home, href: "/" },
-              { label: t.title, href: "/resources" },
+              { label: t("home"), href: "/" },
+              { label: t("title"), href: "/resources" },
             ]}
           />
         </Container>

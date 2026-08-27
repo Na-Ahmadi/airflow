@@ -11,7 +11,8 @@ import {
   getContactSchema,
   type ContactFormValues as FormValues,
 } from "@/lib/contactSchema";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLocale } from "next-intl";
+import type { Locale } from "@/i18n/routing";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
@@ -44,7 +45,7 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ data }: ContactFormProps) {
-  const { lang } = useLanguage();
+  const locale = useLocale() as Locale;
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [status, setStatus] = useState<
@@ -57,7 +58,7 @@ export default function ContactForm({ data }: ContactFormProps) {
     reset,
     formState: { errors },
   } = useForm<FormValues>({
-    resolver: zodResolver(getContactSchema(lang)),
+    resolver: zodResolver(getContactSchema(locale)),
   });
 
   const onSubmit = async (values: FormValues) => {

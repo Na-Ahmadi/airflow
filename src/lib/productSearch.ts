@@ -1,5 +1,5 @@
 import productsPageRaw from "@/data/products-page.json";
-import type { Lang } from "@/context/LanguageContext";
+import type { Locale } from "@/i18n/routing";
 
 export interface SearchableProduct {
   id: string;
@@ -22,8 +22,8 @@ function normalize(value: string): string {
     .trim();
 }
 
-export function getSearchableProducts(lang: Lang): SearchableProduct[] {
-  const page = productsPageRaw[lang];
+export function getSearchableProducts(locale: Locale): SearchableProduct[] {
+  const page = productsPageRaw[locale];
   const categoryLabels = new Map(page.tabs.map((tab) => [tab.id, tab.label]));
 
   return page.items.map((item) => ({

@@ -2,7 +2,8 @@
 
 import Badge from "@/components/shared/Badge/Badge";
 import Icon from "@/components/shared/Icon/Icon";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLocale } from "next-intl";
+import type { Locale } from "@/i18n/routing";
 import productsRaw from "@/data/products.json";
 import type { Product } from "@/types";
 import Image from "next/image";
@@ -11,8 +12,8 @@ import { useState } from "react";
 import styles from "./Products.module.css";
 
 export default function ProductCard({ product }: { product: Product }) {
-  const { lang } = useLanguage();
-  const viewDetails = productsRaw[lang].viewDetailsPlain;
+  const locale = useLocale() as Locale;
+  const viewDetails = productsRaw[locale].viewDetailsPlain;
   const [imgError, setImgError] = useState(false);
   const showPlaceholder = !product.image || imgError;
 
@@ -50,7 +51,7 @@ export default function ProductCard({ product }: { product: Product }) {
         <h3 className={styles.cardName}>{product.name}</h3>
         <span className={styles.cardLink}>
           {viewDetails}
-          <Icon name={lang === "fa" ? "arrow-left" : "arrow-right"} size={12} />
+          <Icon name={locale === "fa" ? "arrow-left" : "arrow-right"} size={12} />
         </span>
       </div>
     </Link>

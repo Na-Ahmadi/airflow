@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Badge from "@/components/shared/Badge/Badge";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLocale } from "next-intl";
+import type { Locale } from "@/i18n/routing";
 import productsRaw from "@/data/products.json";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,8 +21,8 @@ export interface ProductItem {
 }
 
 export default function ProductCard({ product }: { product: ProductItem }) {
-  const { lang } = useLanguage();
-  const viewDetails = productsRaw[lang].viewDetailsPlain;
+  const locale = useLocale() as Locale;
+  const viewDetails = productsRaw[locale].viewDetailsPlain;
   const [imgError, setImgError] = useState(false);
 
   const showPlaceholder = !product.image || imgError;

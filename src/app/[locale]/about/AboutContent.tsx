@@ -2,16 +2,18 @@
 
 import AboutHero from "@/components/about/AboutHero/AboutHero";
 import AboutValues from "@/components/about/AboutValues/AboutValues";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLocale } from "next-intl";
+import type { Locale } from "@/i18n/routing";
+import { pickLocale } from "@/lib/pickLocale";
 import aboutRaw from "@/data/about.json";
 
 type AboutData = typeof aboutRaw.fa;
 type BillingualAbout = { fa: AboutData; en: AboutData };
 
 export default function AboutContent() {
-  const { lang } = useLanguage();
+  const locale = useLocale() as Locale;
 
-  const about = (aboutRaw as unknown as BillingualAbout)[lang];
+  const about = pickLocale(aboutRaw as unknown as BillingualAbout, locale);
 
   return (
     <main>

@@ -7,18 +7,14 @@ import type { TabItem } from "@/components/shared/FilterTabs/FilterTabs";
 import FilterTabs from "@/components/shared/FilterTabs/FilterTabs";
 import ProductsBanner from "@/components/products/ProductsBanner/ProductsBanner";
 import ProductSearchBar from "@/components/products/ProductSearchBar/ProductSearchBar";
-import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "next-intl";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useMemo, useState } from "react";
 import type { ProductItem } from "./ProductCard";
 import ProductCard from "./ProductCard";
 import styles from "./ProductsPageClient.module.css";
-
-const EMPTY_COPY = {
-  fa: "محصولی با این مشخصات یافت نشد.",
-  en: "No products match your search.",
-} as const;
 
 interface Cta {
   title: string;
@@ -41,7 +37,7 @@ export default function ProductsPageClient({
   items,
   cta,
 }: Props) {
-  const { lang } = useLanguage();
+  const t = useTranslations("productsPageClient");
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("category");
   const initialTab =
@@ -109,7 +105,7 @@ export default function ProductsPageClient({
           <motion.div className={styles.grid} layout>
             <AnimatePresence mode="popLayout">
               {filtered.length === 0 ? (
-                <p className={styles.empty}>{EMPTY_COPY[lang]}</p>
+                <p className={styles.empty}>{t("empty")}</p>
               ) : (
                 filtered.map((product) => (
                   <motion.div

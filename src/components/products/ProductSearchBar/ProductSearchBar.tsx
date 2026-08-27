@@ -1,13 +1,8 @@
 "use client";
 
 import Icon from "@/components/shared/Icon/Icon";
-import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "next-intl";
 import styles from "./ProductSearchBar.module.css";
-
-const COPY = {
-  fa: { placeholder: "جستجوی نام محصول یا کد محصول…", clear: "پاک کردن" },
-  en: { placeholder: "Search by product name or product code…", clear: "Clear" },
-} as const;
 
 interface ProductSearchBarProps {
   value: string;
@@ -15,8 +10,7 @@ interface ProductSearchBarProps {
 }
 
 export default function ProductSearchBar({ value, onChange }: ProductSearchBarProps) {
-  const { lang } = useLanguage();
-  const t = COPY[lang];
+  const t = useTranslations("productSearchBar");
 
   return (
     <div className={styles.wrap}>
@@ -25,16 +19,16 @@ export default function ProductSearchBar({ value, onChange }: ProductSearchBarPr
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        placeholder={t.placeholder}
+        placeholder={t("placeholder")}
         className={styles.input}
-        aria-label={t.placeholder}
+        aria-label={t("placeholder")}
       />
       {value && (
         <button
           type="button"
           className={styles.clearBtn}
           onClick={() => onChange("")}
-          aria-label={t.clear}
+          aria-label={t("clear")}
         >
           <Icon name="x" size={18} />
         </button>

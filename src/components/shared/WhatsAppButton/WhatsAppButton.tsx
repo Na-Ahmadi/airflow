@@ -1,7 +1,9 @@
 "use client";
 
 import Icon from "@/components/shared/Icon/Icon";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLocale } from "next-intl";
+import type { Locale } from "@/i18n/routing";
+import { pickLocale } from "@/lib/pickLocale";
 import { SITE_CONFIG } from "@/constants";
 import contactRaw from "@/data/contact.json";
 import { useEffect, useState } from "react";
@@ -14,8 +16,8 @@ type WhatsappWidgetCopy = { bubble: string; ariaLabel: string };
 type BillingualContact = { fa: { whatsappWidget: WhatsappWidgetCopy }; en: { whatsappWidget: WhatsappWidgetCopy } };
 
 export default function WhatsAppButton() {
-  const { lang } = useLanguage();
-  const t = (contactRaw as unknown as BillingualContact)[lang].whatsappWidget;
+  const locale = useLocale() as Locale;
+  const t = pickLocale(contactRaw as unknown as BillingualContact, locale).whatsappWidget;
   const [showBubble, setShowBubble] = useState(false);
 
   useEffect(() => {

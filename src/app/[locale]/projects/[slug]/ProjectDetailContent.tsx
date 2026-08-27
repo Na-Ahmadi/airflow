@@ -1,7 +1,8 @@
 "use client";
 
 import ProjectDetailClient from "@/components/projects/ProjectDetailClient/ProjectDetailClient";
-import { useLanguage, type Lang } from "@/context/LanguageContext";
+import { useLocale, useTranslations } from "next-intl";
+import type { Locale } from "@/i18n/routing";
 import productsCatalogRaw from "@/data/products.json";
 import projectsDetailRaw from "@/data/projects-detail.json";
 import projectsPageRaw from "@/data/projects-page.json";
@@ -11,16 +12,11 @@ export type Slug = keyof (typeof projectsDetailRaw)["fa"];
 
 const FALLBACK_PRODUCT_IMAGE = "/images/product-detail-placeholder.svg";
 
-const FALLBACK_DESCRIPTION: Record<Lang, string> = {
-  fa: "یکی از محصولات استاندارد استفاده‌شده در این پروژه، مطابق مشخصات فنی مورد نیاز طرح.",
-  en: "One of the standard products used in this project, matching the technical specifications required by the design.",
-};
-
-function resolveProduct(label: string, lang: Lang) {
+function resolveProduct(label: string, locale: Locale, fallbackDescription: string) {
   const seriesMatch = label.match(/[A-Z]{2,3}(?:-\d+)?/);
   const series = seriesMatch?.[0];
   const catalogItem = series
-    ? productsCatalogRaw[lang].items.find((item) =>
+    ? productsCatalogRaw[locale].items.find((item) =>
         item.series.toUpperCase().includes(series.split("-")[0]),
       )
     : undefined;
@@ -28,7 +24,7 @@ function resolveProduct(label: string, lang: Lang) {
   return {
     name: label,
     model: series ?? label,
-    description: catalogItem ? catalogItem.name : FALLBACK_DESCRIPTION[lang],
+    description: catalogItem ? catalogItem.name : fallbackDescription,
     image: catalogItem?.image ?? FALLBACK_PRODUCT_IMAGE,
     href: catalogItem ? `/products/${catalogItem.id}` : "/products",
   };
@@ -39,12 +35,13 @@ interface Props {
 }
 
 export default function ProjectDetailContent({ slug }: Props) {
-  const { lang } = useLanguage();
+  const locale = useLocale() as Locale;
+  const tFallback = useTranslations("projectDetail");
 
-  const projectsDetail = projectsDetailRaw[lang] as Record<Slug, ProjectDetail>;
+  const projectsDetail = projectsDetailRaw[locale] as Record<Slug, ProjectDetail>;
   const project = projectsDetail[slug];
 
-  const pageData = projectsPageRaw[lang];
+  const pageData = projectsPageRaw[locale];
   const t = pageData.detail;
 
   const breadcrumb = [
@@ -73,7 +70,7 @@ export default function ProjectDetailContent({ slug }: Props) {
         meta={meta}
         description={project.description}
         scope={project.scope}
-        products={project.products.map((p) => resolveProduct(p, lang))}
+        products={project.products.map((p) => resolveProduct(p, locale, tFallback("fallbackDescription")))}
         highlights={project.highlights}
         sectionLabels={t.sections}
         serviceItems={t.serviceItems}

@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLocale } from "next-intl";
+import type { Locale } from "@/i18n/routing";
+import { BCP47 } from "@/i18n/bcp47";
 import styles from "./AnimatedCounter.module.css";
 
 interface AnimatedCounterProps {
@@ -12,7 +14,7 @@ interface AnimatedCounterProps {
 }
 
 export default function AnimatedCounter({ value, active, className, formatValue }: AnimatedCounterProps) {
-  const { lang } = useLanguage();
+  const locale = useLocale() as Locale;
   const [display, setDisplay] = useState(0);
   const duration = 2000;
 
@@ -33,7 +35,7 @@ export default function AnimatedCounter({ value, active, className, formatValue 
     ? formatValue(display)
     : display >= 1000
       ? `${(display / 1000).toFixed(display % 1000 === 0 ? 0 : 1)}K`
-      : display.toLocaleString(lang === "fa" ? "fa-IR" : "en-US");
+      : display.toLocaleString(BCP47[locale]);
 
   return <span className={className ?? styles.value}>{text}</span>;
 }

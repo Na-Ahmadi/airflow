@@ -2,7 +2,8 @@
 
 import Badge from "@/components/shared/Badge/Badge";
 import Icon from "@/components/shared/Icon/Icon";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLocale } from "next-intl";
+import type { Locale } from "@/i18n/routing";
 import projectsRaw from "@/data/projects.json";
 import type { Project } from "@/types";
 import Image from "next/image";
@@ -20,8 +21,8 @@ const FALLBACK_SRC = "/images/project-placeholder.svg";
 
 export default function ProjectCard({ project, variant = "grid" }: Props) {
   const isCarousel = variant === "carousel";
-  const { lang } = useLanguage();
-  const t = projectsRaw[lang].card;
+  const locale = useLocale() as Locale;
+  const t = projectsRaw[locale].card;
   const [imgSrc, setImgSrc] = useState(project.image);
   const [imgFailed, setImgFailed] = useState(false);
 
@@ -78,7 +79,7 @@ export default function ProjectCard({ project, variant = "grid" }: Props) {
               <span>{project.location}</span>
             </div>
             <span className={styles.cardLink}>
-              <Icon name={lang === "fa" ? "arrow-left" : "arrow-right"} size={14} />
+              <Icon name={locale === "fa" ? "arrow-left" : "arrow-right"} size={14} />
               {t.viewDetails}
             </span>
           </div>
@@ -89,7 +90,7 @@ export default function ProjectCard({ project, variant = "grid" }: Props) {
           <h3 className={styles.title}>{project.title}</h3>
           <span className={styles.link}>
             {t.viewCaseStudy}
-            <Icon name={lang === "fa" ? "arrow-left" : "arrow-right"} size={12} />
+            <Icon name={locale === "fa" ? "arrow-left" : "arrow-right"} size={12} />
           </span>
         </div>
       )}

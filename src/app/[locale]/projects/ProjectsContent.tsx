@@ -1,6 +1,8 @@
 'use client';
 
-import { useLanguage } from '@/context/LanguageContext';
+import { useLocale } from 'next-intl';
+import type { Locale } from '@/i18n/routing';
+import { pickLocale } from '@/lib/pickLocale';
 import ProjectsPageClient from '@/components/projects/ProjectsPageClient/ProjectsPageClient';
 import type { Project } from '@/types';
 import projectsRaw from '@/data/projects.json';
@@ -12,10 +14,10 @@ type PageData = typeof pageRaw.fa;
 type BillingualPage = { fa: PageData; en: PageData };
 
 export default function ProjectsContent() {
-  const { lang } = useLanguage();
+  const locale = useLocale() as Locale;
 
-  const projects = (projectsRaw as unknown as BillingualProjects)[lang];
-  const page     = (pageRaw     as unknown as BillingualPage)[lang];
+  const projects = pickLocale(projectsRaw as unknown as BillingualProjects, locale);
+  const page = pickLocale(pageRaw as unknown as BillingualPage, locale);
 
   return (
     <main>

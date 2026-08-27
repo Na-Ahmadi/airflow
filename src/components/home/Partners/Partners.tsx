@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "next-intl";
 import type { PartnersData } from "@/types";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -11,18 +11,16 @@ interface PartnersProps {
   data: PartnersData;
 }
 
-const ARIA_LABEL = { fa: "شرکای تجاری", en: "Business partners" };
-
 export default function Partners({ data }: PartnersProps) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true });
-  const { lang } = useLanguage();
+  const t = useTranslations("partners");
 
   // Duplicate items for infinite loop
   const items = [...data.items, ...data.items];
 
   return (
-    <section className={styles.section} ref={ref} aria-label={ARIA_LABEL[lang]}>
+    <section className={styles.section} ref={ref} aria-label={t("ariaLabel")}>
       <div className={styles.inner}>
         <motion.p
           className={styles.label}

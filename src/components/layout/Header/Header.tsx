@@ -7,19 +7,22 @@ import NavItemMobile from "@/components/layout/NavItemMobile/NavItemMobile";
 import TopBar from "@/components/layout/TopBar/TopBar";
 import Button from "@/components/shared/Button/Button";
 import { SCROLL_THRESHOLD } from "@/constants";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLocale, useTranslations } from "next-intl";
+import type { Locale } from "@/i18n/routing";
+import { pickLocale } from "@/lib/pickLocale";
 import navRaw from "@/data/navigation.json";
 import type { NavData } from "@/types";
 import { AnimatePresence, motion } from "framer-motion";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
 
 type BillingualNav = { fa: NavData; en: NavData };
 
 export default function Header() {
-  const { lang } = useLanguage();
-  const data = (navRaw as unknown as BillingualNav)[lang];
+  const locale = useLocale() as Locale;
+  const t = useTranslations("header");
+  const data = pickLocale(navRaw as unknown as BillingualNav, locale);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -125,7 +128,7 @@ export default function Header() {
             scrolled={scrolled}
             isHome={pathname === "/"}
           />
-          <nav aria-label={lang === "fa" ? "ناوبری اصلی" : "Main navigation"}>
+          <nav aria-label={t("mainNavigation")}>
             <Navigation
               items={data.items}
               activeDropdown={activeDropdown}
@@ -143,7 +146,7 @@ export default function Header() {
             mobileOpen={mobileOpen}
             onHamburgerClick={() => setMobileOpen(!mobileOpen)}
             onCtaClick={scrollToCta}
-            hamburgerLabel={lang === "fa" ? "منو" : "Menu"}
+            hamburgerLabel={t("menu")}
             scrolled={scrolled}
             isHome={pathname === "/"}
           />

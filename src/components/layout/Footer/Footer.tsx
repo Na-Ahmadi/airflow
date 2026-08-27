@@ -3,7 +3,9 @@
 import Logo from "@/components/layout/Logo/Logo";
 import ContactDetail from "@/components/shared/ContactDetail/ContactDetail";
 import Icon from "@/components/shared/Icon/Icon";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLocale } from "next-intl";
+import type { Locale } from "@/i18n/routing";
+import { pickLocale } from "@/lib/pickLocale";
 import footerRaw from "@/data/footer.json";
 import type { FooterData } from "@/types";
 import Link from "next/link";
@@ -12,8 +14,8 @@ import styles from "./Footer.module.css";
 type BillingualFooter = { fa: FooterData; en: FooterData };
 
 export default function Footer() {
-  const { lang } = useLanguage();
-  const data = (footerRaw as unknown as BillingualFooter)[lang];
+  const locale = useLocale() as Locale;
+  const data = pickLocale(footerRaw as unknown as BillingualFooter, locale);
   return (
     <footer className={styles.footer}>
       <div className={styles.footerTop}>

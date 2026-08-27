@@ -5,7 +5,8 @@ import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLocale, useTranslations } from "next-intl";
+import type { Locale } from "@/i18n/routing";
 import Icon from "@/components/shared/Icon/Icon";
 import { getSearchableProducts, searchProducts } from "@/lib/productSearch";
 import styles from "./SearchOverlay.module.css";
@@ -15,32 +16,13 @@ interface SearchOverlayProps {
   onClose: () => void;
 }
 
-const COPY = {
-  fa: {
-    placeholder: "جستجوی محصول یا کد محصول…",
-    close: "بستن",
-    noResultsTitle: "نتیجه‌ای یافت نشد",
-    noResultsHint: "نام محصول، کد محصول یا دسته‌بندی دیگری را جستجو کنید.",
-    hint: "برای بستن ESC را بزنید",
-    resultsCount: (n: number) => `${n} نتیجه`,
-  },
-  en: {
-    placeholder: "Search product or product code…",
-    close: "Close",
-    noResultsTitle: "No results found",
-    noResultsHint: "Try another product name, code, or category.",
-    hint: "Press ESC to close",
-    resultsCount: (n: number) => `${n} results`,
-  },
-} as const;
-
 export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
-  const { lang } = useLanguage();
-  const t = COPY[lang];
+  const locale = useLocale() as Locale;
+  const t = useTranslations("searchOverlay");
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const allProducts = useMemo(() => getSearchableProducts(lang), [lang]);
+  const allProducts = useMemo(() => getSearchableProducts(locale), [locale]);
   const results = useMemo(
     () => searchProducts(allProducts, query),
     [allProducts, query],
@@ -85,7 +67,7 @@ export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
             className={styles.panel}
             role="dialog"
             aria-modal="true"
-            aria-label={t.placeholder}
+            aria-label={t("placeholder")}
             onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -99,15 +81,15 @@ export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder={t.placeholder}
+                placeholder={t("placeholder")}
                 className={styles.input}
-                aria-label={t.placeholder}
+                aria-label={t("placeholder")}
               />
               <button
                 type="button"
                 className={styles.closeBtn}
                 onClick={onClose}
-                aria-label={t.close}
+                aria-label={t("close")}
               >
                 <Icon name="x" size={20} />
               </button>
@@ -115,17 +97,17 @@ export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
 
             <div className={styles.results}>
               {query.trim() === "" ? (
-                <p className={styles.hint}>{t.hint}</p>
+                <p className={styles.hint}>{t("hint")}</p>
               ) : results.length === 0 ? (
                 <div className={styles.empty}>
                   <Icon name="search" size={28} className={styles.emptyIcon} />
-                  <p className={styles.emptyTitle}>{t.noResultsTitle}</p>
-                  <p className={styles.emptyHint}>{t.noResultsHint}</p>
+                  <p className={styles.emptyTitle}>{t("noResultsTitle")}</p>
+                  <p className={styles.emptyHint}>{t("noResultsHint")}</p>
                 </div>
               ) : (
                 <>
                   <p className={styles.resultsCount}>
-                    {t.resultsCount(results.length)}
+                    {t("resultsCount", { count: results.length })}
                   </p>
                   <ul className={styles.resultsList}>
                     {results.map((product) => (

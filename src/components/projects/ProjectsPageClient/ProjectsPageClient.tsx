@@ -6,16 +6,11 @@ import FilterTabs from "@/components/shared/FilterTabs/FilterTabs";
 import type { TabItem } from "@/components/shared/FilterTabs/FilterTabs";
 import ProjectCard from "@/components/shared/ProjectCard/ProjectCard";
 import ProjectsBanner from "@/components/projects/ProjectsBanner/ProjectsBanner";
-import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "next-intl";
 import type { Project } from "@/types";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import styles from "./ProjectsPageClient.module.css";
-
-const EMPTY_COPY = {
-  fa: "پروژه‌ای در این دسته‌بندی یافت نشد.",
-  en: "No projects found in this category.",
-} as const;
 
 interface Props {
   breadcrumb: BreadcrumbItem[];
@@ -34,7 +29,7 @@ export default function ProjectsPageClient({
   tabs,
   items,
 }: Props) {
-  const { lang } = useLanguage();
+  const t = useTranslations("projectsPageClient");
   const [activeTab, setActiveTab] = useState("all");
 
   const filtered =
@@ -59,7 +54,7 @@ export default function ProjectsPageClient({
           <motion.div className={styles.grid} layout>
             <AnimatePresence mode="popLayout">
               {filtered.length === 0 ? (
-                <p className={styles.empty}>{EMPTY_COPY[lang]}</p>
+                <p className={styles.empty}>{t("empty")}</p>
               ) : (
                 filtered.map((project) => (
                   <motion.div

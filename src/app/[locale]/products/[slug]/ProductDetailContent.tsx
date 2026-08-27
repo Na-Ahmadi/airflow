@@ -1,7 +1,8 @@
 "use client";
 
 import ProductDetailClient from "@/components/products/ProductDetailClient/ProductDetailClient";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLocale } from "next-intl";
+import type { Locale } from "@/i18n/routing";
 import productsDetailRaw from "@/data/products-detail.json";
 import productsPageRaw from "@/data/products-page.json";
 
@@ -13,12 +14,12 @@ interface Props {
 }
 
 export default function ProductDetailContent({ slug }: Props) {
-  const { lang } = useLanguage();
+  const locale = useLocale() as Locale;
 
-  const productsDetail = productsDetailRaw[lang] as Record<Slug, ProductDetail>;
+  const productsDetail = productsDetailRaw[locale] as Record<Slug, ProductDetail>;
   const product = productsDetail[slug];
 
-  const pageData = productsPageRaw[lang];
+  const pageData = productsPageRaw[locale];
   const t = pageData.detail;
 
   const breadcrumb = [

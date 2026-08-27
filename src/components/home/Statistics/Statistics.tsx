@@ -3,7 +3,7 @@
 import AnimatedCounter from "@/components/shared/AnimatedCounter/AnimatedCounter";
 import Container from "@/components/shared/Container/Container";
 import Icon from "@/components/shared/Icon/Icon";
-import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "next-intl";
 import { useInViewOnce } from "@/hooks/useInViewOnce";
 import type { StatisticsData } from "@/types";
 import { motion } from "framer-motion";
@@ -13,14 +13,12 @@ interface StatisticsProps {
   data: StatisticsData;
 }
 
-const ARIA_LABEL = { fa: "آمار و ارقام", en: "Statistics" };
-
 export default function Statistics({ data }: StatisticsProps) {
   const { ref, inView } = useInViewOnce<HTMLElement>();
-  const { lang } = useLanguage();
+  const t = useTranslations("statistics");
 
   return (
-    <section className={styles.section} ref={ref} aria-label={ARIA_LABEL[lang]}>
+    <section className={styles.section} ref={ref} aria-label={t("ariaLabel")}>
       <div className={styles.bgDecor} aria-hidden />
       <Container>
         <div className={styles.grid}>

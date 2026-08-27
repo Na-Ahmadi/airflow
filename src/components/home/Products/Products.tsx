@@ -3,7 +3,8 @@
 import Container from "@/components/shared/Container/Container";
 import Icon from "@/components/shared/Icon/Icon";
 import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLocale, useTranslations } from "next-intl";
+import type { Locale } from "@/i18n/routing";
 import productsPageRaw from "@/data/products-page.json";
 import type { ProductsData } from "@/types";
 import { motion, useInView } from "framer-motion";
@@ -25,14 +26,10 @@ interface ProductsProps {
 
 const VISIBLE_CATEGORY_COUNT = 6;
 
-const SHOW_MORE_LABEL: Record<"fa" | "en", { more: string; less: string }> = {
-  fa: { more: "نمایش بیشتر", less: "نمایش کمتر" },
-  en: { more: "Show More", less: "Show Less" },
-};
-
 export default function Products({ data }: ProductsProps) {
-  const { lang } = useLanguage();
-  const productsPage = productsPageRaw[lang];
+  const locale = useLocale() as Locale;
+  const t = useTranslations("productsSection");
+  const productsPage = productsPageRaw[locale];
   const [showAllCategories, setShowAllCategories] = useState(false);
 
   const categoriesRef = useRef<HTMLElement>(null);
@@ -68,7 +65,7 @@ export default function Products({ data }: ProductsProps) {
             />
             <Link href={data.section.viewAll.href} className={styles.viewAll}>
               {data.section.viewAll.label}
-              <Icon name={lang === "fa" ? "arrow-left" : "arrow-right"} size={14} />
+              <Icon name={locale === "fa" ? "arrow-left" : "arrow-right"} size={14} />
             </Link>
           </div>
 
@@ -112,7 +109,7 @@ export default function Products({ data }: ProductsProps) {
                       <h3 className={styles.categoryTitle}>{category.label}</h3>
                       <span className={styles.categoryCta}>
                         {data.categoryCta}
-                        <Icon name={lang === "fa" ? "arrow-left" : "arrow-right"} size={16} />
+                        <Icon name={locale === "fa" ? "arrow-left" : "arrow-right"} size={16} />
                       </span>
                     </div>
                   </Link>
@@ -129,9 +126,7 @@ export default function Products({ data }: ProductsProps) {
                 onClick={() => setShowAllCategories((prev) => !prev)}
                 aria-expanded={showAllCategories}
               >
-                {showAllCategories
-                  ? SHOW_MORE_LABEL[lang].less
-                  : SHOW_MORE_LABEL[lang].more}
+                {showAllCategories ? t("showLess") : t("showMore")}
                 <Icon
                   name="chevron-down"
                   size={18}

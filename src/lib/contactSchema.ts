@@ -1,25 +1,15 @@
 import { z } from 'zod';
-import type { Lang } from '@/context/LanguageContext';
+import type { Locale } from '@/i18n/routing';
+import faMessages from '../../messages/fa.json';
+import enMessages from '../../messages/en.json';
 
-const messages: Record<Lang, Record<'name' | 'email' | 'phone' | 'projectType' | 'message', string>> = {
-  fa: {
-    name:        'نام باید حداقل ۲ کاراکتر باشد',
-    email:       'ایمیل معتبر نیست',
-    phone:       'شماره تلفن معتبر نیست',
-    projectType: 'لطفاً نوع پروژه را انتخاب کنید',
-    message:     'پیام باید حداقل ۱۰ کاراکتر باشد',
-  },
-  en: {
-    name:        'Name must be at least 2 characters',
-    email:       'Invalid email address',
-    phone:       'Invalid phone number',
-    projectType: 'Please select a project type',
-    message:     'Message must be at least 10 characters',
-  },
+const messages: Record<Locale, typeof faMessages.contactSchema> = {
+  fa: faMessages.contactSchema,
+  en: enMessages.contactSchema,
 };
 
-export function getContactSchema(lang: Lang) {
-  const m = messages[lang];
+export function getContactSchema(locale: Locale) {
+  const m = messages[locale];
   return z.object({
     name:        z.string().min(2, m.name),
     email:       z.string().email(m.email),

@@ -4,20 +4,15 @@ import { useState } from "react";
 import Container from "@/components/shared/Container/Container";
 import Icon from "@/components/shared/Icon/Icon";
 import SearchOverlay from "@/components/shared/SearchOverlay/SearchOverlay";
-import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "next-intl";
 import styles from "./CompactSearchBar.module.css";
 
-const COPY = {
-  fa: { placeholder: "جستجوی محصول یا کد محصول…" },
-  en: { placeholder: "Search product or product code…" },
-} as const;
-
 export default function CompactSearchBar() {
-  const { lang } = useLanguage();
+  const t = useTranslations("compactSearchBar");
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section className={styles.section} aria-label={COPY[lang].placeholder}>
+    <section className={styles.section} aria-label={t("placeholder")}>
       <Container>
         <button
           type="button"
@@ -25,7 +20,7 @@ export default function CompactSearchBar() {
           onClick={() => setIsOpen(true)}
         >
           <Icon name="search" size={18} className={styles.icon} />
-          <span className={styles.placeholder}>{COPY[lang].placeholder}</span>
+          <span className={styles.placeholder}>{t("placeholder")}</span>
         </button>
       </Container>
 
