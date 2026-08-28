@@ -65,10 +65,14 @@ export default function Products({ data }: ProductsProps) {
             <SectionTitle
               title={data.section.title}
               subtitle={data.section.subtitle}
+              align="start"
             />
             <Link href={data.section.viewAll.href} className={styles.viewAll}>
               {data.section.viewAll.label}
-              <Icon name={lang === "fa" ? "arrow-left" : "arrow-right"} size={14} />
+              <Icon
+                name={lang === "fa" ? "arrow-left" : "arrow-right"}
+                size={14}
+              />
             </Link>
           </div>
 
@@ -112,7 +116,10 @@ export default function Products({ data }: ProductsProps) {
                       <h3 className={styles.categoryTitle}>{category.label}</h3>
                       <span className={styles.categoryCta}>
                         {data.categoryCta}
-                        <Icon name={lang === "fa" ? "arrow-left" : "arrow-right"} size={16} />
+                        <Icon
+                          name={lang === "fa" ? "arrow-left" : "arrow-right"}
+                          size={16}
+                        />
                       </span>
                     </div>
                   </Link>
@@ -157,6 +164,7 @@ export default function Products({ data }: ProductsProps) {
             <SectionTitle
               title={data.bestSellers.title}
               subtitle={data.bestSellers.subtitle}
+              align="start"
             />
           </div>
 
