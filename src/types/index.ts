@@ -112,6 +112,24 @@ export interface ProductsData {
   items: Product[];
 }
 
+export interface ProductCategory {
+  id: string;
+  label: string;
+  image?: string;
+}
+
+export interface ProductCategoriesData {
+  section: ProductsData['section'];
+  categoryCta: string;
+  categories: ProductCategory[];
+}
+
+export interface BestSellersData {
+  section: ProductsData['bestSellers'];
+  nav: ProductsData['nav'];
+  items: Product[];
+}
+
 // ─── Projects ─────────────────────────────────────────────────
 export interface Project {
   id: string;
