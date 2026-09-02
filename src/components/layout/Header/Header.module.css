@@ -40,6 +40,15 @@
   height: var(--header-height);
 }
 
+/* Small mobile: tighten the bar so logo + hamburger fit down to 320px */
+@media (max-width: 480px) {
+  .navInner {
+    gap: var(--space-3);
+    padding-inline: var(--space-3);
+    height: var(--header-height-scrolled);
+  }
+}
+
 /* Mobile Menu */
 .mobileMenu {
   position: fixed;
@@ -83,4 +92,15 @@
   color: #fff;
   font-weight: var(--font-semibold);
   text-decoration: none;
+}
+
+/* Small mobile: menu starts flush under the shortened nav bar */
+@media (max-width: 480px) {
+  .mobileMenu {
+    top: var(--header-height-scrolled);
+  }
+
+  .mobileMenuInner {
+    padding-inline: var(--space-3);
+  }
 }
