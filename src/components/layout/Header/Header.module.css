@@ -111,18 +111,11 @@
   text-transform: uppercase;
 }
 
+/* Spacing only — the Button component already supplies the primary variant's
+   gradient, shadow, height and radius, so it stays consistent with every
+   other button on the site. */
 .mobileCta {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: var(--space-4);
-  box-shadow: var(--shadow-btn);
-  border-radius: var(--radius-full);
-  background: var(--gradient-primary);
-  height: var(--btn-height-md);
-  color: #fff;
-  font-weight: var(--font-semibold);
-  text-decoration: none;
 }
 
 /* Small mobile: menu starts flush under the shortened nav bar */
