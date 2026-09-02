@@ -17,13 +17,6 @@
       { "id": "area",         "value": "۱۲M", "numericValue": 12000000, "suffix": "+", "label": "متر مربع اجرا"   },
       { "id": "satisfaction", "value": "۹۸",  "numericValue": 98,       "suffix": "%", "label": "رضایت مشتریان"  }
     ],
-    "productCard": {
-      "image":    "/images/products/ls-300-hero.png",
-      "category": "دریچه خطی شیاردار",
-      "name":     "LS-300",
-      "href":     "/products/ls-300",
-      "link":     "مشاهده جزئیات →"
-    },
     "ariaLabel": "بخش اصلی"
   },
   "en": {
@@ -44,13 +37,6 @@
       { "id": "area",         "value": "12M", "numericValue": 12000000, "suffix": "+", "label": "sqm Executed"          },
       { "id": "satisfaction", "value": "98",  "numericValue": 98,       "suffix": "%", "label": "Client Satisfaction"   }
     ],
-    "productCard": {
-      "image":    "/images/products/ls-300-hero.png",
-      "category": "Slotted Linear Diffuser",
-      "name":     "LS-300",
-      "href":     "/products/ls-300",
-      "link":     "View details →"
-    },
     "ariaLabel": "Main section"
   }
 }

@@ -44,7 +44,6 @@ export interface HeroData {
   buttons: HeroButton[];
   capabilities: string[];
   stats: HeroStat[];
-  productCard: { image: string; category: string; name: string; href: string; link: string };
   ariaLabel: string;
 }
 

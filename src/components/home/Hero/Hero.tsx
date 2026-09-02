@@ -141,19 +141,6 @@ export default function Hero({ data }: HeroProps) {
         </motion.div>
       </div>
 
-      {/* ── Product badge – floats over the image area (left in RTL) ── */}
-      {/* <motion.div className={styles.productBadge} {...fadeUp(0.55)}>
-        <Link href={data.productCard.href} className={styles.productBadgeInner}>
-          <span className={styles.productBadgeCategory}>
-            {data.productCard.category}
-          </span>
-          <span className={styles.productBadgeName}>
-            {data.productCard.name}
-          </span>
-          <span className={styles.productBadgeLink}>{data.productCard.link}</span>
-        </Link>
-      </motion.div> */}
-
       {/* Scroll indicator */}
       <div className={styles.scrollIndicator} aria-hidden>
         <div className={styles.scrollDot} />
