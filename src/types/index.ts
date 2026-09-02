@@ -17,6 +17,7 @@ export interface NavData {
   topbar: { phone: string; email: string; address: string };
   items: NavItem[];
   cta: { label: string; href: string };
+  languageLabel: string;
   languages: { code: string; label: string; active: boolean }[];
 }
 

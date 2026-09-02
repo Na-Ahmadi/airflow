@@ -1,6 +1,7 @@
 "use client";
 
 import HeaderActions from "@/components/layout/HeaderActions/HeaderActions";
+import LanguageSwitch from "@/components/layout/LanguageSwitch/LanguageSwitch";
 import Logo from "@/components/layout/Logo/Logo";
 import Navigation from "@/components/layout/Navigation/Navigation";
 import NavItemMobile from "@/components/layout/NavItemMobile/NavItemMobile";
@@ -182,6 +183,12 @@ export default function Header() {
                     />
                   ))}
                 </ul>
+                <div className={styles.mobileLang}>
+                  <span className={styles.mobileLangLabel}>
+                    {data.languageLabel}
+                  </span>
+                  <LanguageSwitch size="lg" onSelect={closeMobileMenu} />
+                </div>
                 <Button
                   href={data.cta.href}
                   variant="primary"

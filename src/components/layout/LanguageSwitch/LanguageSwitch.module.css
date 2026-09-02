@@ -20,23 +20,23 @@
   transition: all var(--transition-fast);
 }
 
-.langActive {
+.langSwitch:not(.lg) .langActive {
   background: var(--color-primary);
   color: #fff;
 }
 
 /* Light theme: subtle surface tokens are nearly invisible on the light banners
    used across inner pages — give the switch a visible border/background at rest. */
-:global([data-theme="light"]) .langSwitch {
+:global([data-theme="light"]) .langSwitch:not(.lg) {
   background: rgba(10, 37, 64, 0.06);
   border-color: rgba(10, 37, 64, 0.16);
 }
 
-:global([data-theme="light"]) .langSwitch .langBtn {
+:global([data-theme="light"]) .langSwitch:not(.lg) .langBtn {
   color: #1e293b;
 }
 
-:global([data-theme="light"]) .langSwitch .langActive {
+:global([data-theme="light"]) .langSwitch:not(.lg) .langActive {
   color: #fff;
 }
 
@@ -50,6 +50,82 @@
   color: #ffffff;
 }
 
+/* ─── Large variant — mobile menu ──────────────────────────────
+   Two side-by-side cards rather than a blown-up pill: at this size the
+   segmented control reads as cramped, and the language deserves its own
+   name instead of a bare code. */
+.lg {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+  border: none;
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  width: 100%;
+}
+
+.lg .langBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  padding: var(--space-3) var(--space-4);
+  min-height: 56px;
+  text-align: start;
+}
+
+.lg .langBtn:hover {
+  border-color: var(--color-border-primary);
+  background: var(--color-surface-hover);
+}
+
+.lg .code {
+  color: var(--color-text-muted);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+}
+
+.lg .name {
+  color: var(--color-text-primary);
+  font-weight: var(--font-medium);
+  font-size: var(--text-base);
+  line-height: 1.2;
+}
+
+/* Each name renders in its own script, so pin the direction per button
+   instead of letting the page direction flip them. */
+.lg .langBtn[lang="fa"] {
+  direction: rtl;
+}
+
+.lg .langBtn[lang="en"] {
+  direction: ltr;
+}
+
+/* Active card: primary border + tint, so the choice is legible without
+   relying on a solid fill that would fight the menu background. */
+.lg .langActive {
+  border-color: var(--color-primary);
+  background: rgba(30, 111, 207, 0.12);
+}
+
+.lg .langActive .code,
+.lg .langActive .name {
+  color: var(--color-primary-light);
+}
+
+:global([data-theme="light"]) .lg .langActive .code,
+:global([data-theme="light"]) .lg .langActive .name {
+  color: var(--color-primary);
+}
+
+/* The compact bar version does not fit beside the hamburger on mobile;
+   the .lg version inside the menu stays visible. */
 @media (max-width: 1024px) {
-  .langSwitch { display: none; }
+  .langSwitch:not(.lg) { display: none; }
 }
