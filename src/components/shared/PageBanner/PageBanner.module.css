@@ -134,8 +134,9 @@
 .imageEdge {
   position: absolute;
   inset: 0;
-  /* fade to the same light bg so image blends into text panel */
-  background: linear-gradient(to left, #edf1f7 0%, transparent 28%);
+  /* narrow fade to the same light bg so the image blends into the text panel
+     without washing out the photo */
+  background: linear-gradient(to left, #edf1f7 0%, transparent 16%);
   pointer-events: none;
 }
 
@@ -151,7 +152,7 @@
 }
 
 :global([dir="ltr"]) .imageEdge {
-  background: linear-gradient(to right, #edf1f7 0%, transparent 28%);
+  background: linear-gradient(to right, #edf1f7 0%, transparent 16%);
 }
 
 /* ─── Responsive ────────────────────────────────────────────── */
