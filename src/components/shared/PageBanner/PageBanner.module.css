@@ -105,14 +105,16 @@
   gap: var(--space-1);
 }
 
-.metaItem svg { color: var(--color-accent); }
+.metaItem svg {
+  color: var(--color-accent);
+}
 
 .metaDot {
-  width: 4px;
-  height: 4px;
+  opacity: 0.5;
   border-radius: 50%;
   background: var(--color-text-muted);
-  opacity: 0.5;
+  width: 4px;
+  height: 4px;
 }
 
 .buttonRow {
@@ -165,12 +167,12 @@
   .banner {
     display: block;
     position: relative;
-    min-height: var(--banner-height-md);
     background: #0d0f1a;
+    min-height: var(--banner-height-md);
     /* Override light-theme text vars so all children (incl. Breadcrumb) get white text */
     --color-text-primary: #ffffff;
     --color-text-secondary: rgba(255, 255, 255, 0.82);
-    --color-text-muted: rgba(255, 255, 255, 0.60);
+    --color-text-muted: rgba(255, 255, 255, 0.6);
   }
 
   /* Image becomes absolute full-bleed background — no warp, just cover */
@@ -183,22 +185,29 @@
   /* Two-zone gradient: subtle dark top (breadcrumb) + dark bottom (text) */
   .imageEdge {
     background:
-      linear-gradient(to bottom, rgba(6, 8, 18, var(--banner-scrim-top)) 0%, transparent 24%),
-      linear-gradient(to top,
+      linear-gradient(
+        to bottom,
+        rgba(6, 8, 18, var(--banner-scrim-top)) 0%,
+        transparent 24%
+      ),
+      linear-gradient(
+        to top,
         rgba(6, 8, 18, var(--banner-scrim-bottom)) 0%,
         rgba(6, 8, 18, var(--banner-scrim-mid)) 48%,
-        transparent 72%);
+        transparent 72%
+      );
   }
 
   .content {
-    position: relative;
-    z-index: 1;
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: space-between;
-    min-height: var(--banner-height-md);
-    padding: calc(var(--header-height) + var(--space-8)) var(--section-padding-x) var(--space-10);
     gap: 0;
+    z-index: 1;
+    padding: calc(var(--header-height) + var(--space-8))
+      var(--section-padding-x) var(--space-10);
+    min-height: var(--banner-height-md);
   }
 
   .main {

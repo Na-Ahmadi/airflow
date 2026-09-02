@@ -23,7 +23,6 @@ export default function AboutContent() {
         description={about.banner.description}
         image={about.banner.image}
         imageAlt={about.banner.imageAlt}
-        button={about.banner.button}
       />
       <AboutHero
         title={about.hero.title}

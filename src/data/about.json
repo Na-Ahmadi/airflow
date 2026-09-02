@@ -9,8 +9,7 @@
       "title": "ایرفلو سیستم",
       "description": "بیش از ۱۸ سال تجربه در طراحی، تولید و اجرای سیستم‌های توزیع هوا؛ همراه مطمئن مهندسان و کارفرمایان در پروژه‌های تجاری، صنعتی و درمانی.",
       "image": "/images/banners/hero-bg-about.webp",
-      "imageAlt": "ایرفلو سیستم",
-      "button": { "label": "بیشتر درباره ما", "href": "#values" }
+      "imageAlt": "ایرفلو سیستم"
     },
     "hero": {
       "title": "پیشرو در طراحی و اجرای سیستم‌های توزیع هوا",
@@ -48,8 +47,7 @@
       "title": "Airflow System",
       "description": "Over 18 years of experience designing, manufacturing and installing air distribution systems — a trusted partner for engineers and clients across commercial, industrial and healthcare projects.",
       "image": "/images/banners/hero-bg-about.webp",
-      "imageAlt": "Airflow System",
-      "button": { "label": "More About Us", "href": "#values" }
+      "imageAlt": "Airflow System"
     },
     "hero": {
       "title": "Leading the Design & Installation of Air Distribution Systems",
