@@ -1,13 +1,38 @@
 /* ─── Banner wrapper ────────────────────────────────────────── */
 .banner {
   display: grid;
-  /* RTL: col-1 = right (content ~22%), col-2 = left (image ~78%) */
-  grid-template-columns: 22fr 78fr;
-  /* Always light — image is a bright product shot, dark bg would clash */
+  /* RTL: col-1 = right (text), col-2 = left (image) */
+  grid-template-columns: var(--banner-cols);
+  /* Always light — images are bright daytime shots, dark bg would clash */
   background: #edf1f7;
-  min-height: 420px;
+  min-height: var(--banner-height);
   overflow: hidden;
   direction: rtl;
+}
+
+/* ─── Layout variants ───────────────────────────────────────── */
+.default {
+  --banner-cols: 33fr 67fr;
+  --banner-height: 520px;
+  --banner-height-md: 480px;
+  --banner-height-sm: 420px;
+  --banner-pad-inline: 6rem;
+  /* mobile scrim: strong, text sits directly on the photo */
+  --banner-scrim-top: 0.62;
+  --banner-scrim-bottom: 0.88;
+  --banner-scrim-mid: 0.42;
+}
+
+.wide {
+  --banner-cols: 22fr 78fr;
+  --banner-height: 420px;
+  --banner-height-md: 380px;
+  --banner-height-sm: 340px;
+  --banner-pad-inline: 4rem;
+  /* lighter scrim so the product image stays visible */
+  --banner-scrim-top: 0.4;
+  --banner-scrim-bottom: 0.72;
+  --banner-scrim-mid: 0.28;
 }
 
 /* ─── Text content column ───────────────────────────────────── */
@@ -16,7 +41,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding-top: calc(var(--header-height) + var(--space-10));
-  padding-right: 4rem;
+  padding-right: var(--banner-pad-inline);
   padding-bottom: var(--space-10);
   padding-left: var(--space-6);
 }
@@ -33,12 +58,68 @@
   gap: var(--space-4);
 }
 
+.label {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 .title {
   margin: 0;
   color: var(--color-text-primary);
   font-weight: var(--font-bold);
   font-size: clamp(1.75rem, 3vw, 2.75rem);
   line-height: var(--leading-tight);
+}
+
+.description {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+.badgeRow {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+.metaItemGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.metaItem svg { color: var(--color-accent); }
+
+.metaDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+.buttonRow {
+  display: flex;
+  margin-top: var(--space-2);
 }
 
 /* ─── Image panel ───────────────────────────────────────────── */
@@ -75,24 +156,22 @@
   background: linear-gradient(to right, #edf1f7 0%, transparent 28%);
 }
 
+/* ─── Responsive ────────────────────────────────────────────── */
 @media (max-width: 960px) {
   /* mobile: image is a full-bleed background, not a side-by-side column */
   :global([dir="ltr"]) .image {
     transform: none;
   }
-}
 
-/* ─── Responsive ────────────────────────────────────────────── */
-@media (max-width: 960px) {
   .banner {
     display: block;
     position: relative;
-    min-height: 380px;
+    min-height: var(--banner-height-md);
     background: #0d0f1a;
     /* Override light-theme text vars so all children (incl. Breadcrumb) get white text */
     --color-text-primary: #ffffff;
     --color-text-secondary: rgba(255, 255, 255, 0.82);
-    --color-text-muted: rgba(255, 255, 255, 0.6);
+    --color-text-muted: rgba(255, 255, 255, 0.60);
   }
 
   /* Image becomes absolute full-bleed background — no warp, just cover */
@@ -102,11 +181,14 @@
     min-height: unset;
   }
 
-  /* Two-zone gradient: subtle dark top (breadcrumb) + dark bottom (text) — lightened so the product image stays visible */
+  /* Two-zone gradient: subtle dark top (breadcrumb) + dark bottom (text) */
   .imageEdge {
     background:
-      linear-gradient(to bottom, rgba(6, 8, 18, 0.4) 0%, transparent 24%),
-      linear-gradient(to top, rgba(6, 8, 18, 0.72) 0%, rgba(6, 8, 18, 0.28) 48%, transparent 72%);
+      linear-gradient(to bottom, rgba(6, 8, 18, var(--banner-scrim-top)) 0%, transparent 24%),
+      linear-gradient(to top,
+        rgba(6, 8, 18, var(--banner-scrim-bottom)) 0%,
+        rgba(6, 8, 18, var(--banner-scrim-mid)) 48%,
+        transparent 72%);
   }
 
   .content {
@@ -115,7 +197,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 380px;
+    min-height: var(--banner-height-md);
     padding: calc(var(--header-height) + var(--space-8)) var(--section-padding-x) var(--space-10);
     gap: 0;
   }
@@ -129,11 +211,11 @@
 
 @media (max-width: 640px) {
   .banner {
-    min-height: 340px;
+    min-height: var(--banner-height-sm);
   }
 
   .content {
-    min-height: 340px;
+    min-height: var(--banner-height-sm);
   }
 
   .title {

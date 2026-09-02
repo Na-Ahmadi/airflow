@@ -5,7 +5,7 @@ import Container from "@/components/shared/Container/Container";
 import FilterTabs from "@/components/shared/FilterTabs/FilterTabs";
 import type { TabItem } from "@/components/shared/FilterTabs/FilterTabs";
 import ProjectCard from "@/components/shared/ProjectCard/ProjectCard";
-import ProjectsBanner from "@/components/projects/ProjectsBanner/ProjectsBanner";
+import PageBanner from "@/components/shared/PageBanner/PageBanner";
 import { useLanguage } from "@/context/LanguageContext";
 import type { Project } from "@/types";
 import { AnimatePresence, motion } from "framer-motion";
@@ -42,11 +42,12 @@ export default function ProjectsPageClient({
 
   return (
     <>
-      <ProjectsBanner
+      <PageBanner
         breadcrumb={breadcrumb}
         label={pageLabel}
         title={pageTitle}
         description={pageDescription}
+        image="/images/banners/hero-projects.webp"
       />
 
       {/* Projects Grid */}

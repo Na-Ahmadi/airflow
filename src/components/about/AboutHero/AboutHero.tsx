@@ -1,6 +1,5 @@
 "use client";
 
-import Breadcrumb from "@/components/shared/Breadcrumb/Breadcrumb";
 import Button from "@/components/shared/Button/Button";
 import Container from "@/components/shared/Container/Container";
 import Icon from "@/components/shared/Icon/Icon";
@@ -14,7 +13,6 @@ interface Stat {
   label: string;
 }
 interface Props {
-  breadcrumb: { label: string; href: string }[];
   title: string;
   paragraphs: string[];
   button: { label: string; href: string };
@@ -24,7 +22,6 @@ interface Props {
 }
 
 export default function AboutHero({
-  breadcrumb,
   title,
   paragraphs,
   button,
@@ -34,13 +31,6 @@ export default function AboutHero({
 }: Props) {
   return (
     <>
-      {/* Breadcrumb */}
-      <div className={styles.pageHeader}>
-        <Container>
-          <Breadcrumb items={breadcrumb} />
-        </Container>
-      </div>
-
       {/* Hero — DOM order: [image | text | stats]
           With direction:rtl renders as: stats(LEFT) · text(CENTER) · image(RIGHT) */}
       <section className={styles.hero}>

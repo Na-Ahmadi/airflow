@@ -1,6 +1,6 @@
 "use client";
 
-import ProjectsBanner from "@/components/projects/ProjectsBanner/ProjectsBanner";
+import PageBanner from "@/components/shared/PageBanner/PageBanner";
 import type { BreadcrumbItem } from "@/components/shared/Breadcrumb/Breadcrumb";
 import Container from "@/components/shared/Container/Container";
 import Icon from "@/components/shared/Icon/Icon";
@@ -75,7 +75,7 @@ export default function ProjectDetailClient({
 
   return (
     <>
-      <ProjectsBanner
+      <PageBanner
         breadcrumb={breadcrumb}
         badge={category}
         title={title}

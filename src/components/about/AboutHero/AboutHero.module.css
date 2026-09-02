@@ -16,17 +16,10 @@
 .animSlideLeft { animation: slideLeft 0.55s cubic-bezier(0.4,0,0.2,1) both; }
 .animSlideRight{ animation: slideRight 0.55s cubic-bezier(0.4,0,0.2,1) both; }
 
-/* ─── Breadcrumb header ────────────────────────────────────── */
-.pageHeader {
-  background: var(--color-bg-secondary);
-  padding-top: calc(var(--header-height) + var(--space-10));
-  padding-bottom: var(--space-5);
-}
-
 /* ─── Hero Section ─────────────────────────────────────────── */
 .hero {
   background: var(--color-bg-secondary);
-  padding: var(--space-12) 0 var(--space-16);
+  padding: var(--space-16) 0;
 }
 
 /*

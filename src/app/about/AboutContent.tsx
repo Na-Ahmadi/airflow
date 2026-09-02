@@ -2,6 +2,7 @@
 
 import AboutHero from "@/components/about/AboutHero/AboutHero";
 import AboutValues from "@/components/about/AboutValues/AboutValues";
+import PageBanner from "@/components/shared/PageBanner/PageBanner";
 import { useLanguage } from "@/context/LanguageContext";
 import aboutRaw from "@/data/about.json";
 
@@ -15,8 +16,16 @@ export default function AboutContent() {
 
   return (
     <main>
-      <AboutHero
+      <PageBanner
         breadcrumb={about.breadcrumb}
+        label={about.banner.label}
+        title={about.banner.title}
+        description={about.banner.description}
+        image={about.banner.image}
+        imageAlt={about.banner.imageAlt}
+        button={about.banner.button}
+      />
+      <AboutHero
         title={about.hero.title}
         paragraphs={about.hero.paragraphs}
         button={about.hero.button}
