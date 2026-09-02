@@ -20,6 +20,16 @@
   border-bottom: 1px solid var(--glass-border);
 }
 
+/* Mobile menu open — nav bar shares the mobile menu background */
+.mobileOpen .nav,
+.mobileOpen.scrolled .nav {
+  backdrop-filter: none;
+  background: var(--color-bg);
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  border-bottom: none;
+}
+
 .navInner {
   display: flex;
   justify-content: space-between;

@@ -102,7 +102,11 @@ export default function Header() {
 
   return (
     <header
-      className={[styles.header, scrolled ? styles.scrolled : ""]
+      className={[
+        styles.header,
+        scrolled ? styles.scrolled : "",
+        mobileOpen ? styles.mobileOpen : "",
+      ]
         .filter(Boolean)
         .join(" ")}
     >
