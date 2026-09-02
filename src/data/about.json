@@ -11,7 +11,7 @@
         "تیم‌های متخصص دپارتمان طراحی، مهندسی، فناوری اطلاعات، تولید خدمات پس از فروش و مدیریت فروش از ایران منسجم مسیری روشن و مبتنی بر تجربه، نوآوری، دانش و مدیریت منابع انسانی را برای جامعه مهندسی رسم می‌شوند."
       ],
       "button": { "label": "بیشتر درباره ما", "href": "#values" },
-      "image": "/images/banners/hero-bg.webp",
+      "image": "/images/banners/hero-bg-about.webp",
       "imageAlt": "ایرفلو سیستم",
       "stats": [
         { "id": "exp",  "icon": "gear",    "value": "۱۸+",  "label": "سال تجربه"       },
@@ -42,7 +42,7 @@
         "Our specialized teams in design, engineering, IT, after-sales service, and sales management chart a clear, experience-driven path built on innovation, knowledge, and human resource management for the engineering community."
       ],
       "button": { "label": "More About Us", "href": "#values" },
-      "image": "/images/banners/hero-bg.webp",
+      "image": "/images/banners/hero-bg-about.webp",
       "imageAlt": "Airflow System",
       "stats": [
         { "id": "exp",  "icon": "gear",    "value": "18+",  "label": "Years of Experience"  },
