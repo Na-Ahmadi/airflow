@@ -29,7 +29,10 @@ export default function Header() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
-  const lightBanner = pathname === "/products" || pathname === "/projects";
+  const lightBanner =
+    pathname === "/about" ||
+    pathname === "/products" ||
+    pathname.startsWith("/projects");
 
   const closeMobileMenu = () => {
     document.body.style.overflow = "";
