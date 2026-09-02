@@ -113,6 +113,7 @@ export default function Header() {
       ]
         .filter(Boolean)
         .join(" ")}
+      data-mobile-open={String(mobileOpen)}
     >
       {pathname === "/" && (
         <TopBar

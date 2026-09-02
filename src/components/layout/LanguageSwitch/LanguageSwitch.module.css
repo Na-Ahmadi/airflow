@@ -41,12 +41,12 @@
 }
 
 /* Light theme + home page + not scrolled: white text over dark hero */
-:global([data-theme="light"]) .langSwitch[data-home="true"][data-scrolled="false"] {
+:global([data-theme="light"]) :global([data-mobile-open="false"]) .langSwitch[data-home="true"][data-scrolled="false"] {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.25);
 }
 
-:global([data-theme="light"]) .langSwitch[data-home="true"][data-scrolled="false"] .langBtn {
+:global([data-theme="light"]) :global([data-mobile-open="false"]) .langSwitch[data-home="true"][data-scrolled="false"] .langBtn {
   color: #ffffff;
 }
 

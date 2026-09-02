@@ -67,14 +67,18 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Light theme + home page + not scrolled: white bars over dark hero */
+/* Light theme + home page + not scrolled: white bars over dark hero.
+   Excluded while the mobile menu is open — the nav bar then carries the menu's
+   own light background, so white bars would be invisible. */
 :global([data-theme="light"])
+  :global([data-mobile-open="false"])
   .hamburger[data-home="true"][data-scrolled="false"] {
   border-color: rgba(255, 255, 255, 0.25);
   background: rgba(255, 255, 255, 0.12);
 }
 
 :global([data-theme="light"])
+  :global([data-mobile-open="false"])
   .hamburger[data-home="true"][data-scrolled="false"]
   .bar {
   background: #ffffff;

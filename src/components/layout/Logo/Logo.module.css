@@ -37,14 +37,18 @@
   white-space: nowrap;
 }
 
-/* Light theme + home page + not scrolled: white text over dark hero */
+/* Light theme + home page + not scrolled: white text over dark hero.
+   Excluded while the mobile menu is open — the nav bar then carries the menu's
+   own light background, so white text would be invisible. */
 :global([data-theme="light"])
+  :global([data-mobile-open="false"])
   .logo[data-home="true"][data-scrolled="false"]
   .name {
   color: #ffffff;
 }
 
 :global([data-theme="light"])
+  :global([data-mobile-open="false"])
   .logo[data-home="true"][data-scrolled="false"]
   .sub {
   color: rgba(255, 255, 255, 0.65);
