@@ -5,6 +5,10 @@
   grid-template-columns: var(--banner-cols);
   /* Always light — images are bright daytime shots, dark bg would clash */
   background: #edf1f7;
+  /* One height for every page banner, whatever the variant */
+  --banner-height: 520px;
+  --banner-height-md: 480px;
+  --banner-height-sm: 420px;
   min-height: var(--banner-height);
   overflow: hidden;
   direction: rtl;
@@ -13,9 +17,6 @@
 /* ─── Layout variants ───────────────────────────────────────── */
 .default {
   --banner-cols: 33fr 67fr;
-  --banner-height: 520px;
-  --banner-height-md: 480px;
-  --banner-height-sm: 420px;
   --banner-pad-inline: 6rem;
   /* mobile scrim: strong, text sits directly on the photo */
   --banner-scrim-top: 0.62;
@@ -25,9 +26,6 @@
 
 .wide {
   --banner-cols: 22fr 78fr;
-  --banner-height: 420px;
-  --banner-height-md: 380px;
-  --banner-height-sm: 340px;
   --banner-pad-inline: 4rem;
   /* lighter scrim so the product image stays visible */
   --banner-scrim-top: 0.4;
