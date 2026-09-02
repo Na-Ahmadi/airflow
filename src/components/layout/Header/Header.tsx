@@ -106,6 +106,7 @@ export default function Header() {
         styles.header,
         scrolled ? styles.scrolled : "",
         mobileOpen ? styles.mobileOpen : "",
+        lightBanner ? styles.lightBanner : "",
       ]
         .filter(Boolean)
         .join(" ")}

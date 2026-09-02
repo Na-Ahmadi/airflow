@@ -20,6 +20,17 @@
   border-bottom: 1px solid var(--glass-border);
 }
 
+/* Banner pages (products/projects): the photo swings from near-black to
+   near-white across the bar, so no single text color is readable over it.
+   Give the bar its own glass surface — same treatment as the scrolled state. */
+.lightBanner .nav {
+  backdrop-filter: var(--blur-lg);
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: var(--blur-lg);
+  box-shadow: var(--glass-shadow);
+  border-bottom: 1px solid var(--glass-border);
+}
+
 /* Mobile menu open — nav bar shares the mobile menu background */
 .mobileOpen .nav,
 .mobileOpen.scrolled .nav {
