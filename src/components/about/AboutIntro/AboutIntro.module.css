@@ -16,8 +16,8 @@
 .animSlideLeft { animation: slideLeft 0.55s cubic-bezier(0.4,0,0.2,1) both; }
 .animSlideRight{ animation: slideRight 0.55s cubic-bezier(0.4,0,0.2,1) both; }
 
-/* ─── Hero Section ─────────────────────────────────────────── */
-.hero {
+/* ─── Intro Section ────────────────────────────────────────── */
+.intro {
   background: var(--color-bg-secondary);
   padding: var(--space-16) 0;
 }

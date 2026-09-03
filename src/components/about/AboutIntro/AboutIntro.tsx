@@ -4,7 +4,7 @@ import Button from "@/components/shared/Button/Button";
 import Container from "@/components/shared/Container/Container";
 import Icon from "@/components/shared/Icon/Icon";
 import Image from "next/image";
-import styles from "./AboutHero.module.css";
+import styles from "./AboutIntro.module.css";
 
 interface Stat {
   id: string;
@@ -21,7 +21,7 @@ interface Props {
   stats: Stat[];
 }
 
-export default function AboutHero({
+export default function AboutIntro({
   title,
   paragraphs,
   button,
@@ -31,9 +31,9 @@ export default function AboutHero({
 }: Props) {
   return (
     <>
-      {/* Hero — DOM order: [image | text | stats]
+      {/* Intro — DOM order: [image | text | stats]
           With direction:rtl renders as: stats(LEFT) · text(CENTER) · image(RIGHT) */}
-      <section className={styles.hero}>
+      <section className={styles.intro}>
         <Container>
           <div className={styles.grid}>
             {/* RIGHT column: building image */}
@@ -49,7 +49,7 @@ export default function AboutHero({
             </div>
             {/* CENTER column: title + text + button */}
             <div className={`${styles.content} ${styles.animFadeUp}`}>
-              <h1 className={styles.title}>{title}</h1>
+              <h2 className={styles.title}>{title}</h2>
               {paragraphs.map((p, i) => (
                 <p key={i} className={styles.para}>
                   {p}

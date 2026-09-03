@@ -11,14 +11,14 @@
       "image": "/images/banners/hero-about.webp",
       "imageAlt": "ایرفلو سیستم"
     },
-    "hero": {
+    "intro": {
       "title": "پیشرو در طراحی و اجرای سیستم‌های توزیع هوا",
       "paragraphs": [
         "ابرفلو سیستم با بیش از ۱۸ سال تجربه در زمینهٔ تولید و سیستم‌های توزیع هوا، به عنوان یکی از پیشروترین شرکت‌های این صنعت در ایران می‌شود.",
         "تیم‌های متخصص دپارتمان طراحی، مهندسی، فناوری اطلاعات، تولید خدمات پس از فروش و مدیریت فروش از ایران منسجم مسیری روشن و مبتنی بر تجربه، نوآوری، دانش و مدیریت منابع انسانی را برای جامعه مهندسی رسم می‌شوند."
       ],
       "button": { "label": "بیشتر درباره ما", "href": "#values" },
-      "image": "/images/banners/hero-about.webp",
+      "image": "/images/banners/hero-bg-about.webp",
       "imageAlt": "ایرفلو سیستم",
       "stats": [
         { "id": "exp", "icon": "gear", "value": "۱۸+", "label": "سال تجربه" },
@@ -79,14 +79,14 @@
       "image": "/images/banners/hero-about.webp",
       "imageAlt": "Airflow System"
     },
-    "hero": {
+    "intro": {
       "title": "Leading the Design & Installation of Air Distribution Systems",
       "paragraphs": [
         "Airflow System, with over 18 years of experience in manufacturing and air distribution systems, stands as one of Iran's most pioneering companies in the industry.",
         "Our specialized teams in design, engineering, IT, after-sales service, and sales management chart a clear, experience-driven path built on innovation, knowledge, and human resource management for the engineering community."
       ],
       "button": { "label": "More About Us", "href": "#values" },
-      "image": "/images/banners/hero-about.webp",
+      "image": "/images/banners/hero-bg-about.webp",
       "imageAlt": "Airflow System",
       "stats": [
         {
