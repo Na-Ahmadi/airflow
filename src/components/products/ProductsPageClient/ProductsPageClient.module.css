@@ -108,6 +108,40 @@
   text-align: left;
 }
 
+/* Card Info Rows */
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: var(--space-1) 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: start;
+}
+
+.cardInfoRow {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--color-text-secondary) 10%, transparent);
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-text-secondary);
+  font-size: var(--text-xs);
+  line-height: var(--leading-snug);
+}
+
+.cardInfoIcon {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--color-text-muted);
+}
+
+.cardInfoText {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 .cardBtn {
   display: block;
   transition: all var(--transition-fast);
