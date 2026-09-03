@@ -223,62 +223,6 @@
   height: 3px;
 }
 
-/* ─── Product badge – floats over the image (left side in RTL) ─── */
-.productBadge {
-  position: absolute;
-  bottom: 22%;
-  left: 6%;
-  z-index: 2;
-  width: 210px;
-}
-
-.productBadgeInner {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  backdrop-filter: var(--blur-md);
-  transition:
-    border-color var(--transition-base),
-    background var(--transition-base),
-    transform var(--transition-base);
-  cursor: pointer;
-  border: 1px solid rgba(30, 111, 207, 0.35);
-  border-radius: var(--radius-xl);
-  background: rgba(10, 20, 40, 0.75);
-  padding: var(--space-4) var(--space-5);
-  text-decoration: none;
-}
-.productBadgeInner:hover {
-  transform: translateY(-2px);
-  border-color: rgba(30, 111, 207, 0.7);
-  background: rgba(10, 20, 40, 0.9);
-}
-
-.productBadgeCategory {
-  color: var(--color-accent);
-  font-weight: var(--font-medium);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-wider);
-}
-
-.productBadgeName {
-  color: var(--color-text-primary);
-  font-weight: var(--font-bold);
-  font-size: var(--text-xl);
-  line-height: 1.2;
-  text-decoration: none;
-}
-
-.productBadgeLink {
-  transition: color var(--transition-fast);
-  color: var(--color-primary-light);
-  font-size: var(--text-xs);
-  text-decoration: none;
-}
-.productBadgeLink:hover {
-  color: var(--color-accent);
-}
-
 /* ─── Stats row ───────────────────────────────────────────── */
 .statsRow {
   display: flex;
@@ -385,21 +329,11 @@
   .content {
     max-width: 62%;
   }
-  .productBadge {
-    bottom: 18%;
-    left: 2%;
-    width: 185px;
-  }
 }
 
 @media (max-width: 1024px) {
   .content {
     max-width: 72%;
-  }
-  .productBadge {
-    bottom: 15%;
-    left: 1.5%;
-    width: 165px;
   }
   .bgOverlay {
     background: linear-gradient(
@@ -419,11 +353,6 @@
   }
 }
 
-@media (max-width: 900px) {
-  .productBadge {
-    display: none;
-  }
-}
 
 @media (max-width: 768px) {
   .inner {

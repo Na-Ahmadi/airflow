@@ -1,6 +1,6 @@
 .section {
   padding: var(--space-8) 0;
-  background: rgba(10, 22, 40, 0.6);
+  background: var(--color-bg);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   overflow: hidden;
@@ -40,11 +40,11 @@
 }
 .track::before {
   right: 0;
-  background: linear-gradient(to left, var(--color-bg-secondary), transparent);
+  background: linear-gradient(to left, var(--color-bg), transparent);
 }
 .track::after {
   left: 0;
-  background: linear-gradient(to right, var(--color-bg-secondary), transparent);
+  background: linear-gradient(to right, var(--color-bg), transparent);
 }
 
 .marquee {
@@ -59,18 +59,6 @@
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
-}
-
-/* ─── Light Mode ──────────────────────────────────────────── */
-:global([data-theme="light"]) .section {
-  background: var(--color-bg);
-}
-
-:global([data-theme="light"]) .track::before {
-  background: linear-gradient(to left, var(--color-bg), transparent);
-}
-:global([data-theme="light"]) .track::after {
-  background: linear-gradient(to right, var(--color-bg), transparent);
 }
 
 .partnerItem {

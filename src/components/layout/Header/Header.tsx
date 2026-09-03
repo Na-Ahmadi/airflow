@@ -1,6 +1,7 @@
 "use client";
 
 import HeaderActions from "@/components/layout/HeaderActions/HeaderActions";
+import LanguageSwitch from "@/components/layout/LanguageSwitch/LanguageSwitch";
 import Logo from "@/components/layout/Logo/Logo";
 import Navigation from "@/components/layout/Navigation/Navigation";
 import NavItemMobile from "@/components/layout/NavItemMobile/NavItemMobile";
@@ -32,7 +33,10 @@ export default function Header() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
-  const lightBanner = pathname === "/products" || pathname === "/projects";
+  const lightBanner =
+    pathname === "/about" ||
+    pathname === "/products" ||
+    pathname.startsWith("/projects");
 
   const closeMobileMenu = () => {
     document.body.style.overflow = "";
@@ -105,9 +109,15 @@ export default function Header() {
 
   return (
     <header
-      className={[styles.header, scrolled ? styles.scrolled : ""]
+      className={[
+        styles.header,
+        scrolled ? styles.scrolled : "",
+        mobileOpen ? styles.mobileOpen : "",
+        lightBanner ? styles.lightBanner : "",
+      ]
         .filter(Boolean)
         .join(" ")}
+      data-mobile-open={String(mobileOpen)}
     >
       {pathname === "/" && (
         <TopBar
@@ -176,6 +186,12 @@ export default function Header() {
                     />
                   ))}
                 </ul>
+                <div className={styles.mobileLang}>
+                  <span className={styles.mobileLangLabel}>
+                    {data.languageLabel}
+                  </span>
+                  <LanguageSwitch size="lg" onSelect={closeMobileMenu} />
+                </div>
                 <Button
                   href={data.cta.href}
                   variant="primary"

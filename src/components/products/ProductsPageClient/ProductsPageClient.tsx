@@ -5,7 +5,7 @@ import Button from "@/components/shared/Button/Button";
 import Container from "@/components/shared/Container/Container";
 import type { TabItem } from "@/components/shared/FilterTabs/FilterTabs";
 import FilterTabs from "@/components/shared/FilterTabs/FilterTabs";
-import ProductsBanner from "@/components/products/ProductsBanner/ProductsBanner";
+import PageBanner from "@/components/shared/PageBanner/PageBanner";
 import ProductSearchBar from "@/components/products/ProductSearchBar/ProductSearchBar";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
@@ -86,7 +86,12 @@ export default function ProductsPageClient({
   return (
     <>
       {/* Page Banner */}
-      <ProductsBanner breadcrumb={breadcrumb} title={pageTitle} />
+      <PageBanner
+        breadcrumb={breadcrumb}
+        title={pageTitle}
+        image="/images/banners/hvac_showroom_high_quality.webp"
+        variant="wide"
+      />
 
       {/* Products Grid */}
       <section className={styles.section}>

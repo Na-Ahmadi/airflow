@@ -19,6 +19,7 @@
       { "id": "contact",   "label": "تماس با ما",  "href": "#contact",   "active": false }
     ],
     "cta": { "label": "درخواست استعلام", "href": "#contact" },
+    "languageLabel": "زبان",
     "languages": [
       { "code": "fa", "label": "FA", "active": true  },
       { "code": "en", "label": "EN", "active": false }
@@ -44,6 +45,7 @@
       { "id": "contact",   "label": "Contact Us", "href": "#contact",  "active": false }
     ],
     "cta": { "label": "Request Quote", "href": "#contact" },
+    "languageLabel": "Language",
     "languages": [
       { "code": "fa", "label": "FA", "active": false },
       { "code": "en", "label": "EN", "active": true  }

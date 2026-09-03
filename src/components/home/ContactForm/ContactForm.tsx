@@ -33,7 +33,6 @@ interface ContactFormProps {
     contactDetails: { icon: string; label: string; value: string }[];
     fields: ContactField[];
     projectTypes: string[];
-    fileInfo: { label: string; hint: string };
     submit: {
       label: string;
       loading: string;
@@ -195,10 +194,6 @@ export default function ContactForm({ data }: ContactFormProps) {
                     rows={4}
                     {...register("message")}
                   />
-                  {/* <FileUpload
-                    label={data.fileInfo.label}
-                    hint={data.fileInfo.hint}
-                  /> */}
                   {status === "error" && (
                     <p className={styles.errorMsg}>{data.submit.error}</p>
                   )}

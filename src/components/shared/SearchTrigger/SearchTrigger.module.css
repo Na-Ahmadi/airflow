@@ -31,13 +31,13 @@
   color: var(--color-primary-dark);
 }
 
-:global([data-theme="light"]) .searchToggle[data-home="true"][data-scrolled="false"] {
+:global([data-theme="light"]) :global([data-mobile-open="false"]) .searchToggle[data-home="true"][data-scrolled="false"] {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.25);
   color: #ffffff;
 }
 
-:global([data-theme="light"]) .searchToggle[data-home="true"][data-scrolled="false"]:hover {
+:global([data-theme="light"]) :global([data-mobile-open="false"]) .searchToggle[data-home="true"][data-scrolled="false"]:hover {
   background: rgba(255, 255, 255, 0.25);
   border-color: #ffffff;
   color: #ffffff;

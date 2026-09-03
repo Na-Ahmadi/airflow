@@ -1,7 +1,8 @@
 "use client";
 
-import AboutHero from "@/components/about/AboutHero/AboutHero";
+import AboutIntro from "@/components/about/AboutIntro/AboutIntro";
 import AboutValues from "@/components/about/AboutValues/AboutValues";
+import PageBanner from "@/components/shared/PageBanner/PageBanner";
 import { useLocale } from "next-intl";
 import type { Locale } from "@/i18n/routing";
 import { pickLocale } from "@/lib/pickLocale";
@@ -17,14 +18,21 @@ export default function AboutContent() {
 
   return (
     <main>
-      <AboutHero
+      <PageBanner
         breadcrumb={about.breadcrumb}
-        title={about.hero.title}
-        paragraphs={about.hero.paragraphs}
-        button={about.hero.button}
-        image={about.hero.image}
-        imageAlt={about.hero.imageAlt}
-        stats={about.hero.stats}
+        label={about.banner.label}
+        title={about.banner.title}
+        description={about.banner.description}
+        image={about.banner.image}
+        imageAlt={about.banner.imageAlt}
+      />
+      <AboutIntro
+        title={about.intro.title}
+        paragraphs={about.intro.paragraphs}
+        button={about.intro.button}
+        image={about.intro.image}
+        imageAlt={about.intro.imageAlt}
+        stats={about.intro.stats}
       />
       <AboutValues title={about.values.title} items={about.values.items} />
     </main>

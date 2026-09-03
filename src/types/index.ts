@@ -17,6 +17,7 @@ export interface NavData {
   topbar: { phone: string; email: string; address: string };
   items: NavItem[];
   cta: { label: string; href: string };
+  languageLabel: string;
   languages: { code: string; label: string; active: boolean }[];
 }
 
@@ -44,7 +45,6 @@ export interface HeroData {
   buttons: HeroButton[];
   capabilities: string[];
   stats: HeroStat[];
-  productCard: { image: string; category: string; name: string; href: string; link: string };
   ariaLabel: string;
 }
 
@@ -109,6 +109,24 @@ export interface ProductsData {
   viewDetailsPlain: string;
   nav: { prev: string; next: string };
   tabs: ProductTab[];
+  items: Product[];
+}
+
+export interface ProductCategory {
+  id: string;
+  label: string;
+  image?: string;
+}
+
+export interface ProductCategoriesData {
+  section: ProductsData['section'];
+  categoryCta: string;
+  categories: ProductCategory[];
+}
+
+export interface BestSellersData {
+  section: ProductsData['bestSellers'];
+  nav: ProductsData['nav'];
   items: Product[];
 }
 

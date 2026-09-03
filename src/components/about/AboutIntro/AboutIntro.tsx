@@ -1,11 +1,10 @@
 "use client";
 
-import Breadcrumb from "@/components/shared/Breadcrumb/Breadcrumb";
 import Button from "@/components/shared/Button/Button";
 import Container from "@/components/shared/Container/Container";
 import Icon from "@/components/shared/Icon/Icon";
 import Image from "next/image";
-import styles from "./AboutHero.module.css";
+import styles from "./AboutIntro.module.css";
 
 interface Stat {
   id: string;
@@ -14,7 +13,6 @@ interface Stat {
   label: string;
 }
 interface Props {
-  breadcrumb: { label: string; href: string }[];
   title: string;
   paragraphs: string[];
   button: { label: string; href: string };
@@ -23,8 +21,7 @@ interface Props {
   stats: Stat[];
 }
 
-export default function AboutHero({
-  breadcrumb,
+export default function AboutIntro({
   title,
   paragraphs,
   button,
@@ -34,19 +31,9 @@ export default function AboutHero({
 }: Props) {
   return (
     <>
-      {/* Breadcrumb */}
-      <div className={styles.pageHeader}>
-        <Container>
-          <Breadcrumb items={breadcrumb} />
-        </Container>
-      </div>
-
-      {/* Hero — DOM order: [image | text | stats]
-          With direction:rtl renders as: stats(LEFT) · text(CENTER) · image(RIGHT) */}
-      <section className={styles.hero}>
+      <section className={styles.intro}>
         <Container>
           <div className={styles.grid}>
-            {/* RIGHT column: building image */}
             <div className={`${styles.imgWrap} ${styles.animSlideRight}`}>
               <Image
                 src={image}
@@ -57,9 +44,8 @@ export default function AboutHero({
                 priority
               />
             </div>
-            {/* CENTER column: title + text + button */}
             <div className={`${styles.content} ${styles.animFadeUp}`}>
-              <h1 className={styles.title}>{title}</h1>
+              <h2 className={styles.title}>{title}</h2>
               {paragraphs.map((p, i) => (
                 <p key={i} className={styles.para}>
                   {p}
@@ -69,7 +55,6 @@ export default function AboutHero({
                 {button.label}
               </Button>
             </div>
-            {/* LEFT column: 2×2 stats grid */}
             <div className={`${styles.statsGrid} ${styles.animSlideLeft}`}>
               {stats.map((s) => (
                 <div key={s.id} className={styles.statCard}>

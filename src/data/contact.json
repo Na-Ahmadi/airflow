@@ -29,10 +29,6 @@
       "تاسیسات عمومی",
       "سایر"
     ],
-    "fileInfo": {
-      "label": "آپلود نقشه (اختیاری)",
-      "hint": "فرمت‌های مجاز: PDF, DWG, ZIP (حداکثر ۲۵ مگابایت)"
-    },
     "submit": {
       "label":      "ارسال درخواست",
       "loading":    "در حال ارسال...",
@@ -75,10 +71,6 @@
       "Public Infrastructure",
       "Other"
     ],
-    "fileInfo": {
-      "label": "Upload Drawing (Optional)",
-      "hint": "Allowed formats: PDF, DWG, ZIP (max 25 MB)"
-    },
     "submit": {
       "label":      "Submit Request",
       "loading":    "Sending...",

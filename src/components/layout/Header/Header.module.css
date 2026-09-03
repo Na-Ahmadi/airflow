@@ -20,6 +20,27 @@
   border-bottom: 1px solid var(--glass-border);
 }
 
+/* Banner pages (products/projects): the photo swings from near-black to
+   near-white across the bar, so no single text color is readable over it.
+   Give the bar its own glass surface — same treatment as the scrolled state. */
+.lightBanner .nav {
+  backdrop-filter: var(--blur-lg);
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: var(--blur-lg);
+  box-shadow: var(--glass-shadow);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+/* Mobile menu open — nav bar shares the mobile menu background */
+.mobileOpen .nav,
+.mobileOpen.scrolled .nav {
+  backdrop-filter: none;
+  background: var(--color-bg);
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  border-bottom: none;
+}
+
 .navInner {
   display: flex;
   justify-content: space-between;
@@ -28,6 +49,15 @@
   padding-inline: clamp(1rem, 3vw, 3.5rem);
   max-width: 100%;
   height: var(--header-height);
+}
+
+/* Small mobile: tighten the bar so logo + hamburger fit down to 320px */
+@media (max-width: 480px) {
+  .navInner {
+    gap: var(--space-3);
+    padding-inline: var(--space-3);
+    height: var(--header-height-scrolled);
+  }
 }
 
 /* Mobile Menu */
@@ -61,16 +91,40 @@
   list-style: none;
 }
 
-.mobileCta {
+/* Language picker sits between the nav links and the CTA, separated from the
+   links so it reads as a setting rather than another destination. */
+.mobileLang {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: var(--space-4);
-  box-shadow: var(--shadow-btn);
-  border-radius: var(--radius-full);
-  background: var(--gradient-primary);
-  height: var(--btn-height-md);
-  color: #fff;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-5);
+}
+
+.mobileLangLabel {
+  padding-inline: var(--space-1);
+  color: var(--color-text-muted);
   font-weight: var(--font-semibold);
-  text-decoration: none;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+/* Spacing only — the Button component already supplies the primary variant's
+   gradient, shadow, height and radius, so it stays consistent with every
+   other button on the site. */
+.mobileCta {
+  margin-top: var(--space-4);
+}
+
+/* Small mobile: menu starts flush under the shortened nav bar */
+@media (max-width: 480px) {
+  .mobileMenu {
+    top: var(--header-height-scrolled);
+  }
+
+  .mobileMenuInner {
+    padding-inline: var(--space-3);
+  }
 }
