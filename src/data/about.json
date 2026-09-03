@@ -1,8 +1,8 @@
 {
   "fa": {
     "breadcrumb": [
-      { "label": "خانه",    "href": "/"      },
-      { "label": "درباره ما","href": "/about" }
+      { "label": "خانه", "href": "/" },
+      { "label": "درباره ما", "href": "/about" }
     ],
     "banner": {
       "label": "درباره ما",
@@ -21,25 +21,55 @@
       "image": "/images/banners/hero-bg-about.webp",
       "imageAlt": "ایرفلو سیستم",
       "stats": [
-        { "id": "exp",  "icon": "gear",    "value": "۱۸+",  "label": "سال تجربه"       },
-        { "id": "proj", "icon": "cog",     "value": "۸۵۰+", "label": "پروژه موفق"      },
-        { "id": "team", "icon": "users",   "value": "۱۲۰+", "label": "نیروی متخصص"     },
-        { "id": "sat",  "icon": "diamond", "value": "۹۸٪",  "label": "رضایت مشتریان"  }
+        { "id": "exp", "icon": "gear", "value": "۱۸+", "label": "سال تجربه" },
+        { "id": "proj", "icon": "cog", "value": "۸۵۰+", "label": "پروژه موفق" },
+        {
+          "id": "team",
+          "icon": "users",
+          "value": "۱۲۰+",
+          "label": "نیروی متخصص"
+        },
+        {
+          "id": "sat",
+          "icon": "diamond",
+          "value": "۹۸٪",
+          "label": "رضایت مشتریان"
+        }
       ]
     },
     "values": {
       "title": "ارزش‌های ما",
       "items": [
-        { "id": "quality",    "icons": ["award",    "check"],  "title": "کیفیت برتر",    "description": "تعهد برتری در کل مراحل طراحی تولید، نصب و پشتیبانی محصولات خدمات"       },
-        { "id": "innovation", "icons": ["lightbulb","cog"],    "title": "نوآوری مستمر",  "description": "توسعه فناوری‌های نوین و پیشرفته به‌منظور بهبود صنعت تهویه"              },
-        { "id": "customer",   "icons": ["users",    "heart"],  "title": "مشتری‌مداری",   "description": "شناسایی و برآورده‌کردن انتظارات و نیازهای مشتریان با کیفیت بالا"        },
-        { "id": "sustain",    "icons": ["leaf",     "shield"], "title": "پایداری",        "description": "توسعه محصولاتی با حداقل اثرات محیطی، انرژی‌دوستانه و با طول عمر بالا" }
+        {
+          "id": "quality",
+          "icons": ["award", "check"],
+          "title": "کیفیت برتر",
+          "description": "تعهد برتری در کل مراحل طراحی تولید، نصب و پشتیبانی محصولات خدمات"
+        },
+        {
+          "id": "innovation",
+          "icons": ["lightbulb", "cog"],
+          "title": "نوآوری مستمر",
+          "description": "توسعه فناوری‌های نوین و پیشرفته به‌منظور بهبود صنعت تهویه"
+        },
+        {
+          "id": "customer",
+          "icons": ["users", "heart"],
+          "title": "مشتری‌مداری",
+          "description": "شناسایی و برآورده‌کردن انتظارات و نیازهای مشتریان با کیفیت بالا"
+        },
+        {
+          "id": "sustain",
+          "icons": ["leaf", "shield"],
+          "title": "پایداری",
+          "description": "توسعه محصولاتی با حداقل اثرات محیطی، انرژی‌دوستانه و با طول عمر بالا"
+        }
       ]
     }
   },
   "en": {
     "breadcrumb": [
-      { "label": "Home",     "href": "/"      },
+      { "label": "Home", "href": "/" },
       { "label": "About Us", "href": "/about" }
     ],
     "banner": {
@@ -56,22 +86,62 @@
         "Our specialized teams in design, engineering, IT, after-sales service, and sales management chart a clear, experience-driven path built on innovation, knowledge, and human resource management for the engineering community."
       ],
       "button": { "label": "More About Us", "href": "#values" },
-      "image": "/images/banners/hero-bg-about.webp",
+      "image": "/images/banners/hero-about.webp",
       "imageAlt": "Airflow System",
       "stats": [
-        { "id": "exp",  "icon": "gear",    "value": "18+",  "label": "Years of Experience"  },
-        { "id": "proj", "icon": "cog",     "value": "850+", "label": "Successful Projects"   },
-        { "id": "team", "icon": "users",   "value": "120+", "label": "Expert Staff"          },
-        { "id": "sat",  "icon": "diamond", "value": "98%",  "label": "Client Satisfaction"   }
+        {
+          "id": "exp",
+          "icon": "gear",
+          "value": "18+",
+          "label": "Years of Experience"
+        },
+        {
+          "id": "proj",
+          "icon": "cog",
+          "value": "850+",
+          "label": "Successful Projects"
+        },
+        {
+          "id": "team",
+          "icon": "users",
+          "value": "120+",
+          "label": "Expert Staff"
+        },
+        {
+          "id": "sat",
+          "icon": "diamond",
+          "value": "98%",
+          "label": "Client Satisfaction"
+        }
       ]
     },
     "values": {
       "title": "Our Values",
       "items": [
-        { "id": "quality",    "icons": ["award",    "check"],  "title": "Superior Quality",        "description": "Commitment to excellence across all stages of design, production, installation, and support." },
-        { "id": "innovation", "icons": ["lightbulb","cog"],    "title": "Continuous Innovation",   "description": "Developing advanced new technologies to improve the ventilation industry."                     },
-        { "id": "customer",   "icons": ["users",    "heart"],  "title": "Customer Focus",          "description": "Identifying and fulfilling customer expectations and needs at the highest quality."            },
-        { "id": "sustain",    "icons": ["leaf",     "shield"], "title": "Sustainability",          "description": "Developing products with minimal environmental impact, energy-friendly and long-lasting."      }
+        {
+          "id": "quality",
+          "icons": ["award", "check"],
+          "title": "Superior Quality",
+          "description": "Commitment to excellence across all stages of design, production, installation, and support."
+        },
+        {
+          "id": "innovation",
+          "icons": ["lightbulb", "cog"],
+          "title": "Continuous Innovation",
+          "description": "Developing advanced new technologies to improve the ventilation industry."
+        },
+        {
+          "id": "customer",
+          "icons": ["users", "heart"],
+          "title": "Customer Focus",
+          "description": "Identifying and fulfilling customer expectations and needs at the highest quality."
+        },
+        {
+          "id": "sustain",
+          "icons": ["leaf", "shield"],
+          "title": "Sustainability",
+          "description": "Developing products with minimal environmental impact, energy-friendly and long-lasting."
+        }
       ]
     }
   }
