@@ -8,7 +8,7 @@
       "label": "درباره ما",
       "title": "ایرفلو سیستم",
       "description": "بیش از ۱۸ سال تجربه در طراحی، تولید و اجرای سیستم‌های توزیع هوا؛ همراه مطمئن مهندسان و کارفرمایان در پروژه‌های تجاری، صنعتی و درمانی.",
-      "image": "/images/banners/hero-about.webp",
+      "image": "/images/banners/about-banner.webp",
       "imageAlt": "ایرفلو سیستم"
     },
     "intro": {
@@ -18,7 +18,7 @@
         "تیم‌های متخصص دپارتمان طراحی، مهندسی، فناوری اطلاعات، تولید خدمات پس از فروش و مدیریت فروش از ایران منسجم مسیری روشن و مبتنی بر تجربه، نوآوری، دانش و مدیریت منابع انسانی را برای جامعه مهندسی رسم می‌شوند."
       ],
       "button": { "label": "بیشتر درباره ما", "href": "#values" },
-      "image": "/images/banners/hero-bg-about.webp",
+      "image": "/images/banners/about-intro.webp",
       "imageAlt": "ایرفلو سیستم",
       "stats": [
         { "id": "exp", "icon": "gear", "value": "۱۸+", "label": "سال تجربه" },
@@ -76,7 +76,7 @@
       "label": "About Us",
       "title": "Airflow System",
       "description": "Over 18 years of experience designing, manufacturing and installing air distribution systems — a trusted partner for engineers and clients across commercial, industrial and healthcare projects.",
-      "image": "/images/banners/hero-about.webp",
+      "image": "/images/banners/about-banner.webp",
       "imageAlt": "Airflow System"
     },
     "intro": {
@@ -86,7 +86,7 @@
         "Our specialized teams in design, engineering, IT, after-sales service, and sales management chart a clear, experience-driven path built on innovation, knowledge, and human resource management for the engineering community."
       ],
       "button": { "label": "More About Us", "href": "#values" },
-      "image": "/images/banners/hero-bg-about.webp",
+      "image": "/images/banners/about-intro.webp",
       "imageAlt": "Airflow System",
       "stats": [
         {

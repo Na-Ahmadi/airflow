@@ -31,12 +31,9 @@ export default function AboutIntro({
 }: Props) {
   return (
     <>
-      {/* Intro — DOM order: [image | text | stats]
-          With direction:rtl renders as: stats(LEFT) · text(CENTER) · image(RIGHT) */}
       <section className={styles.intro}>
         <Container>
           <div className={styles.grid}>
-            {/* RIGHT column: building image */}
             <div className={`${styles.imgWrap} ${styles.animSlideRight}`}>
               <Image
                 src={image}
@@ -47,7 +44,6 @@ export default function AboutIntro({
                 priority
               />
             </div>
-            {/* CENTER column: title + text + button */}
             <div className={`${styles.content} ${styles.animFadeUp}`}>
               <h2 className={styles.title}>{title}</h2>
               {paragraphs.map((p, i) => (
@@ -59,7 +55,6 @@ export default function AboutIntro({
                 {button.label}
               </Button>
             </div>
-            {/* LEFT column: 2×2 stats grid */}
             <div className={`${styles.statsGrid} ${styles.animSlideLeft}`}>
               {stats.map((s) => (
                 <div key={s.id} className={styles.statCard}>
