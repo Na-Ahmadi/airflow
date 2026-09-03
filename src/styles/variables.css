@@ -143,6 +143,11 @@
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 
+  /* Product card content area + info tiles */
+  --card-body-bg: rgba(255, 255, 255, 0.045);
+  --tile-bg: rgba(255, 255, 255, 0.08);
+  --tile-bg-subtle: rgba(255, 255, 255, 0.06);
+
   /* ─── Transitions ─────────────────────────────────────────── */
   --transition-fast: 150ms ease;
   --transition-base: 250ms ease;
@@ -198,6 +203,11 @@
   --glass-bg: rgba(255, 255, 255, 0.95);
   --glass-border: rgba(0, 0, 0, 0.09);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+  /* Product card content area + info tiles */
+  --card-body-bg: rgba(15, 23, 42, 0.02);
+  --tile-bg: rgba(15, 23, 42, 0.05);
+  --tile-bg-subtle: rgba(15, 23, 42, 0.035);
 
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.07);

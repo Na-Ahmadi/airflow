@@ -23,9 +23,9 @@ export interface ProductItem {
 
 export default function ProductCard({ product }: { product: ProductItem }) {
   const { lang } = useLanguage();
-  const viewDetails = productsRaw[lang].viewDetailsPlain;
+  const { detailsCta } = productsRaw[lang].cardInfo;
   const [imgError, setImgError] = useState(false);
-  const infoRows = getProductCardInfo(product.id, lang);
+  const { tiles, features } = getProductCardInfo(product.id, lang);
 
   const showPlaceholder = !product.image || imgError;
 
@@ -60,17 +60,33 @@ export default function ProductCard({ product }: { product: ProductItem }) {
       <div className={styles.cardBody}>
         <h3 className={styles.cardName}>{product.name}</h3>
         <span className={styles.cardSeries}>{product.series}</span>
-        {infoRows.length > 0 && (
-          <ul className={styles.cardInfo}>
-            {infoRows.map((row) => (
-              <li key={row.id} className={styles.cardInfoRow}>
-                <Icon name={row.icon} size={14} className={styles.cardInfoIcon} />
-                <span className={styles.cardInfoText}>{row.text}</span>
+        {tiles.length > 0 && (
+          <ul className={styles.cardTiles}>
+            {tiles.map((tile) => (
+              <li key={tile.id} className={styles.cardTile}>
+                <Icon name={tile.icon} size={22} className={styles.cardTileIcon} />
+                <span className={styles.cardTileTitle}>{tile.title}</span>
+                {tile.detail && (
+                  <span className={styles.cardTileDetail}>{tile.detail}</span>
+                )}
               </li>
             ))}
           </ul>
         )}
-        <span className={styles.cardBtn}>{viewDetails}</span>
+        {features.length > 0 && (
+          <ul className={styles.cardFeatures}>
+            {features.map((feature) => (
+              <li key={feature} className={styles.cardFeature}>
+                <Icon name="check" size={14} className={styles.cardFeatureIcon} />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+        <span className={styles.cardBtn}>
+          {detailsCta}
+          <Icon name={lang === "fa" ? "chevron-left" : "chevron-right"} size={16} />
+        </span>
       </div>
     </Link>
   );

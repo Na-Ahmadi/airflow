@@ -83,6 +83,7 @@
 }
 
 .cardBody {
+  background: var(--card-body-bg);
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -108,42 +109,81 @@
   text-align: left;
 }
 
-/* Card Info Rows */
-.cardInfo {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-  margin: var(--space-1) 0 0;
+/* Card Info Tiles */
+.cardTiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  margin: var(--space-3) 0 0;
   padding: 0;
   list-style: none;
-  text-align: start;
 }
 
-.cardInfoRow {
+.cardTile {
   display: flex;
-  align-items: flex-start;
-  gap: var(--space-2);
-  border-radius: var(--radius-sm);
-  background: color-mix(in srgb, var(--color-text-secondary) 10%, transparent);
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  border-radius: var(--radius-md);
+  background: var(--tile-bg);
+  padding: var(--space-3) var(--space-2);
+  text-align: center;
+}
+
+.cardTileIcon {
+  margin-bottom: var(--space-1);
+  color: var(--color-primary-light);
+}
+
+.cardTileTitle {
+  color: var(--color-text-primary);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-xs);
+  line-height: var(--leading-snug);
+  text-wrap: balance;
+  hyphens: none;
+}
+
+.cardTileDetail {
+  color: var(--color-text-muted);
+  font-size: 0.6875rem;
+  line-height: var(--leading-snug);
+  text-wrap: balance;
+  hyphens: none;
+}
+
+/* Card Feature Chips */
+.cardFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-1) var(--space-3);
+  margin: var(--space-2) 0 0;
+  border-radius: var(--radius-md);
+  background: var(--tile-bg-subtle);
   padding: var(--space-2) var(--space-3);
+  list-style: none;
+}
+
+.cardFeature {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
   color: var(--color-text-secondary);
   font-size: var(--text-xs);
   line-height: var(--leading-snug);
 }
 
-.cardInfoIcon {
+.cardFeatureIcon {
   flex-shrink: 0;
-  margin-top: 1px;
-  color: var(--color-text-muted);
-}
-
-.cardInfoText {
-  min-width: 0;
-  overflow-wrap: anywhere;
+  color: var(--color-success);
 }
 
 .cardBtn {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2);
   transition: all var(--transition-fast);
   margin-top: var(--space-3);
   border: 1px solid var(--color-border-primary);

@@ -15,8 +15,12 @@
     "viewDetails": "مشاهده جزئیات →",
     "viewDetailsPlain": "مشاهده جزئیات",
     "cardInfo": {
-      "dimensionsFrom": "از {value} میلی‌متر، امکان ساخت در ابعاد سفارشی",
-      "dimensionsFallback": "{value}"
+      "sizeTitle": "ساخت سفارشی",
+      "sizeFrom": "در ابعاد از {value} میلی‌متر",
+      "sizeFromLength": "در طول‌های از {value} میلی‌متر",
+      "applicationTitle": "مناسب {value}",
+      "materialTitle": "جنس بدنه {value}",
+      "detailsCta": "مشاهده جزئیات و استعلام قیمت"
     },
     "nav": { "prev": "قبلی", "next": "بعدی" },
     "tabs": [
@@ -54,8 +58,12 @@
     "viewDetails": "View Details →",
     "viewDetailsPlain": "View Details",
     "cardInfo": {
-      "dimensionsFrom": "from {value} millimeters, custom sizes on request",
-      "dimensionsFallback": "{value}"
+      "sizeTitle": "Custom manufacturing",
+      "sizeFrom": "in sizes from {value} millimeters",
+      "sizeFromLength": "in lengths from {value} millimeters",
+      "applicationTitle": "Suited to {value}",
+      "materialTitle": "Body material {value}",
+      "detailsCta": "View details & request a quote"
     },
     "nav": { "prev": "Previous", "next": "Next" },
     "tabs": [

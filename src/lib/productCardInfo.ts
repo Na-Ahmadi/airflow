@@ -2,10 +2,18 @@ import type { Lang } from "@/context/LanguageContext";
 import productsDetailRaw from "@/data/products-detail.json";
 import productsRaw from "@/data/products.json";
 
-export interface ProductCardInfoRow {
+export interface ProductCardTile {
   id: "dimensions" | "application" | "material";
   icon: string;
-  text: string;
+  /** Bold first line, e.g. "ساخت سفارشی" */
+  title: string;
+  /** Muted second line, e.g. "در طول‌های بالای 1000 میلی‌متر" */
+  detail: string;
+}
+
+export interface ProductCardInfo {
+  tiles: ProductCardTile[];
+  features: string[];
 }
 
 /**
@@ -36,10 +44,19 @@ const DIMENSION_LABELS: Record<Lang, string[]> = {
   ],
 };
 
+/** Size labels that measure a length rather than a width×height footprint. */
+const LINEAR_LABELS: Record<Lang, string[]> = {
+  fa: ["طول"],
+  en: ["Length"],
+};
+
 const APPLICATION_LABELS: Record<Lang, string> = { fa: "کاربرد", en: "Application" };
 const MATERIAL_LABELS: Record<Lang, string> = { fa: "جنس", en: "Material" };
 
 const PERSIAN_DIGITS = "۰۱۲۳۴۵۶۷۸۹";
+
+/** How many feature chips the card shows. */
+const MAX_FEATURES = 3;
 
 function toAsciiDigits(value: string): string {
   return value.replace(/[۰-۹]/g, (d) => String(PERSIAN_DIGITS.indexOf(d)));
@@ -58,51 +75,98 @@ function extractStartingMillimeters(value: string): string | null {
   return match ? match[0] : null;
 }
 
-function findSpec(
-  specs: { label: string; value: string }[],
-  labels: string[],
-): string | null {
+interface Spec {
+  label: string;
+  value: string;
+}
+
+function findSpec(specs: Spec[], labels: string[]): Spec | null {
   for (const label of labels) {
     const spec = specs.find((entry) => entry.label === label);
-    if (spec?.value) return spec.value;
+    if (spec?.value) return spec;
   }
   return null;
 }
 
-type DetailBySlug = Record<string, { specs: { label: string; value: string }[] } | undefined>;
+/**
+ * Splits a spec value on its own separators so a tile gets a short headline
+ * plus a supporting line: "اداری / تجاری / رستوران" becomes "اداری" +
+ * "تجاری / رستوران". Values without a separator are kept whole — splitting
+ * mid-phrase strands words like "شده" on their own line.
+ */
+function splitValue(value: string): { title: string; detail: string } {
+  const parts = value
+    .split(/\s*[/،,]\s*/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+
+  if (parts.length > 1) {
+    return { title: parts[0], detail: parts.slice(1).join(" / ") };
+  }
+  return { title: value.trim(), detail: "" };
+}
+
+type DetailEntry = { specs?: Spec[]; features?: { icon: string; label: string }[] };
+type DetailBySlug = Record<string, DetailEntry | undefined>;
 
 /**
- * Builds the three info rows shown under a product card's series name, reading
- * every value from the product database (products-detail.json) and every label
- * from products.json. Rows without data are omitted rather than guessed.
+ * Builds the tiles and feature chips shown under a product card's series name.
+ * Every value comes from the product database (products-detail.json) and every
+ * label template from products.json, so cards adapt per product automatically.
+ * Missing data yields fewer tiles rather than guessed content.
  */
-export function getProductCardInfo(productId: string, lang: Lang): ProductCardInfoRow[] {
+export function getProductCardInfo(productId: string, lang: Lang): ProductCardInfo {
   const detail = (productsDetailRaw[lang] as DetailBySlug)[productId];
-  if (!detail?.specs) return [];
+  const specs = detail?.specs;
+  if (!specs) return { tiles: [], features: [] };
 
   const labels = productsRaw[lang].cardInfo;
-  const rows: ProductCardInfoRow[] = [];
+  const tiles: ProductCardTile[] = [];
 
-  const dimensions = findSpec(detail.specs, DIMENSION_LABELS[lang]);
+  const dimensions = findSpec(specs, DIMENSION_LABELS[lang]);
   if (dimensions) {
-    const from = extractStartingMillimeters(dimensions);
-    const template = from ? labels.dimensionsFrom : labels.dimensionsFallback;
-    rows.push({
+    const from = extractStartingMillimeters(dimensions.value);
+    let detailText: string;
+    if (from) {
+      const isLinear = LINEAR_LABELS[lang].includes(dimensions.label);
+      const template = isLinear ? labels.sizeFromLength : labels.sizeFrom;
+      detailText = template.replace("{value}", from);
+    } else {
+      detailText = dimensions.value;
+    }
+    tiles.push({
       id: "dimensions",
       icon: "box",
-      text: template.replace("{value}", from ?? dimensions),
+      title: labels.sizeTitle,
+      detail: detailText,
     });
   }
 
-  const application = findSpec(detail.specs, [APPLICATION_LABELS[lang]]);
+  const application = findSpec(specs, [APPLICATION_LABELS[lang]]);
   if (application) {
-    rows.push({ id: "application", icon: "building", text: application });
+    const { title, detail: rest } = splitValue(application.value);
+    tiles.push({
+      id: "application",
+      icon: "file-text",
+      title: labels.applicationTitle.replace("{value}", title),
+      detail: rest,
+    });
   }
 
-  const material = findSpec(detail.specs, [MATERIAL_LABELS[lang]]);
+  const material = findSpec(specs, [MATERIAL_LABELS[lang]]);
   if (material) {
-    rows.push({ id: "material", icon: "material", text: material });
+    const { title, detail: rest } = splitValue(material.value);
+    tiles.push({
+      id: "material",
+      icon: "shield",
+      title: labels.materialTitle.replace("{value}", title),
+      detail: rest,
+    });
   }
 
-  return rows;
+  const features = (detail?.features ?? [])
+    .map((feature) => feature.label)
+    .slice(0, MAX_FEATURES);
+
+  return { tiles, features };
 }

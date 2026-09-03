@@ -13,10 +13,10 @@ import styles from "./Products.module.css";
 
 export default function ProductCard({ product }: { product: Product }) {
   const { lang } = useLanguage();
-  const viewDetails = productsRaw[lang].viewDetailsPlain;
+  const { detailsCta } = productsRaw[lang].cardInfo;
   const [imgError, setImgError] = useState(false);
   const showPlaceholder = !product.image || imgError;
-  const infoRows = getProductCardInfo(product.id, lang);
+  const { tiles, features } = getProductCardInfo(product.id, lang);
 
   return (
     <Link href={product.href} className={styles.card}>
@@ -50,19 +50,32 @@ export default function ProductCard({ product }: { product: Product }) {
       <div className={styles.cardBody}>
         <span className={styles.cardSeries}>{product.series}</span>
         <h3 className={styles.cardName}>{product.name}</h3>
-        {infoRows.length > 0 && (
-          <ul className={styles.cardInfo}>
-            {infoRows.map((row) => (
-              <li key={row.id} className={styles.cardInfoRow}>
-                <Icon name={row.icon} size={13} className={styles.cardInfoIcon} />
-                <span className={styles.cardInfoText}>{row.text}</span>
+        {tiles.length > 0 && (
+          <ul className={styles.cardTiles}>
+            {tiles.map((tile) => (
+              <li key={tile.id} className={styles.cardTile}>
+                <Icon name={tile.icon} size={20} className={styles.cardTileIcon} />
+                <span className={styles.cardTileTitle}>{tile.title}</span>
+                {tile.detail && (
+                  <span className={styles.cardTileDetail}>{tile.detail}</span>
+                )}
               </li>
             ))}
           </ul>
         )}
-        <span className={styles.cardLink}>
-          {viewDetails}
-          <Icon name={lang === "fa" ? "arrow-left" : "arrow-right"} size={12} />
+        {features.length > 0 && (
+          <ul className={styles.cardFeatures}>
+            {features.map((feature) => (
+              <li key={feature} className={styles.cardFeature}>
+                <Icon name="check" size={13} className={styles.cardFeatureIcon} />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+        <span className={styles.cardBtn}>
+          {detailsCta}
+          <Icon name={lang === "fa" ? "chevron-left" : "chevron-right"} size={15} />
         </span>
       </div>
     </Link>
