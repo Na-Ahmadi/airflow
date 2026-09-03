@@ -152,33 +152,6 @@
   hyphens: none;
 }
 
-/* Card Feature Chips */
-.cardFeatures {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-1) var(--space-3);
-  margin: var(--space-2) 0 0;
-  border-radius: var(--radius-md);
-  background: var(--tile-bg-subtle);
-  padding: var(--space-2) var(--space-3);
-  list-style: none;
-}
-
-.cardFeature {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-1);
-  color: var(--color-text-secondary);
-  font-size: var(--text-xs);
-  line-height: var(--leading-snug);
-}
-
-.cardFeatureIcon {
-  flex-shrink: 0;
-  color: var(--color-success);
-}
-
 .cardBtn {
   display: flex;
   justify-content: center;

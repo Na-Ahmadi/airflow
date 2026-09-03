@@ -25,7 +25,7 @@ export default function ProductCard({ product }: { product: ProductItem }) {
   const { lang } = useLanguage();
   const { detailsCta } = productsRaw[lang].cardInfo;
   const [imgError, setImgError] = useState(false);
-  const { tiles, features } = getProductCardInfo(product.id, lang);
+  const { tiles } = getProductCardInfo(product.id, lang);
 
   const showPlaceholder = !product.image || imgError;
 
@@ -69,16 +69,6 @@ export default function ProductCard({ product }: { product: ProductItem }) {
                 {tile.detail && (
                   <span className={styles.cardTileDetail}>{tile.detail}</span>
                 )}
-              </li>
-            ))}
-          </ul>
-        )}
-        {features.length > 0 && (
-          <ul className={styles.cardFeatures}>
-            {features.map((feature) => (
-              <li key={feature} className={styles.cardFeature}>
-                <Icon name="check" size={14} className={styles.cardFeatureIcon} />
-                <span>{feature}</span>
               </li>
             ))}
           </ul>
