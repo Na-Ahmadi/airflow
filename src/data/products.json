@@ -20,7 +20,7 @@
       "sizeFromLength": "در طول‌های از {value} میلی‌متر",
       "applicationTitle": "مناسب {value}",
       "materialTitle": "جنس بدنه {value}",
-      "detailsCta": "مشاهده جزئیات و استعلام قیمت"
+      "detailsCta": "مشاهده جزئیات"
     },
     "nav": { "prev": "قبلی", "next": "بعدی" },
     "tabs": [
@@ -63,7 +63,7 @@
       "sizeFromLength": "in lengths from {value} millimeters",
       "applicationTitle": "Suited to {value}",
       "materialTitle": "Body material {value}",
-      "detailsCta": "View details & request a quote"
+      "detailsCta": "View details"
     },
     "nav": { "prev": "Previous", "next": "Next" },
     "tabs": [
