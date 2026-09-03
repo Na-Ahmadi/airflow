@@ -13,7 +13,6 @@ export interface ProductCardTile {
 
 export interface ProductCardInfo {
   tiles: ProductCardTile[];
-  features: string[];
 }
 
 /**
@@ -54,9 +53,6 @@ const APPLICATION_LABELS: Record<Lang, string> = { fa: "کاربرد", en: "Appl
 const MATERIAL_LABELS: Record<Lang, string> = { fa: "جنس", en: "Material" };
 
 const PERSIAN_DIGITS = "۰۱۲۳۴۵۶۷۸۹";
-
-/** How many feature chips the card shows. */
-const MAX_FEATURES = 3;
 
 function toAsciiDigits(value: string): string {
   return value.replace(/[۰-۹]/g, (d) => String(PERSIAN_DIGITS.indexOf(d)));
@@ -106,19 +102,18 @@ function splitValue(value: string): { title: string; detail: string } {
   return { title: value.trim(), detail: "" };
 }
 
-type DetailEntry = { specs?: Spec[]; features?: { icon: string; label: string }[] };
+type DetailEntry = { specs?: Spec[] };
 type DetailBySlug = Record<string, DetailEntry | undefined>;
 
 /**
- * Builds the tiles and feature chips shown under a product card's series name.
- * Every value comes from the product database (products-detail.json) and every
- * label template from products.json, so cards adapt per product automatically.
+ * Builds the info tiles shown under a product card's series name. Every value
+ * comes from the product database (products-detail.json) and every label
+ * template from products.json, so cards adapt per product automatically.
  * Missing data yields fewer tiles rather than guessed content.
  */
 export function getProductCardInfo(productId: string, lang: Lang): ProductCardInfo {
-  const detail = (productsDetailRaw[lang] as DetailBySlug)[productId];
-  const specs = detail?.specs;
-  if (!specs) return { tiles: [], features: [] };
+  const specs = (productsDetailRaw[lang] as DetailBySlug)[productId]?.specs;
+  if (!specs) return { tiles: [] };
 
   const labels = productsRaw[lang].cardInfo;
   const tiles: ProductCardTile[] = [];
@@ -164,9 +159,5 @@ export function getProductCardInfo(productId: string, lang: Lang): ProductCardIn
     });
   }
 
-  const features = (detail?.features ?? [])
-    .map((feature) => feature.label)
-    .slice(0, MAX_FEATURES);
-
-  return { tiles, features };
+  return { tiles };
 }

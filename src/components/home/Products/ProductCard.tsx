@@ -4,7 +4,6 @@ import Badge from "@/components/shared/Badge/Badge";
 import Icon from "@/components/shared/Icon/Icon";
 import { useLanguage } from "@/context/LanguageContext";
 import productsRaw from "@/data/products.json";
-import { getProductCardInfo } from "@/lib/productCardInfo";
 import type { Product } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,7 +15,6 @@ export default function ProductCard({ product }: { product: Product }) {
   const { detailsCta } = productsRaw[lang].cardInfo;
   const [imgError, setImgError] = useState(false);
   const showPlaceholder = !product.image || imgError;
-  const { tiles, features } = getProductCardInfo(product.id, lang);
 
   return (
     <Link href={product.href} className={styles.card}>
@@ -50,29 +48,6 @@ export default function ProductCard({ product }: { product: Product }) {
       <div className={styles.cardBody}>
         <span className={styles.cardSeries}>{product.series}</span>
         <h3 className={styles.cardName}>{product.name}</h3>
-        {tiles.length > 0 && (
-          <ul className={styles.cardTiles}>
-            {tiles.map((tile) => (
-              <li key={tile.id} className={styles.cardTile}>
-                <Icon name={tile.icon} size={20} className={styles.cardTileIcon} />
-                <span className={styles.cardTileTitle}>{tile.title}</span>
-                {tile.detail && (
-                  <span className={styles.cardTileDetail}>{tile.detail}</span>
-                )}
-              </li>
-            ))}
-          </ul>
-        )}
-        {features.length > 0 && (
-          <ul className={styles.cardFeatures}>
-            {features.map((feature) => (
-              <li key={feature} className={styles.cardFeature}>
-                <Icon name="check" size={13} className={styles.cardFeatureIcon} />
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-        )}
         <span className={styles.cardBtn}>
           {detailsCta}
           <Icon name={lang === "fa" ? "chevron-left" : "chevron-right"} size={15} />
