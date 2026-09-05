@@ -83,11 +83,11 @@
 }
 
 .cardBody {
-  background: var(--card-body-bg);
   display: flex;
   flex: 1;
   flex-direction: column;
   gap: var(--space-2);
+  background: var(--card-body-bg);
   padding: var(--space-5);
   text-align: right;
 }
@@ -124,8 +124,8 @@
   flex-direction: column;
   align-items: center;
   gap: var(--space-1);
+  outline: 2px solid var(--tile-bg);
   border-radius: var(--radius-md);
-  background: var(--tile-bg);
   padding: var(--space-3) var(--space-2);
   text-align: center;
 }
@@ -140,16 +140,16 @@
   font-weight: var(--font-semibold);
   font-size: var(--text-xs);
   line-height: var(--leading-snug);
-  text-wrap: balance;
   hyphens: none;
+  text-wrap: balance;
 }
 
 .cardTileDetail {
   color: var(--color-text-muted);
   font-size: 0.6875rem;
   line-height: var(--leading-snug);
-  text-wrap: balance;
   hyphens: none;
+  text-wrap: balance;
 }
 
 .cardBtn {
