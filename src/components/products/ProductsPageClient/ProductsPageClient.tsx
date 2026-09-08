@@ -74,18 +74,21 @@ export default function ProductsPageClient({
     [pathname, router, searchParams],
   );
 
-  const byCategory =
-    activeTab === "all" ? items : items.filter((p) => p.category === activeTab);
-
+  // Both filters run in one pass over `items`, and the memo depends only on
+  // primitives plus the `items` prop — deriving `byCategory` outside the memo
+  // would allocate a fresh array each render and defeat it.
   const normalizedQuery = query.trim().toLocaleLowerCase();
   const filtered = useMemo(() => {
-    if (!normalizedQuery) return byCategory;
-    return byCategory.filter((p) =>
+    const matchesCategory = (p: ProductItem) =>
+      activeTab === "all" || p.category === activeTab;
+    const matchesQuery = (p: ProductItem) =>
+      !normalizedQuery ||
       `${p.name} ${p.model} ${p.series} ${p.id}`
         .toLocaleLowerCase()
-        .includes(normalizedQuery),
-    );
-  }, [byCategory, normalizedQuery]);
+        .includes(normalizedQuery);
+
+    return items.filter((p) => matchesCategory(p) && matchesQuery(p));
+  }, [items, activeTab, normalizedQuery]);
 
   return (
     <>
