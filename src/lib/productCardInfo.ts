@@ -76,10 +76,24 @@ interface Spec {
   value: string;
 }
 
-function findSpec(specs: Spec[], labels: string[]): Spec | null {
+/**
+ * Indexes a product's specs by label so each lookup is a single map hit
+ * instead of a scan. Later duplicates are ignored: the first spec carrying a
+ * value wins, matching the previous top-down search order.
+ */
+function indexSpecsByLabel(specs: Spec[]): Map<string, Spec> {
+  const byLabel = new Map<string, Spec>();
+  for (const spec of specs) {
+    if (spec.value && !byLabel.has(spec.label)) byLabel.set(spec.label, spec);
+  }
+  return byLabel;
+}
+
+/** Returns the first label present in the index, in the labels' priority order. */
+function findSpec(byLabel: Map<string, Spec>, labels: string[]): Spec | null {
   for (const label of labels) {
-    const spec = specs.find((entry) => entry.label === label);
-    if (spec?.value) return spec;
+    const spec = byLabel.get(label);
+    if (spec) return spec;
   }
   return null;
 }
@@ -102,6 +116,24 @@ function splitValue(value: string): { title: string; detail: string } {
   return { title: value.trim(), detail: "" };
 }
 
+/**
+ * Renders the size tile's second line: a templated "from {value} mm" when the
+ * spec carries a millimeter figure, otherwise the raw spec value so no
+ * measurement is invented.
+ */
+function formatDimensionDetail(
+  dimensions: Spec,
+  lang: Lang,
+  labels: { sizeFrom: string; sizeFromLength: string },
+): string {
+  const from = extractStartingMillimeters(dimensions.value);
+  if (!from) return dimensions.value;
+
+  const isLinear = LINEAR_LABELS[lang].includes(dimensions.label);
+  const template = isLinear ? labels.sizeFromLength : labels.sizeFrom;
+  return template.replace("{value}", from);
+}
+
 type DetailEntry = { specs?: Spec[] };
 type DetailBySlug = Record<string, DetailEntry | undefined>;
 
@@ -115,48 +147,42 @@ export function getProductCardInfo(productId: string, lang: Lang): ProductCardIn
   const specs = (productsDetailRaw[lang] as DetailBySlug)[productId]?.specs;
   if (!specs) return { tiles: [] };
 
+  const byLabel = indexSpecsByLabel(specs);
   const labels = productsRaw[lang].cardInfo;
   const tiles: ProductCardTile[] = [];
 
-  const dimensions = findSpec(specs, DIMENSION_LABELS[lang]);
+  const dimensions = findSpec(byLabel, DIMENSION_LABELS[lang]);
   if (dimensions) {
-    const from = extractStartingMillimeters(dimensions.value);
-    let detailText: string;
-    if (from) {
-      const isLinear = LINEAR_LABELS[lang].includes(dimensions.label);
-      const template = isLinear ? labels.sizeFromLength : labels.sizeFrom;
-      detailText = template.replace("{value}", from);
-    } else {
-      detailText = dimensions.value;
-    }
     tiles.push({
       id: "dimensions",
       icon: "box",
       title: labels.sizeTitle,
-      detail: detailText,
+      detail: formatDimensionDetail(dimensions, lang, labels),
     });
   }
 
-  const application = findSpec(specs, [APPLICATION_LABELS[lang]]);
-  if (application) {
-    const { title, detail: rest } = splitValue(application.value);
-    tiles.push({
+  // Application and material share one shape: split the value, use the first
+  // part in the templated title and keep the rest as the muted detail line.
+  const SPLIT_TILES = [
+    {
       id: "application",
       icon: "file-text",
-      title: labels.applicationTitle.replace("{value}", title),
-      detail: rest,
-    });
-  }
-
-  const material = findSpec(specs, [MATERIAL_LABELS[lang]]);
-  if (material) {
-    const { title, detail: rest } = splitValue(material.value);
-    tiles.push({
+      label: APPLICATION_LABELS[lang],
+      template: labels.applicationTitle,
+    },
+    {
       id: "material",
       icon: "shield",
-      title: labels.materialTitle.replace("{value}", title),
-      detail: rest,
-    });
+      label: MATERIAL_LABELS[lang],
+      template: labels.materialTitle,
+    },
+  ] as const;
+
+  for (const { id, icon, label, template } of SPLIT_TILES) {
+    const spec = findSpec(byLabel, [label]);
+    if (!spec) continue;
+    const { title, detail } = splitValue(spec.value);
+    tiles.push({ id, icon, title: template.replace("{value}", title), detail });
   }
 
   return { tiles };
