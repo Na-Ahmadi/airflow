@@ -1,6 +1,6 @@
-# ایرفلو سیستم — Airflow System
+# Airflow System
 
-Unternehmenswebsite für **ایرفلو سیستم** (Airflow System), einen iranischen Hersteller von HVAC-Komponenten (Lüftungsgitter, Dämper, Luftverteilungssysteme) mit über 18 Jahren Erfahrung.
+Unternehmenswebsite für (Airflow System), einen iranischen Hersteller von HVAC-Komponenten (Lüftungsgitter, Dämper, Luftverteilungssysteme) mit über 18 Jahren Erfahrung.
 
 Die Website ist vollständig auf Persisch (Farsi) mit RTL-Layout aufgebaut und richtet sich an den iranischen B2B-Markt.
 
@@ -103,13 +103,6 @@ Alle Texte und Daten liegen als JSON-Dateien in `src/data/`. Es ist kein CMS not
 
 ---
 
-## RTL-Konfiguration
-
-- `<html dir="rtl" lang="fa">` ist in `src/app/layout.tsx` gesetzt
-- Schriftart: **Vazirmatn** (Google Fonts, Arabic-Subset)
-- Design-Tokens für RTL-Abstände in `src/styles/variables.css`
-
----
 
 ## Kontakt / Deployment
 
